@@ -1,0 +1,111 @@
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Implementer.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\Mono.Cecil.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Injecter.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.IL.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Implementer.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Injecter.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Injecter.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetRenamer.IL.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+D:\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.xml
+D:\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\DotNetPatcher.exe
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\DotNetPatcher.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\DotNetPatcher.xml
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Core20Reader.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Helper.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Implementer.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Mono.Cecil.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\IL.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Vestris.ResourceLib.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Injections.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Mono.Cecil.Rocks.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Core20Reader.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Helper.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Implementer.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\IL.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Debug\Injections.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Result.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.xml
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Helper.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Implementer.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\LoginTheme.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Mono.Cecil.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Helper.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Implementer.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\LoginTheme.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\LoginTheme.xml
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.xml
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\Injections.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Debug\SevenzipLib.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Debug\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Helper.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Implementer.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\LoginTheme.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Implementer.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\LoginTheme.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\LoginTheme.xml
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Vestris.ResourceLib.xml
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Debug\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Debug\DotNetPatcher.pdb

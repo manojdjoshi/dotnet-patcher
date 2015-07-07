@@ -1,0 +1,4 @@
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer\obj\Debug\DotNetRenamer.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer\obj\Debug\DotNetRenamer.Frm_Main.resources
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer\obj\Debug\DotNetRenamer.Resources.resources
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer\obj\Debug\DotNetRenamer.vbproj.GenerateResource.Cache

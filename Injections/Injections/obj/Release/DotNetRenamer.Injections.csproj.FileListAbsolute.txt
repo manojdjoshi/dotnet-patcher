@@ -1,0 +1,29 @@
+F:\Injections\Injections\bin\Release\DotNetRenamer.Injections.dll
+F:\Injections\Injections\bin\Release\DotNetRenamer.Injections.pdb
+F:\Injections\Injections\obj\Release\DotNetRenamer.Injections.dll
+F:\Injections\Injections\obj\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\Injections\Injections\bin\Release\DotNetRenamer.Injections.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\Injections\Injections\bin\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\Injections\Injections\obj\Release\DotNetRenamer.Injections.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\Injections\Injections\obj\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\Injections\Injections\obj\Release\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Renamer - Interface\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.pdb
+D:\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.dll
+D:\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\DotNetRenamer.Injections.pdb
+D:\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+D:\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.dll
+D:\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\DotNetRenamer.Injections.pdb

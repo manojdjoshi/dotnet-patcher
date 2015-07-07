@@ -1,0 +1,65 @@
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Implementer.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Implementer.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Core20Reader.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Helper.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\Mono.Cecil.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Core20Reader.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\bin\Debug\DotNetRenamer.Helper.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\obj\Debug\DotNetRenamer.Implementer.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\obj\Debug\DotNetRenamer.Implementer.Resources.resources
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\obj\Debug\DotNetRenamer.Implementer.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\obj\Debug\DotNetRenamer.Implementer.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Engine\obj\Debug\DotNetRenamer.Implementer.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.xml
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbprojResolveAssemblyReference.cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.Rocks.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.xml
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbprojResolveAssemblyReference.cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Implementer.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.IL.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.IL.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injecter.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\bin\Debug\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Implementer\obj\Debug\DotNetRenamer.Implementer.pdb

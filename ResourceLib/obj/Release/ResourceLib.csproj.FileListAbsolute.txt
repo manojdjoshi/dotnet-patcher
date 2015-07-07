@@ -1,0 +1,80 @@
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Release\Vestris.ResourceLib.XML
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache

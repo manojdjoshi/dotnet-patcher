@@ -1,0 +1,18 @@
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\bin\Debug\Core20Reader.dll
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\bin\Debug\Core20Reader.pdb
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\obj\Debug\Core20Reader.Resources.resources
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\obj\Debug\Core20Reader.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\obj\Debug\Core20Reader.dll
+D:\DotNet Patcher - Copie\Core20Reader\Core20Reader\obj\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\bin\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\bin\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.Resources.resources
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\bin\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\bin\Debug\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.Resources.resources
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher\Core20Reader\Core20Reader\obj\Debug\Core20Reader.pdb

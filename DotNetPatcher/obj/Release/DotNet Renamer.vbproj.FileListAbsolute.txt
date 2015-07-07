@@ -1,0 +1,11 @@
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\bin\Release\DotNet Renamer.exe
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\bin\Release\DotNet Renamer.pdb
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\bin\Release\DotNet Renamer.xml
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\bin\Release\Mono.Cecil.pdb
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet Renamer.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet_Renamer.Resources.resources
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet Renamer.vbproj.GenerateResource.Cache
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet Renamer.exe
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet Renamer.xml
+C:\Users\jm\Documents\Visual Studio 2012\Projects\DotNet Renamer\DotNet Renamer\obj\Release\DotNet Renamer.pdb

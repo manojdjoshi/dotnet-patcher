@@ -1,0 +1,34 @@
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.Resources.resources
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbprojResolveAssemblyReference.cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbprojResolveAssemblyReference.cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\bin\Debug\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\bin\Debug\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Helper\obj\Debug\DotNetRenamer.Helper.pdb

@@ -1,0 +1,1061 @@
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Implementer.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Injecter.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.IL.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Implementer.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Injecter.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Injecter.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\bin\Release\DotNetRenamer.IL.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetRenamer.Frm_Main.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetRenamer.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer\obj\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.xml
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.xml
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.xml
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.dll
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.xml
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.pdb
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.xml
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.dll
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Core20Reader.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Helper.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Implementer.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.IL.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injecter.xml
+D:\DotNet Patcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\DotNet Patcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.xml
+D:\DotNet Patcher\DotNetPatcher\bin\Release\DotNetRenamer.Injections.pdb
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.xml
+D:\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.xml
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Helper.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Implementer.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Injections.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.dll
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Helper.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Injections.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.xml
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Implementer.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Implementer.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Implementer.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\PERSONNEL\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Implementer.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Bureau\DotNet Patcher - 4.2\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Implementer.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Implementer.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Implementer.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Bureau\DotNet Patcher - 4.2 Last\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Helper.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Implementer.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Injections.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Implementer.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\PERSONNEL\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Helper.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Implementer.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Injections.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Helper.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Injections.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\Bureau\DotNetPatcher42Last\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Helper.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Implementer.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Injections.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Helper.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Injections.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Bureau\DotNetPatcher43Last\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.xml
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Implementer.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\3dotdev-dotnet-patcher-232bcffb24fc\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Implementer.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Sevenzip.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Sevenzip.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.xml
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Sevenzip.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Sevenzip.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.xml
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Core20Reader.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Implementer.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\LoginTheme.xml
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Core20Reader.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Implementer.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\LoginTheme.xml
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Mono.Cecil.Rocks.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Core20Reader.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Implementer.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Core20Reader.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Implementer.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.xml
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Core20Reader.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Implementer.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Core20Reader.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Implementer.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\LoginTheme.xml
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.xml
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.xml
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Core20Reader.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.xml
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.xml
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.exe
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.exe
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Mono.Cecil.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Core20Reader.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Helper.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Implementer.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\LoginTheme.xml
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\bin\Release\Export.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.exe
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.exe
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Core20Reader.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Implementer.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Mono.Cecil.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Export.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Core20Reader.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Implementer.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.xml
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Export.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.exe
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Core20Reader.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Implementer.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Mono.Cecil.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Export.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Core20Reader.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Helper.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Implementer.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\LoginTheme.xml
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\bin\Release\Export.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.exe
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.4\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher - 4.4\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher - 4.4\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Implementer.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Implementer.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNet Patcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.exe.config
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\DotNetPatcher.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Core20Reader.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Implementer.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Core20Reader.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Implementer.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\LoginTheme.xml
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Vestris.ResourceLib.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Exclusion.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Result.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Frm_Main.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.Resources.resources
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.exe
+D:\_BITBUCKET\DotNetPatcher\DotNetPatcher\obj\Release\DotNetPatcher.pdb

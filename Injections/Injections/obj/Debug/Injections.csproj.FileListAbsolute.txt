@@ -1,0 +1,18 @@
+F:\Injections\Injections\bin\Debug\Injections.dll
+F:\Injections\Injections\bin\Debug\Injections.pdb
+F:\Injections\Injections\obj\Debug\Injections.dll
+F:\Injections\Injections\obj\Debug\Injections.pdb
+D:\DotNet Patcher - Copie\Injections\Injections\bin\Debug\Injections.dll
+D:\DotNet Patcher - Copie\Injections\Injections\bin\Debug\Injections.pdb
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Debug\Injections.dll
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Debug\Injections.pdb
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Debug\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Debug\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Debug\Injections.pdb
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Debug\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Debug\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Debug\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Debug\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Debug\Injections.pdb

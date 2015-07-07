@@ -1,0 +1,189 @@
+D:\DotNet Patcher - Copie\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\Injections.dll
+D:\DotNet Patcher - Copie\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Release\Injections.pdb
+D:\DotNet Patcher - Copie\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\Injections.dll
+D:\DotNet Patcher - Copie\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\Injections.pdb
+D:\DotNet Patcher - Copie\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\DotNet Patcher - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\DotNet Patcher - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Release\Injections.pdb
+D:\DotNet Patcher - Copie\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\bin\Release\Injections.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Injections\Injections\obj\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\Injections\Injections\bin\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Injections\Injections\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2\Injections\Injections\bin\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2\Injections\Injections\bin\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\Bureau\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2\Injections\Injections\obj\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Injections\Injections\bin\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Injections\Injections\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Injections\Injections\obj\Release\Injections.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Injections\Injections\obj\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Injections\Injections\bin\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Injections\Injections\bin\Release\Injections.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Injections\Injections\obj\Release\Injections.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Injections\Injections\obj\Release\Injections.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Injections\Injections\bin\Release\Injections.dll
+F:\PERSONNEL\DotNetPatcher42Last\Injections\Injections\bin\Release\Injections.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Injections\Injections\obj\Release\Injections.dll
+F:\PERSONNEL\DotNetPatcher42Last\Injections\Injections\obj\Release\Injections.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\Bureau\DotNetPatcher42Last\Injections\Injections\bin\Release\Injections.dll
+D:\Bureau\DotNetPatcher42Last\Injections\Injections\bin\Release\Injections.pdb
+D:\Bureau\DotNetPatcher42Last\Injections\Injections\obj\Release\Injections.dll
+D:\Bureau\DotNetPatcher42Last\Injections\Injections\obj\Release\Injections.pdb
+D:\Bureau\DotNetPatcher43Last\Injections\Injections\bin\Release\Injections.dll
+D:\Bureau\DotNetPatcher43Last\Injections\Injections\bin\Release\Injections.pdb
+D:\Bureau\DotNetPatcher43Last\Injections\Injections\obj\Release\Injections.dll
+D:\Bureau\DotNetPatcher43Last\Injections\Injections\obj\Release\Injections.pdb
+D:\Bureau\DotNetPatcher43Last\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\bin\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Injections\Injections\obj\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Injections\Injections\obj\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Injections\Injections\obj\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Injections\Injections\obj\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\bin\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Injections\Injections\obj\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\bin\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\bin\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\obj\Release\Injections.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\obj\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\bin\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\bin\Release\Injections.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\obj\Release\Injections.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\obj\Release\Injections.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
+D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
+D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache

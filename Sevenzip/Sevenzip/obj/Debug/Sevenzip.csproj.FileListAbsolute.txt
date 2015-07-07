@@ -1,0 +1,14 @@
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\bin\Debug\Sevenzip.dll
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\bin\Debug\Sevenzip.pdb
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\obj\Debug\Sevenzip.csprojResolveAssemblyReference.cache
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\obj\Debug\Sevenzip.dll
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\obj\Debug\Sevenzip.pdb
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb

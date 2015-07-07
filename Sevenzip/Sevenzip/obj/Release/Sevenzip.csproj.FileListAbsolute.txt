@@ -1,0 +1,163 @@
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\bin\Release\Sevenzip.dll
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\bin\Release\Sevenzip.pdb
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\obj\Release\Sevenzip.dll
+C:\Users\wallace\AppData\Local\Temporary Projects\Sevenzip\obj\Release\Sevenzip.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\Bureau\DotNet Patcher - 4.2\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+F:\PERSONNEL\DotNetPatcher42Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+F:\PERSONNEL\DotNetPatcher42Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher42Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher42Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher42Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher42Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\Bureau\DotNetPatcher43Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher43Last\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher43Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\Bureau\DotNetPatcher43Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\Bureau\DotNetPatcher43Last\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\Sevenzip.dll
+D:\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\Sevenzip.pdb
+D:\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\Sevenzip.dll
+D:\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\Sevenzip.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache

@@ -1,0 +1,24 @@
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.pdb
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.Resources.resources
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.dll
+D:\_BITBUCKET\DotNet Renamer\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 4 - Boolean et integers\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.Resources.resources
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.vbproj.GenerateResource.Cache
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.dll
+E:\_PERSONNEL\DotNet Renamer - StringEncryption 5 - integers et Boolean\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\bin\Debug\DotNetRenamer.Core20Reader.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.Resources.resources
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Core20Reader\DotNetRenamer.Core20Reader\obj\Debug\DotNetRenamer.Core20Reader.pdb

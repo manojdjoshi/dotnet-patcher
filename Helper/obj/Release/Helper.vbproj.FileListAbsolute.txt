@@ -1,0 +1,311 @@
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\bin\Release\Helper.dll
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\bin\Release\Helper.pdb
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\obj\Release\Helper.Resources.resources
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\obj\Release\Helper.dll
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\obj\Release\Helper.pdb
+D:\DotNet Patcher - Copie\DotNetRenamer.Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\DotNet Patcher - Copie\Helper\bin\Release\Helper.dll
+D:\DotNet Patcher - Copie\Helper\bin\Release\Helper.pdb
+D:\DotNet Patcher - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\DotNet Patcher - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - Copie\Helper\obj\Release\Helper.dll
+D:\DotNet Patcher - Copie\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.2\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.4 - Copie\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.Resources.resources
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Helper.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\bin\Release\Mono.Cecil.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.Resources.resources
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.dll
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.pdb
+E:\PERSONNEL\DotNet Patcher - 4.0.0.5 - Copie\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\bin\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\obj\Release\Helper.Resources.resources
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\obj\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2\Helper\obj\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2\Helper\bin\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2\Helper\bin\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2\Helper\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNet Patcher - 4.2\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNet Patcher - 4.2\Helper\obj\Release\Helper.Resources.resources
+D:\Bureau\DotNet Patcher - 4.2\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Bureau\DotNet Patcher - 4.2\Helper\obj\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2\Helper\obj\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\bin\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.Resources.resources
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.dll
+F:\PERSONNEL\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\bin\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\bin\Release\Helper.pdb
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.Resources.resources
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.dll
+D:\Bureau\DotNet Patcher - 4.2 Last\Helper\obj\Release\Helper.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Helper\bin\Release\Helper.dll
+F:\PERSONNEL\DotNetPatcher42Last\Helper\bin\Release\Helper.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Helper\bin\Release\Mono.Cecil.dll
+F:\PERSONNEL\DotNetPatcher42Last\Helper\obj\Release\Helper.Resources.resources
+F:\PERSONNEL\DotNetPatcher42Last\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\PERSONNEL\DotNetPatcher42Last\Helper\obj\Release\Helper.dll
+F:\PERSONNEL\DotNetPatcher42Last\Helper\obj\Release\Helper.pdb
+D:\Bureau\DotNetPatcher42Last\Helper\obj\Release\Helper.Resources.resources
+D:\Bureau\DotNetPatcher42Last\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Bureau\DotNetPatcher42Last\Helper\bin\Release\Helper.dll
+D:\Bureau\DotNetPatcher42Last\Helper\bin\Release\Helper.pdb
+D:\Bureau\DotNetPatcher42Last\Helper\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNetPatcher42Last\Helper\obj\Release\Helper.dll
+D:\Bureau\DotNetPatcher42Last\Helper\obj\Release\Helper.pdb
+F:\PERSONNEL\DotNetPatcher42Last\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\Bureau\DotNetPatcher43Last\Helper\obj\Release\Helper.Resources.resources
+D:\Bureau\DotNetPatcher43Last\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Bureau\DotNetPatcher43Last\Helper\obj\Release\Helper.pdb
+D:\Bureau\DotNetPatcher43Last\Helper\bin\Release\Helper.dll
+D:\Bureau\DotNetPatcher43Last\Helper\bin\Release\Helper.pdb
+D:\Bureau\DotNetPatcher43Last\Helper\bin\Release\Mono.Cecil.dll
+D:\Bureau\DotNetPatcher43Last\Helper\obj\Release\Helper.dll
+D:\Bureau\DotNetPatcher43Last\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.Resources.resources
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.dll
+C:\Users\jm\Desktop\3dotdev-dotnet-patcher-232bcffb24fc\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.pdb
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Mono.Cecil.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.Resources.resources
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.dll
+F:\DNP\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\bin\Release\Mono.Cecil.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.Resources.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc\Helper\obj\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\bin\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\bin\Release\Helper.pdb
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\obj\Release\Helper.dll
+D:\3dotdev-dotnet-patcher-232bcffb24fc - Copie\Helper\obj\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.Resources.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.Resources.resources
+D:\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.pdb
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.dll
+D:\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4 - Copie\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.Rocks.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\bin\Release\Mono.Cecil.Rocks.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.4\Helper\obj\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\obj\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5\Helper\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.pdb
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Mono.Cecil.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.Resources.resources
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.dll
+E:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.pdb
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Mono.Cecil.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.Resources.resources
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.dll
+H:\[PERSONNEL]\Working ON\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.Resources.resources
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\USB BACKUP 18052015\DotNet Patcher - 4.3.5 - Original\Helper\obj\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Mono.Cecil.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.Resources.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.Resources.resources
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.dll
+C:\Users\jm\Desktop\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.pdb
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Mono.Cecil.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.Resources.resources
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.dll
+D:\Recovered\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.pdb
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Mono.Cecil.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.Resources.resources
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.dll
+C:\Users\jm\Desktop\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Helper.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\bin\Release\Mono.Cecil.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.Resources.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection\Helper\obj\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.Resources.resources
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Helper.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Helper.pdb
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Mono.Cecil.dll
+F:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Helper.pdb
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\bin\Release\Mono.Cecil.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.Resources.resources
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.dll
+G:\DotNet Patcher - 4.3.5 - Original Test Reflection 1\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNetPatcher\Helper\bin\Release\Helper.dll
+D:\_BITBUCKET\DotNetPatcher\Helper\bin\Release\Helper.pdb
+D:\_BITBUCKET\DotNetPatcher\Helper\bin\Release\Mono.Cecil.dll
+D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.Resources.resources
+D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.dll
+D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.pdb
+D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache

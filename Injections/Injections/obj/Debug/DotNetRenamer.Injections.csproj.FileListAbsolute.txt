@@ -1,0 +1,9 @@
+F:\Injections\Injections\bin\Debug\DotNetRenamer.Injections.dll
+F:\Injections\Injections\bin\Debug\DotNetRenamer.Injections.pdb
+F:\Injections\Injections\obj\Debug\DotNetRenamer.Injections.dll
+F:\Injections\Injections\obj\Debug\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Debug\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\bin\Debug\DotNetRenamer.Injections.pdb
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Debug\DotNetRenamer.Injections.csprojResolveAssemblyReference.cache
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Debug\DotNetRenamer.Injections.dll
+E:\[PERSONNEL]\BACKUP\USB BACKUP 28092014\DotNet Patcher\DotNetRenamer.Injections\DotNetRenamer.Injections\obj\Debug\DotNetRenamer.Injections.pdb
