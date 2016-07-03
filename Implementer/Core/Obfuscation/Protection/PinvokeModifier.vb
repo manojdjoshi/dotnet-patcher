@@ -4,6 +4,7 @@ Imports Helper.RandomizeHelper
 Imports Mono.Cecil.Cil
 Imports System.Runtime.InteropServices
 Imports Implementer.Core.Obfuscation.Builder
+Imports System.Security
 
 Namespace Core.Obfuscation.Protection
     Public Class PinvokeModifier
@@ -48,9 +49,12 @@ Namespace Core.Obfuscation.Protection
             Dim newDelegate = DelegateEmitter.Create(iteratedT.Module.Assembly, Randomizer.GenerateNew, returnedType, typeRefs)
 
             Dim ca As New CustomAttribute(iteratedT.Module.Import(GetType(UnmanagedFunctionPointerAttribute).GetConstructor(New Type() {GetType(CallingConvention)})))
-            Dim carg = New CustomAttributeArgument(iteratedT.Module.Import(GetType(CallingConvention)), 2)
+            Dim carg = New CustomAttributeArgument(iteratedT.Module.Import(GetType(CallingConvention)), 3)
 
             ca.ConstructorArguments.Add(carg)
+
+            Dim si As Type = GetType(SuppressUnmanagedCodeSecurityAttribute)
+            newDelegate.CustomAttributes.Add(New CustomAttribute(iteratedT.Module.Import(si.GetConstructor(Type.EmptyTypes))))
 
             If Not charSetVal = 1 Then
                 Dim caf As New CustomAttributeArgument(iteratedT.Module.Import(GetType(CharSet)), charSetVal)
@@ -72,10 +76,10 @@ Namespace Core.Obfuscation.Protection
             ILProc.Body.InitLocals = True
 
             If isNotSystemVoid Then
-                originalMeth.Body.Variables.Add(New VariableDefinition(returnedType))
+                originalMeth.Body.Variables.Add(New VariableDefinition(Randomizer.GenerateNew, returnedType))
             End If
 
-            originalMeth.Body.Variables.Add(New VariableDefinition(iteratedT.Module.Import(newDelegate)))
+            originalMeth.Body.Variables.Add(New VariableDefinition(Randomizer.GenerateNew, iteratedT.Module.Import(newDelegate)))
 
             ILProc.Emit(OpCodes.Ldstr, moduleName)
             ILProc.Emit(OpCodes.Ldstr, functionName)
@@ -122,6 +126,23 @@ Namespace Core.Obfuscation.Protection
             End If
             Return 0
         End Function
+
+        'Private Function LOWORD(ByVal dwValue As Long) As Long
+        '    CopyMemory(LOWORD, dwValue, 2)
+        'End Function
+
+        'Private Function MAKELONG(ByVal wLow As Long, ByVal wHi As Long) As Long
+        '    If (wHi And &H8000&) Then
+        '        MAKELONG = (((wHi And &H7FFF&) * 65536) Or (wLow And &HFFFF&)) Or &H80000000
+        '    Else
+        '        MAKELONG = LOWORD(wLow) Or (&H10000 * LOWORD(wHi))
+        '    End If
+        'End Function
+
+        'Private Function MAKEINTRESOURCE(ByVal lID As Long) As String
+        '    MAKEINTRESOURCE = "#" & CStr(MAKELONG(lID, 0))
+        'End Function
+
 #End Region
 
 #Region "IDisposable Support"

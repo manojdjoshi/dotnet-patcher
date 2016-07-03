@@ -292,9 +292,7 @@ Namespace CecilHelper
 
         Public Shared Function Inject(targetModule As ModuleDefinition, mtd As MethodDefinition) As MethodDefinition
 
-            If mtd Is Nothing Then
-                Return Nothing
-            End If
+            If mtd Is Nothing Then Return Nothing
 
             Dim ret As New MethodDefinition(mtd.Name, mtd.Attributes, targetModule.TypeSystem.Void)
             ret.Attributes = mtd.Attributes

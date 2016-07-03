@@ -309,3 +309,18 @@ D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Ca
 D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.dll
 D:\_BITBUCKET\DotNetPatcher\Helper\obj\Release\Helper.pdb
 D:\_BITBUCKET\DotNet Patcher\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Helper.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Helper.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Mono.Cecil.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.Resources.resources
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Helper.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Helper.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\bin\Release\Mono.Cecil.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.Resources.resources
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.pdb

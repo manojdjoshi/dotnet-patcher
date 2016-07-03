@@ -133,7 +133,7 @@ Namespace Engine.Processing
         End Sub
 
         Public Sub ProcessInvalidOpcodes(AssDef As AssemblyDefinition)
-            invalidOpcodes.Inject(AssDef, m_RenamingAccept.ExclusionRule)
+            InvalidOpcodes.Inject(AssDef, m_RenamingAccept.ExclusionRule)
         End Sub
 
         Public Sub ProcessVersionInfos(FilePath$, Frmwk$, vInfos As Infos)

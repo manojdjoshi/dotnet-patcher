@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DNP.ico" />
+    <None Include="Resources\Attention.png" />
     <None Include="Resources\Loading.png" />
     <None Include="Resources\Warning.png" />
     <None Include="Resources\Valid.png" />

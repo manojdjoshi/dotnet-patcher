@@ -11,7 +11,7 @@ Imports Mono.Cecil.Rocks
 Imports Implementer.Core.Obfuscation.Exclusion
 
 Namespace Core.Obfuscation.Protection
-    Public NotInheritable Class invalidOpcodes
+    Public NotInheritable Class InvalidOpcodes
 
 #Region " Fields "
         Private Shared r As Random

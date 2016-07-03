@@ -86,6 +86,7 @@ Namespace Core.Obfuscation.Protection
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
+
                         If Utils.HasUnsafeInstructions(md) = False Then
                             Using optim As New Msil(md.Body)
                                 For i = 0 To md.Body.Instructions.Count - 1
@@ -100,10 +101,12 @@ Namespace Core.Obfuscation.Protection
                                                     If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" Then
                                                         Continue For
                                                     End If
-
-                                                    PinvokeCreate.InitPinvokeInfos(originalMethod, td)
-                                                    PinvokeCreate.CreatePinvokeBody(LoaderInvoke)
-
+                                                    If originalMethod.PInvokeInfo.EntryPoint.StartsWith("#") Then
+                                                        originalMethod = Renamer.RenameMethod(originalMethod.DeclaringType, originalMethod)
+                                                    Else
+                                                        PinvokeCreate.InitPinvokeInfos(originalMethod, td)
+                                                        PinvokeCreate.CreatePinvokeBody(LoaderInvoke)
+                                                    End If
                                                     completedMethods.Add(originalMethod)
                                                 End If
                                             End If

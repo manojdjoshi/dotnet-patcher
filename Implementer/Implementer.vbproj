@@ -120,7 +120,7 @@
     <Compile Include="Core\Dependencing\Dependencies.vb" />
     <Compile Include="Core\Dependencing\AnalysisResult.vb" />
     <Compile Include="Core\Obfuscation\Builder\Source.vb" />
-    <Compile Include="Core\Obfuscation\Protection\invalidOpcodes.vb" />
+    <Compile Include="Core\Obfuscation\Protection\InvalidOpcodes.vb" />
     <Compile Include="Engine\Processing\Mapping.vb" />
     <Compile Include="Engine\Processing\ProcessTask.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -183,7 +183,16 @@ D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.dll
 D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.pdb
 D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
 D:\_BITBUCKET\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
-D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
 D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
 D:\_BITBUCKET\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
 D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\bin\Release\Injections.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\bin\Release\Injections.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\bin\Release\Injections.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\bin\Release\Injections.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.pdb

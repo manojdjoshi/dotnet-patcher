@@ -220,3 +220,15 @@ D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Release\Core20Reader.R
 D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Release\Core20Reader.vbproj.GenerateResource.Cache
 D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Release\Core20Reader.dll
 D:\_BITBUCKET\DotNetPatcher\Core20Reader\Core20Reader\obj\Release\Core20Reader.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\bin\Release\Core20Reader.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\bin\Release\Core20Reader.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.Resources.resources
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.vbproj.GenerateResource.Cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\bin\Release\Core20Reader.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\bin\Release\Core20Reader.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.Resources.resources
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.vbproj.GenerateResource.Cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Core20Reader\Core20Reader\obj\Release\Core20Reader.pdb

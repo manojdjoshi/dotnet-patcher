@@ -74,7 +74,16 @@ D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
 D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
 D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
 D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
 D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\ResourceLib\obj\Release\Vestris.ResourceLib.pdb

@@ -161,3 +161,13 @@ D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
 D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 D:\_BITBUCKET\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
 D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb

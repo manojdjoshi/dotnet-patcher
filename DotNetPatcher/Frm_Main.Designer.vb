@@ -100,6 +100,9 @@ Partial Class Frm_Main
         Me.CbxObfuscatorScheme = New LoginTheme.XertzLoginTheme.LogInComboBox()
         Me.LblObfuscatorScheme = New System.Windows.Forms.Label()
         Me.GbxObfuscatorAdvanced = New LoginTheme.XertzLoginTheme.LogInGroupBox()
+        Me.PcbHideCalls = New System.Windows.Forms.PictureBox()
+        Me.PcbInvalidOpCodes = New System.Windows.Forms.PictureBox()
+        Me.PcbInvalidMd = New System.Windows.Forms.PictureBox()
         Me.ChbObfuscatorInvalidMetadata = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorResourcesEncryption = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorInvalidOpcodes = New LoginTheme.XertzLoginTheme.LogInCheckBox()
@@ -158,6 +161,9 @@ Partial Class Frm_Main
         Me.GbxObfuscatorRenaming.SuspendLayout()
         Me.PnlObfuscatorNamespacesGroup.SuspendLayout()
         Me.GbxObfuscatorAdvanced.SuspendLayout()
+        CType(Me.PcbHideCalls, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PcbInvalidOpCodes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PcbInvalidMd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpPacker.SuspendLayout()
         Me.PnlPackerEnabled.SuspendLayout()
         Me.GbxPackerLoader.SuspendLayout()
@@ -287,7 +293,7 @@ Partial Class Frm_Main
         Me.TpAbout.Controls.Add(Me.PbxAboutLogo)
         Me.TpAbout.Location = New System.Drawing.Point(4, 36)
         Me.TpAbout.Name = "TpAbout"
-        Me.TpAbout.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpAbout.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpAbout.Size = New System.Drawing.Size(671, 326)
         Me.TpAbout.TabIndex = 0
         Me.TpAbout.Text = "About"
@@ -366,7 +372,7 @@ Partial Class Frm_Main
         Me.LblAboutVersion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblAboutVersion.Location = New System.Drawing.Point(283, 103)
         Me.LblAboutVersion.Name = "LblAboutVersion"
-        Me.LblAboutVersion.Size = New System.Drawing.Size(52, 15)
+        Me.LblAboutVersion.Size = New System.Drawing.Size(51, 15)
         Me.LblAboutVersion.TabIndex = 91
         Me.LblAboutVersion.Text = "Version :"
         '
@@ -415,7 +421,7 @@ Partial Class Frm_Main
         Me.TpVersionInfos.Controls.Add(Me.ChbVersionInfosEnabled)
         Me.TpVersionInfos.Location = New System.Drawing.Point(4, 36)
         Me.TpVersionInfos.Name = "TpVersionInfos"
-        Me.TpVersionInfos.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpVersionInfos.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpVersionInfos.Size = New System.Drawing.Size(671, 326)
         Me.TpVersionInfos.TabIndex = 1
         Me.TpVersionInfos.Text = "Version Infos Changer"
@@ -515,7 +521,7 @@ Partial Class Frm_Main
         Me.LblVersionInfosTrademark.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblVersionInfosTrademark.Location = New System.Drawing.Point(51, 193)
         Me.LblVersionInfosTrademark.Name = "LblVersionInfosTrademark"
-        Me.LblVersionInfosTrademark.Size = New System.Drawing.Size(70, 15)
+        Me.LblVersionInfosTrademark.Size = New System.Drawing.Size(69, 15)
         Me.LblVersionInfosTrademark.TabIndex = 93
         Me.LblVersionInfosTrademark.Text = "Trademark :"
         '
@@ -528,7 +534,7 @@ Partial Class Frm_Main
         Me.LblVersionInfosVersion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblVersionInfosVersion.Location = New System.Drawing.Point(69, 224)
         Me.LblVersionInfosVersion.Name = "LblVersionInfosVersion"
-        Me.LblVersionInfosVersion.Size = New System.Drawing.Size(52, 15)
+        Me.LblVersionInfosVersion.Size = New System.Drawing.Size(51, 15)
         Me.LblVersionInfosVersion.TabIndex = 92
         Me.LblVersionInfosVersion.Text = "Version :"
         '
@@ -640,7 +646,7 @@ Partial Class Frm_Main
         Me.TpManifestChanger.Controls.Add(Me.ChbManifestEnabled)
         Me.TpManifestChanger.Location = New System.Drawing.Point(4, 36)
         Me.TpManifestChanger.Name = "TpManifestChanger"
-        Me.TpManifestChanger.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpManifestChanger.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpManifestChanger.Size = New System.Drawing.Size(671, 326)
         Me.TpManifestChanger.TabIndex = 3
         Me.TpManifestChanger.Text = "Manifest Changer"
@@ -730,7 +736,7 @@ Partial Class Frm_Main
         Me.TpIconChanger.Controls.Add(Me.ChbIconChangerEnabled)
         Me.TpIconChanger.Location = New System.Drawing.Point(4, 36)
         Me.TpIconChanger.Name = "TpIconChanger"
-        Me.TpIconChanger.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpIconChanger.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpIconChanger.Size = New System.Drawing.Size(671, 326)
         Me.TpIconChanger.TabIndex = 6
         Me.TpIconChanger.Text = "Icon Changer"
@@ -809,7 +815,7 @@ Partial Class Frm_Main
         Me.TpDependencies.Controls.Add(Me.ChbDependenciesEnabled)
         Me.TpDependencies.Location = New System.Drawing.Point(4, 36)
         Me.TpDependencies.Name = "TpDependencies"
-        Me.TpDependencies.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpDependencies.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpDependencies.Size = New System.Drawing.Size(671, 326)
         Me.TpDependencies.TabIndex = 2
         Me.TpDependencies.Text = "Dependencies"
@@ -972,7 +978,7 @@ Partial Class Frm_Main
         Me.TpObfuscator.Controls.Add(Me.ChbObfuscatorEnabled)
         Me.TpObfuscator.Location = New System.Drawing.Point(4, 36)
         Me.TpObfuscator.Name = "TpObfuscator"
-        Me.TpObfuscator.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpObfuscator.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpObfuscator.Size = New System.Drawing.Size(671, 326)
         Me.TpObfuscator.TabIndex = 5
         Me.TpObfuscator.Text = "Obfuscator"
@@ -1247,6 +1253,9 @@ Partial Class Frm_Main
         'GbxObfuscatorAdvanced
         '
         Me.GbxObfuscatorAdvanced.BorderColour = System.Drawing.SystemColors.ButtonShadow
+        Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbHideCalls)
+        Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbInvalidOpCodes)
+        Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbInvalidMd)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorInvalidMetadata)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorResourcesEncryption)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorInvalidOpcodes)
@@ -1269,6 +1278,36 @@ Partial Class Frm_Main
         Me.GbxObfuscatorAdvanced.Text = "Advanced"
         Me.GbxObfuscatorAdvanced.TextColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         '
+        'PcbHideCalls
+        '
+        Me.PcbHideCalls.Image = Global.DotNetPatcher.My.Resources.Resources.Attention
+        Me.PcbHideCalls.Location = New System.Drawing.Point(289, 118)
+        Me.PcbHideCalls.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PcbHideCalls.Name = "PcbHideCalls"
+        Me.PcbHideCalls.Size = New System.Drawing.Size(16, 18)
+        Me.PcbHideCalls.TabIndex = 68
+        Me.PcbHideCalls.TabStop = False
+        '
+        'PcbInvalidOpCodes
+        '
+        Me.PcbInvalidOpCodes.Image = Global.DotNetPatcher.My.Resources.Resources.Attention
+        Me.PcbInvalidOpCodes.Location = New System.Drawing.Point(125, 238)
+        Me.PcbInvalidOpCodes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PcbInvalidOpCodes.Name = "PcbInvalidOpCodes"
+        Me.PcbInvalidOpCodes.Size = New System.Drawing.Size(16, 18)
+        Me.PcbInvalidOpCodes.TabIndex = 67
+        Me.PcbInvalidOpCodes.TabStop = False
+        '
+        'PcbInvalidMd
+        '
+        Me.PcbInvalidMd.Image = Global.DotNetPatcher.My.Resources.Resources.Attention
+        Me.PcbInvalidMd.Location = New System.Drawing.Point(289, 238)
+        Me.PcbInvalidMd.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PcbInvalidMd.Name = "PcbInvalidMd"
+        Me.PcbInvalidMd.Size = New System.Drawing.Size(16, 18)
+        Me.PcbInvalidMd.TabIndex = 65
+        Me.PcbInvalidMd.TabStop = False
+        '
         'ChbObfuscatorInvalidMetadata
         '
         Me.ChbObfuscatorInvalidMetadata.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
@@ -1280,7 +1319,7 @@ Partial Class Frm_Main
         Me.ChbObfuscatorInvalidMetadata.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbObfuscatorInvalidMetadata.Location = New System.Drawing.Point(164, 238)
         Me.ChbObfuscatorInvalidMetadata.Name = "ChbObfuscatorInvalidMetadata"
-        Me.ChbObfuscatorInvalidMetadata.Size = New System.Drawing.Size(141, 22)
+        Me.ChbObfuscatorInvalidMetadata.Size = New System.Drawing.Size(117, 22)
         Me.ChbObfuscatorInvalidMetadata.TabIndex = 63
         Me.ChbObfuscatorInvalidMetadata.Tag = "Parameters"
         Me.ChbObfuscatorInvalidMetadata.Text = "Invalid Metadatas"
@@ -1312,7 +1351,7 @@ Partial Class Frm_Main
         Me.ChbObfuscatorInvalidOpcodes.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbObfuscatorInvalidOpcodes.Location = New System.Drawing.Point(12, 238)
         Me.ChbObfuscatorInvalidOpcodes.Name = "ChbObfuscatorInvalidOpcodes"
-        Me.ChbObfuscatorInvalidOpcodes.Size = New System.Drawing.Size(141, 22)
+        Me.ChbObfuscatorInvalidOpcodes.Size = New System.Drawing.Size(112, 22)
         Me.ChbObfuscatorInvalidOpcodes.TabIndex = 61
         Me.ChbObfuscatorInvalidOpcodes.Tag = "Parameters"
         Me.ChbObfuscatorInvalidOpcodes.Text = "Invalid Opcodes"
@@ -1328,7 +1367,7 @@ Partial Class Frm_Main
         Me.ChbObfuscatorAntiDumper.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbObfuscatorAntiDumper.Location = New System.Drawing.Point(12, 193)
         Me.ChbObfuscatorAntiDumper.Name = "ChbObfuscatorAntiDumper"
-        Me.ChbObfuscatorAntiDumper.Size = New System.Drawing.Size(110, 22)
+        Me.ChbObfuscatorAntiDumper.Size = New System.Drawing.Size(94, 22)
         Me.ChbObfuscatorAntiDumper.TabIndex = 57
         Me.ChbObfuscatorAntiDumper.Tag = "Parameters"
         Me.ChbObfuscatorAntiDumper.Text = "Anti-Dumper"
@@ -1390,9 +1429,9 @@ Partial Class Frm_Main
         Me.ChbObfuscatorAntiTamper.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ChbObfuscatorAntiTamper.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ChbObfuscatorAntiTamper.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChbObfuscatorAntiTamper.Location = New System.Drawing.Point(164, 164)
+        Me.ChbObfuscatorAntiTamper.Location = New System.Drawing.Point(164, 193)
         Me.ChbObfuscatorAntiTamper.Name = "ChbObfuscatorAntiTamper"
-        Me.ChbObfuscatorAntiTamper.Size = New System.Drawing.Size(101, 22)
+        Me.ChbObfuscatorAntiTamper.Size = New System.Drawing.Size(91, 22)
         Me.ChbObfuscatorAntiTamper.TabIndex = 52
         Me.ChbObfuscatorAntiTamper.Tag = "Parameters"
         Me.ChbObfuscatorAntiTamper.Text = "Anti-Tamper"
@@ -1406,9 +1445,9 @@ Partial Class Frm_Main
         Me.ChbObfuscatorAntiIlDasm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ChbObfuscatorAntiIlDasm.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.ChbObfuscatorAntiIlDasm.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChbObfuscatorAntiIlDasm.Location = New System.Drawing.Point(164, 193)
+        Me.ChbObfuscatorAntiIlDasm.Location = New System.Drawing.Point(164, 165)
         Me.ChbObfuscatorAntiIlDasm.Name = "ChbObfuscatorAntiIlDasm"
-        Me.ChbObfuscatorAntiIlDasm.Size = New System.Drawing.Size(100, 22)
+        Me.ChbObfuscatorAntiIlDasm.Size = New System.Drawing.Size(91, 22)
         Me.ChbObfuscatorAntiIlDasm.TabIndex = 54
         Me.ChbObfuscatorAntiIlDasm.Tag = "Parameters"
         Me.ChbObfuscatorAntiIlDasm.Text = "Anti-ILDasm"
@@ -1486,7 +1525,7 @@ Partial Class Frm_Main
         Me.TpPacker.Controls.Add(Me.ChbPackerEnabled)
         Me.TpPacker.Location = New System.Drawing.Point(4, 36)
         Me.TpPacker.Name = "TpPacker"
-        Me.TpPacker.Padding = New System.Windows.Forms.Padding(3)
+        Me.TpPacker.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
         Me.TpPacker.Size = New System.Drawing.Size(671, 326)
         Me.TpPacker.TabIndex = 4
         Me.TpPacker.Text = "Packer"
@@ -1500,7 +1539,7 @@ Partial Class Frm_Main
         Me.LblPackerWarning.ForeColor = System.Drawing.Color.DarkOrange
         Me.LblPackerWarning.Location = New System.Drawing.Point(98, 9)
         Me.LblPackerWarning.Name = "LblPackerWarning"
-        Me.LblPackerWarning.Size = New System.Drawing.Size(349, 15)
+        Me.LblPackerWarning.Size = New System.Drawing.Size(348, 15)
         Me.LblPackerWarning.TabIndex = 40
         Me.LblPackerWarning.Text = "(You must enable the detection of dependencies before packing)"
         Me.LblPackerWarning.Visible = False
@@ -1567,7 +1606,7 @@ Partial Class Frm_Main
         Me.LblPackerSystem.ForeColor = System.Drawing.Color.White
         Me.LblPackerSystem.Location = New System.Drawing.Point(237, 51)
         Me.LblPackerSystem.Name = "LblPackerSystem"
-        Me.LblPackerSystem.Size = New System.Drawing.Size(56, 15)
+        Me.LblPackerSystem.Size = New System.Drawing.Size(55, 15)
         Me.LblPackerSystem.TabIndex = 12
         Me.LblPackerSystem.Text = "ExeType :"
         '
@@ -1713,7 +1752,7 @@ Partial Class Frm_Main
         Me.LblType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblType.Location = New System.Drawing.Point(472, 72)
         Me.LblType.Name = "LblType"
-        Me.LblType.Size = New System.Drawing.Size(39, 15)
+        Me.LblType.Size = New System.Drawing.Size(38, 15)
         Me.LblType.TabIndex = 13
         Me.LblType.Text = "Type :"
         '
@@ -1806,7 +1845,7 @@ Partial Class Frm_Main
         Me.LblVersionInfo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblVersionInfo.Location = New System.Drawing.Point(45, 72)
         Me.LblVersionInfo.Name = "LblVersionInfo"
-        Me.LblVersionInfo.Size = New System.Drawing.Size(52, 15)
+        Me.LblVersionInfo.Size = New System.Drawing.Size(51, 15)
         Me.LblVersionInfo.TabIndex = 4
         Me.LblVersionInfo.Text = "Version :"
         '
@@ -1886,6 +1925,9 @@ Partial Class Frm_Main
         Me.GbxObfuscatorRenaming.PerformLayout()
         Me.PnlObfuscatorNamespacesGroup.ResumeLayout(False)
         Me.GbxObfuscatorAdvanced.ResumeLayout(False)
+        CType(Me.PcbHideCalls, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PcbInvalidOpCodes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PcbInvalidMd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpPacker.ResumeLayout(False)
         Me.TpPacker.PerformLayout()
         Me.PnlPackerEnabled.ResumeLayout(False)
@@ -2014,4 +2056,7 @@ Partial Class Frm_Main
     Friend WithEvents TxbPackerFramework As System.Windows.Forms.TextBox
     Friend WithEvents ChbObfuscatorInvalidMetadata As LoginTheme.XertzLoginTheme.LogInCheckBox
     Friend WithEvents ChbObfuscatorExcludeReflection As LoginTheme.XertzLoginTheme.LogInCheckBox
+    Friend WithEvents PcbHideCalls As System.Windows.Forms.PictureBox
+    Friend WithEvents PcbInvalidOpCodes As System.Windows.Forms.PictureBox
+    Friend WithEvents PcbInvalidMd As System.Windows.Forms.PictureBox
 End Class
