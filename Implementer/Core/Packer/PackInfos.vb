@@ -1,42 +1,21 @@
 ﻿Imports Implementer.Core.IconChanger
-Imports System.IO
 Imports System.Drawing
 
 Namespace Core.Packer
     Public Class PackInfos
         Implements IDisposable
 
-#Region " Fields "
-        Private m_Enabled As Boolean
-        Private m_NewIcon As Icon
-        Private m_RequestedLevel As String
-#End Region
-
 #Region " Properties "
         Public ReadOnly Property Enabled As Boolean
-            Get
-                Return m_Enabled
-            End Get
-        End Property
-
         Public ReadOnly Property NewIcon As Icon
-            Get
-                Return m_NewIcon
-            End Get
-        End Property
-
         Public ReadOnly Property RequestedLevel As String
-            Get
-                Return m_RequestedLevel
-            End Get
-        End Property
 #End Region
 
 #Region " Constructor "
         Public Sub New(Enable As Boolean, NewIconP$, RequestedL$)
-            m_Enabled = Enable
-            m_NewIcon = NewIconValue(NewIconP)
-            m_RequestedLevel = RequestedL
+            _Enabled = Enable
+            _NewIcon = NewIconValue(NewIconP)
+            _RequestedLevel = RequestedL
         End Sub
 #End Region
 

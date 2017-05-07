@@ -11,14 +11,14 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("DotNetPatcher")> 
 <Assembly: AssemblyDescription("DotNetPatcher")> 
 <Assembly: AssemblyCompany("3DotDev Freewares")> 
-<Assembly: AssemblyProduct("DotNetPatcher")> 
-<Assembly: AssemblyCopyright("Copyright © 3DotDev 2016")> 
+<Assembly: AssemblyProduct("DotNetPatcher")>
+<Assembly: AssemblyCopyright("Copyright © 3DotDev 2017")>
 <Assembly: AssemblyTrademark("DotNetPatcher")> 
 
 <Assembly: ComVisible(False)>
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-<Assembly: Guid("915ff3d7-13e1-42a5-b672-b3e31e96fa76")> 
+<Assembly: Guid("915ff3d7-13e1-42a5-b672-b3e31e96fa76")>
 
 ' Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.4.3.0")> 
-<Assembly: AssemblyFileVersion("4.4.3.0")> 
+<Assembly: AssemblyVersion("4.5.0.0")>
+<Assembly: AssemblyFileVersion("4.5.0.0")>

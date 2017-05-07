@@ -1,8 +1,8 @@
 ﻿Imports System.IO
 Imports System.Windows.Forms
 Imports Helper.UtilsHelper
-Imports Implementer.engine.Checking
-Imports Core20Reader
+Imports Implementer.Engine.Checking
+Imports dnlib
 
 Namespace Core.Dependencing
     Public NotInheritable Class Checker
@@ -44,21 +44,20 @@ Namespace Core.Dependencing
                         If Not Functions.isValid(File.ReadAllBytes(f)) Then
                             RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " isn't a Dynamic-Link Library !", "Bad file", "")
                         Else
-                            Dim pe As New Reader
-                            pe.ReadFile(f)
+                            Dim pe As New PeReader(f)
 
                             If pe.isExecutable Then
                                 RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " is a DotNet executable file !" & vbNewLine & "You had to choose a real Dynamic-Link Library DotNet file !", "Bad DotNet file", "")
                             Else
-                                If pe.isManagedFile Then
+                                If pe.IsManaged Then
                                     Try
                                         Dim AssemblyName As Reflection.AssemblyName = Reflection.AssemblyName.GetAssemblyName(f)
                                         RaiseCheckerResultEvent("File Added", "Operation Completed", f)
-                                    Catch ex As System.IO.FileNotFoundException
+                                    Catch ex As FileNotFoundException
                                         RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " doesn't exist !", "Inexistant file", "")
-                                    Catch ex As System.BadImageFormatException
+                                    Catch ex As BadImageFormatException
                                         RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " isn't a DotNet assembly or was probably modified by an obfuscator !", "Bad file", "")
-                                    Catch ex As System.IO.FileLoadException
+                                    Catch ex As FileLoadException
                                         RaiseCheckerResultEvent("The file : " & New FileInfo(f).Name & " seems to be loaded somewhere else !", "Open file", "")
                                     End Try
                                 End If

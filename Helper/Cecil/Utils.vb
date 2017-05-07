@@ -20,7 +20,7 @@ Namespace CecilHelper
 
         Public Shared Function RemoveCustomAttributeByName(member As AssemblyDefinition, CaName$) As Boolean
             If member.HasCustomAttributes Then
-                Dim caList = Enumerable.Where(Of CustomAttribute)(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+                Dim caList = Enumerable.Where(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
                 Dim caCount = caList.Count
                 If caCount <> 0 Then
                     Dim Finded = caList.First

@@ -9,20 +9,35 @@ Namespace AssemblyHelper
 
 #Region " Methods "
 
-        Private Sub AssemblyInfo(assemblyBuffer As Byte(), ByRef AssName$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False)
+        Private Sub AssemblyInfo(assemblyBuffer As Byte(), ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False)
             Try
                 Dim assembly = AppDomain.CurrentDomain.Load(assemblyBuffer)
 
                 Dim manifest = assembly.ManifestModule
                 AssName = manifest.ScopeName
 
-                Dim fileVersionAttributes = assembly.GetCustomAttributes(GetType(AssemblyFileVersionAttribute), True)
-                If fileVersionAttributes.Length = 1 Then
-                    Dim fileVersion = TryCast(fileVersionAttributes(0), AssemblyFileVersionAttribute)
-                    AssVersion = fileVersion.Version
-                End If
+                AssVersion = assembly.GetName.Version.ToString()
 
-                Dim isWpfProg = assembly.GetReferencedAssemblies().Any(Function(x) x.Name.ToLower = "system.xaml") AndAlso _
+                Dim frameworkName = String.Empty
+                Dim frameworkDisplayName = String.Empty
+                Dim customAttributes = assembly.GetCustomAttributesData()
+                For Each att In customAttributes
+                    For Each attca In att.NamedArguments
+                        If attca.MemberInfo.Name.ToString = "FrameworkDisplayName" Then
+                            If att.ConstructorArguments.Count <> 0 Then
+                                If Not att.ConstructorArguments(0).Value Is Nothing Then
+                                    'MsgBox(att.ConstructorArguments(0).Value.ToString())
+                                    If att.ConstructorArguments(0).Value.ToString().ToLower.Contains(",version=") Then
+                                        FrmwkVersion = att.ConstructorArguments(0).Value.ToString().Split("=")(1).Replace(",Client", String.Empty).Replace(",Profile", String.Empty).Trim
+                                        Exit For
+                                    End If
+                                End If
+                            End If
+                        End If
+                    Next
+                Next
+
+                Dim isWpfProg = assembly.GetReferencedAssemblies().Any(Function(x) x.Name.ToLower = "system.xaml") AndAlso
         assembly.GetManifestResourceNames().Any(Function(x) x.ToLower.EndsWith(".g.resources"))
 
                 IsWpfApp = isWpfProg
@@ -56,12 +71,12 @@ Namespace AssemblyHelper
             Catch ex As BadImageFormatException
                 Result = Data.Message.Failed
             Finally
-                'LogLoadedAssemblies()
+
             End Try
         End Sub
 
-        Public Sub GetAssemblyInfo(assembly() As Byte, ByRef AssName$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False) Implements IAssemblyInfos.GetAssemblyInfo
-            AssemblyInfo(assembly, AssName, AssVersion, IsWpfApp, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, LoadMaxInfos)
+        Public Sub GetAssemblyInfo(assembly() As Byte, ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False) Implements IAssemblyInfos.GetAssemblyInfo
+            AssemblyInfo(assembly, AssName, FrmwkVersion, AssVersion, IsWpfApp, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, LoadMaxInfos)
         End Sub
 
 #End Region

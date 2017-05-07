@@ -17,7 +17,7 @@ Namespace Core.Obfuscation.Exclusion
 #End Region
 
 #Region " Methods "
-        Private Shared Sub FollowStack(ByVal op As OpCode, ByVal stack As Stack(Of Object))
+        Private Shared Sub FollowStack(op As OpCode, stack As Stack(Of Object))
             Select Case op.StackBehaviourPop
                 Case StackBehaviour.Pop1, StackBehaviour.Pop1_pop1, StackBehaviour.Popi, StackBehaviour.Popref
                     stack.Pop()
@@ -52,7 +52,7 @@ Namespace Core.Obfuscation.Exclusion
             End Select
         End Sub
 
-        Private Shared Sub FollowStack(ByVal op As OpCode, ByRef stack As Integer)
+        Private Shared Sub FollowStack(op As OpCode, ByRef stack As Integer)
             Select Case op.StackBehaviourPop
                 Case StackBehaviour.Pop1, StackBehaviour.Pop1_pop1, StackBehaviour.Popi, StackBehaviour.Popref
                     stack -= 1
@@ -83,7 +83,7 @@ Namespace Core.Obfuscation.Exclusion
             End Select
         End Sub
 
-        Public Shared Function StackTrace(ByVal idx As Integer, ByVal body As MethodBody, ByVal mtd As ReflectionMethod, ByVal scope As ModuleDefinition, ByRef memInst As Instruction) As MemberReference
+        Public Shared Function StackTrace(idx As Integer, body As MethodBody, mtd As ReflectionMethod, scope As ModuleDefinition, ByRef memInst As Instruction) As MemberReference
             memInst = Nothing
             Dim instructions As Mono.Collections.Generic.Collection(Of Instruction) = body.Instructions
             Dim c As Integer = (If(TryCast(instructions.Item(idx).Operand, MethodReference).HasThis, 1, 0) + TryCast(instructions.Item(idx).Operand, MethodReference).Parameters.Count)
@@ -134,15 +134,15 @@ Namespace Core.Obfuscation.Exclusion
                         stack += 1
                         Exit Select
                     Case Else
-                        ReflectionAnalyzer.FollowStack(instruction.OpCode, stack)
+                        FollowStack(instruction.OpCode, stack)
                         Exit Select
                 End Select
                 idx -= 1
             Loop
-            Return ReflectionAnalyzer.StackTrace2((idx + 1), c, body, mtd, scope, memInst)
+            Return StackTrace2((idx + 1), c, body, mtd, scope, memInst)
         End Function
 
-        Private Shared Function StackTrace2(ByVal idx As Integer, ByVal c As Integer, ByVal body As MethodBody, ByVal mtd As ReflectionMethod, ByVal scope As ModuleDefinition, ByRef memInst As Instruction) As MemberReference
+        Private Shared Function StackTrace2(idx%, c%, body As MethodBody, mtd As ReflectionMethod, scope As ModuleDefinition, ByRef memInst As Instruction) As MemberReference
             memInst = Nothing
             Dim num As Integer = c
             Dim stack As New Stack(Of Object)
@@ -178,7 +178,7 @@ Namespace Core.Obfuscation.Exclusion
                                 If (str Is Nothing) Then
                                     Return Nothing
                                 End If
-                                memInst = ReflectionAnalyzer.StackTrace3(idx, c, body.Instructions, mtd.paramLoc(i))
+                                memInst = StackTrace3(idx, c, body.Instructions, mtd.paramLoc(i))
                             End If
                         End If
                         Continue For
@@ -203,7 +203,7 @@ Label_038A:
                             predicate = Function(r) (r.Name = (TryCast(param, String) & ".resources"))
                         End If
                         resource = Enumerable.FirstOrDefault(Of Resource)(scope.Resources, predicate)
-                        memInst = ReflectionAnalyzer.StackTrace3(idx, c, body.Instructions, mtd.paramLoc(i))
+                        memInst = StackTrace3(idx, c, body.Instructions, mtd.paramLoc(i))
                     Next i
                     If (((Not str Is Nothing) OrElse (Not type Is Nothing)) OrElse (Not resource Is Nothing)) Then
                         If (Not resource Is Nothing) Then
@@ -235,7 +235,7 @@ Label_038A:
                                 End If
                             Next
                         ElseIf (Not type Is Nothing) Then
-                            memInst = ReflectionAnalyzer.StackTrace3(idx, c, body.Instructions, mtd.paramLoc(Array.IndexOf(Of String)(mtd.paramType, "TargetType")))
+                            memInst = StackTrace3(idx, c, body.Instructions, mtd.paramLoc(Array.IndexOf(Of String)(mtd.paramType, "TargetType")))
                             Return type
                         End If
                     End If
@@ -291,7 +291,7 @@ Label_038A:
                         stack.Push(TryCast(instruction.Operand, VariableReference).VariableType)
                         Exit Select
                     Case Else
-                        ReflectionAnalyzer.FollowStack(instruction.OpCode, stack)
+                        FollowStack(instruction.OpCode, stack)
                         Exit Select
                 End Select
                 num2 += 1
@@ -345,7 +345,7 @@ Label_038A:
                         Exit Select
                     Case Else
                         Dim num As Integer = count
-                        ReflectionAnalyzer.FollowStack(instruction.OpCode, count)
+                        FollowStack(instruction.OpCode, count)
                         count = (count - (count - num))
                         Exit Select
                 End Select

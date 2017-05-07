@@ -1,10 +1,7 @@
 ﻿Imports Mono.Cecil
 Imports Mono.Cecil.Cil
-Imports Implementer.Engine.Context
 Imports Helper.RandomizeHelper
 Imports Helper.CecilHelper
-Imports Implementer.core.Obfuscation.Exclusion
-Imports Mono.Collections
 
 Namespace Engine.Processing
     ''' <summary>
@@ -19,8 +16,8 @@ Namespace Engine.Processing
         ''' </summary>
         ''' <param name="method"></param>
         Friend Shared Function RenameMethod(type As TypeDefinition, method As MethodDefinition) As MethodDefinition
-            Dim MethodOriginal$ = method.Name
-            Dim MethodPublicObf$ = Randomizer.GenerateNew()
+            Dim MethodOriginal = method.Name
+            Dim MethodPublicObf = Randomizer.GenerateNew()
 
             If method.IsPInvokeImpl Then
                 If method.PInvokeInfo.EntryPoint = String.Empty Then method.PInvokeInfo.EntryPoint = MethodOriginal
@@ -170,22 +167,22 @@ Namespace Engine.Processing
             prop.Name = Mapping.RenamePropertyMember(prop, obfuscatedN)
 
             If Not prop.GetMethod Is Nothing Then
-                Dim meth = Renamer.RenameMethod(prop.DeclaringType, prop.GetMethod)
-                Renamer.RenameParameters(meth)
-                Renamer.RenameVariables(meth)
+                Dim meth = RenameMethod(prop.DeclaringType, prop.GetMethod)
+                RenameParameters(meth)
+                RenameVariables(meth)
             End If
             If Not prop.SetMethod Is Nothing Then
-                Dim meth = Renamer.RenameMethod(prop.DeclaringType, prop.SetMethod)
-                Renamer.RenameParameters(meth)
-                Renamer.RenameVariables(meth)
+                Dim meth = RenameMethod(prop.DeclaringType, prop.SetMethod)
+                RenameParameters(meth)
+                RenameVariables(meth)
             End If
 
             For Each m In (From p In prop.OtherMethods
                            Where Not p Is Nothing AndAlso NameChecker.IsRenamable(p)
                            Select p)
-                Dim meth = Renamer.RenameMethod(prop.DeclaringType, m)
-                Renamer.RenameParameters(meth)
-                Renamer.RenameVariables(meth)
+                Dim meth = RenameMethod(prop.DeclaringType, m)
+                RenameParameters(meth)
+                RenameVariables(meth)
             Next
         End Sub
 
@@ -257,7 +254,7 @@ Namespace Engine.Processing
                             If TypeOf instruction.Operand Is String Then
                                 If Properties Then
                                     If Not instruction.Previous Is Nothing Then
-                                        If instruction.Previous.OpCode = Mono.Cecil.Cil.OpCodes.Callvirt AndAlso instruction.Previous.Operand.ToString.EndsWith("get_" & OriginalKeyName & "()") Then
+                                        If instruction.Previous.OpCode = OpCodes.Callvirt AndAlso instruction.Previous.Operand.ToString.EndsWith("get_" & OriginalKeyName & "()") Then
                                             If CStr(instruction.Operand) = OriginalKeyName Then
                                                 instruction.Operand = NewKeyName
                                             End If
@@ -265,7 +262,7 @@ Namespace Engine.Processing
                                     End If
                                 Else
                                     If Not instruction.Next Is Nothing Then
-                                        If instruction.Next.OpCode = Mono.Cecil.Cil.OpCodes.Callvirt AndAlso instruction.Next.ToString.EndsWith("set_Name(System.String)") Then
+                                        If instruction.Next.OpCode = OpCodes.Callvirt AndAlso instruction.Next.ToString.EndsWith("set_Name(System.String)") Then
                                             If CStr(instruction.Operand) = OriginalKeyName Then
                                                 instruction.Operand = NewKeyName
                                             End If

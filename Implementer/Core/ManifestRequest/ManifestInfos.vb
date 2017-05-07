@@ -7,38 +7,27 @@ Namespace Core.ManifestRequest
         Implements IDisposable
 
 #Region " Properties "
-        Private m_LastRequested As String
         Public ReadOnly Property LastRequested As String
-            Get
-                Return m_LastRequested
-            End Get
-        End Property
-
-        Private m_NewRequested As String
         Public ReadOnly Property NewRequested As String
-            Get
-                Return m_NewRequested
-            End Get
-        End Property
 
         Public ReadOnly Property Modified() As Boolean
             Get
-                Return If(m_LastRequested <> "" AndAlso m_NewRequested <> "", m_LastRequested <> m_NewRequested, False)
+                Return If(_LastRequested <> "" AndAlso _NewRequested <> "", _LastRequested <> _NewRequested, False)
             End Get
         End Property
 #End Region
 
 #Region " Constructor "
         Public Sub New(LastRequest$, NewRequest$)
-            m_LastRequested = LastRequest
-            m_NewRequested = NewRequest
+            _LastRequested = LastRequest
+            _NewRequested = NewRequest
         End Sub
 #End Region
 
 #Region " Methods "
         Private Sub CleanUp()
-            m_LastRequested = String.Empty
-            m_NewRequested = String.Empty
+            _LastRequested = String.Empty
+            _NewRequested = String.Empty
         End Sub
 #End Region
 

@@ -23,7 +23,7 @@ Namespace Core.ManifestRequest
 #End Region
 
 #Region " Methods "
-        Friend Shared Sub ApplyManifest(ByVal FilePath As String, ByVal PrivilegeName As String)
+        Friend Shared Sub ApplyManifest(FilePath As String, PrivilegeName As String)
             WriteXmlFile(PrivilegeName)
             If File.Exists(Functions.GetTempFolder & "\DNMP.txt") Then
                 Dim Res As New GenericResource(New ResourceId(Kernel32.ResourceTypes.RT_MANIFEST), New ResourceId(CUInt(1)), CUShort(0))
@@ -34,9 +34,9 @@ Namespace Core.ManifestRequest
             End If
         End Sub
 
-        Private Shared Sub WriteXmlFile(ByVal PrivilegeName As String)
+        Private Shared Sub WriteXmlFile(PrivilegeName As String)
             Dim s As Stream = New FileStream(Functions.GetTempFolder & "\DNMP.txt", FileMode.Create, FileAccess.Write)
-            Dim writer As New StreamWriter(s, System.Text.Encoding.UTF8)
+            Dim writer As New StreamWriter(s, Text.Encoding.UTF8)
 
             Select Case PrivilegeName
                 Case "asInvoker"

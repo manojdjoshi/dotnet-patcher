@@ -1,7 +1,4 @@
 ﻿Imports Mono.Cecil
-Imports System.IO
-Imports Mono.Cecil.Cil
-Imports System.Threading
 Imports System.Runtime.CompilerServices
 Imports Helper.CecilHelper
 

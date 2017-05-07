@@ -5,15 +5,15 @@ Namespace CecilHelper
 
 #Region " Methods "
         Public Shared Function FindCustomAttributeByName(member As MethodDefinition, CaName$) As Boolean
-            Return Enumerable.Any(Of CustomAttribute)(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+            Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
         Public Shared Function FindCustomAttributeByName(member As TypeDefinition, CaName$) As Boolean
-            Return Enumerable.Any(Of CustomAttribute)(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+            Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
         Public Shared Function FindCustomAttributeByName(member As AssemblyDefinition, CaName$) As Boolean
-            Return Enumerable.Any(Of CustomAttribute)(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+            Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
         Public Shared Function FindGenericParameter(member As MethodDefinition) As Boolean
@@ -116,10 +116,11 @@ Namespace CecilHelper
         End Function
 
         Public Shared Function frameworkVersion(assDef As AssemblyDefinition) As String
+            'MsgBox(assDef.MainModule.Runtime.ToString)
             Return If(assDef.MainModule.Runtime.ToString.StartsWith("Net_4"), "v4.0", "v2.0")
         End Function
 
-        Public Shared Function AccessorMethods(ByVal type As TypeDefinition) As List(Of MethodDefinition)
+        Public Shared Function AccessorMethods(type As TypeDefinition) As List(Of MethodDefinition)
             Dim list As New List(Of MethodDefinition)
             For Each Pdef In type.Properties
                 list.Add(Pdef.GetMethod)
@@ -143,6 +144,6 @@ Namespace CecilHelper
             Return list
         End Function
 #End Region
-     
+
     End Class
 End Namespace

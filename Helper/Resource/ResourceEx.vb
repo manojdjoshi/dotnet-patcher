@@ -1,14 +1,11 @@
 ﻿Imports System.Runtime.InteropServices
 Imports System.ComponentModel
-Imports System.Text
-Imports System.IO
-Imports Helper.UtilsHelper
 
 Namespace ResourcesHelper
     Public NotInheritable Class ResourceEx
 
 #Region " Methods "
-        Public Shared Function UpdateResourceEx(ByVal FilePath As String, ByVal ResName As Integer, ByVal ResType As Integer, ByVal ResPath As Byte()) As Boolean
+        Public Shared Function UpdateResourceEx(FilePath As String, ResName%, ByVal ResType%, ByVal ResPath As Byte()) As Boolean
             Try
                 Dim hUpdate As IntPtr = NativeMethods.BeginUpdateResource(FilePath, False)
                 If (hUpdate = IntPtr.Zero) Then Throw New Win32Exception(Marshal.GetLastWin32Error)

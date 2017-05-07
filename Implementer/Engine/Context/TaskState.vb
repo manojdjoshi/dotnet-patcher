@@ -1,5 +1,4 @@
-﻿Imports Implementer.Core.Obfuscation
-Imports Implementer.Core.Versions
+﻿Imports Implementer.Core.Versions
 Imports Implementer.Core.ManifestRequest
 Imports Implementer.Core.IconChanger
 Imports Implementer.Core.Packer

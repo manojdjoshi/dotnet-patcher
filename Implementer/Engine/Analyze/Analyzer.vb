@@ -1,15 +1,9 @@
-﻿Imports System.Reflection
-Imports Core20Reader
-Imports System.Runtime.InteropServices
-Imports Helper.RandomizeHelper
-Imports Mono.Cecil
-Imports System.Runtime.CompilerServices
-Imports System.Xml
-Imports System.IO
+﻿Imports dnlib
 Imports System.Drawing
 Imports Helper.AssemblyHelper
 Imports Implementer.Core.ManifestRequest
 Imports Implementer.Core.Obfuscation.Exclusion
+Imports Helper.UtilsHelper
 
 Namespace Engine.Analyze
 
@@ -21,8 +15,9 @@ Namespace Engine.Analyze
     Public Class Analyzer
 
 #Region " Fields "
-        Private m_pe As IReader
+        Private m_pe As PeReader
         Private m_assemblyName As String = String.Empty
+        Private m_targetFramework As String = String.Empty
         Private m_assemblyVersion As String = String.Empty
         Private m_isWpfProgram As Boolean
 #End Region
@@ -46,8 +41,7 @@ Namespace Engine.Analyze
         Public Sub New(inputFilePath$, outPutFilePath$)
             _inputFile = inputFilePath
             _outputFile = outPutFilePath
-            m_pe = New Reader()
-            m_pe.ReadFile(_inputFile)
+            m_pe = New PeReader(_inputFile)
         End Sub
 #End Region
 
@@ -57,13 +51,17 @@ Namespace Engine.Analyze
         ''' </summary>
         Public Function isValidFile() As Boolean
             If m_pe.isExecutable Then
-                If m_pe.isManagedFile Then
+                If m_pe.IsManaged Then
+
                     Dim infos = Loader.Minimal(_inputFile)
                     If infos.Result = Data.Message.Success Then
+
                         If infos.EntryPoint IsNot Nothing Then
                             m_assemblyName = infos.AssName
+                            m_targetFramework = infos.FrameworkVersion
                             m_assemblyVersion = infos.AssVersion
                             m_isWpfProgram = infos.IsWpf
+
                             If m_isWpfProgram = False Then
                                 RaiseEvent FileValidated(Me, New ValidatedFile(True, m_pe, infos))
                                 Return True
@@ -92,7 +90,7 @@ Namespace Engine.Analyze
         End Function
 
         Public Function getRuntime() As String
-            Return m_pe.GetTargetRuntime
+            Return If(m_targetFramework = String.Empty, If(m_pe.GetTargetFramework.StartsWith("v4."), "v4.0", "v2.0"), m_targetFramework)
         End Function
 
         Public Function getProcessArchitecture() As String
@@ -109,7 +107,8 @@ Namespace Engine.Analyze
         End Function
 
         Public Function getMainIcon() As Bitmap
-            Return If(m_pe.GetMainIcon Is Nothing, System.Drawing.Icon.ExtractAssociatedIcon(_inputFile).ToBitmap, m_pe.GetMainIcon.ToBitmap)
+            Return If(m_pe.GetMainIcon Is Nothing, Functions.GetAutoSize(Icon.ExtractAssociatedIcon(_inputFile).ToBitmap, New Size(48, 48)),
+                Functions.GetAutoSize(m_pe.GetMainIcon.ToBitmap, New Size(48, 48)))
         End Function
 
         ''' <summary>

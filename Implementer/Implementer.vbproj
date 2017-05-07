@@ -166,9 +166,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core20Reader\Core20Reader\Core20Reader.vbproj">
-      <Project>{eef33d18-4542-4e3d-80f0-6bda8deec0cd}</Project>
-      <Name>Core20Reader</Name>
+    <ProjectReference Include="..\Dnlib\dnlib.csproj">
+      <Project>{7460a353-299c-4d1a-b95a-15c675f4fbc7}</Project>
+      <Name>dnlib</Name>
     </ProjectReference>
     <ProjectReference Include="..\Helper\Helper.vbproj">
       <Project>{c83fb11b-f2fc-4895-bede-11bfa9c90ae3}</Project>

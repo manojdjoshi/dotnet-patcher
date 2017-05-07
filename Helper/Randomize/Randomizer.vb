@@ -44,7 +44,7 @@ Namespace RandomizeHelper
         ''' Creates a pseudo-random password containing the number of character classes
         ''' </summary>
         Private Shared Function GenerateKey(length%) As String
-            Dim csp As New System.Security.Cryptography.RNGCryptoServiceProvider()
+            Dim csp As New RNGCryptoServiceProvider()
 
             Dim allchars = m_alphabeticChars.Take(1).SelectMany(Function(c) c).ToArray()
             Dim bytes = New Byte(allchars.Length - 1) {}
@@ -187,22 +187,22 @@ Namespace RandomizeHelper
         End Function
 
         Public Shared Function GenerateNew() As String
-            Select Case RandomizerType.RenameSetting
-                Case RandomizerType.RenameEnum.Alphabetic
+            Select Case RenameSetting
+                Case RenameEnum.Alphabetic
                     Return Alphabetic()
-                Case RandomizerType.RenameEnum.Dot
+                Case RenameEnum.Dot
                     Return Dots()
-                Case RandomizerType.RenameEnum.Invisible
+                Case RenameEnum.Invisible
                     Return Invisible()
-                Case RandomizerType.RenameEnum.Chinese
+                Case RenameEnum.Chinese
                     Return Chinese()
-                Case RandomizerType.RenameEnum.Japanese
+                Case RenameEnum.Japanese
                     Return japanese()
-                Case RandomizerType.RenameEnum.Greek
+                Case RenameEnum.Greek
                     Return Greek()
-                Case RandomizerType.RenameEnum.Symbols
+                Case RenameEnum.Symbols
                     Return Symbols()
-                Case RandomizerType.RenameEnum.Flowing
+                Case RenameEnum.Flowing
                     Return Flowing()
             End Select
 
@@ -212,24 +212,24 @@ Namespace RandomizeHelper
         Public Shared Function GetScheme(IntVal%) As RenameEnum
             Select Case IntVal
                 Case 0
-                    Return RandomizerType.RenameEnum.Alphabetic
+                    Return RenameEnum.Alphabetic
                 Case 1
-                    Return RandomizerType.RenameEnum.Dot
+                    Return RenameEnum.Dot
                 Case 2
-                    Return RandomizerType.RenameEnum.Invisible
+                    Return RenameEnum.Invisible
                 Case 3
-                    Return RandomizerType.RenameEnum.Chinese
+                    Return RenameEnum.Chinese
                 Case 4
-                    Return RandomizerType.RenameEnum.Japanese
+                    Return RenameEnum.Japanese
                 Case 5
-                    Return RandomizerType.RenameEnum.Greek
+                    Return RenameEnum.Greek
                 Case 6
-                    Return RandomizerType.RenameEnum.Symbols
+                    Return RenameEnum.Symbols
                 Case 7
-                    Return RandomizerType.RenameEnum.Flowing
+                    Return RenameEnum.Flowing
             End Select
 
-            Return RandomizerType.RenameEnum.Alphabetic
+            Return RenameEnum.Alphabetic
         End Function
 
         Public Shared Sub CleanUp()

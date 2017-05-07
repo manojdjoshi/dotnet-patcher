@@ -1,14 +1,9 @@
 ﻿Imports System.Reflection
 Imports System.IO
 Imports System.Resources
-Imports Mono.Cecil
 Imports Helper.AssemblyHelper
 Imports Helper.UtilsHelper
-Imports Helper.RandomizeHelper
-Imports System.Runtime.InteropServices
-Imports System.Security
 Imports System.ComponentModel
-Imports System.Windows.Forms
 
 Namespace Core.Dependencing
     Public Class Dependencies
@@ -40,7 +35,7 @@ Namespace Core.Dependencing
                     If m_infos.ManifestResourceStreams.Count <> 0 AndAlso m_infos.TypesClass.Any(Function(typeDef) typeDef.FullName.EndsWith(".My.Resources")) Then
                         For Each Res In m_infos.ManifestResourceStreams
                             Using read As New ResourceReader(Res)
-                                For Each Dat As System.Collections.DictionaryEntry In read
+                                For Each Dat As DictionaryEntry In read
                                     Dim data() As Byte = Nothing
                                     Dim dataType = String.Empty
                                     Dim originalDataKey$ = Dat.Key

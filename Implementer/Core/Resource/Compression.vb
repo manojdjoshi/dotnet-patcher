@@ -1,18 +1,8 @@
 ﻿Imports System.IO
-Imports System.IO.Compression
-Imports System.CodeDom.Compiler
-Imports System.Text
-Imports System.Reflection
 Imports Mono.Cecil
-Imports Mono.Cecil.Cil
 Imports Helper.RandomizeHelper
-Imports Helper.CryptoHelper
 Imports Helper.CecilHelper
-Imports Helper.AssemblyHelper
-Imports Helper.CodeDomHelper
 Imports Helper.UtilsHelper
-Imports Implementer.Core.Dependencing
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Obfuscation.Builder
 
 Namespace Core.Resources
@@ -25,7 +15,7 @@ Namespace Core.Resources
 #End Region
 
 #Region " Constructor "
-        Friend Sub New(ByVal assDef As AssemblyDefinition, ByVal frwk As String, encrypt As Boolean, compress As Boolean, EnabledPack As Boolean)
+        Friend Sub New(assDef As AssemblyDefinition, frwk As String, encrypt As Boolean, compress As Boolean, EnabledPack As Boolean)
             AssemblyDef = assDef
             Frmwk = frwk
             m_encrypt = encrypt
@@ -35,7 +25,7 @@ Namespace Core.Resources
             ResName = Randomizer.GenerateNew & ".resources"
         End Sub
 
-        Friend Sub New(ByVal frwk As String, encrypt As Boolean, compress As Boolean, EnabledPack As Boolean)
+        Friend Sub New(frwk As String, encrypt As Boolean, compress As Boolean, EnabledPack As Boolean)
             Frmwk = frwk
             m_encrypt = encrypt
             m_compress = compress

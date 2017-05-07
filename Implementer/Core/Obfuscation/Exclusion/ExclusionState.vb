@@ -18,7 +18,6 @@ Namespace Core.Obfuscation.Exclusion
         Public Property member As Object
         Public Property memberType As mType
         Public Property allEntities As Boolean
-
         Public Property stringEncrypt As Boolean
         Public Property integerEncoding As Boolean
         Public Property booleanEncrypt As Boolean

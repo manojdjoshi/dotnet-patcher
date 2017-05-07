@@ -27,7 +27,6 @@ Namespace Core.Obfuscation.Exclusion
 #End Region
 
 #Region " Methods "
-
         Public Function LoadTreeNode() As TreeNode
             m_AssDef = AssemblyDefinition.ReadAssembly(_filepath)
 

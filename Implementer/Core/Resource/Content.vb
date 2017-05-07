@@ -5,8 +5,6 @@ Imports System.IO
 Imports Helper.CecilHelper
 Imports System.Text.RegularExpressions
 Imports Helper.UtilsHelper
-Imports Helper.ResourcesHelper
-Imports Implementer.Core.Dependencing
 Imports Implementer.engine.Processing
 
 Namespace Core.Resources
@@ -62,7 +60,7 @@ Namespace Core.Resources
                             Dim NewEmbeddedRes As New ResourceWriter(KeyNameOriginal)
 
                             Using read As New ResourceReader(OriginalEmbeddedRes.GetResourceStream)
-                                For Each Dat As System.Collections.DictionaryEntry In read
+                                For Each Dat As DictionaryEntry In read
                                     Dim data() As Byte = Nothing
                                     Dim dataType = String.Empty
                                     Dim originalDataKey$ = Dat.Key
@@ -144,8 +142,8 @@ Namespace Core.Resources
 
         Private Shared Sub CleanUpTmpFiles()
             Try
-                For Each f In System.IO.Directory.GetFiles(My.Application.Info.DirectoryPath, "*.resources", IO.SearchOption.TopDirectoryOnly)
-                    System.IO.File.Delete(f)
+                For Each f In Directory.GetFiles(My.Application.Info.DirectoryPath, "*.resources", IO.SearchOption.TopDirectoryOnly)
+                    File.Delete(f)
                 Next
             Catch ex As Exception
             End Try

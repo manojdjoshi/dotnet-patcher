@@ -16,3 +16,8 @@ D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Debug\Injections.dll
 D:\_BITBUCKET\DotNet Patcher\Injections\Injections\bin\Debug\Injections.pdb
 D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Debug\Injections.dll
 D:\_BITBUCKET\DotNet Patcher\Injections\Injections\obj\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\obj\Debug\Injections.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\obj\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\obj\Debug\Injections.pdb

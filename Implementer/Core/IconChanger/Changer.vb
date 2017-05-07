@@ -1,6 +1,4 @@
-﻿
-Imports System.IO
-Imports System.Windows.Forms
+﻿Imports System.IO
 Imports System.Drawing
 Imports Implementer.Engine.Checking
 Imports Helper.UtilsHelper

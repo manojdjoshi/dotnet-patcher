@@ -3,8 +3,6 @@ Imports Mono.Cecil.Rocks
 Imports Helper.CecilHelper
 Imports System.IO
 Imports Mono.Cecil.Cil
-Imports Helper.RandomizeHelper
-Imports Implementer.Engine.Processing
 Imports Implementer.Core.Packer
 
 Namespace Core.Obfuscation.Builder
@@ -174,7 +172,7 @@ Namespace Core.Obfuscation.Builder
                                     Dim last = ilproc.Body.Instructions.Count
                                     Dim init = ilproc.Create(OpCodes.Call, ImportedMeth)
                                     cctr.Body.Instructions.Insert(last, init)
-                                    ilproc.InsertAfter(init, ilproc.Create(Mono.Cecil.Cil.OpCodes.Ret))
+                                    ilproc.InsertAfter(init, ilproc.Create(OpCodes.Ret))
                                 End If
 
                             End If

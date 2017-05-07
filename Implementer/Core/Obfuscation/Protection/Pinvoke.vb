@@ -1,17 +1,9 @@
-﻿Imports System.Text
-Imports System.IO
-Imports System.CodeDom.Compiler
-Imports System.ComponentModel
-Imports System.Resources
-Imports Mono.Cecil
+﻿Imports Mono.Cecil
 Imports Mono.Cecil.Cil
 Imports Mono.Cecil.Rocks
 Imports Helper.CecilHelper
-Imports Helper.CodeDomHelper
-Imports Helper.AssemblyHelper
 Imports Helper.RandomizeHelper
 Imports Implementer.Engine.Processing
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Obfuscation.Exclusion
 
@@ -32,7 +24,7 @@ Namespace Core.Obfuscation.Protection
 
 #Region " Methods "
 
-        Friend Shared Sub DoJob(ByVal asm As AssemblyDefinition, Framework$, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False)
+        Friend Shared Sub DoJob(asm As AssemblyDefinition, Framework$, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False)
             AssemblyDef = asm
             Frmwk = Framework
             Pack = packIt
@@ -42,17 +34,14 @@ Namespace Core.Obfuscation.Protection
             For Each mo As ModuleDefinition In asm.Modules
                 For Each t In mo.GetAllTypes()
                     Types.Add(t)
-                    For Each m In t.Methods
-                        If m.IsPInvokeImpl Then
-                            HasPinvokeCalls = True
-                            Exit For
-                        End If
-                    Next
+                    If t.Methods.Any(Function(f) f.IsPInvokeImpl) = True Then
+                        HasPinvokeCalls = True
+                    End If
                 Next
             Next
 
             If HasPinvokeCalls Then
-                LoaderInvoke = New Stub(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, _
+                LoaderInvoke = New Stub(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic,
                               Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic)
                 With LoaderInvoke
                     .ResolveTypeFromFile(DynamicInvokeStub(.className, .funcName1, .funcName2, .funcName3), Finder.FindDefaultNamespace(asm, Pack), Randomizer.GenerateNew, Randomizer.GenerateNew, Randomizer.GenerateNew, Randomizer.GenerateNew)
@@ -79,14 +68,13 @@ Namespace Core.Obfuscation.Protection
             Types.Clear()
         End Sub
 
-        Private Shared Sub IterateType(ByVal td As TypeDefinition)
+        Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 1 AndAlso Not completedMethods.Contains(m)))
 
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
-
                         If Utils.HasUnsafeInstructions(md) = False Then
                             Using optim As New Msil(md.Body)
                                 For i = 0 To md.Body.Instructions.Count - 1
@@ -110,7 +98,7 @@ Namespace Core.Obfuscation.Protection
                                                     completedMethods.Add(originalMethod)
                                                 End If
                                             End If
-                                        Catch ex As Mono.Cecil.AssemblyResolutionException
+                                        Catch ex As AssemblyResolutionException
                                             Continue For
                                         End Try
                                     End If

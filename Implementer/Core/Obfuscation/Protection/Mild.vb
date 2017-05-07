@@ -2,16 +2,9 @@
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.RandomizeHelper
-Imports System.Runtime.CompilerServices
 Imports Helper.CecilHelper
-Imports Helper.AssemblyHelper
-Imports Helper.CodeDomHelper
-Imports System.Text.RegularExpressions
-Imports Helper.CryptoHelper
-Imports System.Resources
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Obfuscation.Exclusion
-Imports System.IO
 
 Namespace Core.Obfuscation.Protection
     Public NotInheritable Class Mild
@@ -58,7 +51,7 @@ Namespace Core.Obfuscation.Protection
             MdByRef.Clear()
         End Sub
 
-        Private Shared Sub IterateType(ByVal td As TypeDefinition)
+        Private Shared Sub IterateType( td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not Finder.FindCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try

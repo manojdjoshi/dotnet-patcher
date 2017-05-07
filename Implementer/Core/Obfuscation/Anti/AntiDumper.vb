@@ -1,11 +1,6 @@
 ﻿Imports Mono.Cecil
 Imports Helper.RandomizeHelper
-Imports System.IO
 Imports Helper.CecilHelper
-Imports Mono.Cecil.Cil
-Imports Mono.Cecil.Rocks
-Imports System.Runtime.InteropServices
-Imports Helper
 Imports Implementer.Core.Obfuscation.Builder
 
 Namespace Core.Obfuscation.Anti

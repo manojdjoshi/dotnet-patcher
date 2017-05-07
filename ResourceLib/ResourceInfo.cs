@@ -154,26 +154,26 @@ namespace Vestris.ResourceLib
                 {
                     case Kernel32.ResourceTypes.RT_VERSION:
                         return new VersionResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_GROUP_CURSOR:
-                    //    return new CursorDirectoryResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_GROUP_CURSOR:
+                        return new CursorDirectoryResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
                     case Kernel32.ResourceTypes.RT_GROUP_ICON:
                         return new IconDirectoryResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
                     case Kernel32.ResourceTypes.RT_MANIFEST:
                         return new ManifestResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
                     case Kernel32.ResourceTypes.RT_BITMAP:
                         return new BitmapResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_MENU:
-                    //    return new MenuResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_DIALOG:
-                    //    return new DialogResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_MENU:
+                        return new MenuResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_DIALOG:
+                        return new DialogResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
                     case Kernel32.ResourceTypes.RT_STRING:
                         return new StringResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_FONTDIR:
-                    //    return new FontDirectoryResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_FONT:
-                    //    return new FontResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
-                    //case Kernel32.ResourceTypes.RT_ACCELERATOR:
-                    //    return new AcceleratorResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_FONTDIR:
+                        return new FontDirectoryResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_FONT:
+                        return new FontResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
+                    case Kernel32.ResourceTypes.RT_ACCELERATOR:
+                        return new AcceleratorResource(hModule, hResourceGlobal, type, name, wIDLanguage, size);
                 }
             }
 

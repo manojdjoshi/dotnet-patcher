@@ -1,11 +1,8 @@
 ﻿Imports System.IO
 Imports System.Drawing.Imaging
 Imports System.Drawing
-Imports System.Security.AccessControl
-Imports System.Security.Principal
 Imports System.IO.Compression
 Imports System.Text
-Imports System.Runtime.InteropServices
 Imports System.Security.Cryptography
 
 Namespace UtilsHelper
@@ -93,7 +90,7 @@ Namespace UtilsHelper
             Return False
         End Function
 
-        Public Shared Function isValid(ByVal filepath As String, ByVal Mime As ImageFormat) As Boolean
+        Public Shared Function isValid(filepath As String, Mime As ImageFormat) As Boolean
             Try
                 Dim id As Guid = GetGuidID(filepath)
                 If id = Mime.Guid Then
@@ -105,7 +102,7 @@ Namespace UtilsHelper
             Return False
         End Function
 
-        Private Shared Function GetGuidID(ByVal filepath As String) As Guid
+        Private Shared Function GetGuidID(filepath As String) As Guid
             Dim imagedata As Byte() = File.ReadAllBytes(filepath)
             Dim id As Guid
             Using ms As New MemoryStream(imagedata)
@@ -125,6 +122,46 @@ Namespace UtilsHelper
                 Next
                 Return sb.ToString()
             End Using
+        End Function
+
+        ''' <summary>
+        ''' Redimensionne une image selon une taille prédéfinie passée en paramétre.
+        ''' </summary>
+        ''' <param name="Img">Image au format Bitmap</param>
+        ''' <param name="siz">Dimensons pour la future 'image</param>
+        ''' <returns>Valeur de type Image</returns>
+        Public Shared Function GetAutoSize(Img As Bitmap, siz As Size) As Image
+            Dim imgOrg As Bitmap
+            Dim imgShow As Bitmap
+            Dim g As Graphics
+            Dim divideBy, divideByH, divideByW As Double
+            imgOrg = Img
+            divideByW = imgOrg.Width / siz.Width
+            divideByH = imgOrg.Height / siz.Height
+            If divideByW > 1 Or divideByH > 1 Then
+                If divideByW > divideByH Then
+                    divideBy = divideByW
+                Else
+                    divideBy = divideByH
+                End If
+                imgShow = New Bitmap(CInt(CDbl(imgOrg.Width) / divideBy), CInt(CDbl(imgOrg.Height) / divideBy))
+                imgShow.SetResolution(imgOrg.HorizontalResolution, imgOrg.VerticalResolution)
+                g = Graphics.FromImage(imgShow)
+                g.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+                g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+                g.DrawImage(imgOrg, New Rectangle(0, 0, CInt(CDbl(imgOrg.Width) / divideBy), CInt(CDbl(imgOrg.Height) / divideBy)), 0, 0, imgOrg.Width, imgOrg.Height, GraphicsUnit.Pixel)
+                g.Dispose()
+            Else
+                imgShow = New Bitmap(imgOrg.Width, imgOrg.Height)
+                imgShow.SetResolution(imgOrg.HorizontalResolution, imgOrg.VerticalResolution)
+                g = Graphics.FromImage(imgShow)
+                g.SmoothingMode = Drawing2D.SmoothingMode.HighQuality
+                g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+                g.DrawImage(imgOrg, New Rectangle(0, 0, imgOrg.Width, imgOrg.Height), 0, 0, imgOrg.Width, imgOrg.Height, GraphicsUnit.Pixel)
+                g.Dispose()
+            End If
+            imgOrg.Dispose()
+            Return imgShow
         End Function
 #End Region
 

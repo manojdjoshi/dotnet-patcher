@@ -130,12 +130,12 @@ Label_0017:
                             method.paramLoc(i) = Integer.Parse(strArray(i).Split(New Char() {":"c})(0))
                             method.paramType(i) = strArray(i).Split(New Char() {":"c})(1)
                         Next i
-                        ExclusionReflection.Reflections.Add((method.typeName & "::" & method.mtdName), method)
+                        Reflections.Add((method.typeName & "::" & method.mtdName), method)
                     End If
                     GoTo Label_0017
                 End If
             End Using
-            ExclusionReflection.ExcludeAttributes = New List(Of String)
+            ExcludeAttributes = New List(Of String)
             Using reader2 = New StringReader("System.ServiceModel.ServiceContractAttribute" & ChrW(13) & ChrW(10) & _
                                                              "System.ServiceModel.OperationContractAttribute" & ChrW(13) & ChrW(10) & _
                                                              "System.Data.Services.Common.DataServiceKeyAttribute" & ChrW(13) & ChrW(10) & _
@@ -151,7 +151,7 @@ Label_0017:
 Label_017E:
                 str4 = reader2.ReadLine
                 If Not (str4 = "=") Then
-                    ExclusionReflection.ExcludeAttributes.Add(str4)
+                    ExcludeAttributes.Add(str4)
                     GoTo Label_017E
                 End If
             End Using

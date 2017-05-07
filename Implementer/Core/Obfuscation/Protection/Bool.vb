@@ -2,10 +2,7 @@
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.RandomizeHelper
-Imports System.Runtime.CompilerServices
 Imports Helper.CecilHelper
-Imports Helper.AssemblyHelper
-Imports Helper.CodeDomHelper
 Imports Helper.CryptoHelper
 Imports System.Resources
 Imports Implementer.Core.Obfuscation.Builder
@@ -25,7 +22,7 @@ Namespace Core.Obfuscation.Protection
 #End Region
 
 #Region " Methods "
-        Friend Shared Function DoJob(ByVal asm As AssemblyDefinition, Framework$, encryptToRes As EncryptType, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False) As AssemblyDefinition
+        Friend Shared Function DoJob(asm As AssemblyDefinition, Framework$, encryptToRes As EncryptType, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False) As AssemblyDefinition
             AssemblyDef = asm
             Frmwk = Framework
             Pack = packIt
@@ -98,7 +95,7 @@ Namespace Core.Obfuscation.Protection
         End Sub
 
 
-        Private Shared Sub IterateType(ByVal td As TypeDefinition)
+        Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.FindCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try
@@ -170,7 +167,7 @@ Namespace Core.Obfuscation.Protection
             publicMethods.Clear()
         End Sub
 
-        Private Shared Sub CreateMethod(ByRef mDef As MethodDefinition, value As Integer, ByRef md As MethodDefinition)
+        Private Shared Sub CreateMethod(ByRef mDef As MethodDefinition, value%, ByRef md As MethodDefinition)
             If Randomizer.GenerateBoolean Then
                 mDef = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Boolean)))
                 mDef.Body = New MethodBody(mDef)
@@ -244,7 +241,7 @@ Namespace Core.Obfuscation.Protection
             End If
         End Sub
 
-        Private Shared Function isOdd(num As Integer) As Boolean
+        Private Shared Function isOdd(num%) As Boolean
             Return num Mod 2 <> 0
         End Function
 

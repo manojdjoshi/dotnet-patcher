@@ -1,8 +1,5 @@
-﻿Imports System.Text
-Imports System.CodeDom.Compiler
-Imports Mono.Cecil
+﻿Imports Mono.Cecil
 Imports Mono.Cecil.Cil
-Imports System.ComponentModel
 Imports Helper.RandomizeHelper
 Imports Helper.CryptoHelper
 Imports System.Resources
@@ -10,9 +7,6 @@ Imports System.IO
 Imports Helper.AssemblyHelper
 Imports Helper.CecilHelper
 Imports Helper.CodeDomHelper
-Imports System.Reflection
-Imports System.Runtime.InteropServices
-Imports Implementer.Core.Packer
 
 Namespace Core.Obfuscation.Builder
     Public Class Source

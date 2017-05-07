@@ -11,14 +11,14 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("Helper")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("3DotDev Freewares")> 
-<Assembly: AssemblyProduct("Helper")> 
-<Assembly: AssemblyCopyright("Copyright © 3DotDev 2016")> 
+<Assembly: AssemblyProduct("Helper")>
+<Assembly: AssemblyCopyright("Copyright © 3DotDev 2017")>
 <Assembly: AssemblyTrademark("Helper")> 
 
 <Assembly: ComVisible(False)>
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-<Assembly: Guid("7f2ea4b2-5d71-4ec9-92fb-edf8654c2ef9")> 
+<Assembly: Guid("7f2ea4b2-5d71-4ec9-92fb-edf8654c2ef9")>
 
 ' Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.4.3.0")> 
-<Assembly: AssemblyFileVersion("4.4.3.0")> 
+<Assembly: AssemblyVersion("4.5.0.0")>
+<Assembly: AssemblyFileVersion("4.5.0.0")>

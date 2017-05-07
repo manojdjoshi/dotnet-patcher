@@ -1,21 +1,10 @@
 ﻿Imports Mono.Cecil
 Imports Mono.Cecil.Rocks
 Imports System.IO
-Imports System.Resources
-Imports System.Threading
-Imports System.Threading.Tasks
 Imports System.ComponentModel
-Imports System.Windows.Forms
-Imports Implementer.Engine.Context
 Imports Implementer.Engine.Processing
-Imports Implementer.Engine.Processing.ProcessTask
 Imports Implementer.Core.Resources
 Imports Implementer.Core.Dependencing
-Imports Implementer.Core.Versions
-Imports Implementer.Core.ManifestRequest
-Imports Implementer.Core.IconChanger
-Imports Implementer.Core.Packer
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Core.Obfuscation.Exclusion
@@ -209,6 +198,7 @@ Namespace Engine.Context
         Public Sub IconChangerTask()
             If m_parameters.TaskAccept.IconChanger.Enabled Then
                 m_bgw.ReportProgress(28, "Icon Changing ...")
+
                 m_processing.ProcessIconChanger(m_parameters.inputFile, m_framework, m_parameters.TaskAccept.IconChanger.NewIcon, m_parameters.TaskAccept.VersionInfos)
             End If
         End Sub

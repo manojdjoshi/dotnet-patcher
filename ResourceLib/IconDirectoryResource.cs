@@ -21,7 +21,7 @@ namespace Vestris.ResourceLib
         /// <param name="name">Resource name.</param>
         /// <param name="language">Language ID.</param>
         /// <param name="size">Resource size.</param>
-        internal IconDirectoryResource(IntPtr hModule, IntPtr hResource, ResourceId type, ResourceId name, UInt16 language, int size)
+        internal IconDirectoryResource(IntPtr hModule, IntPtr hResource, ResourceId type, ResourceId name, ushort language, int size)
             : base(hModule, hResource, type, name, language, size)
         {
             
@@ -42,7 +42,7 @@ namespace Vestris.ResourceLib
         public IconDirectoryResource(IconFile iconFile)
             : base(Kernel32.ResourceTypes.RT_GROUP_ICON)
         {            
-            for (UInt16 id = 0; id < iconFile.Icons.Count; id++)
+            for (ushort id = 0; id < iconFile.Icons.Count; id++)
             {
                 IconResource iconResource = new IconResource(
                     iconFile.Icons[id], new ResourceId(id), _language);

@@ -1,16 +1,13 @@
 ﻿Imports Mono.Cecil
 Imports Mono.Cecil.Cil
-Imports Helper.CecilHelper
-Imports System.Runtime.InteropServices
-Imports Helper.RandomizeHelper
 
 Namespace CecilHelper
     ' Credits: yck1509 / Confuser
     Public NotInheritable Class Injecter
 
 #Region " Methods "
-        Public Shared Function CreateGenericCctor(ByVal assDef As AssemblyDefinition) As MethodDefinition
-            Dim cctor__1 As New MethodDefinition(".cctor", Mono.Cecil.MethodAttributes.[Private] Or Mono.Cecil.MethodAttributes.HideBySig Or Mono.Cecil.MethodAttributes.SpecialName Or Mono.Cecil.MethodAttributes.RTSpecialName Or Mono.Cecil.MethodAttributes.[Static], assDef.MainModule.Import(GetType(System.Void)))
+        Public Shared Function CreateGenericCctor(assDef As AssemblyDefinition) As MethodDefinition
+            Dim cctor__1 As New MethodDefinition(".cctor", MethodAttributes.[Private] Or MethodAttributes.HideBySig Or MethodAttributes.SpecialName Or MethodAttributes.RTSpecialName Or MethodAttributes.[Static], assDef.MainModule.Import(GetType(Void)))
             Dim ilproc As ILProcessor
             cctor__1.Body = New Cil.MethodBody(cctor__1)
             ilproc = cctor__1.Body.GetILProcessor()
@@ -19,13 +16,13 @@ Namespace CecilHelper
         End Function
 
         Public Shared Sub InjectAssemblyInfoCustomAttribute(member As AssemblyDefinition, AttributeType As Type, attributeValue$)
-            Dim ca As New CustomAttribute(member.MainModule.Import(AttributeType.GetConstructor(New Type() {GetType(System.String)})))
-            Dim carg = New CustomAttributeArgument(member.MainModule.Import(GetType(System.String)), attributeValue)
+            Dim ca As New CustomAttribute(member.MainModule.Import(AttributeType.GetConstructor(New Type() {GetType(String)})))
+            Dim carg = New CustomAttributeArgument(member.MainModule.Import(GetType(String)), attributeValue)
             ca.ConstructorArguments.Add(carg)
             member.CustomAttributes.Add(ca)
         End Sub
 
-        Public Shared Function InjectTypeDefinition(ByVal mdef As ModuleDefinition, ByVal name As String, ByVal baseType As TypeReference) As TypeDefinition
+        Public Shared Function InjectTypeDefinition(mdef As ModuleDefinition, name As String, ByVal baseType As TypeReference) As TypeDefinition
             Dim str As String = String.Empty
             If name.Contains(".") Then
                 Dim length As Integer = name.LastIndexOf(".")
@@ -431,7 +428,7 @@ Namespace CecilHelper
                     End If
 
                     Select Case eh.HandlerType
-                        Case ExceptionHandlerType.[Catch]
+                        Case ExceptionHandlerType.Catch
                             neh.CatchType = ImportType(eh.CatchType, targetModule, ret, Nothing)
                             Exit Select
                         Case ExceptionHandlerType.Filter
@@ -448,18 +445,18 @@ Namespace CecilHelper
             Return ret
         End Function
 
-        Public Shared Function Inject(ByVal m As ModuleDefinition, ByVal type As TypeDefinition) As TypeDefinition
+        Public Shared Function Inject(m As ModuleDefinition, type As TypeDefinition) As TypeDefinition
             Dim mems As New Dictionary(Of MetadataToken, IMemberDefinition)
             Dim definition As TypeDefinition = m_Inject(m, type, mems)
             PopulateDatas(m, type, mems)
             Return definition
         End Function
 
-        Private Shared Function m_Inject(mDef As ModuleDefinition, ByVal type As TypeDefinition, ByVal mems As Dictionary(Of MetadataToken, IMemberDefinition)) As TypeDefinition
-            Dim definition As New TypeDefinition(type.Namespace, type.Name, type.Attributes) With { _
-                .Scope = mDef, _
-                .ClassSize = type.ClassSize, _
-                .PackingSize = type.PackingSize _
+        Private Shared Function m_Inject(mDef As ModuleDefinition, type As TypeDefinition, mems As Dictionary(Of MetadataToken, IMemberDefinition)) As TypeDefinition
+            Dim definition As New TypeDefinition(type.Namespace, type.Name, type.Attributes) With {
+                .Scope = mDef,
+                .ClassSize = type.ClassSize,
+                .PackingSize = type.PackingSize
             }
             If (Not type.BaseType Is Nothing) Then
                 definition.BaseType = mDef.Import(type.BaseType)
@@ -484,16 +481,16 @@ Namespace CecilHelper
             Return definition
         End Function
 
-        Public Shared Function InjectResource(ByVal mdef As ModuleDefinition, ByVal name As String, ByVal resourceType As ResourceType, ByVal data As Byte()) As Resource
+        Public Shared Function InjectResource(mdef As ModuleDefinition, name As String, resourceType As ResourceType, data As Byte()) As Resource
             Dim item As Resource = Nothing
             Select Case resourceType
-                Case resourceType.Embedded
+                Case ResourceType.Embedded
                     item = New EmbeddedResource(name, ManifestResourceAttributes.Private, data)
                     Exit Select
-                Case resourceType.Linked
+                Case ResourceType.Linked
                     item = New LinkedResource(name, ManifestResourceAttributes.Public)
                     Exit Select
-                Case resourceType.AssemblyLinked
+                Case ResourceType.AssemblyLinked
                     Dim reference As New AssemblyNameReference(name, New Version)
                     mdef.AssemblyReferences.Add(reference)
                     item = New AssemblyLinkedResource(name, ManifestResourceAttributes.Public, reference)
@@ -504,7 +501,7 @@ Namespace CecilHelper
             mdef.Resources.Add(item)
             Return item
         End Function
-#End Region  
+#End Region
 
     End Class
 End Namespace

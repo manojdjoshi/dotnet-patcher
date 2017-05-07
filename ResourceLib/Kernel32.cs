@@ -305,7 +305,7 @@ namespace Vestris.ResourceLib
         /// <param name="hFile">This parameter is reserved for future use.</param>
         /// <param name="dwFlags">The action to be taken when loading the module.</param>
         /// <returns></returns>
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "LoadLibraryExW")]
         internal static extern IntPtr LoadLibraryEx(string lpFileName, IntPtr hFile, uint dwFlags);
 
         /// <summary>
@@ -324,7 +324,7 @@ namespace Vestris.ResourceLib
             /// <summary>
             /// Hardware-dependent cursor resource.
             /// </summary>
-            //RT_CURSOR = 1,
+            RT_CURSOR = 1,
             /// <summary>
             /// Bitmap resource.
             /// </summary>
@@ -336,11 +336,11 @@ namespace Vestris.ResourceLib
             /// <summary>
             /// Menu resource.
             /// </summary>
-            //RT_MENU = 4,
+            RT_MENU = 4,
             /// <summary>
             /// Dialog box.
             /// </summary>
-            //RT_DIALOG = 5,
+            RT_DIALOG = 5,
             /// <summary>
             /// String-table entry.
             /// </summary>
@@ -348,15 +348,15 @@ namespace Vestris.ResourceLib
             /// <summary>
             /// Font directory resource.
             /// </summary>
-            //RT_FONTDIR = 7,
+            RT_FONTDIR = 7,
             /// <summary>
             /// Font resource.
             /// </summary>
-            //RT_FONT = 8,
+            RT_FONT = 8,
             /// <summary>
             /// Accelerator table.
             /// </summary>
-            //RT_ACCELERATOR = 9,
+            RT_ACCELERATOR = 9,
             /// <summary>
             /// Application-defined resource (raw data).
             /// </summary>
@@ -364,11 +364,11 @@ namespace Vestris.ResourceLib
             /// <summary>
             /// Message-table entry.
             /// </summary>
-            //RT_MESSAGETABLE = 11,
+            RT_MESSAGETABLE = 11,
             /// <summary>
             /// Hardware-independent cursor resource.
             /// </summary>
-            //RT_GROUP_CURSOR = 12,
+            RT_GROUP_CURSOR = 12,
             /// <summary>
             /// Hardware-independent icon resource.
             /// </summary>
@@ -380,23 +380,23 @@ namespace Vestris.ResourceLib
             /// <summary>
             /// Allows a resource editing tool to associate a string with an .rc file.
             /// </summary>
-            //RT_DLGINCLUDE = 17,
+            RT_DLGINCLUDE = 17,
             /// <summary>
             /// Plug and Play resource.
             /// </summary>
-            //RT_PLUGPLAY = 19,
+            RT_PLUGPLAY = 19,
             /// <summary>
             /// VXD.
             /// </summary>
-            //RT_VXD = 20,
+            RT_VXD = 20,
             /// <summary>
             /// Animated cursor.
             /// </summary>
-            //RT_ANICURSOR = 21,
+            RT_ANICURSOR = 21,
             /// <summary>
             /// Animated icon.
             /// </summary>
-            //RT_ANIICON = 22,
+            RT_ANIICON = 22,
             /// <summary>
             /// HTML.
             /// </summary>

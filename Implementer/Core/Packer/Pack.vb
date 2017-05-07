@@ -1,20 +1,11 @@
 ﻿Imports System.IO
-Imports System.IO.Compression
-Imports System.CodeDom.Compiler
 Imports System.Text
-Imports System.Reflection
 Imports Mono.Cecil
-Imports System.Windows.Forms
 Imports Helper.CryptoHelper
-Imports Core20Reader
 Imports Implementer.Core.Versions
 Imports Helper.RandomizeHelper
 Imports Helper.UtilsHelper
-Imports Injections
-Imports System.Resources
-Imports System.Runtime.CompilerServices
 Imports Helper.CecilHelper
-Imports System.Runtime.InteropServices
 Imports SevenZipLib
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.IconChanger
@@ -36,7 +27,7 @@ Namespace Core.Packer
 #End Region
 
 #Region " Constructor "
-        Friend Sub New(ByVal FilePathToPack As String)
+        Friend Sub New(FilePathToPack As String)
             m_FilePathToPack = FilePathToPack
             m_reverse = Randomizer.GenerateBoolean
         End Sub
@@ -106,7 +97,7 @@ Namespace Core.Packer
             ManifestWriter.ApplyManifest(m_FilePathToPack, reqLevel)
         End Sub
 
-        Private Function GetEncodedFileName(ByVal asmName As String) As String
+        Private Function GetEncodedFileName(asmName As String) As String
             Dim asm = AssemblyDefinition.ReadAssembly(asmName)
             Dim compressedName = Convert.ToBase64String(Encoding.Default.GetBytes(asm.FullName.ToLower))
             compressedName &= ".resources"

@@ -1,17 +1,12 @@
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Debug\ResourceLib.csprojResolveAssemblyReference.cache
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
-D:\Documents\resourcelib-master\resourcelib-master\Source\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Debug\ResourceLib.csprojResolveAssemblyReference.cache
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
-D:\_BITBUCKET\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
-D:\_BITBUCKET\DotNet Patcher\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
-D:\_BITBUCKET\DotNet Patcher\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
-D:\_BITBUCKET\DotNet Patcher\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
-D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
-D:\_BITBUCKET\DotNet Patcher\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
+D:\Téléchargements\resourcelib-master\Source\ResourceLib\obj\Debug\ResourceLib.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\obj\Debug\ResourceLib.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb

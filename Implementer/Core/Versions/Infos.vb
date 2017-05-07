@@ -3,114 +3,58 @@ Namespace Core.Versions
     Public Class Infos
         Implements IDisposable
 
-#Region " Fields "
-        Private m_Enabled As Boolean
-        Private m_FileDescription As String
-        Private m_Comments As String
-        Private m_CompanyName As String
-        Private m_ProductName As String
-        Private m_LegalCopyright As String
-        Private m_LegalTrademarks As String
-        Private m_FileVersion As String
-        Private m_ProductVersion As String
-#End Region
-
 #Region " Properties "
 
         Public ReadOnly Property Enabled As Boolean
-            Get
-                Return m_Enabled
-            End Get
-        End Property
-
         Public ReadOnly Property FileDescription As String
-            Get
-                Return m_FileDescription
-            End Get
-        End Property
-
         Public ReadOnly Property Comments As String
-            Get
-                Return m_Comments
-            End Get
-        End Property
-
         Public ReadOnly Property CompanyName As String
-            Get
-                Return m_CompanyName
-            End Get
-        End Property
-
         Public ReadOnly Property ProductName As String
-            Get
-                Return m_ProductName
-            End Get
-        End Property
-
         Public ReadOnly Property LegalCopyright As String
-            Get
-                Return m_LegalCopyright
-            End Get
-        End Property
-
         Public ReadOnly Property LegalTrademarks As String
-            Get
-                Return m_LegalTrademarks
-            End Get
-        End Property
-
         Public ReadOnly Property FileVersion As String
-            Get
-                Return checkVersion(m_FileVersion)
-            End Get
-        End Property
-
         Public ReadOnly Property ProductVersion As String
-            Get
-                Return checkVersion(m_ProductVersion)
-            End Get
-        End Property
 #End Region
 
 #Region " Constructor "
         Public Sub New(Enabl As Boolean, FileDescript$, Comment$, CompanyN$, ProductN$, LegalCopy$, LegalTrade$, FileV$, ProductV$)
-            m_Enabled = Enabl
-            m_FileDescription = FileDescript
-            m_Comments = Comment
-            m_CompanyName = CompanyN
-            m_ProductName = ProductN
-            m_LegalCopyright = LegalCopy
-            m_LegalTrademarks = LegalTrade
-            m_FileVersion = FileV
-            m_ProductVersion = ProductV
+            _Enabled = Enabl
+            _FileDescription = FileDescript
+            _Comments = Comment
+            _CompanyName = CompanyN
+            _ProductName = ProductN
+            _LegalCopyright = LegalCopy
+            _LegalTrademarks = LegalTrade
+            _FileVersion = FileV
+            _ProductVersion = ProductV
         End Sub
 
         Public Sub New(Enabl As Boolean, FilePath$)
             Dim fvi As FileVersionInfo = FileVersionInfo.GetVersionInfo(FilePath)
-            m_Enabled = Enabl
-            m_FileDescription = fvi.FileDescription
-            m_Comments = fvi.Comments
-            m_CompanyName = fvi.CompanyName
-            m_ProductName = fvi.ProductName
-            m_LegalCopyright = fvi.LegalCopyright
-            m_LegalTrademarks = fvi.LegalTrademarks
-            m_FileVersion = fvi.FileVersion
-            m_ProductVersion = fvi.ProductVersion
+            _Enabled = Enabl
+            _FileDescription = fvi.FileDescription
+            _Comments = fvi.Comments
+            _CompanyName = fvi.CompanyName
+            _ProductName = fvi.ProductName
+            _LegalCopyright = fvi.LegalCopyright
+            _LegalTrademarks = fvi.LegalTrademarks
+            _FileVersion = fvi.FileVersion
+            _ProductVersion = fvi.ProductVersion
         End Sub
 #End Region
 
 #Region " Methods "
 
         Private Sub CleanUp()
-            m_Enabled = False
-            m_FileDescription = String.Empty
-            m_Comments = String.Empty
-            m_CompanyName = String.Empty
-            m_ProductName = String.Empty
-            m_LegalCopyright = String.Empty
-            m_LegalTrademarks = String.Empty
-            m_FileVersion = String.Empty
-            m_ProductVersion = String.Empty
+            _Enabled = False
+            _FileDescription = String.Empty
+            _Comments = String.Empty
+            _CompanyName = String.Empty
+            _ProductName = String.Empty
+            _LegalCopyright = String.Empty
+            _LegalTrademarks = String.Empty
+            _FileVersion = String.Empty
+            _ProductVersion = String.Empty
         End Sub
 
         Private Function checkVersion(VersionValue$) As String

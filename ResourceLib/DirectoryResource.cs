@@ -27,8 +27,8 @@ namespace Vestris.ResourceLib
                 {
                     case 1:
                         return Kernel32.ResourceTypes.RT_ICON;
-                    //case 2:
-                    //    return Kernel32.ResourceTypes.RT_CURSOR;
+                    case 2:
+                        return Kernel32.ResourceTypes.RT_CURSOR;
                     default:
                         throw new NotSupportedException();
                 }
@@ -78,9 +78,9 @@ namespace Vestris.ResourceLib
         {
             switch(resourceType)
             {
-                //case Kernel32.ResourceTypes.RT_GROUP_CURSOR:
-                //    _header.wType = 2;
-                //    break;
+                case Kernel32.ResourceTypes.RT_GROUP_CURSOR:
+                    _header.wType = 2;
+                    break;
                 case Kernel32.ResourceTypes.RT_GROUP_ICON:
                     _header.wType = 1;
                     break;

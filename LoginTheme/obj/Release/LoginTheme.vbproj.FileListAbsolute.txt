@@ -247,3 +247,19 @@ E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\LoginTheme\obj\Release\LoginThe
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\LoginTheme\obj\Release\LoginTheme.dll
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\LoginTheme\obj\Release\LoginTheme.xml
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.pdb

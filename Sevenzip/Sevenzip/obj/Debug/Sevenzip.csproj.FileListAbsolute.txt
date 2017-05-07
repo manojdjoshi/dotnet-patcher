@@ -12,3 +12,8 @@ D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
 D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
 D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
 D:\_BITBUCKET\DotNet Patcher\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\bin\Debug\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Debug\Sevenzip.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Debug\SevenzipLib.pdb

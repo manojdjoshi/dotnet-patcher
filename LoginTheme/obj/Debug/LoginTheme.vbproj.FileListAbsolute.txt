@@ -14,3 +14,11 @@ D:\_BITBUCKET\DotNet Patcher\LoginTheme\obj\Debug\LoginTheme.vbproj.GenerateReso
 D:\_BITBUCKET\DotNet Patcher\LoginTheme\obj\Debug\LoginTheme.dll
 D:\_BITBUCKET\DotNet Patcher\LoginTheme\obj\Debug\LoginTheme.xml
 D:\_BITBUCKET\DotNet Patcher\LoginTheme\obj\Debug\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Debug\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Debug\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\bin\Debug\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Debug\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Debug\LoginTheme.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Debug\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Debug\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Debug\LoginTheme.pdb

@@ -1,5 +1,4 @@
-﻿
-Namespace Engine.Identification
+﻿Namespace Engine.Identification
     Public NotInheritable Class IdentifierEnum
 
 #Region " Enumerations "

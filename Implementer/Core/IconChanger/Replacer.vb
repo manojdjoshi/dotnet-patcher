@@ -1,8 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
-Imports System.Security
 Imports System.IO
 Imports Helper.ResourcesHelper
-Imports Core20Reader
 Imports Helper.RandomizeHelper
 Imports Helper.UtilsHelper
 Imports System.Drawing

@@ -2,7 +2,6 @@
 Imports Mono.Cecil.Cil
 Imports Mono.Cecil.Rocks
 Imports Helper.CecilHelper
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Obfuscation.Exclusion
 
 Namespace Core.Obfuscation.Protection

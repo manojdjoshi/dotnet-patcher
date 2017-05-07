@@ -5,34 +5,20 @@ Imports Helper.RandomizeHelper
 Namespace CryptoHelper
     Public Class Crypt
 
-#Region "Fields "
-        Private _SaltSize%
-        Private _key As Byte()
-#End Region
-
 #Region "Properties "
         Public ReadOnly Property SaltSize() As Integer
-            Get
-                Return _SaltSize
-            End Get
-        End Property
-
         Public ReadOnly Property key() As Byte()
-            Get
-                Return _key
-            End Get
-        End Property
 #End Region
-      
+
 #Region " Constructor "
         Public Sub New()
             _SaltSize = New Random().Next(1, 8)
             _key = Encoding.ASCII.GetBytes(Randomizer.GenerateNew)
         End Sub
 #End Region
-      
+
 #Region " Methods "
-        Public Function Encrypt(ByVal input As Byte()) As Byte()
+        Public Function Encrypt(input As Byte()) As Byte()
             Dim RND As New RNGCryptoServiceProvider()
             Dim Output As Byte() = New Byte(input.Length - 1) {}
             Dim Salt As Byte() = New Byte(SaltSize - 1) {}
@@ -45,7 +31,7 @@ Namespace CryptoHelper
             Return Output
         End Function
 #End Region
-     
+
         'Public Function AESEncrypt(ByVal input As Byte()) As Byte()
         '    Dim AES As New RijndaelManaged()
         '    Dim hash As Byte() = New Byte(&H20 - 1) {}

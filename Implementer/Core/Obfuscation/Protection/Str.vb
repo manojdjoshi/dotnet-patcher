@@ -2,17 +2,8 @@
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.RandomizeHelper
-Imports System.Runtime.CompilerServices
 Imports Helper.CecilHelper
-Imports Helper.AssemblyHelper
-Imports Helper.CodeDomHelper
-Imports System.Text.RegularExpressions
-Imports Helper.CryptoHelper
-Imports Helper.UtilsHelper
-Imports System.Resources
 Imports System.IO
-Imports System.CodeDom.Compiler
-Imports System.Text
 Imports System.IO.Compression
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Obfuscation.Exclusion
@@ -43,7 +34,7 @@ Namespace Core.Obfuscation.Protection
 #End Region
 
 #Region " Methods "
-        Friend Shared Function DoJob(ByVal asm As AssemblyDefinition, Framework$, encryptToRes As EncryptType, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False) As AssemblyDefinition
+        Friend Shared Function DoJob(asm As AssemblyDefinition, Framework$, encryptToRes As EncryptType, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False) As AssemblyDefinition
             AssemblyDef = asm
             Frmwk = Framework
             Pack = packIt
@@ -115,7 +106,7 @@ Namespace Core.Obfuscation.Protection
             If Not DecryptBase64 Is Nothing Then DecryptBase64.DeleteDll()
         End Sub
 
-        Private Shared Sub IterateType(ByVal td As TypeDefinition)
+        Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
             publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 1 AndAlso Not completedMethods.Contains(m) AndAlso Not m.Name = "get_ResourceManager" AndAlso Not Utils.isStronglyTypedResourceBuilder(m.DeclaringType) AndAlso Not Finder.FindCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
 
@@ -153,7 +144,7 @@ Namespace Core.Obfuscation.Protection
                                                         ilProc.Emit(OpCodes.Ldc_I4, inte)
                                                         ilProc.Emit(OpCodes.Call, DecryptReadStringResources.GetMethod1)
                                                     Else
-                                                        ilProc.Emit(Mono.Cecil.Cil.OpCodes.Ldstr, encXor)
+                                                        ilProc.Emit(OpCodes.Ldstr, encXor)
                                                     End If
 
                                                     ilProc.Emit(OpCodes.Ldc_I4, salt)
@@ -232,7 +223,7 @@ Namespace Core.Obfuscation.Protection
         End Function
 
         Private Shared Function EncodeTo_64(toEncode$) As String
-            Return Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(toEncode))
+            Return Convert.ToBase64String(Text.Encoding.Unicode.GetBytes(toEncode))
         End Function
 
         Private Shared Function GenerateEncryptXor() As Type

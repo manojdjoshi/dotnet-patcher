@@ -1,7 +1,7 @@
 ﻿Imports System.Reflection
 Imports System.IO
 Imports Helper.RandomizeHelper
-Imports Helper.UtilsHelper
+Imports System.Runtime.Versioning
 
 Namespace AssemblyHelper
     Public Class Loader
@@ -9,12 +9,9 @@ Namespace AssemblyHelper
 #Region " Methods "
         Public Shared Function Minimal(AssPath$) As Data
 
-            'Dim inf As New Infos()
-            'inf.
-
             Dim tempAppDomain As AppDomain = Nothing
             Dim fName = Randomizer.GenerateNewAlphabetic
-            Dim path As String = String.Format("{0}{1}\", System.IO.Path.GetTempPath, fName)
+            Dim path As String = String.Format("{0}{1}\", IO.Path.GetTempPath, fName)
             Directory.CreateDirectory(path)
             Dim tempAssemblyFilePath As String = (path & fName)
             File.Copy(AssPath, tempAssemblyFilePath, True)
@@ -35,10 +32,11 @@ Namespace AssemblyHelper
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
-                Dim AssName$ = String.Empty
-                Dim AssVersion$ = String.Empty
+                Dim AssName = String.Empty
+                Dim FrmwkVersion = String.Empty
+                Dim AssVersion = String.Empty
                 Dim IsWpf As Boolean
-                Dim Location$ = String.Empty
+                Dim Location = String.Empty
                 Dim EntryPoint As MethodInfo = Nothing
                 Dim AssemblyReferences As AssemblyName() = Nothing
                 Dim ManifestResourceNames As IEnumerable(Of String) = Nothing
@@ -47,10 +45,11 @@ Namespace AssemblyHelper
                 Dim Modules As IEnumerable(Of [Module]) = Nothing
                 Dim Result As Data.Message
 
-                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result)
+                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result)
 
                 With AssData
                     .AssName = AssName
+                    .FrameworkVersion = FrmwkVersion
                     .AssVersion = AssVersion
                     .IsWpf = IsWpf
                     .Location = AssPath
@@ -60,7 +59,7 @@ Namespace AssemblyHelper
                 End With
 
             Catch exception As Exception
-                'MsgBox(exception.ToString)
+                MsgBox(exception.ToString)
             Finally
                 CleanDomain(tempAppDomain, tempAssemblyFilePath, path)
             End Try
@@ -71,7 +70,7 @@ Namespace AssemblyHelper
 
             Dim tempAppDomain As AppDomain = Nothing
             Dim fName = Randomizer.GenerateNewAlphabetic
-            Dim path As String = String.Format("{0}{1}\", System.IO.Path.GetTempPath, fName)
+            Dim path As String = String.Format("{0}{1}\", IO.Path.GetTempPath, fName)
             Directory.CreateDirectory(path)
             Dim tempAssemblyFilePath As String = (path & fName)
             File.Copy(AssPath, tempAssemblyFilePath, True)
@@ -92,10 +91,11 @@ Namespace AssemblyHelper
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
-                Dim AssName$ = String.Empty
-                Dim AssVersion$ = String.Empty
+                Dim AssName = String.Empty
+                Dim FrmwkVersion = String.Empty
+                Dim AssVersion = String.Empty
                 Dim IsWpf As Boolean
-                Dim Location$ = String.Empty
+                Dim Location = String.Empty
                 Dim EntryPoint As MethodInfo = Nothing
                 Dim AssemblyReferences As AssemblyName() = Nothing
                 Dim ManifestResourceNames As IEnumerable(Of String) = Nothing
@@ -104,10 +104,11 @@ Namespace AssemblyHelper
                 Dim Modules As IEnumerable(Of [Module]) = Nothing
                 Dim Result As DataFull.Message
 
-                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, True)
+                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, True)
 
                 With AssData
                     .AssName = AssName
+                    .FrameworkVersion = FrmwkVersion
                     .AssVersion = AssVersion
                     .IsWpf = IsWpf
                     .Location = New FileInfo(AssPath).DirectoryName
@@ -121,7 +122,7 @@ Namespace AssemblyHelper
                 End With
 
             Catch exception As Exception
-                'MsgBox(exception.ToString)
+                MsgBox(exception.ToString)
             Finally
                 CleanDomain(tempAppDomain, tempAssemblyFilePath, path)
             End Try
@@ -152,6 +153,6 @@ Namespace AssemblyHelper
             & "<Assembly: AssemblyFileVersion(""" & Version & """)>"
         End Function
 #End Region
-      
+
     End Class
 End Namespace

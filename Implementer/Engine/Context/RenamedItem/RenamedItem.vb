@@ -2,38 +2,18 @@
 
     Public NotInheritable Class RenamedItem
 
-#Region " Fields "
-        Private ReadOnly m_itemType As RenamedItemType.ItemType
-        Private ReadOnly m_itemName$
-        Private ReadOnly m_obfuscatedItemName$
-#End Region
-
 #Region " Constructor "
         Friend Sub New(ItemType As RenamedItemType.ItemType, ItemName$, obfuscatedItemName$)
-            m_itemType = ItemType
-            m_itemName = ItemName
-            m_obfuscatedItemName = obfuscatedItemName
+            _ItemType = ItemType
+            _ItemName = ItemName
+            _obfuscatedItemName = obfuscatedItemName
         End Sub
 #End Region
 
 #Region " Properties "
         Public ReadOnly Property ItemType As String
-            Get
-                Return TypeToString(Me.m_itemType)
-            End Get
-        End Property
-
         Public ReadOnly Property ItemName As String
-            Get
-                Return m_itemName
-            End Get
-        End Property
-
         Public ReadOnly Property obfuscatedItemName As String
-            Get
-                Return m_obfuscatedItemName
-            End Get
-        End Property
 #End Region
 
 #Region " Methods "

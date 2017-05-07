@@ -324,3 +324,17 @@ E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.Resou
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.dll
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Helper\obj\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.pdb

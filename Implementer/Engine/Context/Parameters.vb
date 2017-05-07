@@ -1,5 +1,4 @@
-﻿Imports Implementer.Engine.Context
-Imports Implementer.Engine.Analyze
+﻿Imports Implementer.Engine.Analyze
 Imports Implementer.Core.Obfuscation.Exclusion
 
 Namespace Engine.Context

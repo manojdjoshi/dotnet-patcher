@@ -2,18 +2,14 @@
 Imports Helper.CecilHelper
 Imports Helper.RandomizeHelper
 Imports Implementer.Core.Resources
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Versions
 Imports Implementer.Core.ManifestRequest
 Imports Implementer.Core.Packer
 Imports Implementer.Core.IconChanger
-Imports Implementer.Core.Dependencing
 Imports Implementer.Core.Obfuscation.Anti
 Imports Implementer.Core.Obfuscation.Builder.Source
 Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Engine.Context
-Imports System.IO
-Imports System.Resources
 Imports System.Drawing
 
 Namespace Engine.Processing

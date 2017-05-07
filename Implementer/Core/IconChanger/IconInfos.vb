@@ -1,9 +1,8 @@
 ﻿Imports Helper.RandomizeHelper
 Imports Helper.UtilsHelper
 Imports System.IO
-Imports Core20Reader
-Imports Helper.CecilHelper
 Imports System.Drawing
+Imports dnlib
 
 Namespace Core.IconChanger
     Public Class IconInfos
@@ -14,30 +13,19 @@ Namespace Core.IconChanger
 #End Region
 
 #Region " Properties "
-        Private m_Enabled As Boolean
         Public ReadOnly Property Enabled As Boolean
-            Get
-                Return m_Enabled
-            End Get
-        End Property
-
-        Private m_NewIcon As Icon
         Public ReadOnly Property NewIcon As Icon
-            Get
-                Return m_NewIcon
-            End Get
-        End Property
 #End Region
 
 #Region " Constructor "
         Public Sub New(Enable As Boolean, NewIconPath$)
-            m_Enabled = Enable
-            m_NewIcon = If(File.Exists(NewIconPath), New Icon(NewIconPath), Nothing)
-            m_Enabled = checkNewIconExists()
+            _Enabled = Enable
+            _NewIcon = If(File.Exists(NewIconPath), New Icon(NewIconPath), Nothing)
+            _Enabled = checkNewIconExists()
         End Sub
 
         Public Sub New(FilePath$)
-            m_NewIcon = FromExeFile(FilePath)
+            _NewIcon = FromExeFile(FilePath)
         End Sub
 #End Region
 
@@ -46,20 +34,16 @@ Namespace Core.IconChanger
             If File.Exists(FilePath) Then
                 m_tmpExePath = Functions.GetTempFolder & "\" & Randomizer.GenerateNewAlphabetic & ".exe"
                 File.Copy(FilePath, m_tmpExePath, True)
-                Dim ic As New Reader()
-                With ic
-                    .ReadFile(m_tmpExePath)
-                    m_Enabled = True
-                    Return .GetMainIcon
-                End With
+                Dim ic As New PeReader(m_tmpExePath)
+                Return ic.GetMainIcon
             End If
-            m_Enabled = False
+            _Enabled = False
             Return Nothing
         End Function
 
         Private Function checkNewIconExists() As Boolean
-            If m_Enabled Then
-                If m_NewIcon IsNot Nothing Then
+            If _Enabled Then
+                If _NewIcon IsNot Nothing Then
                     Return True
                 End If
             End If
@@ -74,8 +58,8 @@ Namespace Core.IconChanger
             If Not Me.disposedValue Then
                 If disposing Then
                 End If
-                m_Enabled = False
-                m_NewIcon = Nothing
+                _Enabled = False
+                _NewIcon = Nothing
                 Try
                     File.Delete(m_tmpExePath)
                 Catch ex As Exception

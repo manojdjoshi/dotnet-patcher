@@ -2,13 +2,6 @@
     Public Class DependenciesInfos
         Implements IDisposable
 
-#Region " Fields "
-        Private m_Enabled As Boolean
-        Private m_Dependencies As IEnumerable(Of String)
-        Private m_DependenciesMode As DependenciesAddMode
-        Private m_DependenciesCompressEncryptMode As CompressEncryptMode
-#End Region
-
 #Region " Enumerations "
         Enum DependenciesAddMode
             Merged = 0
@@ -25,42 +18,23 @@
 
 #Region " Properties "
         Public ReadOnly Property Enabled As Boolean
-            Get
-                Return m_Enabled
-            End Get
-        End Property
-
         Public ReadOnly Property Dependencies As IEnumerable(Of String)
-            Get
-                Return m_Dependencies
-            End Get
-        End Property
-
         Public ReadOnly Property DependenciesMode As DependenciesAddMode
-            Get
-                Return m_DependenciesMode
-            End Get
-        End Property
-
         Public ReadOnly Property DependenciesCompressEncryptMode As CompressEncryptMode
-            Get
-                Return m_DependenciesCompressEncryptMode
-            End Get
-        End Property
 #End Region
 
 #Region " Constructor "
         Public Sub New(Enable As Boolean, Dependenc As IEnumerable(Of String), DependenciesMod As Boolean, DependenciesCompressEncryptMod%)
-            m_Enabled = Enable
-            m_Dependencies = Dependenc
-            m_DependenciesMode = DependenciesModeValue(DependenciesMod)
-            m_DependenciesCompressEncryptMode = DependenciesCompressEncryptModeValue(DependenciesCompressEncryptMod)
+            _Enabled = Enable
+            _Dependencies = Dependenc
+            _DependenciesMode = DependenciesModeValue(DependenciesMod)
+            _DependenciesCompressEncryptMode = DependenciesCompressEncryptModeValue(DependenciesCompressEncryptMod)
         End Sub
 #End Region
 
 #Region " Methods "
         Private Function DependenciesModeValue(boolValue As Boolean) As DependenciesAddMode
-            Return If(boolValue, DependenciesInfos.DependenciesAddMode.Embedded, DependenciesInfos.DependenciesAddMode.Merged)
+            Return If(boolValue, DependenciesAddMode.Embedded, DependenciesAddMode.Merged)
         End Function
 
         Private Function DependenciesCompressEncryptModeValue(intValue%) As CompressEncryptMode
@@ -85,7 +59,7 @@
             If Not Me.disposedValue Then
                 If disposing Then
                 End If
-                m_Enabled = False
+                _Enabled = False
             End If
             Me.disposedValue = True
         End Sub

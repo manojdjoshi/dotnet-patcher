@@ -11,8 +11,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("LoginTheme")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("LoginTheme")> 
-<Assembly: AssemblyCopyright("Copyright © 2016")> 
+<Assembly: AssemblyProduct("LoginTheme")>
+<Assembly: AssemblyCopyright("Copyright © 2017")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

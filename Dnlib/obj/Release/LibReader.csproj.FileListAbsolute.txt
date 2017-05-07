@@ -1,0 +1,5 @@
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\bin\Release\LibReader.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\bin\Release\LibReader.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\LibReader.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\LibReader.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\LibReader.csprojResolveAssemblyReference.cache

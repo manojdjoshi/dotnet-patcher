@@ -1,0 +1,5 @@
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\bin\Release\PeManager.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\bin\Release\PeManager.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\PeManager.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\PeManager.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Release\PeManager.pdb

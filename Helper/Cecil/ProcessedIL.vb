@@ -9,7 +9,7 @@ Namespace CecilHelper
 #End Region
 
 #Region " Constructors "
-        Public Sub New(ByVal instruct As Instruction)
+        Public Sub New(instruct As Instruction)
             Me.New(instruct, instruct.Offset)
         End Sub
 

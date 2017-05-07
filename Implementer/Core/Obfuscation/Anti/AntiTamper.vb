@@ -1,12 +1,8 @@
 ﻿Imports Helper.RandomizeHelper
 Imports System.IO
 Imports Helper.CecilHelper
-Imports Mono.Cecil.Cil
-Imports Mono.Cecil.Rocks
-Imports System.Threading
 Imports Mono.Cecil
 Imports System.Security.Cryptography
-Imports Helper.CodeDomHelper
 Imports Implementer.Core.Obfuscation.Builder
 
 Namespace Core.Obfuscation.Anti
@@ -15,7 +11,7 @@ Namespace Core.Obfuscation.Anti
         Inherits Source
 
 #Region " Methods "
-        Friend Shared Sub CreateAntiTamperClass(AssDef As AssemblyDefinition, ByVal framwk$, EnabledPack As Boolean)
+        Friend Shared Sub CreateAntiTamperClass(AssDef As AssemblyDefinition, framwk$, EnabledPack As Boolean)
             Try
                 AssemblyDef = AssDef
                 Frmwk = framwk
@@ -35,7 +31,7 @@ Namespace Core.Obfuscation.Anti
             End Try
         End Sub
 
-        Public Shared Sub InjectMD5(ByVal SelectedFile As String)
+        Public Shared Sub InjectMD5(SelectedFile As String)
             Dim md5bytes As Byte() = Nothing
             md5bytes = CType(CryptoConfig.CreateFromName("MD5"), HashAlgorithm).ComputeHash(File.ReadAllBytes(SelectedFile))
             Using stream = New FileStream(SelectedFile, FileMode.Append)

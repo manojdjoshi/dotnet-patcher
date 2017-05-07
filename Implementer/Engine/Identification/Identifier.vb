@@ -1,12 +1,8 @@
 ﻿Imports System.IO
 Imports Mono.Cecil
 Imports Mono.Cecil.Rocks
-Imports System.Runtime.InteropServices
-Imports System.Reflection.Emit
-Imports System.Reflection
 Imports Helper.UtilsHelper
 Imports Helper.AssemblyHelper
-Imports Helper.CecilHelper
 Imports Mono.Cecil.Cil
 Imports Implementer.engine.Analyze
 
@@ -19,10 +15,10 @@ Namespace Engine.Identification
         Private Shared m_assem As Data = Nothing
         Private Shared m_assDef As AssemblyDefinition = Nothing
         Private Shared m_assDefEntryPoint As MethodDefinition = Nothing
-        Private Shared m_assDefReferences As Generic.ICollection(Of AssemblyNameReference)
-        Private Shared m_assDefResources As Generic.ICollection(Of Resource)
-        Private Shared m_assDefTypes As Generic.ICollection(Of TypeDefinition)
-        Private Shared m_assDefModuleReferences As Generic.ICollection(Of ModuleReference)
+        Private Shared m_assDefReferences As ICollection(Of AssemblyNameReference)
+        Private Shared m_assDefResources As ICollection(Of Resource)
+        Private Shared m_assDefTypes As ICollection(Of TypeDefinition)
+        Private Shared m_assDefModuleReferences As ICollection(Of ModuleReference)
 
         Private Shared ReadOnly IdentifierSearcher As New List(Of ObfuscatorPackerIdentifierDelegate)() From { _
       New ObfuscatorPackerIdentifierDelegate(AddressOf findConfuserObfuscator), _
@@ -60,9 +56,14 @@ Namespace Engine.Identification
 
 #Region " Methods "
         Public Shared Function search(e As ValidatedFile) As IdentifierResult
-            If e.peInfos.HasInvalidSectionHeader Then
-                Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
-            End If
+
+            '################################################## COMMENT IT IF NECESSARY  ################################################
+
+            'If e.peInfos.HasInvalidSectionHeader Then
+            '    Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
+            'End If
+
+            '#############################################################################################################################
 
             m_assem = e.assembly
             m_HexAssembly = Functions.AssemblyToHex(m_assem.Location)

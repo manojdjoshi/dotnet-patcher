@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Injections")]
-[assembly: AssemblyCopyright("Copyright © 3DotDev 2016")]
+[assembly: AssemblyCopyright("Copyright © 3DotDev 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

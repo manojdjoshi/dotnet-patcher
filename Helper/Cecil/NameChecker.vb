@@ -36,7 +36,7 @@ Namespace CecilHelper
         ''' INFO : Verifying if eventDefinition is renamable
         ''' </summary>
         ''' <param name="Events"></param>
-        Public Shared Function IsRenamable(ByVal Events As EventDefinition) As Boolean
+        Public Shared Function IsRenamable(Events As EventDefinition) As Boolean
             Return If(Not Events.IsSpecialName OrElse Not Events.IsRuntimeSpecialName OrElse Not Events.IsDefinition, True, False)
         End Function
 

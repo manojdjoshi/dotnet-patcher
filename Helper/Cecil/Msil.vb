@@ -8,16 +8,16 @@ Namespace CecilHelper
         Property MethodBody As MethodBody
         Property ProcessedInstructions As List(Of ProcessedIL)
 #End Region
-       
+
 #Region " Constructor "
-        Public Sub New(ByVal methodBody As MethodBody)
+        Public Sub New(methodBody As MethodBody)
             _MethodBody = methodBody
             CollectInstructions()
         End Sub
 #End Region
-      
+
 #Region " Methods "
-        Public Sub Append(ByVal newInstruction As Instruction)
+        Public Sub Append(newInstruction As Instruction)
             _MethodBody.Instructions.Add(newInstruction)
             ProcessedInstructions.Add(New ProcessedIL(newInstruction))
         End Sub
@@ -116,17 +116,17 @@ Namespace CecilHelper
             Next
         End Sub
 
-        Private Function GetIndex(ByVal instruction As Instruction) As Integer
+        Private Function GetIndex(instruct As Instruction) As Integer
             Dim i%
             For i = 0 To ProcessedInstructions.Count - 1
-                If (ProcessedInstructions.Item(i).Instruction Is instruction) Then
+                If (ProcessedInstructions.Item(i).Instruction Is instruct) Then
                     Return i
                 End If
             Next i
             Return -1
         End Function
 
-        Private Function GetOpCodeByName(ByVal name As String) As OpCode?
+        Private Function GetOpCodeByName(name As String) As OpCode?
             Dim info As Reflection.FieldInfo
             For Each info In GetType(OpCodes).GetFields
                 If (info.Name.ToLower = name) Then
@@ -136,21 +136,21 @@ Namespace CecilHelper
             Return Nothing
         End Function
 
-        Public Sub InsertAfter(ByVal targetInstruction As Instruction, ByVal newInstruction As Instruction)
+        Public Sub InsertAfter(targetInstruction As Instruction, newInstruction As Instruction)
             Dim index% = (GetIndex(targetInstruction) + 1)
             _MethodBody.Instructions.Insert(index, newInstruction)
             UpdateExceptionHandlers(newInstruction, (targetInstruction.Offset + targetInstruction.GetSize))
             ProcessedInstructions.Insert(index, New ProcessedIL(newInstruction, True))
         End Sub
 
-        Public Sub InsertBefore(ByVal targetInstruction As Instruction, ByVal newInstruction As Instruction)
+        Public Sub InsertBefore(targetInstruction As Instruction, newInstruction As Instruction)
             Dim index% = GetIndex(targetInstruction)
             Me._MethodBody.Instructions.Insert(index, newInstruction)
             Me.UpdateExceptionHandlers(newInstruction, targetInstruction.Offset)
             Me.ProcessedInstructions.Insert(index, New ProcessedIL(newInstruction, True))
         End Sub
 
-        Private Function OptimizeOpCode(ByVal opcode As OpCode) As OpCode
+        Private Function OptimizeOpCode(opcode As OpCode) As OpCode
             If (opcode.OperandType = OperandType.InlineBrTarget) Then
                 Dim name As String = (opcode.Name.ToLower & "_s")
                 Dim opCodeByName As OpCode? = Me.GetOpCodeByName(name)
@@ -161,7 +161,7 @@ Namespace CecilHelper
             Return opcode
         End Function
 
-        Public Sub Replace(ByVal targetInstruction As Instruction, ByVal newInstruction As Instruction)
+        Public Sub Replace(targetInstruction As Instruction, newInstruction As Instruction)
             Dim index% = GetIndex(targetInstruction)
             UpdateExceptionHandlers(newInstruction, targetInstruction.Offset)
             ProcessedInstructions.RemoveAt(index)
@@ -170,7 +170,7 @@ Namespace CecilHelper
             _MethodBody.Instructions.Insert(index, newInstruction)
         End Sub
 
-        Private Function SimplifyOpCode(ByVal opcode As OpCode) As OpCode
+        Private Function SimplifyOpCode(opcode As OpCode) As OpCode
             If (opcode.OperandType = OperandType.ShortInlineBrTarget) Then
                 Dim name = opcode.Name.Remove((opcode.Name.Length - 2)).ToLower
                 Dim opCodeByName As OpCode? = Me.GetOpCodeByName(name)
@@ -181,9 +181,8 @@ Namespace CecilHelper
             Return opcode
         End Function
 
-        Private Sub UpdateExceptionHandlers(ByVal instruction As Instruction, ByVal offset As Integer)
-            Dim handler As ExceptionHandler
-            For Each handler In _MethodBody.ExceptionHandlers
+        Private Sub UpdateExceptionHandlers(instruction As Instruction, offset As Integer)
+            For Each handler As ExceptionHandler In _MethodBody.ExceptionHandlers
                 If (handler.TryStart.Offset = offset) Then
                     handler.TryStart = instruction
                 End If
@@ -202,11 +201,10 @@ Namespace CecilHelper
             Next
         End Sub
 #End Region
-       
-#Region "IDisposable Support"
-        Private disposedValue As Boolean ' Pour détecter les appels redondants
 
-        ' IDisposable
+#Region "IDisposable Support"
+        Private disposedValue As Boolean
+
         Protected Overridable Sub Dispose(disposing As Boolean)
             If Not Me.disposedValue Then
                 If disposing Then
@@ -220,9 +218,7 @@ Namespace CecilHelper
             Me.disposedValue = True
         End Sub
 
-        ' Ce code a été ajouté par Visual Basic pour permettre l'implémentation correcte du modèle pouvant être supprimé.
         Public Sub Dispose() Implements IDisposable.Dispose
-            ' Ne modifiez pas ce code. Ajoutez du code de nettoyage dans Dispose(disposing As Boolean) ci-dessus.
             Dispose(True)
             GC.SuppressFinalize(Me)
         End Sub

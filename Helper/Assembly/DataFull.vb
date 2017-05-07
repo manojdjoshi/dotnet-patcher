@@ -1,5 +1,4 @@
-﻿Imports System.Reflection
-Imports System.IO
+﻿Imports System.IO
 
 Namespace AssemblyHelper
     Public Class DataFull

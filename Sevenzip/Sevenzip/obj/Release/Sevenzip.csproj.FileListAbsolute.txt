@@ -171,3 +171,12 @@ E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\bin\Release\S
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb

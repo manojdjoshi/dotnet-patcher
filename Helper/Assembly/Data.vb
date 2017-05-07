@@ -5,6 +5,7 @@ Namespace AssemblyHelper
 
 #Region " Properties "
         Public Property AssName As String
+        Public Property FrameworkVersion As String
         Public Property AssVersion As String
         Public Property IsWpf As Boolean
         Public Property Location As String

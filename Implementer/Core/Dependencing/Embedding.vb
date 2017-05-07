@@ -1,20 +1,9 @@
 ﻿Imports System.IO
-Imports System.IO.Compression
-Imports System.CodeDom.Compiler
-Imports System.Text
-Imports System.Reflection
 Imports Mono.Cecil
-Imports Mono.Cecil.Cil
 Imports Helper.RandomizeHelper
-Imports Helper.CryptoHelper
 Imports Helper.CecilHelper
-Imports Helper.AssemblyHelper
-Imports Helper.CodeDomHelper
 Imports Implementer.Core.Dependencing.DependenciesInfos
 Imports Helper.UtilsHelper
-Imports System.Runtime.InteropServices
-Imports Implementer.Core.Packer
-Imports Implementer.Core.Obfuscation
 Imports Implementer.Core.Obfuscation.Builder
 
 Namespace Core.Dependencing

@@ -1,7 +1,6 @@
 ﻿Imports Helper.RandomizeHelper
 Imports System.CodeDom.Compiler
 Imports System.IO
-Imports Helper.UtilsHelper
 
 Namespace CodeDomHelper
     Public Class Compiler
@@ -10,7 +9,7 @@ Namespace CodeDomHelper
         Public Shared Function CreateStubFromString(MainClass$, FrmwkVersion$, str$, Optional ByVal ReferencencedAssemblies As Dictionary(Of String, Byte()) = Nothing) As String
             Try
                 Dim nam = Randomizer.GenerateNewAlphabetic()
-                Dim Version = New Collections.Generic.Dictionary(Of String, String) : Version.Add("CompilerVersion", FrmwkVersion)
+                Dim Version = New Dictionary(Of String, String) : Version.Add("CompilerVersion", FrmwkVersion)
                 Dim cProv As New VBCodeProvider(Version)
                 Dim cParams As New CompilerParameters()
                 With cParams
@@ -54,7 +53,7 @@ Namespace CodeDomHelper
 
         Public Shared Function CreateTypeFromString(MainClass$, FrmwkVersion$, str$) As Type
             Try
-                Dim Version = New Collections.Generic.Dictionary(Of String, String) : Version.Add("CompilerVersion", FrmwkVersion)
+                Dim Version = New Dictionary(Of String, String) : Version.Add("CompilerVersion", FrmwkVersion)
                 Dim cProv As New VBCodeProvider(Version)
                 Dim cParams As New CompilerParameters()
                 With cParams
