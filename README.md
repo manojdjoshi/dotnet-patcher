@@ -21,15 +21,15 @@ It doesn't support WPF .exe !
 * Exclusionary rules Manager
 * Anti-IlDasm, Anti-Tamper, Anti-Debug, Anti-Dumping
 * "System-Reflection" methods calls detection
-* Public calls hidding
-* Pinvoke calls hidding
+* Public calls hidding 
+* Pinvoke calls hidding (Use with caution)
 * Strings encryption
 * Numerics encryption
 * Constants encoding
 * Booleans encoding
-* Invalid Metadatas
+* Invalid Metadatas (Use with caution)
 * Mild calls
-* Stackflow
+* Stackflow (Use with caution)
 * Fake attributes injection
 * Invalid opcodes injection
 * Packer with LZX compression and encryption
@@ -49,6 +49,7 @@ It doesn't support WPF .exe !
 
 # Credits
 
+* 0xd4d : for [Dnlib Pe module] (https://github.com/0xd4d/dnlib) library
 * jbevains : for [MonoCecil](https://github.com/jbevain/cecil) library
 * Yck1509 : for [Confuser](https://confuser.codeplex.com/) project 
 * Daniel Doubrovkine : for his ResourceLib library [Vestris](https://github.com/dblock/resourcelib)
@@ -60,7 +61,7 @@ It doesn't support WPF .exe !
 
 # Copyright
 
-Copyright © 3DotDev 2008-2016
+Copyright © 3DotDev 2008-2017
 
 
 # Licence
