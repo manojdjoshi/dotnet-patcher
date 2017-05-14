@@ -19,6 +19,10 @@ Namespace RandomizeHelper
         Public Shared invisibleChars As Integer() = New Integer(3) {8203, 8204, 8206, 8207}
 #End Region
 
+#Region " Enumerations "
+
+#End Region
+
 #Region " Methods "
 
         Public Shared Function GenerateInvisible() As Integer
@@ -88,6 +92,10 @@ Namespace RandomizeHelper
 
         Public Shared Function GenerateNewAlphabetic() As String
             Return Alphabetic()
+        End Function
+
+        Public Shared Function GenerateNewJapaneese() As String
+            Return japanese()
         End Function
 
         Private Shared Function japanese() As String

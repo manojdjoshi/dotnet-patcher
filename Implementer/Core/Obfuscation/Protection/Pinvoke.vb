@@ -29,14 +29,17 @@ Namespace Core.Obfuscation.Protection
             Frmwk = Framework
             Pack = packIt
 
-            Dim Types As New List(Of TypeDefinition)()
+            Dim Types As New List(Of TypeDefinition)
             Dim HasPinvokeCalls As Boolean
             For Each mo As ModuleDefinition In asm.Modules
                 For Each t In mo.GetAllTypes()
                     Types.Add(t)
-                    If t.Methods.Any(Function(f) f.IsPInvokeImpl) = True Then
-                        HasPinvokeCalls = True
-                    End If
+                    For Each m In t.Methods
+                        If m.IsPInvokeImpl Then
+                            HasPinvokeCalls = True
+                            Exit For
+                        End If
+                    Next
                 Next
             Next
 

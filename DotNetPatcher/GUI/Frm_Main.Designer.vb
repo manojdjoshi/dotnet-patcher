@@ -1,12 +1,12 @@
 ﻿Imports LoginTheme
 Imports LoginTheme.XertzLoginTheme
 
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_Main
     Inherits Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -23,7 +23,7 @@ Partial Class Frm_Main
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Main))
         Me.BgwRenameTask = New System.ComponentModel.BackgroundWorker()
@@ -206,7 +206,7 @@ Partial Class Frm_Main
         Me.Frm_MainThemeContainer.ShowMinimizeButton = True
         Me.Frm_MainThemeContainer.Size = New System.Drawing.Size(704, 697)
         Me.Frm_MainThemeContainer.TabIndex = 0
-        Me.Frm_MainThemeContainer.Text = "DotNet Patcher v4.5"
+        Me.Frm_MainThemeContainer.Text = "DotNet Patcher v4.5.1"
         '
         'LnkLblBlogSpot
         '
@@ -333,9 +333,9 @@ Partial Class Frm_Main
         Me.LblAboutCredits.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblAboutCredits.Location = New System.Drawing.Point(343, 183)
         Me.LblAboutCredits.Name = "LblAboutCredits"
-        Me.LblAboutCredits.Size = New System.Drawing.Size(262, 15)
+        Me.LblAboutCredits.Size = New System.Drawing.Size(299, 15)
         Me.LblAboutCredits.TabIndex = 94
-        Me.LblAboutCredits.Text = "Jbevain, yck1509, Aeonhack, Xertz, Pl0xy, Ωɱega"
+        Me.LblAboutCredits.Text = "0xd4d, Jbevain, yck1509, Aeonhack, Xertz, Pl0xy, Ωɱega"
         '
         'LblAboutWebsite
         '
@@ -1044,7 +1044,7 @@ Partial Class Frm_Main
         Me.ChbObfuscatorExcludeReflection.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbObfuscatorExcludeReflection.Location = New System.Drawing.Point(22, 78)
         Me.ChbObfuscatorExcludeReflection.Name = "ChbObfuscatorExcludeReflection"
-        Me.ChbObfuscatorExcludeReflection.Size = New System.Drawing.Size(142, 22)
+        Me.ChbObfuscatorExcludeReflection.Size = New System.Drawing.Size(127, 22)
         Me.ChbObfuscatorExcludeReflection.TabIndex = 62
         Me.ChbObfuscatorExcludeReflection.Tag = ""
         Me.ChbObfuscatorExcludeReflection.Text = "Reflection analyzer"

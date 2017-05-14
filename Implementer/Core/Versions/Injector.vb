@@ -1,10 +1,4 @@
-﻿Imports System.ComponentModel
-Imports System.Runtime.InteropServices
-Imports System.CodeDom.Compiler
-Imports System.IO
-Imports Helper.RandomizeHelper
-Imports Helper.UtilsHelper
-Imports Mono.Cecil
+﻿Imports Mono.Cecil
 Imports System.Reflection
 Imports Helper.CecilHelper
 Imports Vestris.ResourceLib

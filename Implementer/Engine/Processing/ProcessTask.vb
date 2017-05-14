@@ -259,7 +259,13 @@ Namespace Engine.Processing
                 Else
                     If NameChecker.IsRenamable(meth) Then
                         meth = Renamer.RenameMethod(meth.DeclaringType, meth)
-                    End If
+
+                        If m_RenamingAccept.CustomAttributes Then
+                            If meth.HasCustomAttributes Then
+                                Utils.RemoveCustomAttributeByName(meth, "ObsoleteAttribute")
+                            End If
+                        End If
+                        End If
                 End If
             End If
             ProcessParameters(meth)

@@ -19,7 +19,7 @@ Namespace Core.Obfuscation.Protection
         Private functionName As String
         Private returnedType As TypeReference
         Private parameters As Mono.Collections.Generic.Collection(Of ParameterDefinition)
-        Private typeRefs As Generic.List(Of TypeReference)
+        Private typeRefs As List(Of TypeReference)
 #End Region
 
 #Region " Methods "
@@ -42,7 +42,7 @@ Namespace Core.Obfuscation.Protection
             functionName = If(originalMeth.PInvokeInfo.EntryPoint.ToString = Nothing, originalMeth.Name, originalMeth.PInvokeInfo.EntryPoint.ToString)
             returnedType = iteratedT.Module.Import(originalMeth.ReturnType)
             parameters = originalMeth.Parameters
-            typeRefs = parameters.ToList.ConvertAll(Of TypeReference)(Function(rt) rt.ParameterType)
+            typeRefs = parameters.ToList.ConvertAll(Function(rt) rt.ParameterType)
         End Sub
 
         Public Sub CreatePinvokeBody(LoaderInvoke As Stub)

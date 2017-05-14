@@ -245,7 +245,7 @@ Namespace Engine.Processing
             End If
         End Sub
 
-        Friend Shared Sub RenameInitializeComponentsValues(TypeDef As TypeDefinition, OriginalKeyName$, NewKeyName$, ByVal Properties As Boolean)
+        Friend Shared Sub RenameInitializeComponentsValues(TypeDef As TypeDefinition, OriginalKeyName$, NewKeyName$, Properties As Boolean)
             Dim methodSearch As MethodDefinition = Finder.FindMethod(TypeDef, "InitializeComponent")
             If Not methodSearch Is Nothing Then
                 If methodSearch.HasBody Then

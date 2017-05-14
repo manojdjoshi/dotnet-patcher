@@ -32,7 +32,7 @@ Namespace Core.Dependencing
             m_infos = Loader.Full(m_OriginalFilePath)
             If Not m_infos Is Nothing Then
                 If Not m_infos.TypesClass Is Nothing Then
-                    If m_infos.ManifestResourceStreams.Count <> 0 AndAlso m_infos.TypesClass.Any(Function(typeDef) typeDef.FullName.EndsWith(".My.Resources")) Then
+                    If m_infos.ManifestResourceStreams.Count <> 0 AndAlso m_infos.TypesClass.Any(Function(typeDef) typeDef.FullName.EndsWith(".My.Resources.Resources")) Then
                         For Each Res In m_infos.ManifestResourceStreams
                             Using read As New ResourceReader(Res)
                                 For Each Dat As DictionaryEntry In read

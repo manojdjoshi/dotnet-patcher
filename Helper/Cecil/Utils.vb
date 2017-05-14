@@ -8,7 +8,7 @@ Namespace CecilHelper
     Public NotInheritable Class Utils
 
 #Region " Methods "
-     
+
         Public Shared Function HasUnsafeInstructions(member As MethodDefinition) As Boolean
             If member.HasBody Then
                 If member.Body.HasVariables Then
@@ -19,6 +19,20 @@ Namespace CecilHelper
         End Function
 
         Public Shared Function RemoveCustomAttributeByName(member As AssemblyDefinition, CaName$) As Boolean
+            If member.HasCustomAttributes Then
+                Dim caList = Enumerable.Where(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+                Dim caCount = caList.Count
+                If caCount <> 0 Then
+                    Dim Finded = caList.First
+                    If Not Finded Is Nothing Then
+                        Return member.CustomAttributes.Remove(Finded)
+                    End If
+                End If
+            End If
+            Return False
+        End Function
+
+        Public Shared Function RemoveCustomAttributeByName(member As MethodDefinition, CaName$) As Boolean
             If member.HasCustomAttributes Then
                 Dim caList = Enumerable.Where(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
                 Dim caCount = caList.Count

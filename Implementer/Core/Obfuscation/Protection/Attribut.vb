@@ -34,7 +34,8 @@ Namespace Core.Obfuscation.Protection
                     ElseIf it = "DotNetPatcherPackerAttribute" Then
                     ElseIf it = "AssemblyInfoAttribute" Then
                     Else
-                        assdef.MainModule.Types.Add(item)
+                        creatAttribut(assdef, item, it)
+                        'assdef.MainModule.Types.Add(item)
                     End If
                 End If
             Next
@@ -54,7 +55,13 @@ Namespace Core.Obfuscation.Protection
             item.Methods.Add(method)
             assdef.MainModule.Types.Add(item)
             Dim att As New CustomAttribute(method)
-            att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, If(it = "AssemblyInfoAttribute", "", String.Format(("DotNetPatcher v" & GetType(Attribut).Assembly.GetName.Version.ToString), New Object(0 - 1) {}))))
+            Select Case it
+                Case "DotNetPatcherObfuscatorAttribute", "DotNetPatcherObfuscatorAttribute"
+                    att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, If(it = "AssemblyInfoAttribute", "", String.Format(("DotNetPatcher v" & GetType(Attribut).Assembly.GetName.Version.ToString), New Object(0 - 1) {}))))
+                Case Else
+                    att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, String.Empty))
+            End Select
+            'att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, If(it = "AssemblyInfoAttribute", "", String.Format(("DotNetPatcher v" & GetType(Attribut).Assembly.GetName.Version.ToString), New Object(0 - 1) {}))))
             assdef.MainModule.CustomAttributes.Add(att)
             assdef.CustomAttributes.Add(att)
         End Sub

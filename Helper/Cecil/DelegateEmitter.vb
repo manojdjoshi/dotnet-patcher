@@ -35,7 +35,7 @@ Namespace CecilHelper
             voidType = assDef.MainModule.Import(GetType(Void))
             objectType = assDef.MainModule.Import(GetType(Object))
             nativeIntType = assDef.MainModule.Import(GetType(IntPtr))
-            multidelegate = assDef.MainModule.Import(GetType(System.MulticastDelegate))
+            multidelegate = assDef.MainModule.Import(GetType(MulticastDelegate))
         End Sub
 
         Private Shared Function BuildConstructor() As MethodDefinition

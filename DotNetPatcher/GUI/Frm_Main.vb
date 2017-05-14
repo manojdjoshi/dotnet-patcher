@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.ComponentModel
 Imports System.Drawing.Imaging
 Imports Implementer.Engine.Analyze
 Imports Implementer.Engine.Context
@@ -9,10 +10,9 @@ Imports Implementer.Core.Versions
 Imports Implementer.Core.ManifestRequest
 Imports Implementer.Core.IconChanger
 Imports Implementer.Core.Packer
-Imports LoginTheme.XertzLoginTheme
 Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Core.Obfuscation.Exclusion
-Imports System.ComponentModel
+Imports LoginTheme.XertzLoginTheme
 
 Public Class Frm_Main
 
@@ -90,11 +90,9 @@ Public Class Frm_Main
                 TxbCpuTargetInfo.Text = m_param.getProcessArchitecture
                 PbxSelectedFile.Image = m_param.getMainIcon
                 TxbSelectedFile.Text = FilePath
-
                 TxbPackerFramework.Text = TxbFrameworkInfo.Text
                 TxbPackerPlatform.Text = TxbCpuTargetInfo.Text
                 TxbPackerSystem.Text = TxbType.Text
-
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -493,13 +491,8 @@ Public Class Frm_Main
     End Function
 
     Private Sub Frm_Exclusion_OnShowingExclusionInfos(e As ExcludeList) Handles m_exclude.OnShowingExclusionInfos
-        If e.itemsCount <> 0 Then
-            BtnExclusion.BorderColour = Color.BlueViolet
-            BtnExclusion.Text = "Exclusion rules (" & e.itemsCount & ")"
-        Else
-            BtnExclusion.BorderColour = Color.DimGray
-            BtnExclusion.Text = "Exclusion rules (0)"
-        End If
+        BtnExclusion.BorderColour = If(e.itemsCount <> 0, Color.BlueViolet, Color.DimGray)
+        BtnExclusion.Text = If(e.itemsCount <> 0, "Exclusion rules (" & e.itemsCount & ")", "Exclusion rules (0)")
         BtnExclusion.Invalidate()
         m_param.ExcludeList = e
     End Sub
@@ -542,28 +535,16 @@ Public Class Frm_Main
 
     Private Sub ChbPackerEnabled_Click(sender As Object, e As EventArgs) Handles ChbPackerEnabled.Click
         PnlPackerEnabled.Enabled = ChbPackerEnabled.Checked
-        If ChbPackerEnabled.Checked Then
-            ChbObfuscatorResourcesContent.Enabled = False
-            ChbObfuscatorResourcesContent.Checked = False
-            ChbObfuscatorResourcesEncryption.Enabled = False
-            ChbObfuscatorResourcesEncryption.Checked = False
-            ChbObfuscatorResourcesCompress.Enabled = False
-            ChbObfuscatorResourcesCompress.Checked = False
-            ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = False
-            ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = False
-            GbxPackerLoader.Enabled = True
-        Else
-            ChbObfuscatorResourcesContent.Enabled = True
-            ChbObfuscatorResourcesContent.Checked = True
-            ChbObfuscatorResourcesEncryption.Enabled = True
-            ChbObfuscatorResourcesEncryption.Checked = True
-            ChbObfuscatorResourcesCompress.Enabled = True
-            ChbObfuscatorResourcesCompress.Checked = True
-            ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = True
-            ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = False
-            GbxPackerLoader.Enabled = False
-            ChbPackerEnabled.Checked = False
-        End If
+        Dim state As Boolean = ChbPackerEnabled.Checked
+        ChbObfuscatorResourcesContent.Enabled = If(state, False, True)
+        ChbObfuscatorResourcesContent.Checked = If(state, False, True)
+        ChbObfuscatorResourcesEncryption.Enabled = If(state, False, True)
+        ChbObfuscatorResourcesEncryption.Checked = If(state, False, True)
+        ChbObfuscatorResourcesCompress.Enabled = If(state, False, True)
+        ChbObfuscatorResourcesCompress.Checked = If(state, False, True)
+        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = If(state, False, True)
+        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = If(state, False, True)
+        GbxPackerLoader.Enabled = If(state, True, False)
     End Sub
 
     Private Sub TpPacker_Enter(sender As Object, e As EventArgs) Handles TpPacker.Enter

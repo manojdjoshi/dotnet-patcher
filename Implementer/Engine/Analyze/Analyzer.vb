@@ -52,16 +52,13 @@ Namespace Engine.Analyze
         Public Function isValidFile() As Boolean
             If m_pe.isExecutable Then
                 If m_pe.IsManaged Then
-
                     Dim infos = Loader.Minimal(_inputFile)
                     If infos.Result = Data.Message.Success Then
-
                         If infos.EntryPoint IsNot Nothing Then
                             m_assemblyName = infos.AssName
                             m_targetFramework = infos.FrameworkVersion
                             m_assemblyVersion = infos.AssVersion
                             m_isWpfProgram = infos.IsWpf
-
                             If m_isWpfProgram = False Then
                                 RaiseEvent FileValidated(Me, New ValidatedFile(True, m_pe, infos))
                                 Return True
