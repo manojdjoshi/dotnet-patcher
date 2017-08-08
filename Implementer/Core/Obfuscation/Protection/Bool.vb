@@ -63,11 +63,11 @@ Namespace Core.Obfuscation.Protection
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    If NameChecker.IsRenamable(type) Then
-                        If Exclude.isBooleanEncryptExclude(type) = False Then
+                    'If NameChecker.IsRenamable(type) Then
+                    If Exclude.isBooleanEncryptExclude(type) = False Then
                             IterateType(type)
                         End If
-                    End If
+                    'End If
                 Next
                 Types.Clear()
             Next
@@ -97,7 +97,7 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.FindCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then

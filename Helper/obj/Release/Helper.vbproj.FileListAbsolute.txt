@@ -338,3 +338,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.Resources
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache

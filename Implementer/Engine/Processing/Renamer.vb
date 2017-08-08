@@ -23,7 +23,7 @@ Namespace Engine.Processing
                 If method.PInvokeInfo.EntryPoint = String.Empty Then method.PInvokeInfo.EntryPoint = MethodOriginal
             End If
 
-            If Not Finder.FindGenericParameter(method) AndAlso Not Finder.FindCustomAttributeByName(method, "DebuggerHiddenAttribute") Then
+            If Not Finder.FindGenericParameter(method) AndAlso Not Finder.HasCustomAttributeByName(method, "DebuggerHiddenAttribute") Then
                 method.Name = Mapping.RenameMethodMember(method, MethodPublicObf)
             End If
 

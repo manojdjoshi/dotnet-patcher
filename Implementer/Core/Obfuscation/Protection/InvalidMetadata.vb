@@ -1,11 +1,7 @@
 ﻿Imports Mono.Cecil
-Imports Mono.Cecil.Cil
 Imports Mono.Cecil.PE
-Imports Mono.Cecil.MetadataProcessor
 Imports Mono.Cecil.Metadata
-Imports Helper.RandomizeHelper
 Imports System.IO
-Imports System.Text
 Imports Implementer.Core.Obfuscation.Exclusion
 
 Namespace Core.Obfuscation.Protection

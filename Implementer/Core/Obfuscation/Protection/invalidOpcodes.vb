@@ -1,10 +1,5 @@
-﻿Imports System.Text
-Imports System.IO
-Imports System.CodeDom.Compiler
-Imports Mono.Cecil
+﻿Imports Mono.Cecil
 Imports Mono.Cecil.Cil
-Imports System.ComponentModel
-Imports System.Resources
 Imports Helper.RandomizeHelper
 Imports Helper.CecilHelper
 Imports Mono.Cecil.Rocks
@@ -34,7 +29,7 @@ Namespace Core.Obfuscation.Protection
                     Select t)
 
                     For Each method In (From mtd In type.Methods
-                        Where mtd.HasBody AndAlso Not Finder.FindCustomAttributeByName(mtd.DeclaringType, "EditorBrowsableAttribute")
+                        Where mtd.HasBody AndAlso Not Finder.HasCustomAttributeByName(mtd.DeclaringType, "EditorBrowsableAttribute")
                         Select mtd)
                         Using optim As New Msil(method.Body)
                             For i% = 0 To method.Body.Instructions.Count - 1

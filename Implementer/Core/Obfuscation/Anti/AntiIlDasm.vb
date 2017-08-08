@@ -10,7 +10,7 @@ Namespace Core.Obfuscation.Anti
 
         Friend Shared Sub Inject(Ass As AssemblyDefinition)
             Dim si As Type = GetType(SuppressIldasmAttribute)
-            If Finder.FindCustomAttributeByName(Ass, si.Name) = False Then
+            If Finder.HasCustomAttributeByName(Ass, si.Name) = False Then
                 Ass.CustomAttributes.Add(New CustomAttribute(Ass.MainModule.Import(si.GetConstructor(Type.EmptyTypes))))
             End If
         End Sub

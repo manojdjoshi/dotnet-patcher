@@ -25,7 +25,7 @@ Namespace Core.Obfuscation.Protection
                 For Each def In m.GetTypes
                     If Exclude.isIntegerEncodExclude(def) = False Then
                         For Each mDef In (From mtd In def.Methods
-                        Where mtd.HasBody AndAlso Not Finder.FindCustomAttributeByName(mtd.DeclaringType, "EditorBrowsableAttribute") AndAlso Utils.HasUnsafeInstructions(mtd) = False
+                        Where mtd.HasBody AndAlso Not Finder.HasCustomAttributeByName(mtd.DeclaringType, "EditorBrowsableAttribute") AndAlso Utils.HasUnsafeInstructions(mtd) = False
                         Select mtd)
                             Dim i%
                             Using optim As New Msil(mDef.Body)

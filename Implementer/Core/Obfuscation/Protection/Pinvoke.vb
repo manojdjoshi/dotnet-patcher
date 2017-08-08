@@ -89,9 +89,10 @@ Namespace Core.Obfuscation.Protection
 
                                             If Not originalMethod Is Nothing AndAlso Not originalMethod.DeclaringType Is Nothing AndAlso Not completedMethods.Contains(originalMethod) Then
                                                 If originalMethod.IsPInvokeImpl Then
-                                                    If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" Then
+                                                    If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" OrElse Not originalMethod.ReturnType.ToString = "System.Void" Then
                                                         Continue For
                                                     End If
+
                                                     If originalMethod.PInvokeInfo.EntryPoint.StartsWith("#") Then
                                                         originalMethod = Renamer.RenameMethod(originalMethod.DeclaringType, originalMethod)
                                                     Else

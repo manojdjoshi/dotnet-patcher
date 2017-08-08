@@ -263,3 +263,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.v
 D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.xml
 D:\Documents\Bitbucket\DotNetPatcher - Copie\LoginTheme\obj\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbprojResolveAssemblyReference.cache

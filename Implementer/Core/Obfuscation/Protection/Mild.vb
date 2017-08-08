@@ -13,6 +13,7 @@ Namespace Core.Obfuscation.Protection
 #Region " Fields "
         Private Shared MdByString As New Dictionary(Of String, MethodDefinition)
         Private Shared MdByInteger As New Dictionary(Of Integer, MethodDefinition)
+        Private Shared MdByLong As New Dictionary(Of Long, MethodDefinition)
         Private Shared MdByDouble As New Dictionary(Of Double, MethodDefinition)
         Private Shared MdBySingle As New Dictionary(Of Single, MethodDefinition)
         Private Shared MdByByte As New Dictionary(Of Byte, MethodDefinition)
@@ -29,11 +30,11 @@ Namespace Core.Obfuscation.Protection
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    If NameChecker.IsRenamable(type) Then
-                        If Exclude.isHideCallsExclude(type) = False Then
+                    'If NameChecker.IsRenamable(type) Then
+                    If Exclude.isHideCallsExclude(type) = False Then
                             IterateType(type)
                         End If
-                    End If
+                    'End If
                 Next
                 Types.Clear()
             Next
@@ -51,9 +52,9 @@ Namespace Core.Obfuscation.Protection
             MdByRef.Clear()
         End Sub
 
-        Private Shared Sub IterateType( td As TypeDefinition)
+        Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not Finder.FindCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not m.DeclaringType.BaseType.Name = "WindowsFormsApplicationBase" AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
@@ -165,6 +166,20 @@ Namespace Core.Obfuscation.Protection
                                                 completedMethods.Add(mdFinal)
                                                 completedInstructions.Add(Instruction)
                                             End If
+                                        ElseIf (Instruction.OpCode = OpCodes.Ldc_I8) Then
+                                            If MdByLong.ContainsKey(CLng(Instruction.Operand)) Then
+                                                mdFinal = MdBySingle.Item(CLng(Instruction.Operand))
+                                            Else
+                                                mdFinal = CreateMethod(CLng(Instruction.Operand), md)
+                                                MdByLong.Add(CLng(Instruction.Operand), mdFinal)
+                                            End If
+                                            If (Not mdFinal Is Nothing) Then
+                                                md.Body.Instructions.Item(index).OpCode = OpCodes.Call
+                                                md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
+
+                                                completedMethods.Add(mdFinal)
+                                                completedInstructions.Add(Instruction)
+                                            End If
                                         ElseIf (Instruction.OpCode = OpCodes.Ldc_R8) Then
                                             If MdByDouble.ContainsKey(CDbl(Instruction.Operand)) Then
                                                 mdFinal = MdByDouble.Item(CDbl(Instruction.Operand))
@@ -200,6 +215,7 @@ Namespace Core.Obfuscation.Protection
             End If
             Dim item As New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(targetConstructor.DeclaringType))
             item.Body = New MethodBody(item)
+            item.IsPublic = True
             Dim ilProc As ILProcessor = item.Body.GetILProcessor()
             With ilProc
                 .Body.MaxStackSize = 1
@@ -220,6 +236,8 @@ Namespace Core.Obfuscation.Protection
                     opc = OpCodes.Ldstr
                 Case GetType(Integer)
                     opc = OpCodes.Ldc_I4
+                Case GetType(Long)
+                    opc = OpCodes.Ldc_I8
                 Case GetType(Byte)
                     opc = OpCodes.Ldc_I4_S
                 Case GetType(Single)
@@ -229,6 +247,7 @@ Namespace Core.Obfuscation.Protection
             End Select
             Dim item As New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(value.GetType))
             item.Body = New MethodBody(item)
+            item.IsPublic = True
             Dim ilProc As ILProcessor = item.Body.GetILProcessor()
             With ilProc
                 .Body.MaxStackSize = 1

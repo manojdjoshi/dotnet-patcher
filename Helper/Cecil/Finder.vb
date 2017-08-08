@@ -4,15 +4,23 @@ Namespace CecilHelper
     Public NotInheritable Class Finder
 
 #Region " Methods "
-        Public Shared Function FindCustomAttributeByName(member As MethodDefinition, CaName$) As Boolean
+        Public Shared Function HasCustomAttributeByName(member As MethodDefinition, CaName$) As Boolean
             Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
-        Public Shared Function FindCustomAttributeByName(member As TypeDefinition, CaName$) As Boolean
+        Public Shared Function HasCustomAttributeByName(member As TypeDefinition, CaName$) As Boolean
             Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
-        Public Shared Function FindCustomAttributeByName(member As AssemblyDefinition, CaName$) As Boolean
+        Public Shared Function HasCustomAttributeByName(member As PropertyDefinition, CaName$) As Boolean
+            Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+        End Function
+
+        Public Shared Function HasCustomAttributeByName(member As FieldDefinition, CaName$) As Boolean
+            Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
+        End Function
+
+        Public Shared Function HasCustomAttributeByName(member As AssemblyDefinition, CaName$) As Boolean
             Return Enumerable.Any(member.CustomAttributes, Function(ca) ca.AttributeType.Name = CaName)
         End Function
 
@@ -116,7 +124,6 @@ Namespace CecilHelper
         End Function
 
         Public Shared Function frameworkVersion(assDef As AssemblyDefinition) As String
-            'MsgBox(assDef.MainModule.Runtime.ToString)
             Return If(assDef.MainModule.Runtime.ToString.StartsWith("Net_4"), "v4.0", "v2.0")
         End Function
 

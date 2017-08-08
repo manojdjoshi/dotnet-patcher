@@ -25,7 +25,7 @@ Namespace CecilHelper
             If Force Then
                 If method.HasBody Then
                     If Finder.AccessorMethods(method.DeclaringType).Contains(method) Then
-                        Return Not Finder.FindGenericParameter(method) AndAlso Not Finder.FindCustomAttributeByName(method, "DebuggerHiddenAttribute")
+                        Return Not Finder.FindGenericParameter(method) AndAlso Not Finder.HasCustomAttributeByName(method, "DebuggerHiddenAttribute")
                     End If
                 End If
             End If
@@ -46,7 +46,8 @@ Namespace CecilHelper
         ''' </summary>
         ''' <param name="prop"></param>
         Public Shared Function IsRenamable(prop As PropertyDefinition) As Boolean
-            Return prop IsNot Nothing AndAlso Not (prop.IsRuntimeSpecialName OrElse prop.IsSpecialName OrElse prop.DeclaringType.IsSerializable OrElse prop.DeclaringType.IsGenericInstance OrElse prop.DeclaringType.HasGenericParameters)
+            Dim IsSerializable As Boolean = Finder.HasCustomAttributeByName(prop, "XmlIgnoreAttribute") = False AndAlso prop.DeclaringType.IsSerializable
+            Return prop IsNot Nothing AndAlso Not (prop.IsRuntimeSpecialName OrElse prop.IsSpecialName OrElse IsSerializable OrElse prop.DeclaringType.IsGenericInstance OrElse prop.DeclaringType.HasGenericParameters)
         End Function
 
         ''' <summary>
@@ -54,7 +55,8 @@ Namespace CecilHelper
         ''' </summary>
         ''' <param name="field"></param>
         Public Shared Function IsRenamable(field As FieldDefinition) As Boolean
-            If (Not field.IsRuntimeSpecialName AndAlso Not field.DeclaringType.HasGenericParameters AndAlso Not field.DeclaringType.IsSerializable AndAlso Not field.DeclaringType.IsGenericInstance) And Not field.IsPInvokeImpl AndAlso Not field.IsSpecialName Then
+            Dim IsSerializable As Boolean = Finder.HasCustomAttributeByName(field, "XmlIgnoreAttribute") = False AndAlso field.DeclaringType.IsSerializable
+            If (Not field.IsRuntimeSpecialName AndAlso Not field.DeclaringType.HasGenericParameters AndAlso Not IsSerializable AndAlso Not field.DeclaringType.IsGenericInstance) And Not field.IsPInvokeImpl AndAlso Not field.IsSpecialName Then
                 Return True
             End If
             Return False

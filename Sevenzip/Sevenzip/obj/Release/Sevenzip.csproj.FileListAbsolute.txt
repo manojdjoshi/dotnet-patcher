@@ -180,3 +180,4 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\bin\Release\Seven
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
