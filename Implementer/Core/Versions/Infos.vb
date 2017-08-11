@@ -1,5 +1,4 @@
-﻿
-Namespace Core.Versions
+﻿Namespace Core.Versions
     Public Class Infos
         Implements IDisposable
 

@@ -118,3 +118,10 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\DotNetPatcher\obj\Debug\DotNetPatch
 D:\Documents\Bitbucket\DotNetPatcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
 D:\Documents\Bitbucket\DotNetPatcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
 D:\Documents\Bitbucket\DotNetPatcher - Copie\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\bin\Debug\DotNetPatcher.exe.config
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Exclusion.resources
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Result.resources
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.Frm_Main.resources
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher0\DotNetPatcher\obj\Debug\DotNetPatcher.vbproj.GenerateResource.Cache

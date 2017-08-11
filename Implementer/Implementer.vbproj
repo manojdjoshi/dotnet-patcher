@@ -48,8 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Cecil, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Mono.Cecil">
       <HintPath>bin\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -72,6 +71,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Obfuscation\Protection\ControlFlow.vb" />
     <Compile Include="Engine\Analyze\Analyzer.vb" />
     <Compile Include="Engine\Analyze\ValidatedFile.vb" />
     <Compile Include="Engine\Context\RenamerState.vb" />
@@ -120,7 +120,6 @@
     <Compile Include="Core\Dependencing\Dependencies.vb" />
     <Compile Include="Core\Dependencing\AnalysisResult.vb" />
     <Compile Include="Core\Obfuscation\Builder\Source.vb" />
-    <Compile Include="Core\Obfuscation\Protection\InvalidOpcodes.vb" />
     <Compile Include="Engine\Processing\Mapping.vb" />
     <Compile Include="Engine\Processing\ProcessTask.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

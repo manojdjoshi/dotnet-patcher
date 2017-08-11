@@ -35,7 +35,7 @@ Namespace UtilsHelper
             Dim sVal As String
             Dim sHex As String = ""
             While Data.Length > 0
-                sVal = Conversion.Hex(Strings.Asc(Data.Substring(0, 1).ToString()))
+                sVal = Hex(Asc(Data.Substring(0, 1).ToString()))
                 Data = Data.Substring(1, Data.Length - 1)
                 sHex = sHex & sVal
             End While

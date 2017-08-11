@@ -1,1 +1,2 @@
 D:\Documents\Bitbucket\DotNetPatcher - Copie\LibReader\obj\Debug\dnlib.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher0\Dnlib\obj\Debug\dnlib.csprojResolveAssemblyReference.cache

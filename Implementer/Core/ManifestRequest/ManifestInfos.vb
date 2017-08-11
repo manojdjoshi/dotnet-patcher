@@ -1,8 +1,4 @@
-﻿Imports System.IO
-Imports Vestris.ResourceLib
-Imports System.Xml
-
-Namespace Core.ManifestRequest
+﻿Namespace Core.ManifestRequest
     Public Class ManifestInfos
         Implements IDisposable
 

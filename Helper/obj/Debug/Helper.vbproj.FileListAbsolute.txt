@@ -28,3 +28,11 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Debug\Helper.Resources.r
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Debug\Helper.vbproj.GenerateResource.Cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Debug\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Helper\obj\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.pdb

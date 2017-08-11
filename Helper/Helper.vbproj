@@ -45,9 +45,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mono.Cecil, Version=0.9.4.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Mono.Cecil, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Implementer\bin\Mono.Cecil.dll</HintPath>
+      <HintPath>bin\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -72,6 +72,8 @@
     <Compile Include="Assembly\DataFull.vb" />
     <Compile Include="Cecil\DelegateEmitter.vb" />
     <Compile Include="Cecil\Finder.vb" />
+    <Compile Include="Cecil\InstructionGroup.vb" />
+    <Compile Include="Cecil\InstructionGroups.vb" />
     <Compile Include="Cecil\NameChecker.vb" />
     <Compile Include="Cecil\ProcessedIL.vb" />
     <Compile Include="CodeDom\Compiler.vb" />

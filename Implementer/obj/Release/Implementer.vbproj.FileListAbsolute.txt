@@ -777,22 +777,6 @@ E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Implementer\obj\Release\Impleme
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Implementer\obj\Release\Implementer.vbproj.GenerateResource.Cache
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Implementer\obj\Release\Implementer.dll
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Implementer\obj\Release\Implementer.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Implementer.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Implementer.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Helper.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Mono.Cecil.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Vestris.ResourceLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Helper.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Vestris.ResourceLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbprojResolveAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.Resources.resources
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbproj.GenerateResource.Cache
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.dll
-D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\bin\Release\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\bin\Release\Implementer.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\bin\Release\dnlib.dll
@@ -812,6 +796,41 @@ D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\obj\Release\Implementer
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\obj\Release\Implementer.vbproj.GenerateResource.Cache
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\obj\Release\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Implementer\obj\Release\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Implementer.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Release\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\dnlib.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\dnlib.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\Vestris.ResourceLib.xml
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Release\Implementer.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Release\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Release\Implementer.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Release\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Release\Implementer.pdb

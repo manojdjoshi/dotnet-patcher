@@ -195,8 +195,8 @@ Namespace CecilHelper
 
                 Dim psr As ILProcessor = bdy.GetILProcessor()
 
-                For Each var As VariableDefinition In old.Variables
-                    bdy.Variables.Add(New VariableDefinition(var.Name, ImportType(var.VariableType, mDef, newMtd, mems)))
+                For Each varDef As VariableDefinition In old.Variables
+                    bdy.Variables.Add(New VariableDefinition(ImportType(varDef.VariableType, mDef, newMtd, mems)))
                 Next
 
                 For Each inst As Instruction In old.Instructions
@@ -349,7 +349,7 @@ Namespace CecilHelper
                 Dim psr As ILProcessor = bdy.GetILProcessor()
 
                 For Each var As VariableDefinition In old.Variables
-                    bdy.Variables.Add(New VariableDefinition(var.Name, ImportType(var.VariableType, targetModule, ret, Nothing)))
+                    bdy.Variables.Add(New VariableDefinition(ImportType(var.VariableType, targetModule, ret, Nothing)))
                 Next
 
                 For Each inst As Instruction In old.Instructions

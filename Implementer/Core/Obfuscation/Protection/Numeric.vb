@@ -104,53 +104,53 @@ Namespace Core.Obfuscation.Protection
                                                         'If Randomizer.GenerateBoolean Then
 
                                                         mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
-                                                        mdFinal.Body = New MethodBody(mdFinal)
+                                                            mdFinal.Body = New MethodBody(mdFinal)
 
-                                                        If EncryptToResources = EncryptType.ToResources Then
-                                                            Dim integ = Randomizer.GenerateInvisible
+                                                            If EncryptToResources = EncryptType.ToResources Then
+                                                                Dim integ = Randomizer.GenerateInvisible
 
-                                                            Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
-                                                            Dim dataKeyName = Randomizer.GenerateNew
-                                                            ResWriter.AddResource(dataKeyName, encStr)
+                                                                Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
+                                                                Dim dataKeyName = Randomizer.GenerateNew
+                                                                ResWriter.AddResource(dataKeyName, encStr)
 
-                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                            With ilProc
-                                                                .Body.MaxStackSize = 2
-                                                                .Body.InitLocals = True
-                                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                .Emit(OpCodes.Ldstr, dataKeyName)
-                                                                .Emit(OpCodes.Call, md.Module.Import(DecryptReadResources.GetMethod1))
-                                                                .Emit(OpCodes.Ldc_I4, integ)
-                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
-                                                                .Emit(OpCodes.Stloc_0)
-                                                                .Emit(OpCodes.Ldloc_0)
-                                                                .Emit(OpCodes.Ret)
-                                                            End With
+                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                                With ilProc
+                                                                    .Body.MaxStackSize = 2
+                                                                    .Body.InitLocals = True
+                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                                    .Emit(OpCodes.Ldstr, dataKeyName)
+                                                                    .Emit(OpCodes.Call, md.Module.Import(DecryptReadResources.GetMethod1))
+                                                                    .Emit(OpCodes.Ldc_I4, integ)
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
+                                                                    .Emit(OpCodes.Stloc_0)
+                                                                    .Emit(OpCodes.Ldloc_0)
+                                                                    .Emit(OpCodes.Ret)
+                                                                End With
 
-                                                            md.DeclaringType.Methods.Add(mdFinal)
-                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                        Else
-                                                            Dim integ = Randomizer.GenerateInvisible
-                                                            Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
+                                                                md.DeclaringType.Methods.Add(mdFinal)
+                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                            Else
+                                                                Dim integ = Randomizer.GenerateInvisible
+                                                                Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
 
-                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                            With ilProc
-                                                                .Body.MaxStackSize = 2
-                                                                .Body.InitLocals = True
-                                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                .Emit(OpCodes.Ldstr, encStr)
-                                                                .Emit(OpCodes.Ldc_I4, integ)
-                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
-                                                                .Emit(OpCodes.Stloc_0)
-                                                                .Emit(OpCodes.Ldloc_0)
-                                                                .Emit(OpCodes.Ret)
-                                                            End With
+                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                                With ilProc
+                                                                    .Body.MaxStackSize = 2
+                                                                    .Body.InitLocals = True
+                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                                    .Emit(OpCodes.Ldstr, encStr)
+                                                                    .Emit(OpCodes.Ldc_I4, integ)
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
+                                                                    .Emit(OpCodes.Stloc_0)
+                                                                    .Emit(OpCodes.Ldloc_0)
+                                                                    .Emit(OpCodes.Ret)
+                                                                End With
 
-                                                            md.DeclaringType.Methods.Add(mdFinal)
-                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                        End If
+                                                                md.DeclaringType.Methods.Add(mdFinal)
+                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                            End If
                                                         'Else
-                                                        'Dim resultPrimes = GetPrimes(CInt(Instruct.Operand))
+                                                        '    Dim resultPrimes = GetPrimes(CInt(Instruct.Operand))
                                                         '    Dim countPrimes = resultPrimes.Count
                                                         '    If countPrimes > 2 Then
 
@@ -358,102 +358,102 @@ Namespace Core.Obfuscation.Protection
             publicMethods.Clear()
         End Sub
 
-        'Private Shared Function GetPrimes(n As Decimal) As List(Of Integer)
-        '    Dim storage As New List(Of Integer)()
-        '    While n > 1
-        '        Dim i% = 1
-        '        While True
-        '            If IsPrime(i) Then
-        '                If (CDec(n) / i) = Math.Round(CDec(n) / i) Then
-        '                    n /= i
-        '                    storage.Add(i)
-        '                    Exit While
-        '                End If
-        '            End If
-        '            i += 1
-        '        End While
-        '    End While
-        '    Return storage
-        'End Function
+        Private Shared Function GetPrimes(n As Decimal) As List(Of Integer)
+            Dim storage As New List(Of Integer)()
+            While n > 1
+                Dim i% = 1
+                'While True
+                If IsPrime(i) Then
+                    If (CDec(n) / i) = Math.Round(CDec(n) / i) Then
+                        n /= i
+                        storage.Add(i)
+                        Exit While
+                    End If
+                End If
+                i += 1
+                'End While
+            End While
+            Return storage
+        End Function
 
-        'Private Shared Function IsPrime(n As Integer) As Boolean
-        '    If n <= 1 Then
-        '        Return False
-        '    End If
-        '    For i% = 2 To Math.Sqrt(n)
-        '        If n Mod i = 0 Then
-        '            Return False
-        '        End If
-        '    Next
-        '    Return True
-        'End Function
+        Private Shared Function IsPrime(n As Integer) As Boolean
+            If n <= 1 Then
+                Return False
+            End If
+            For i% = 2 To Math.Sqrt(n)
+                If n Mod i = 0 Then
+                    Return False
+                End If
+            Next
+            Return True
+        End Function
 
-        'Private Shared Function DetermineDiv(real As Integer, ByRef div As Integer) As Integer
-        '    Dim num% = rand.Next(5, 40)
-        '    div = num
-        '    Dim v% = real
-        '    Try
-        '        v = (real * num)
-        '    Catch ex As System.OverflowException
-        '        div = 1
-        '    End Try
+        Private Shared Function DetermineDiv(real As Integer, ByRef div As Integer) As Integer
+            Dim num% = rand.Next(5, 40)
+            div = num
+            Dim v% = real
+            Try
+                v = (real * num)
+            Catch ex As System.OverflowException
+                div = 1
+            End Try
 
-        '    Return v
-        'End Function
+            Return v
+        End Function
 
-        'Private Shared Function InfixToPostfixConvert(ByRef infixBuffer As String, ByRef postfixBuffer As String) As Boolean
-        '    Dim prior% = 0
-        '    postfixBuffer = ""
+        Private Shared Function InfixToPostfixConvert(ByRef infixBuffer As String, ByRef postfixBuffer As String) As Boolean
+            Dim prior% = 0
+            postfixBuffer = ""
 
-        '    Dim s1 As New Stack(Of Char)
+            Dim s1 As New Stack(Of Char)
 
-        '    For i% = 0 To infixBuffer.Length - 1
-        '        Dim item As Char = infixBuffer.Chars(i)
-        '        Select Case item
-        '            Case "+"c, "-"c, "*"c, "/"c
-        '                If (s1.Count <= 0) Then
-        '                    s1.Push(item)
-        '                Else
-        '                    If ((s1.Peek = "*"c) OrElse (s1.Peek = "/"c)) Then
-        '                        prior = 1
-        '                    Else
-        '                        prior = 0
-        '                    End If
-        '                    If (prior = 1) Then
-        '                        Select Case item
-        '                            Case "+"c, "-"c
-        '                                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
-        '                                i -= 1
-        '                                Continue For
-        '                        End Select
-        '                        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
-        '                        i -= 1
-        '                    Else
-        '                        Select Case item
-        '                            Case "+"c, "-"c
-        '                                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
-        '                                s1.Push(item)
-        '                                Continue For
-        '                        End Select
-        '                        s1.Push(item)
-        '                    End If
-        '                End If
-        '                Exit Select
-        '            Case Else
-        '                postfixBuffer = (postfixBuffer & CStr(item))
-        '                Exit Select
-        '        End Select
-        '    Next
+            For i% = 0 To infixBuffer.Length - 1
+                Dim item As Char = infixBuffer.Chars(i)
+                Select Case item
+                    Case "+"c, "-"c, "*"c, "/"c
+                        If (s1.Count <= 0) Then
+                            s1.Push(item)
+                        Else
+                            If ((s1.Peek = "*"c) OrElse (s1.Peek = "/"c)) Then
+                                prior = 1
+                            Else
+                                prior = 0
+                            End If
+                            If (prior = 1) Then
+                                Select Case item
+                                    Case "+"c, "-"c
+                                        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                        i -= 1
+                                        Continue For
+                                End Select
+                                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                i -= 1
+                            Else
+                                Select Case item
+                                    Case "+"c, "-"c
+                                        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+                                        s1.Push(item)
+                                        Continue For
+                                End Select
+                                s1.Push(item)
+                            End If
+                        End If
+                        Exit Select
+                    Case Else
+                        postfixBuffer = (postfixBuffer & CStr(item))
+                        Exit Select
+                End Select
+            Next
 
-        '    Dim len% = s1.Count
-        '    For j% = 0 To len - 1
-        '        postfixBuffer = (postfixBuffer & CStr(s1.Pop))
-        '    Next
+            Dim len% = s1.Count
+            For j% = 0 To len - 1
+                postfixBuffer = (postfixBuffer & CStr(s1.Pop))
+            Next
 
-        '    postfixBuffer = postfixBuffer.Replace("/", " / ").Replace("*", " * ").Replace("+", " + ").Replace("-", " - ")
-        '    postfixBuffer = New Regex("[ ]{2,}", RegexOptions.None).Replace(postfixBuffer, " ")
-        '    Return True
-        'End Function
+            postfixBuffer = postfixBuffer.Replace("/", " / ").Replace("*", " * ").Replace("+", " + ").Replace("-", " - ")
+            postfixBuffer = New Regex("[ ]{2,}", RegexOptions.None).Replace(postfixBuffer, " ")
+            Return True
+        End Function
 
         Private Shared Sub DeleteStubs()
             If Not DecryptReadResources Is Nothing Then DecryptReadResources.DeleteDll()

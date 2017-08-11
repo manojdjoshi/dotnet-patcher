@@ -87,6 +87,10 @@ Namespace Engine.Processing
             Pinvoke.DoJob(AssDef, frmwk, m_RenamingAccept.ExclusionRule, pack)
         End Sub
 
+        Public Sub ProcessControlFlow(AssDef As AssemblyDefinition)
+            ControlFlow.DoJob(AssDef, m_RenamingAccept.ExclusionRule)
+        End Sub
+
         Public Sub ProcessConstants(AssDef As AssemblyDefinition)
             Constants.DoJob(AssDef, m_RenamingAccept.ExclusionRule)
         End Sub
@@ -126,10 +130,6 @@ Namespace Engine.Processing
 
         Public Sub ProcessAntiIlDasm(AssDef As AssemblyDefinition)
             AntiIlDasm.Inject(AssDef)
-        End Sub
-
-        Public Sub ProcessInvalidOpcodes(AssDef As AssemblyDefinition)
-            InvalidOpcodes.Inject(AssDef, m_RenamingAccept.ExclusionRule)
         End Sub
 
         Public Sub ProcessVersionInfos(FilePath$, Frmwk$, vInfos As Infos)

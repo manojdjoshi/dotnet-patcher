@@ -165,7 +165,7 @@ Public Class Frm_Exclusion
                 .Add(ChbExclusionIntegersEncode, SettingsState.integerEncoding)
                 .Add(ChbExclusionBooleanEncrypt, SettingsState.booleanEncrypt)
                 .Add(ChbExclusionHideCalls, SettingsState.hideCalls)
-                .Add(ChbExclusionInvalidOpCodes, SettingsState.InvalidOpcodes)
+                .Add(ChbExclusionControlflow, SettingsState.ControlFlow)
             End With
 
             SettingsButton.Keys.ToList.ForEach(Sub(x) x.Visible = False)
@@ -216,7 +216,7 @@ Public Class Frm_Exclusion
             ChbExclusionIntegersEncode.Checked = m_TreeviewHandler.isIntegersEncodingExclude(e.Node.Tag)
             ChbExclusionBooleanEncrypt.Checked = m_TreeviewHandler.isBooleansEncryptExclude(e.Node.Tag)
             ChbExclusionRenaming.Checked = m_TreeviewHandler.isRenamingExclude(e.Node.Tag)
-            ChbExclusionInvalidOpCodes.Checked = m_TreeviewHandler.isInvalidOpcodesExclude(e.Node.Tag)
+            ChbExclusionControlflow.Checked = m_TreeviewHandler.isControlFlowExclude(e.Node.Tag)
             ChbExclusionHideCalls.Checked = m_TreeviewHandler.isHideCallsExclude(e.Node.Tag)
 
             SettingsButton.Keys.ToList.ForEach(Sub(x) x.Enabled = ChbExclusion.Checked)
@@ -236,9 +236,9 @@ Public Class Frm_Exclusion
         ChbExclusionCheckAll.Checked = False
     End Sub
 
-    Private Sub IncludeAllChildNodes(treeNode As TreeNode, Optional ByVal nodeChecked As Boolean = False, Optional ByVal stringEncr As Boolean = False, _
-                                                           Optional ByVal integerEncod As Boolean = False, Optional ByVal booleanEncr As Boolean = False, _
-                                                           Optional ByVal Renamin As Boolean = False, Optional ByVal invalidOp As Boolean = False, _
+    Private Sub IncludeAllChildNodes(treeNode As TreeNode, Optional ByVal nodeChecked As Boolean = False, Optional ByVal stringEncr As Boolean = False,
+                                                           Optional ByVal integerEncod As Boolean = False, Optional ByVal booleanEncr As Boolean = False,
+                                                           Optional ByVal Renamin As Boolean = False, Optional ByVal ctrlflow As Boolean = False,
                                                            Optional ByVal hideCall As Boolean = False)
         For Each node As TreeNode In treeNode.Nodes
             With node
@@ -248,20 +248,20 @@ Public Class Frm_Exclusion
                     .Tag.integerEncoding = integerEncod
                     .Tag.booleanEncrypt = booleanEncr
                     .Tag.Renaming = Renamin
-                    .Tag.InvalidOpcodes = invalidOp
+                    .Tag.ControlFlow = ctrlflow
                     .Tag.HideCalls = hideCall
                     ColorNode(node, nodeChecked)
                     If .Nodes.Count > 0 Then
-                        IncludeAllChildNodes(node, nodeChecked, stringEncr, integerEncod, booleanEncr, Renamin, invalidOp, hideCall)
+                        IncludeAllChildNodes(node, nodeChecked, stringEncr, integerEncod, booleanEncr, Renamin, ctrlflow, hideCall)
                     End If
                 End If
             End With
         Next
     End Sub
 
-    Private Sub IncludeEntitiesChildNodes(treeNode As TreeNode, Optional ByVal nodeChecked As Boolean = False, Optional ByVal stringEncr As Boolean = False, _
-                                                                Optional ByVal integerEncod As Boolean = False, Optional ByVal booleanEncr As Boolean = False, _
-                                                                Optional ByVal Renamin As Boolean = False, Optional ByVal invalidOp As Boolean = False, _
+    Private Sub IncludeEntitiesChildNodes(treeNode As TreeNode, Optional ByVal nodeChecked As Boolean = False, Optional ByVal stringEncr As Boolean = False,
+                                                                Optional ByVal integerEncod As Boolean = False, Optional ByVal booleanEncr As Boolean = False,
+                                                                Optional ByVal Renamin As Boolean = False, Optional ByVal ctrlflow As Boolean = False,
                                                                 Optional ByVal hideCall As Boolean = False)
         For Each node As TreeNode In treeNode.Nodes
             With node
@@ -272,11 +272,11 @@ Public Class Frm_Exclusion
                     .Tag.integerEncoding = integerEncod
                     .Tag.booleanEncrypt = booleanEncr
                     .Tag.Renaming = Renamin
-                    .Tag.InvalidOpcodes = invalidOp
+                    .Tag.ControlFlow = ctrlflow
                     .Tag.HideCalls = hideCall
                     ColorNode(node, nodeChecked)
                     If .Nodes.Count > 0 Then
-                        IncludeEntitiesChildNodes(node, nodeChecked, stringEncr, integerEncod, booleanEncr, Renamin, invalidOp, hideCall)
+                        IncludeEntitiesChildNodes(node, nodeChecked, stringEncr, integerEncod, booleanEncr, Renamin, ctrlflow, hideCall)
                     End If
                 End If
             End With
@@ -291,13 +291,13 @@ Public Class Frm_Exclusion
                 .Tag.integerEncoding = ChbExclusionIntegersEncode.Checked
                 .Tag.booleanEncrypt = ChbExclusionBooleanEncrypt.Checked
                 .Tag.Renaming = ChbExclusionRenaming.Checked
-                .Tag.InvalidOpcodes = ChbExclusionInvalidOpCodes.Checked
-                .Tag.HideCalls = ChbExclusionInvalidOpCodes.Checked
+                .Tag.ControlFlow = ChbExclusionControlflow.Checked
+                .Tag.HideCalls = ChbExclusionControlflow.Checked
             End With
         End If
         If ChbAllEntities.Checked = True Then
             IncludeEntitiesChildNodes(TvExclusion.SelectedNode, ChbAllEntities.Checked, ChbExclusionStringsEncrypt.Checked, ChbExclusionIntegersEncode.Checked, _
-                                      ChbExclusionBooleanEncrypt.Checked, ChbExclusionRenaming.Checked, ChbExclusionInvalidOpCodes.Checked, ChbExclusionHideCalls.Checked)
+                                      ChbExclusionBooleanEncrypt.Checked, ChbExclusionRenaming.Checked, ChbExclusionControlflow.Checked, ChbExclusionHideCalls.Checked)
         Else
             ColorNode(TvExclusion.SelectedNode, False)
             IncludeAllChildNodes(TvExclusion.SelectedNode)
@@ -315,7 +315,7 @@ Public Class Frm_Exclusion
             ChbExclusionCheckAll.Enabled = True
 
             IncludeAllChildNodes(TvExclusion.SelectedNode, ChbAllEntities.Checked, ChbExclusionStringsEncrypt.Checked, ChbExclusionIntegersEncode.Checked, _
-                                 ChbExclusionBooleanEncrypt.Checked, ChbExclusionRenaming.Checked, ChbExclusionInvalidOpCodes.Checked, ChbExclusionHideCalls.Checked)
+                                 ChbExclusionBooleanEncrypt.Checked, ChbExclusionRenaming.Checked, ChbExclusionControlflow.Checked, ChbExclusionHideCalls.Checked)
         Else
             ChbAllEntities.Enabled = False
 
@@ -342,7 +342,7 @@ Public Class Frm_Exclusion
                 .Tag.integerEncoding = ChbExclusionIntegersEncode.Checked
                 .Tag.booleanEncrypt = ChbExclusionBooleanEncrypt.Checked
                 .Tag.Renaming = ChbExclusionRenaming.Checked
-                .Tag.InvalidOpcodes = ChbExclusionInvalidOpCodes.Checked
+                .Tag.ControlFlow = ChbExclusionControlflow.Checked
                 .Tag.HideCalls = ChbExclusionHideCalls.Checked
             End With
             ColorNode(TvExclusion.SelectedNode, ChbExclusion.Checked)
@@ -350,7 +350,7 @@ Public Class Frm_Exclusion
     End Sub
 
     Private Sub CheckSettings(sender As Object, e As EventArgs) Handles ChbExclusionStringsEncrypt.Click, ChbExclusionBooleanEncrypt.Click, ChbExclusionIntegersEncode.Click, _
-                                                            ChbExclusion.Click, ChbExclusionInvalidOpCodes.Click, ChbExclusionRenaming.Click, ChbExclusionHideCalls.Click
+                                                            ChbExclusion.Click, ChbExclusionControlflow.Click, ChbExclusionRenaming.Click, ChbExclusionHideCalls.Click
 
         If (Not Me.TvExclusion.SelectedNode.Tag Is Nothing) Then
             With TvExclusion.SelectedNode
@@ -359,7 +359,7 @@ Public Class Frm_Exclusion
                 .Tag.integerEncoding = ChbExclusionIntegersEncode.Checked
                 .Tag.booleanEncrypt = ChbExclusionBooleanEncrypt.Checked
                 .Tag.Renaming = ChbExclusionRenaming.Checked
-                .Tag.InvalidOpcodes = ChbExclusionInvalidOpCodes.Checked
+                .Tag.ControlFlow = ChbExclusionControlflow.Checked
                 .Tag.HideCalls = ChbExclusionHideCalls.Checked
             End With
 
@@ -374,7 +374,7 @@ Public Class Frm_Exclusion
                     .Tag.integerEncoding = True
                     .Tag.booleanEncrypt = True
                     .Tag.Renaming = True
-                    .Tag.InvalidOpcodes = True
+                    .Tag.ControlFlow = True
                     .Tag.HideCalls = True
 
                     SettingsButton.Keys.ToList.ForEach(Sub(x) x.Checked = True)
@@ -390,7 +390,7 @@ Public Class Frm_Exclusion
                     .Tag.integerEncoding = False
                     .Tag.booleanEncrypt = False
                     .Tag.Renaming = False
-                    .Tag.InvalidOpcodes = False
+                    .Tag.ControlFlow = False
                     .Tag.HideCalls = False
 
                     SettingsButton.Keys.ToList.ForEach(Sub(x) x.Checked = False)

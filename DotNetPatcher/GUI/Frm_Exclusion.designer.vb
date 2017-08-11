@@ -45,7 +45,7 @@ Partial Class Frm_Exclusion
         Me.ChbExclusionCheckAll = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbExclusionHideCalls = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbAllEntities = New LoginTheme.XertzLoginTheme.LogInCheckBox()
-        Me.ChbExclusionInvalidOpCodes = New LoginTheme.XertzLoginTheme.LogInCheckBox()
+        Me.ChbExclusionControlflow = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbExclusionBooleanEncrypt = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbExclusionRenaming = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbExclusionIntegersEncode = New LoginTheme.XertzLoginTheme.LogInCheckBox()
@@ -84,7 +84,7 @@ Partial Class Frm_Exclusion
         '
         'BgwExclusion
         '
-        Me.BgwExclusion.WorkerReportsProgress = true
+        Me.BgwExclusion.WorkerReportsProgress = True
         Me.BgwExclusion.WorkerSupportsCancellation = True
         '
         'Frm_ExclusionThemeContainer
@@ -207,7 +207,7 @@ Partial Class Frm_Exclusion
         Me.LblExclusionDetailsTypes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LblExclusionDetailsTypes.Location = New System.Drawing.Point(25, 61)
         Me.LblExclusionDetailsTypes.Name = "LblExclusionDetailsTypes"
-        Me.LblExclusionDetailsTypes.Size = New System.Drawing.Size(47, 15)
+        Me.LblExclusionDetailsTypes.Size = New System.Drawing.Size(46, 15)
         Me.LblExclusionDetailsTypes.TabIndex = 0
         Me.LblExclusionDetailsTypes.Text = "Types : "
         '
@@ -215,19 +215,19 @@ Partial Class Frm_Exclusion
         '
         Me.GbxExclusionViewer.BorderColour = System.Drawing.SystemColors.ButtonShadow
         Me.GbxExclusionViewer.Controls.Add(Me.TvExclusion)
-        Me.GbxExclusionViewer.Font = New System.Drawing.Font("Segoe UI", 10!)
-        Me.GbxExclusionViewer.HeaderColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
+        Me.GbxExclusionViewer.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.GbxExclusionViewer.HeaderColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.GbxExclusionViewer.Location = New System.Drawing.Point(12, 45)
-        Me.GbxExclusionViewer.MainColour = System.Drawing.Color.FromArgb(CType(CType(54,Byte),Integer), CType(CType(54,Byte),Integer), CType(CType(54,Byte),Integer))
+        Me.GbxExclusionViewer.MainColour = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.GbxExclusionViewer.Name = "GbxExclusionViewer"
         Me.GbxExclusionViewer.Size = New System.Drawing.Size(531, 640)
         Me.GbxExclusionViewer.TabIndex = 64
         Me.GbxExclusionViewer.Text = "                                                       Assembly viewer"
-        Me.GbxExclusionViewer.TextColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.GbxExclusionViewer.TextColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         '
         'TvExclusion
         '
-        Me.TvExclusion.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.TvExclusion.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TvExclusion.ImageIndex = 0
         Me.TvExclusion.ImageList = Me.ImageList1
         Me.TvExclusion.Location = New System.Drawing.Point(3, 33)
@@ -242,32 +242,32 @@ Partial Class Frm_Exclusion
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionCheckAll)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionHideCalls)
         Me.GbxExclusionRule.Controls.Add(Me.ChbAllEntities)
-        Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionInvalidOpCodes)
+        Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionControlflow)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionBooleanEncrypt)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionRenaming)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionIntegersEncode)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusionStringsEncrypt)
         Me.GbxExclusionRule.Controls.Add(Me.ChbExclusion)
-        Me.GbxExclusionRule.Enabled = false
-        Me.GbxExclusionRule.Font = New System.Drawing.Font("Segoe UI", 10!)
-        Me.GbxExclusionRule.HeaderColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
+        Me.GbxExclusionRule.Enabled = False
+        Me.GbxExclusionRule.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.GbxExclusionRule.HeaderColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.GbxExclusionRule.Location = New System.Drawing.Point(549, 45)
-        Me.GbxExclusionRule.MainColour = System.Drawing.Color.FromArgb(CType(CType(54,Byte),Integer), CType(CType(54,Byte),Integer), CType(CType(54,Byte),Integer))
+        Me.GbxExclusionRule.MainColour = System.Drawing.Color.FromArgb(CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.GbxExclusionRule.Name = "GbxExclusionRule"
         Me.GbxExclusionRule.Size = New System.Drawing.Size(143, 349)
         Me.GbxExclusionRule.TabIndex = 2
         Me.GbxExclusionRule.Text = "              Rule"
-        Me.GbxExclusionRule.TextColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.GbxExclusionRule.TextColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         '
         'ChbExclusionCheckAll
         '
-        Me.ChbExclusionCheckAll.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
+        Me.ChbExclusionCheckAll.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ChbExclusionCheckAll.BorderColour = System.Drawing.Color.DimGray
-        Me.ChbExclusionCheckAll.Checked = false
+        Me.ChbExclusionCheckAll.Checked = False
         Me.ChbExclusionCheckAll.CheckedColour = System.Drawing.Color.BlueViolet
         Me.ChbExclusionCheckAll.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChbExclusionCheckAll.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.ChbExclusionCheckAll.FontColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ChbExclusionCheckAll.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChbExclusionCheckAll.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbExclusionCheckAll.Location = New System.Drawing.Point(4, 50)
         Me.ChbExclusionCheckAll.Name = "ChbExclusionCheckAll"
         Me.ChbExclusionCheckAll.Size = New System.Drawing.Size(136, 22)
@@ -277,30 +277,30 @@ Partial Class Frm_Exclusion
         '
         'ChbExclusionHideCalls
         '
-        Me.ChbExclusionHideCalls.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
+        Me.ChbExclusionHideCalls.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ChbExclusionHideCalls.BorderColour = System.Drawing.Color.DimGray
-        Me.ChbExclusionHideCalls.Checked = false
+        Me.ChbExclusionHideCalls.Checked = False
         Me.ChbExclusionHideCalls.CheckedColour = System.Drawing.Color.BlueViolet
         Me.ChbExclusionHideCalls.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChbExclusionHideCalls.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.ChbExclusionHideCalls.FontColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ChbExclusionHideCalls.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ChbExclusionHideCalls.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbExclusionHideCalls.Location = New System.Drawing.Point(4, 206)
         Me.ChbExclusionHideCalls.Name = "ChbExclusionHideCalls"
         Me.ChbExclusionHideCalls.Size = New System.Drawing.Size(136, 22)
         Me.ChbExclusionHideCalls.TabIndex = 64
         Me.ChbExclusionHideCalls.Tag = ""
         Me.ChbExclusionHideCalls.Text = "Hide calls"
-        Me.ChbExclusionHideCalls.Visible = false
+        Me.ChbExclusionHideCalls.Visible = False
         '
         'ChbAllEntities
         '
-        Me.ChbAllEntities.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
+        Me.ChbAllEntities.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
         Me.ChbAllEntities.BorderColour = System.Drawing.Color.DimGray
-        Me.ChbAllEntities.Checked = false
+        Me.ChbAllEntities.Checked = False
         Me.ChbAllEntities.CheckedColour = System.Drawing.Color.BlueViolet
         Me.ChbAllEntities.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChbAllEntities.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.ChbAllEntities.FontColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
+        Me.ChbAllEntities.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChbAllEntities.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ChbAllEntities.Location = New System.Drawing.Point(4, 323)
         Me.ChbAllEntities.Name = "ChbAllEntities"
         Me.ChbAllEntities.Size = New System.Drawing.Size(136, 22)
@@ -308,22 +308,22 @@ Partial Class Frm_Exclusion
         Me.ChbAllEntities.Tag = ""
         Me.ChbAllEntities.Text = "All entities"
         '
-        'ChbExclusionInvalidOpCodes
+        'ChbExclusionControlflow
         '
-        Me.ChbExclusionInvalidOpCodes.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer), CType(CType(42,Byte),Integer))
-        Me.ChbExclusionInvalidOpCodes.BorderColour = System.Drawing.Color.DimGray
-        Me.ChbExclusionInvalidOpCodes.Checked = false
-        Me.ChbExclusionInvalidOpCodes.CheckedColour = System.Drawing.Color.BlueViolet
-        Me.ChbExclusionInvalidOpCodes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChbExclusionInvalidOpCodes.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.ChbExclusionInvalidOpCodes.FontColour = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer), CType(CType(255,Byte),Integer))
-        Me.ChbExclusionInvalidOpCodes.Location = New System.Drawing.Point(4, 234)
-        Me.ChbExclusionInvalidOpCodes.Name = "ChbExclusionInvalidOpCodes"
-        Me.ChbExclusionInvalidOpCodes.Size = New System.Drawing.Size(136, 22)
-        Me.ChbExclusionInvalidOpCodes.TabIndex = 63
-        Me.ChbExclusionInvalidOpCodes.Tag = ""
-        Me.ChbExclusionInvalidOpCodes.Text = "Invalid OpCodes"
-        Me.ChbExclusionInvalidOpCodes.Visible = false
+        Me.ChbExclusionControlflow.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.ChbExclusionControlflow.BorderColour = System.Drawing.Color.DimGray
+        Me.ChbExclusionControlflow.Checked = False
+        Me.ChbExclusionControlflow.CheckedColour = System.Drawing.Color.BlueViolet
+        Me.ChbExclusionControlflow.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ChbExclusionControlflow.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ChbExclusionControlflow.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChbExclusionControlflow.Location = New System.Drawing.Point(4, 234)
+        Me.ChbExclusionControlflow.Name = "ChbExclusionControlflow"
+        Me.ChbExclusionControlflow.Size = New System.Drawing.Size(136, 22)
+        Me.ChbExclusionControlflow.TabIndex = 63
+        Me.ChbExclusionControlflow.Tag = ""
+        Me.ChbExclusionControlflow.Text = "Controlflow"
+        Me.ChbExclusionControlflow.Visible = false
         '
         'ChbExclusionBooleanEncrypt
         '
@@ -440,7 +440,7 @@ End Sub
     Friend WithEvents ChbExclusionBooleanEncrypt As XertzLoginTheme.LogInCheckBox
     Friend WithEvents ChbExclusionIntegersEncode As XertzLoginTheme.LogInCheckBox
     Friend WithEvents ChbExclusionStringsEncrypt As XertzLoginTheme.LogInCheckBox
-    Friend WithEvents ChbExclusionInvalidOpCodes As XertzLoginTheme.LogInCheckBox
+    Friend WithEvents ChbExclusionControlflow As XertzLoginTheme.LogInCheckBox
     Friend WithEvents ChbExclusionRenaming As XertzLoginTheme.LogInCheckBox
     Friend WithEvents GbxExclusionViewer As XertzLoginTheme.LogInGroupBox
     Friend WithEvents LblExclusionTotal As XertzLoginTheme.LogInLabel

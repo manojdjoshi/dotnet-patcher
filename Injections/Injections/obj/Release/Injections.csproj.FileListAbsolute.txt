@@ -196,12 +196,16 @@ E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\bin\Relea
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.dll
 E:\_PROJECTS\3dotdev-dotnet-patcher-854a4f056568\Injections\Injections\obj\Release\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\bin\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\bin\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\obj\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - Copie\Injections\Injections\obj\Release\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache

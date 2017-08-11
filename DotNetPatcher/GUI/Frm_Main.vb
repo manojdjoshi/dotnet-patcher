@@ -34,6 +34,7 @@ Public Class Frm_Main
 
     Public Sub New()
         InitializeComponent()
+        Frm_MainThemeContainer.Text = "DotNet Patcher " & My.Application.Info.Version.ToString
         ShowAboutInfos()
         m_rdb = New LogInRadioButton(2) {RdbManifestChangerAsInvoker, RdbManifestChangerRequireAdministrator, RdbManifestChangerHighestAvailable}
         m_taskArgs = New TaskState

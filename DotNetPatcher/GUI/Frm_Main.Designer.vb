@@ -100,8 +100,6 @@ Partial Class Frm_Main
         Me.CbxObfuscatorScheme = New LoginTheme.XertzLoginTheme.LogInComboBox()
         Me.LblObfuscatorScheme = New System.Windows.Forms.Label()
         Me.GbxObfuscatorAdvanced = New LoginTheme.XertzLoginTheme.LogInGroupBox()
-        Me.PcbHideCalls = New System.Windows.Forms.PictureBox()
-        Me.PcbInvalidOpCodes = New System.Windows.Forms.PictureBox()
         Me.PcbInvalidMd = New System.Windows.Forms.PictureBox()
         Me.ChbObfuscatorInvalidMetadata = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorResourcesEncryption = New LoginTheme.XertzLoginTheme.LogInCheckBox()
@@ -161,8 +159,6 @@ Partial Class Frm_Main
         Me.GbxObfuscatorRenaming.SuspendLayout()
         Me.PnlObfuscatorNamespacesGroup.SuspendLayout()
         Me.GbxObfuscatorAdvanced.SuspendLayout()
-        CType(Me.PcbHideCalls, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PcbInvalidOpCodes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PcbInvalidMd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TpPacker.SuspendLayout()
         Me.PnlPackerEnabled.SuspendLayout()
@@ -206,7 +202,7 @@ Partial Class Frm_Main
         Me.Frm_MainThemeContainer.ShowMinimizeButton = True
         Me.Frm_MainThemeContainer.Size = New System.Drawing.Size(704, 697)
         Me.Frm_MainThemeContainer.TabIndex = 0
-        Me.Frm_MainThemeContainer.Text = "DotNet Patcher v4.5.2"
+        Me.Frm_MainThemeContainer.Text = "DotNet Patcher"
         '
         'LnkLblBlogSpot
         '
@@ -1253,8 +1249,6 @@ Partial Class Frm_Main
         'GbxObfuscatorAdvanced
         '
         Me.GbxObfuscatorAdvanced.BorderColour = System.Drawing.SystemColors.ButtonShadow
-        Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbHideCalls)
-        Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbInvalidOpCodes)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbInvalidMd)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorInvalidMetadata)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorResourcesEncryption)
@@ -1277,26 +1271,6 @@ Partial Class Frm_Main
         Me.GbxObfuscatorAdvanced.TabIndex = 55
         Me.GbxObfuscatorAdvanced.Text = "Advanced"
         Me.GbxObfuscatorAdvanced.TextColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        '
-        'PcbHideCalls
-        '
-        Me.PcbHideCalls.Image = Global.DotNetPatcher.My.Resources.Resources.Attention
-        Me.PcbHideCalls.Location = New System.Drawing.Point(289, 118)
-        Me.PcbHideCalls.Margin = New System.Windows.Forms.Padding(2)
-        Me.PcbHideCalls.Name = "PcbHideCalls"
-        Me.PcbHideCalls.Size = New System.Drawing.Size(16, 18)
-        Me.PcbHideCalls.TabIndex = 68
-        Me.PcbHideCalls.TabStop = False
-        '
-        'PcbInvalidOpCodes
-        '
-        Me.PcbInvalidOpCodes.Image = Global.DotNetPatcher.My.Resources.Resources.Attention
-        Me.PcbInvalidOpCodes.Location = New System.Drawing.Point(125, 238)
-        Me.PcbInvalidOpCodes.Margin = New System.Windows.Forms.Padding(2)
-        Me.PcbInvalidOpCodes.Name = "PcbInvalidOpCodes"
-        Me.PcbInvalidOpCodes.Size = New System.Drawing.Size(16, 18)
-        Me.PcbInvalidOpCodes.TabIndex = 67
-        Me.PcbInvalidOpCodes.TabStop = False
         '
         'PcbInvalidMd
         '
@@ -1354,7 +1328,7 @@ Partial Class Frm_Main
         Me.ChbObfuscatorInvalidOpcodes.Size = New System.Drawing.Size(112, 22)
         Me.ChbObfuscatorInvalidOpcodes.TabIndex = 61
         Me.ChbObfuscatorInvalidOpcodes.Tag = "Parameters"
-        Me.ChbObfuscatorInvalidOpcodes.Text = "Invalid Opcodes"
+        Me.ChbObfuscatorInvalidOpcodes.Text = "Controlflow"
         '
         'ChbObfuscatorAntiDumper
         '
@@ -1925,8 +1899,6 @@ Partial Class Frm_Main
         Me.GbxObfuscatorRenaming.PerformLayout()
         Me.PnlObfuscatorNamespacesGroup.ResumeLayout(False)
         Me.GbxObfuscatorAdvanced.ResumeLayout(False)
-        CType(Me.PcbHideCalls, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PcbInvalidOpCodes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PcbInvalidMd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TpPacker.ResumeLayout(False)
         Me.TpPacker.PerformLayout()
@@ -2056,7 +2028,5 @@ Partial Class Frm_Main
     Friend WithEvents TxbPackerFramework As System.Windows.Forms.TextBox
     Friend WithEvents ChbObfuscatorInvalidMetadata As LoginTheme.XertzLoginTheme.LogInCheckBox
     Friend WithEvents ChbObfuscatorExcludeReflection As LoginTheme.XertzLoginTheme.LogInCheckBox
-    Friend WithEvents PcbHideCalls As System.Windows.Forms.PictureBox
-    Friend WithEvents PcbInvalidOpCodes As System.Windows.Forms.PictureBox
     Friend WithEvents PcbInvalidMd As System.Windows.Forms.PictureBox
 End Class

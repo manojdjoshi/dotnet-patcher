@@ -30,11 +30,9 @@ Namespace Core.Obfuscation.Protection
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    'If NameChecker.IsRenamable(type) Then
                     If Exclude.isHideCallsExclude(type) = False Then
-                            IterateType(type)
-                        End If
-                    'End If
+                        IterateType(type)
+                    End If
                 Next
                 Types.Clear()
             Next
@@ -168,7 +166,7 @@ Namespace Core.Obfuscation.Protection
                                             End If
                                         ElseIf (Instruction.OpCode = OpCodes.Ldc_I8) Then
                                             If MdByLong.ContainsKey(CLng(Instruction.Operand)) Then
-                                                mdFinal = MdBySingle.Item(CLng(Instruction.Operand))
+                                                mdFinal = MdByLong.Item(CLng(Instruction.Operand))
                                             Else
                                                 mdFinal = CreateMethod(CLng(Instruction.Operand), md)
                                                 MdByLong.Add(CLng(Instruction.Operand), mdFinal)

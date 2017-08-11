@@ -103,18 +103,18 @@ Namespace Engine.Context
 
         Public Function HasObfuscationTask() As Boolean
             With m_parameters.TaskAccept.Obfuscation
-                If .Enabled AndAlso _
-              (.EncryptNumeric OrElse _
-              .EncryptBoolean OrElse _
-              .EncryptString OrElse _
-              .AntiTamper OrElse _
-              .AntiDebug OrElse _
-              .AntiDumper OrElse _
-              .AntiIlDasm OrElse _
-              .HidePublicCalls OrElse _
-              .CompressResources OrElse _
-              .RenameAssembly OrElse _
-              .InvalidOpcodes OrElse _
+                If .Enabled AndAlso
+              (.EncryptNumeric OrElse
+              .EncryptBoolean OrElse
+              .EncryptString OrElse
+              .AntiTamper OrElse
+              .AntiDebug OrElse
+              .AntiDumper OrElse
+              .AntiIlDasm OrElse
+              .HidePublicCalls OrElse
+              .CompressResources OrElse
+              .RenameAssembly OrElse
+              .ControlFlow OrElse
               .InvalidMetadata) Then
                     Return True
                 End If
@@ -226,7 +226,7 @@ Namespace Engine.Context
                     If HasRenameTask() Then RenameAssembly()
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PostCompressResources()
 
-                    If .Obfuscation.InvalidOpcodes Then InvalidOpcodes()
+                    If .Obfuscation.ControlFlow Then ControlFlow()
                     If HasObfuscationTask() Then InjectDnpWatermark()
 
                     If .Obfuscation.InvalidMetadata AndAlso .Packer.Enabled = False Then InvalidMetadata()
@@ -264,7 +264,7 @@ Namespace Engine.Context
 
                     PostCompressResolver()
 
-                    If .Obfuscation.Enabled AndAlso .Obfuscation.InvalidOpcodes Then InvalidOpcodes(True)
+                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then ControlFlow(True)
                     If HasPackerTask() Then InjectDnpWatermark(True)
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.InvalidMetadata Then InvalidMetadata(True)
@@ -325,6 +325,13 @@ Namespace Engine.Context
             m_bgw.ReportProgress(30, "Obfuscating (Resources content renaming ...)")
             ReadAssembly()
             m_processing.ProcessRenameResourcesContent(AssDef)
+            WriteAssembly()
+        End Sub
+
+        Private Sub ControlFlow(Optional pack As Boolean = False)
+            m_bgw.ReportProgress(90, If(pack, "Packing", "Obfuscating") & " (ControlFlow...)")
+            ReadAssembly()
+            m_processing.ProcessControlFlow(AssDef)
             WriteAssembly()
         End Sub
 
@@ -502,13 +509,6 @@ Namespace Engine.Context
         Private Sub PostCompressResolver()
             ReadAssembly()
             m_resourceCompress.InjectSevenzipLibrary(AssDef)
-            WriteAssembly()
-        End Sub
-
-        Private Sub InvalidOpcodes(Optional pack As Boolean = False)
-            m_bgw.ReportProgress(90, If(pack, "Packing", "Obfuscating") & " (ControlFlow injecting ...)")
-            ReadAssembly()
-            m_processing.ProcessInvalidOpcodes(AssDef)
             WriteAssembly()
         End Sub
 

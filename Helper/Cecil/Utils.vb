@@ -1,8 +1,4 @@
 ﻿Imports Mono.Cecil
-Imports Mono.Cecil.Rocks
-Imports Mono.Cecil.Cil
-Imports Helper.RandomizeHelper
-Imports Helper.AssemblyHelper
 
 Namespace CecilHelper
     Public NotInheritable Class Utils

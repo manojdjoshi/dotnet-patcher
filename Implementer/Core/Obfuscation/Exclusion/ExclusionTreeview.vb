@@ -1,11 +1,7 @@
 ﻿Imports System.Windows.Forms
-Imports System.Drawing
 Imports Mono.Cecil
 Imports Helper.CecilHelper
 Imports Helper.UtilsHelper
-Imports System.Security.Cryptography
-Imports System.IO
-Imports System.Text
 
 Namespace Core.Obfuscation.Exclusion
     Public NotInheritable Class ExclusionTreeview
@@ -220,7 +216,7 @@ Namespace Core.Obfuscation.Exclusion
             Return n.Renaming
         End Function
 
-        Public Function isInvalidOpcodesExclude(n As Object) As Boolean
+        Public Function isControlFlowExclude(n As Object) As Boolean
             If n Is Nothing Then Return False
             Return n.InvalidOpcodes
         End Function

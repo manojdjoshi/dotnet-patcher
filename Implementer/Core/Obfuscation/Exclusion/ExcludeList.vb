@@ -1,5 +1,4 @@
 ﻿Imports Mono.Cecil
-Imports Mono.Cecil.Rocks
 
 Namespace Core.Obfuscation.Exclusion
     Public NotInheritable Class ExcludeList
@@ -69,8 +68,8 @@ Namespace Core.Obfuscation.Exclusion
             Return m_ObfTypes.Any(Function(x) x.Key.FullName = m.FullName AndAlso x.Value.booleanEncrypt = True)
         End Function
 
-        Friend Function isInvalidOpcodesExclude(m As TypeDefinition) As Boolean
-            Return m_ObfTypes.Any(Function(x) x.Key.FullName = m.FullName AndAlso x.Value.InvalidOpcodes = True)
+        Friend Function isControlFlowExclude(m As TypeDefinition) As Boolean
+            Return m_ObfTypes.Any(Function(x) x.Key.FullName = m.FullName AndAlso x.Value.ControlFlow = True)
         End Function
 
         Friend Function isHideCallsExclude(m As TypeDefinition) As Boolean

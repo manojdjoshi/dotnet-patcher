@@ -1,4 +1,6 @@
-﻿Imports Mono.Cecil.Cil
+﻿Imports System.Runtime.InteropServices
+Imports Mono.Cecil
+Imports Mono.Cecil.Cil
 
 Namespace CecilHelper
     Public Class Msil
@@ -7,6 +9,13 @@ Namespace CecilHelper
 #Region " Properties "
         Property MethodBody As MethodBody
         Property ProcessedInstructions As List(Of ProcessedIL)
+#End Region
+
+#Region " Delegates "
+        Public Delegate Sub ListIterateAllDelegate(Of T)(ByVal list As IList(Of T), ByVal index As Integer, ByVal value As T)
+        Public Delegate Function ListIterateDelegate(Of T)(ByVal list As IList(Of T), ByVal index As Integer, ByVal value As T) As Boolean
+        Public Delegate Function EnumerableIterateDelegate(Of T)(ByVal index As Integer, ByVal value As T) As Boolean
+        Public Delegate Sub EnumerableIterateAllDelegate(Of T)(ByVal index As Integer, ByVal value As T)
 #End Region
 
 #Region " Constructor "
@@ -21,41 +30,6 @@ Namespace CecilHelper
             _MethodBody.Instructions.Add(newInstruction)
             ProcessedInstructions.Add(New ProcessedIL(newInstruction))
         End Sub
-
-        Public Sub StackOverFlow(r As Random)
-            If (_MethodBody.Instructions.Item(0).OpCode.Code <> Code.Br_S OrElse _MethodBody.Instructions.Item(0).OpCode.Code <> Code.Ldarg) Then
-                Dim body = _MethodBody
-                Dim iLProcessor = body.GetILProcessor
-                Dim target = body.Instructions.Item(0)
-                Dim instruct = iLProcessor.Create(OpCodes.Br_S, target)
-                Dim instruction2 = iLProcessor.Create(OpCodes.Pop)
-                Dim instruction3 = iLProcessor.Create(OpCodes.Ldc_I8, CLng(r.Next))
-                InsertBefore(target, instruction3)
-                InsertBefore(instruction3, instruction2)
-                InsertBefore(instruction2, instruct)
-            End If
-        End Sub
-
-        Public Sub StackUnflow(r As Random)
-            Dim iLProcessor0 = _MethodBody.GetILProcessor
-            _MethodBody.Instructions.Add(iLProcessor0.Create(GetRndCrap(r)))
-            _MethodBody.Instructions.Add(iLProcessor0.Create(OpCodes.Ret))
-        End Sub
-
-        Private Function GetRndCrap(r As Random) As OpCode
-            Dim code As OpCode
-            Select Case r.Next(1, 5)
-                Case 1
-                    Return OpCodes.Add
-                Case 2
-                    Return OpCodes.Div
-                Case 3
-                    Return OpCodes.Xor
-                Case 4
-                    Return OpCodes.Mul
-            End Select
-            Return code
-        End Function
 
         Public Sub CalculateOffsets()
             Dim num As Integer = 0
@@ -181,6 +155,84 @@ Namespace CecilHelper
             Return opcode
         End Function
 
+        Public Shared Sub CalculateStackUsage(ByVal inst As Instruction, <Out> ByRef pushes As Integer, <Out> ByRef pops As Integer)
+            Dim hasReturnValue As Boolean = False
+            Dim opCode As OpCode = inst.OpCode
+            If (opCode.FlowControl = FlowControl.Call) Then
+                If (opCode.Code <> Code.Jmp) Then
+                    pushes = 0
+                    pops = 0
+                    Dim methodSig As IMethodSignature
+                    Dim operand As Object = inst.Operand
+                    Dim method As MethodReference = TryCast(operand, MethodReference)
+
+                    If (Not method Is Nothing) Then
+                        methodSig = method
+                    Else
+                        methodSig = TryCast(operand, IMethodSignature)
+                    End If
+                    If (Not methodSig Is Nothing) Then
+                        Dim implicitThis As Boolean = (methodSig.HasThis AndAlso Not methodSig.ExplicitThis)
+                        If (methodSig.ReturnType.MetadataType <> MetadataType.Void OrElse ((opCode.Code = Code.Newobj) AndAlso methodSig.HasThis)) Then
+                            pushes += 1
+                        End If
+                        pops = (pops + methodSig.Parameters.Count)
+
+                        Dim paramsAfterSentinel As New List(Of TypeReference)
+                        For Each p In methodSig.Parameters
+                            If p.ParameterType.IsSentinel Then
+                                paramsAfterSentinel.Add(p.ParameterType)
+                            End If
+                        Next
+                        If (Not paramsAfterSentinel Is Nothing) Then
+                            pops = (pops + paramsAfterSentinel.Count)
+                        End If
+                        If (implicitThis AndAlso (opCode.Code <> Code.Newobj)) Then
+                            pops += 1
+                        End If
+                        If (opCode.Code = Code.Calli) Then
+                            pops += 1
+                        End If
+                    End If
+                End If
+            Else
+
+                pushes = 0
+                pops = 0
+                Select Case opCode.StackBehaviourPush
+                    Case StackBehaviour.Push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref
+                        pushes += 1
+                        Exit Select
+                    Case StackBehaviour.Push1_push1
+                        pushes = (pushes + 2)
+                        Exit Select
+                End Select
+                Select Case opCode.StackBehaviourPop
+                    Case StackBehaviour.Pop0, StackBehaviour.Push0, StackBehaviour.Push1, StackBehaviour.Push1_push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref, StackBehaviour.Varpush
+                        Exit Select
+                    Case StackBehaviour.Pop1, StackBehaviour.Popi, StackBehaviour.Popref
+                        pops += 1
+                        Return
+                    Case StackBehaviour.Pop1_pop1, StackBehaviour.Popi_pop1, StackBehaviour.Popi_popi, StackBehaviour.Popi_popi8, StackBehaviour.Popi_popr4, StackBehaviour.Popi_popr8, StackBehaviour.Popref_pop1, StackBehaviour.Popref_popi
+                        pops = (pops + 2)
+                        Return
+                    Case StackBehaviour.Popi_popi_popi, StackBehaviour.Popref_popi_popi, StackBehaviour.Popref_popi_popi8, StackBehaviour.Popref_popi_popr4, StackBehaviour.Popref_popi_popr8, StackBehaviour.Popref_popi_popref
+                        pops = (pops + 3)
+                        Return
+                    Case StackBehaviour.Varpop
+                        If hasReturnValue Then
+                            pops += 1
+                        End If
+                        Exit Select
+                    Case StackBehaviour.PopAll
+                        pops = -1
+                        Return
+                    Case Else
+                        Return
+                End Select
+            End If
+        End Sub
+
         Private Sub UpdateExceptionHandlers(instruction As Instruction, offset As Integer)
             For Each handler As ExceptionHandler In _MethodBody.ExceptionHandlers
                 If (handler.TryStart.Offset = offset) Then
@@ -200,6 +252,344 @@ Namespace CecilHelper
                 End If
             Next
         End Sub
+
+        Public Shared Sub Iterate(Of T)(ByVal list As IEnumerable(Of T), ByVal handler As EnumerableIterateDelegate(Of T))
+            Dim index As Integer = 0
+            Dim local As T
+            For Each local In list
+                If Not handler.Invoke(index, local) Then
+                    Exit For
+                End If
+                index += 1
+            Next
+        End Sub
+
+        Public Shared Sub Iterate(Of T)(ByVal list As IList(Of T), ByVal handler As ListIterateDelegate(Of T))
+            Iterate(Of T)(list, 0, -1, False, handler)
+        End Sub
+
+        Public Shared Sub IterateAll(Of T)(ByVal list As IList(Of T), ByVal handler As ListIterateAllDelegate(Of T))
+            Iterate(Of T)(list, 0, -1, False, Function(ByVal list2 As IList(Of T), ByVal index As Integer, ByVal value As T)
+                                                  handler.Invoke(list2, index, value)
+                                                  Return True
+                                              End Function)
+        End Sub
+
+        Public Shared Sub Iterate(Of T)(ByVal list As IList(Of T), ByVal startIndex As Integer, ByVal endIndex As Integer, ByVal reverseOrder As Boolean, ByVal handler As ListIterateDelegate(Of T))
+            If reverseOrder Then
+                Dim i As Integer = (If((endIndex < 0), list.Count, endIndex) - 1)
+                Do While (i >= startIndex)
+                    If Not handler.Invoke(list, i, list.Item(i)) Then
+                        Return
+                    End If
+                    i -= 1
+                Loop
+            Else
+                Dim j As Integer
+                For j = startIndex To If((endIndex < 0), list.Count, endIndex) - 1
+                    If Not handler.Invoke(list, j, list.Item(j)) Then
+                        Return
+                    End If
+                Next j
+            End If
+        End Sub
+
+        Public Shared Sub OptimizeMacros(instructions As IList(Of Instruction))
+            For Each InSt In instructions
+                Dim arg As ParameterDefinition
+                Dim local As VariableDefinition
+                Select Case InSt.OpCode.Code
+                    Case Code.Ldarg, Code.Ldarg_S
+                        arg = TryCast(InSt.Operand, ParameterDefinition)
+                        If arg Is Nothing Then
+                            Exit Select
+                        End If
+                        If arg.Index = 0 Then
+                            InSt.OpCode = OpCodes.Ldarg_0
+                            InSt.Operand = Nothing
+                        ElseIf arg.Index = 1 Then
+                            InSt.OpCode = OpCodes.Ldarg_1
+                            InSt.Operand = Nothing
+                        ElseIf arg.Index = 2 Then
+                            InSt.OpCode = OpCodes.Ldarg_2
+                            InSt.Operand = Nothing
+                        ElseIf arg.Index = 3 Then
+                            InSt.OpCode = OpCodes.Ldarg_3
+                            InSt.Operand = Nothing
+                        ElseIf Byte.MinValue <= arg.Index AndAlso arg.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Ldarg_S
+                        End If
+                        Exit Select
+                    Case Code.Ldarga
+                        arg = TryCast(InSt.Operand, ParameterDefinition)
+                        If arg Is Nothing Then
+                            Exit Select
+                        End If
+                        If Byte.MinValue <= arg.Index AndAlso arg.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Ldarga_S
+                        End If
+                        Exit Select
+                    Case Code.Ldc_I4, Code.Ldc_I4_S
+                        Dim i4 As Integer
+                        If TypeOf InSt.Operand Is Integer Then
+                            i4 = CInt(InSt.Operand)
+                        ElseIf TypeOf InSt.Operand Is SByte Then
+                            i4 = CSByte(InSt.Operand)
+                        Else
+                            Exit Select
+                        End If
+                        Select Case i4
+                            Case 0
+                                InSt.OpCode = OpCodes.Ldc_I4_0
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 1
+                                InSt.OpCode = OpCodes.Ldc_I4_1
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 2
+                                InSt.OpCode = OpCodes.Ldc_I4_2
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 3
+                                InSt.OpCode = OpCodes.Ldc_I4_3
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 4
+                                InSt.OpCode = OpCodes.Ldc_I4_4
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 5
+                                InSt.OpCode = OpCodes.Ldc_I4_5
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 6
+                                InSt.OpCode = OpCodes.Ldc_I4_6
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 7
+                                InSt.OpCode = OpCodes.Ldc_I4_7
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case 8
+                                InSt.OpCode = OpCodes.Ldc_I4_8
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case -1
+                                InSt.OpCode = OpCodes.Ldc_I4_M1
+                                InSt.Operand = Nothing
+                                Exit Select
+                            Case Else
+                                If SByte.MinValue <= i4 AndAlso i4 <= SByte.MaxValue Then
+                                    InSt.OpCode = OpCodes.Ldc_I4_S
+                                    InSt.Operand = CSByte(i4)
+                                End If
+                                Exit Select
+                        End Select
+                        Exit Select
+                    Case Code.Ldloc, Code.Ldloc_S
+                        local = TryCast(InSt.Operand, VariableDefinition)
+                        If local Is Nothing Then
+                            Exit Select
+                        End If
+                        If local.Index = 0 Then
+                            InSt.OpCode = OpCodes.Ldloc_0
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 1 Then
+                            InSt.OpCode = OpCodes.Ldloc_1
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 2 Then
+                            InSt.OpCode = OpCodes.Ldloc_2
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 3 Then
+                            InSt.OpCode = OpCodes.Ldloc_3
+                            InSt.Operand = Nothing
+                        ElseIf Byte.MinValue <= local.Index AndAlso local.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Ldloc_S
+                        End If
+                        Exit Select
+                    Case Code.Ldloca
+                        local = TryCast(InSt.Operand, VariableDefinition)
+                        If local Is Nothing Then
+                            Exit Select
+                        End If
+                        If Byte.MinValue <= local.Index AndAlso local.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Ldloca_S
+                        End If
+                        Exit Select
+                    Case Code.Starg
+                        arg = TryCast(InSt.Operand, ParameterDefinition)
+                        If arg Is Nothing Then
+                            Exit Select
+                        End If
+                        If Byte.MinValue <= arg.Index AndAlso arg.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Starg_S
+                        End If
+                        Exit Select
+                    Case Code.Stloc, Code.Stloc_S
+                        local = TryCast(InSt.Operand, VariableDefinition)
+                        If local Is Nothing Then
+                            Exit Select
+                        End If
+                        If local.Index = 0 Then
+                            InSt.OpCode = OpCodes.Stloc_0
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 1 Then
+                            InSt.OpCode = OpCodes.Stloc_1
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 2 Then
+                            InSt.OpCode = OpCodes.Stloc_2
+                            InSt.Operand = Nothing
+                        ElseIf local.Index = 3 Then
+                            InSt.OpCode = OpCodes.Stloc_3
+                            InSt.Operand = Nothing
+                        ElseIf Byte.MinValue <= local.Index AndAlso local.Index <= Byte.MaxValue Then
+                            InSt.OpCode = OpCodes.Stloc_S
+                        End If
+                        Exit Select
+                End Select
+            Next
+
+            OptimizeBranches(instructions)
+        End Sub
+
+        Public Shared Sub OptimizeBranches(instructions As IList(Of Instruction))
+            While True
+                UpdateInstructionOffsets(instructions)
+
+                Dim modified As Boolean = False
+                For Each InSt In instructions
+                    Dim shortOpCode As OpCode
+                    Select Case InSt.OpCode.Code
+                        Case Code.Beq
+                            shortOpCode = OpCodes.Beq_S
+                            Exit Select
+                        Case Code.Bge
+                            shortOpCode = OpCodes.Bge_S
+                            Exit Select
+                        Case Code.Bge_Un
+                            shortOpCode = OpCodes.Bge_Un_S
+                            Exit Select
+                        Case Code.Bgt
+                            shortOpCode = OpCodes.Bgt_S
+                            Exit Select
+                        Case Code.Bgt_Un
+                            shortOpCode = OpCodes.Bgt_Un_S
+                            Exit Select
+                        Case Code.Ble
+                            shortOpCode = OpCodes.Ble_S
+                            Exit Select
+                        Case Code.Ble_Un
+                            shortOpCode = OpCodes.Ble_Un_S
+                            Exit Select
+                        Case Code.Blt
+                            shortOpCode = OpCodes.Blt_S
+                            Exit Select
+                        Case Code.Blt_Un
+                            shortOpCode = OpCodes.Blt_Un_S
+                            Exit Select
+                        Case Code.Bne_Un
+                            shortOpCode = OpCodes.Bne_Un_S
+                            Exit Select
+                        Case Code.Br
+                            shortOpCode = OpCodes.Br_S
+                            Exit Select
+                        Case Code.Brfalse
+                            shortOpCode = OpCodes.Brfalse_S
+                            Exit Select
+                        Case Code.Brtrue
+                            shortOpCode = OpCodes.Brtrue_S
+                            Exit Select
+                        Case Code.Leave
+                            shortOpCode = OpCodes.Leave_S
+                            Exit Select
+                        Case Else
+                            Continue For
+                    End Select
+                    Dim targetInstr = TryCast(InSt.Operand, Instruction)
+                    If targetInstr Is Nothing Then
+                        Continue For
+                    End If
+
+                    Dim afterShortInstr As Integer
+                    If targetInstr.Offset >= InSt.Offset Then
+                        afterShortInstr = CInt(InSt.Offset) + InSt.GetSize()
+                    Else
+                        Const operandSize As Integer = 1
+                        afterShortInstr = CInt(InSt.Offset) + shortOpCode.Size + operandSize
+                    End If
+
+                    Dim displ As Integer = CInt(targetInstr.Offset) - afterShortInstr
+                    If SByte.MinValue <= displ AndAlso displ <= SByte.MaxValue Then
+                        InSt.OpCode = shortOpCode
+                        modified = True
+                    End If
+                Next
+                If Not modified Then
+                    Exit While
+                End If
+            End While
+        End Sub
+
+        Public Shared Function UpdateInstructionOffsets(ByVal instructions As IList(Of Instruction)) As UInteger
+            Dim offset As UInteger = 0
+            IterateAll(instructions, Sub(ByVal list As IList(Of Instruction), ByVal index As Integer, ByVal instr As Instruction)
+                                         instr.Offset = offset
+                                         offset = (offset + CType(instr.GetSize, UInteger))
+                                     End Sub)
+            Return offset
+        End Function
+
+
+        Public Shared Sub SimplifyBranches(ByVal instructions As IList(Of Instruction))
+            IterateAll(instructions, Sub(ByVal list As IList(Of Instruction), ByVal index As Integer, ByVal instr As Instruction)
+                                         Select Case instr.OpCode.Code
+                                             Case Code.Br_S
+                                                 instr.OpCode = OpCodes.Br
+                                                 Exit Select
+                                             Case Code.Brfalse_S
+                                                 instr.OpCode = OpCodes.Brfalse
+                                                 Exit Select
+                                             Case Code.Brtrue_S
+                                                 instr.OpCode = OpCodes.Brtrue
+                                                 Exit Select
+                                             Case Code.Beq_S
+                                                 instr.OpCode = OpCodes.Beq
+                                                 Exit Select
+                                             Case Code.Bge_S
+                                                 instr.OpCode = OpCodes.Bge
+                                                 Exit Select
+                                             Case Code.Bgt_S
+                                                 instr.OpCode = OpCodes.Bgt
+                                                 Exit Select
+                                             Case Code.Ble_S
+                                                 instr.OpCode = OpCodes.Ble
+                                                 Exit Select
+                                             Case Code.Blt_S
+                                                 instr.OpCode = OpCodes.Blt
+                                                 Exit Select
+                                             Case Code.Bne_Un_S
+                                                 instr.OpCode = OpCodes.Bne_Un
+                                                 Exit Select
+                                             Case Code.Bge_Un_S
+                                                 instr.OpCode = OpCodes.Bge_Un
+                                                 Exit Select
+                                             Case Code.Bgt_Un_S
+                                                 instr.OpCode = OpCodes.Bgt_Un
+                                                 Exit Select
+                                             Case Code.Ble_Un_S
+                                                 instr.OpCode = OpCodes.Ble_Un
+                                                 Exit Select
+                                             Case Code.Blt_Un_S
+                                                 instr.OpCode = OpCodes.Blt_Un
+                                                 Exit Select
+                                             Case Code.Leave_S
+                                                 instr.OpCode = OpCodes.Leave
+                                                 Exit Select
+                                         End Select
+                                     End Sub)
+        End Sub
+
 #End Region
 
 #Region "IDisposable Support"
@@ -212,8 +602,6 @@ Namespace CecilHelper
                 End If
                 If ProcessedInstructions.Count <> 0 Then ProcessedInstructions.Clear()
                 _MethodBody = Nothing
-                ' TODO: libérez les ressources non managées (objets non managés) et substituez la méthode Finalize() ci-dessous.
-                ' TODO: définissez les champs volumineux à null.
             End If
             Me.disposedValue = True
         End Sub

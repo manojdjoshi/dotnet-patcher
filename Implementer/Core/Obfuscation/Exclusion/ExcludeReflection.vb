@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports Mono.Cecil.Cil
+﻿Imports Mono.Cecil.Cil
 Imports Mono.Cecil.Rocks
 Imports Mono.Cecil
 
@@ -43,7 +42,6 @@ Namespace Core.Obfuscation.Exclusion
                     Next
                 End If
             Next
-            'm_methodReferences = m_assdef.MainModule.Types.Cast(Of TypeDefinition).SelectMany(Function(type) Type.Methods.Cast(Of MethodDefinition)()).Where(Function(method) method.Body IsNot Nothing).SelectMany(Function(method) method.Body.Instructions.Cast(Of Instruction)()).Select(Function(instr) InStr.Operand).OfType(Of MethodReference)()
         End Sub
 
         Public Shared Sub CleanUp()

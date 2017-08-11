@@ -120,10 +120,11 @@ Namespace Core.Obfuscation.Protection
                                 If Not completedInstructions.Contains(Instruction) Then
                                     Dim mdFinal As MethodDefinition = Nothing
                                     Dim index As Integer = md.Body.Instructions.IndexOf(Instruction)
-                                    If (Instruction.OpCode = OpCodes.Ldstr) Then
+                                    If (Instruction.OpCode = OpCodes.Ldstr AndAlso Not Instruction.OpCode.ToString.Contains("Lambda$")) Then
                                         Dim str = TryCast(Instruction.Operand, String)
                                         Dim salt = randSalt.Next(1, 255)
                                         Dim addProperty As Boolean = Randomizer.GenerateBoolean
+
                                         If Not String.IsNullOrWhiteSpace(str) And str.Length > 0 Then
                                             If optim.IsSettingStr(str) = False Then
                                                 If Not str = ResName Then
