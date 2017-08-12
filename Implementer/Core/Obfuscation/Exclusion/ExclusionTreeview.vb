@@ -218,7 +218,7 @@ Namespace Core.Obfuscation.Exclusion
 
         Public Function isControlFlowExclude(n As Object) As Boolean
             If n Is Nothing Then Return False
-            Return n.InvalidOpcodes
+            Return n.ControlFlow
         End Function
 
         Public Function isHideCallsExclude(n As Object) As Boolean

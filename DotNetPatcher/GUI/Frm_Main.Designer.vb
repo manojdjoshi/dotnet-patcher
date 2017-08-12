@@ -103,7 +103,7 @@ Partial Class Frm_Main
         Me.PcbInvalidMd = New System.Windows.Forms.PictureBox()
         Me.ChbObfuscatorInvalidMetadata = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorResourcesEncryption = New LoginTheme.XertzLoginTheme.LogInCheckBox()
-        Me.ChbObfuscatorInvalidOpcodes = New LoginTheme.XertzLoginTheme.LogInCheckBox()
+        Me.ChbObfuscatorControlFlow = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorAntiDumper = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorBooleanEncrypt = New LoginTheme.XertzLoginTheme.LogInCheckBox()
         Me.ChbObfuscatorHideCalls = New LoginTheme.XertzLoginTheme.LogInCheckBox()
@@ -1252,7 +1252,7 @@ Partial Class Frm_Main
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.PcbInvalidMd)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorInvalidMetadata)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorResourcesEncryption)
-        Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorInvalidOpcodes)
+        Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorControlFlow)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorAntiDumper)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorBooleanEncrypt)
         Me.GbxObfuscatorAdvanced.Controls.Add(Me.ChbObfuscatorHideCalls)
@@ -1314,21 +1314,21 @@ Partial Class Frm_Main
         Me.ChbObfuscatorResourcesEncryption.Tag = "Parameters"
         Me.ChbObfuscatorResourcesEncryption.Text = "Resources encryption"
         '
-        'ChbObfuscatorInvalidOpcodes
+        'ChbObfuscatorControlFlow
         '
-        Me.ChbObfuscatorInvalidOpcodes.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.ChbObfuscatorInvalidOpcodes.BorderColour = System.Drawing.Color.DimGray
-        Me.ChbObfuscatorInvalidOpcodes.Checked = True
-        Me.ChbObfuscatorInvalidOpcodes.CheckedColour = System.Drawing.Color.BlueViolet
-        Me.ChbObfuscatorInvalidOpcodes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ChbObfuscatorInvalidOpcodes.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.ChbObfuscatorInvalidOpcodes.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ChbObfuscatorInvalidOpcodes.Location = New System.Drawing.Point(12, 238)
-        Me.ChbObfuscatorInvalidOpcodes.Name = "ChbObfuscatorInvalidOpcodes"
-        Me.ChbObfuscatorInvalidOpcodes.Size = New System.Drawing.Size(112, 22)
-        Me.ChbObfuscatorInvalidOpcodes.TabIndex = 61
-        Me.ChbObfuscatorInvalidOpcodes.Tag = "Parameters"
-        Me.ChbObfuscatorInvalidOpcodes.Text = "Controlflow"
+        Me.ChbObfuscatorControlFlow.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
+        Me.ChbObfuscatorControlFlow.BorderColour = System.Drawing.Color.DimGray
+        Me.ChbObfuscatorControlFlow.Checked = True
+        Me.ChbObfuscatorControlFlow.CheckedColour = System.Drawing.Color.BlueViolet
+        Me.ChbObfuscatorControlFlow.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ChbObfuscatorControlFlow.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.ChbObfuscatorControlFlow.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ChbObfuscatorControlFlow.Location = New System.Drawing.Point(12, 238)
+        Me.ChbObfuscatorControlFlow.Name = "ChbObfuscatorControlFlow"
+        Me.ChbObfuscatorControlFlow.Size = New System.Drawing.Size(112, 22)
+        Me.ChbObfuscatorControlFlow.TabIndex = 61
+        Me.ChbObfuscatorControlFlow.Tag = "Parameters"
+        Me.ChbObfuscatorControlFlow.Text = "Controlflow"
         '
         'ChbObfuscatorAntiDumper
         '
@@ -1990,7 +1990,7 @@ Partial Class Frm_Main
     Friend WithEvents LblVersionInfosCopyright As LogInLabel
     Friend WithEvents LblVersionInfosTrademark As LogInLabel
     Friend WithEvents ChbObfuscatorAntiDumper As LogInCheckBox
-    Friend WithEvents ChbObfuscatorInvalidOpcodes As LogInCheckBox
+    Friend WithEvents ChbObfuscatorControlFlow As LogInCheckBox
     Friend WithEvents ChbObfuscatorResourcesEncryption As XertzLoginTheme.LogInCheckBox
     Friend WithEvents LblPackerPlatform As XertzLoginTheme.LogInLabel
     Friend WithEvents LblPackerSystem As XertzLoginTheme.LogInLabel

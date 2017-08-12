@@ -239,8 +239,8 @@ Public Class Frm_Main
         ChbObfuscatorStringsEncrypt.Checked = True
         ChbObfuscatorHideCalls.Enabled = True
         ChbObfuscatorHideCalls.Checked = True
-        ChbObfuscatorInvalidOpcodes.Enabled = True
-        ChbObfuscatorInvalidOpcodes.Checked = True
+        ChbObfuscatorControlFlow.Enabled = True
+        ChbObfuscatorControlFlow.Checked = True
         ChbObfuscatorInvalidMetadata.Enabled = True
         ChbObfuscatorInvalidMetadata.Checked = True
         CbxObfuscatorScheme.SelectedIndex = 0
@@ -472,9 +472,9 @@ Public Class Frm_Main
 
     Private Sub BtnExclusion_Click(sender As Object, e As EventArgs) Handles BtnExclusion.Click
         If Not m_exclude Is Nothing Then
-            m_exclude.SettingsState = New ExclusionState(ChbObfuscatorStringsEncrypt.Checked, ChbObfuscatorIntegersEncode.Checked, _
-                                                   ChbObfuscatorBooleanEncrypt.Checked, HasRenamingTask, _
-                                                   ChbObfuscatorInvalidOpcodes.Checked, ChbObfuscatorHideCalls.Checked)
+            m_exclude.SettingsState = New ExclusionState(ChbObfuscatorStringsEncrypt.Checked, ChbObfuscatorIntegersEncode.Checked,
+                                                   ChbObfuscatorBooleanEncrypt.Checked, HasRenamingTask,
+                                                   ChbObfuscatorControlFlow.Checked, ChbObfuscatorHideCalls.Checked)
             With m_exclude
                 .Dependencies = LbxDependenciesAdd.Items.Cast(Of String).ToList
                 .Title = "Exclusion rules"
@@ -486,8 +486,8 @@ Public Class Frm_Main
     End Sub
 
     Private Function HasRenamingTask() As Boolean
-        Return ChbObfuscatorNamespacesRP.Checked OrElse ChbObfuscatorTypesRP.Checked OrElse ChbObfuscatorMethodsRP.Checked OrElse _
-               ChbObfuscatorPropertiesRP.Checked OrElse ChbObfuscatorFieldsRP.Checked OrElse ChbObfuscatorEventsRP.Checked OrElse _
+        Return ChbObfuscatorNamespacesRP.Checked OrElse ChbObfuscatorTypesRP.Checked OrElse ChbObfuscatorMethodsRP.Checked OrElse
+               ChbObfuscatorPropertiesRP.Checked OrElse ChbObfuscatorFieldsRP.Checked OrElse ChbObfuscatorEventsRP.Checked OrElse
                ChbObfuscatorResourcesContent.Checked
     End Function
 
@@ -586,42 +586,42 @@ Public Class Frm_Main
 
     Private Sub BgwRenameTask_DoWork(sender As Object, e As DoWorkEventArgs) Handles BgwRenameTask.DoWork
         Try
-            m_param.RenamingAccept = New RenamerState(ChbObfuscatorNamespacesRP.Checked, _
-                                                      ChbObfuscatorTypesRP.Checked, _
-                                                      ChbObfuscatorMethodsRP.Checked, _
-                                                      ChbObfuscatorPropertiesRP.Checked, _
-                                                      ChbObfuscatorAttributesRP.Checked, _
-                                                      ChbObfuscatorEventsRP.Checked, _
-                                                      ChbObfuscatorFieldsRP.Checked, _
-                                                      ChbObfuscatorMethodsRP.Checked, _
-                                                      ChbObfuscatorMethodsRP.Checked, _
-                                                      ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked, _
-                                                      ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked, _
-                                                      m_LanguageType, _
-                                                      m_param.ExcludeList, _
+            m_param.RenamingAccept = New RenamerState(ChbObfuscatorNamespacesRP.Checked,
+                                                      ChbObfuscatorTypesRP.Checked,
+                                                      ChbObfuscatorMethodsRP.Checked,
+                                                      ChbObfuscatorPropertiesRP.Checked,
+                                                      ChbObfuscatorAttributesRP.Checked,
+                                                      ChbObfuscatorEventsRP.Checked,
+                                                      ChbObfuscatorFieldsRP.Checked,
+                                                      ChbObfuscatorMethodsRP.Checked,
+                                                      ChbObfuscatorMethodsRP.Checked,
+                                                      ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked,
+                                                      ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked,
+                                                      m_LanguageType,
+                                                      m_param.ExcludeList,
                                                       ChbObfuscatorExcludeReflection.Checked)
 
             With m_taskArgs
 
-                .MergeReferences = New DependenciesInfos(ChbDependenciesEnabled.Checked, _
-                                                         LbxDependenciesAdd.Items.Cast(Of String).ToList, _
-                                                         RdbDependenciesEmbedded.Checked, _
+                .MergeReferences = New DependenciesInfos(ChbDependenciesEnabled.Checked,
+                                                         LbxDependenciesAdd.Items.Cast(Of String).ToList,
+                                                         RdbDependenciesEmbedded.Checked,
                                                          CInt(e.Argument))
 
-                .Obfuscation = New ObfuscationInfos(ChbObfuscatorEnabled.Checked, _
-                                                    ChbObfuscatorResourcesContent.Checked, _
-                                                    ChbObfuscatorResourcesEncryption.Checked, _
-                                                    ChbObfuscatorResourcesCompress.Checked, _
-                                                    ChbObfuscatorIntegersEncode.Checked, _
-                                                    ChbObfuscatorBooleanEncrypt.Checked, _
-                                                    ChbObfuscatorStringsEncrypt.Checked, _
-                                                    ChbObfuscatorAntiIlDasm.Checked, _
-                                                    ChbObfuscatorAntiTamper.Checked, _
-                                                    ChbObfuscatorAntiDebug.Checked, _
-                                                    ChbObfuscatorAntiDumper.Checked, _
-                                                    ChbObfuscatorHideCalls.Checked, _
-                                                    ChbObfuscatorInvalidOpcodes.Checked, _
-                                                    ChbObfuscatorInvalidMetadata.Checked, _
+                .Obfuscation = New ObfuscationInfos(ChbObfuscatorEnabled.Checked,
+                                                    ChbObfuscatorResourcesContent.Checked,
+                                                    ChbObfuscatorResourcesEncryption.Checked,
+                                                    ChbObfuscatorResourcesCompress.Checked,
+                                                    ChbObfuscatorIntegersEncode.Checked,
+                                                    ChbObfuscatorBooleanEncrypt.Checked,
+                                                    ChbObfuscatorStringsEncrypt.Checked,
+                                                    ChbObfuscatorAntiIlDasm.Checked,
+                                                    ChbObfuscatorAntiTamper.Checked,
+                                                    ChbObfuscatorAntiDebug.Checked,
+                                                    ChbObfuscatorAntiDumper.Checked,
+                                                    ChbObfuscatorHideCalls.Checked,
+                                                    ChbObfuscatorControlFlow.Checked,
+                                                    ChbObfuscatorInvalidMetadata.Checked,
                                                     True)
 
                 .VersionInfos = If(ChbVersionInfosEnabled.Checked, New Infos(ChbVersionInfosEnabled.Checked, _
