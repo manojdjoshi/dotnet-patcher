@@ -61,11 +61,9 @@ Namespace Core.Obfuscation.Protection
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    'If NameChecker.IsRenamable(type) Then
                     If Exclude.isIntegerEncodExclude(type) = False Then
-                            IterateType(type)
-                        End If
-                    'End If
+                        IterateType(type)
+                    End If
                 Next
                 Types.Clear()
             Next
@@ -101,9 +99,9 @@ Namespace Core.Obfuscation.Protection
                                             If isValidOperand(Instruct) AndAlso CInt(Instruct.Operand) > 1 Then
                                                 If Instruct.OpCode = OpCodes.Ldc_I4 Then
                                                     If Not MethodByInteger.TryGetValue(CInt(Instruct.Operand), mdFinal) Then
-                                                        'If Randomizer.GenerateBoolean Then
+                                                        If Randomizer.GenerateBoolean Then
 
-                                                        mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
+                                                            mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
                                                             mdFinal.Body = New MethodBody(mdFinal)
 
                                                             If EncryptToResources = EncryptType.ToResources Then
@@ -149,77 +147,78 @@ Namespace Core.Obfuscation.Protection
                                                                 md.DeclaringType.Methods.Add(mdFinal)
                                                                 MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
                                                             End If
-                                                        'Else
-                                                        '    Dim resultPrimes = GetPrimes(CInt(Instruct.Operand))
-                                                        '    Dim countPrimes = resultPrimes.Count
-                                                        '    If countPrimes > 2 Then
+                                                        Else
+                                                            Dim resultPrimes = PrimeFactors(CInt(Instruct.Operand))
 
-                                                        '        Dim num = CInt(Instruct.Operand)
-                                                        '        Dim divider0 = 0
-                                                        '        Dim resultdivider0 = DetermineDiv(num, divider0)
-                                                        '        Dim StrDivider0 = resultdivider0 & " / " & divider0
-                                                        '        Dim divider1 = 0
-                                                        '        Dim resultdivider1 = DetermineDiv(num, divider1)
-                                                        '        Dim StrDivider1 = resultdivider1 & " / " & divider1
+                                                            Dim countPrimes = resultPrimes.Count
+                                                            If countPrimes > 2 Then
 
-                                                        '        Dim StrDivider = StrDivider0 & " - " & StrDivider1 & " + "
+                                                                Dim num = CInt(Instruct.Operand)
+                                                                Dim divider0 = 0
+                                                                Dim resultdivider0 = DetermineDiv(num, divider0)
+                                                                Dim StrDivider0 = resultdivider0 & " / " & divider0
+                                                                Dim divider1 = 0
+                                                                Dim resultdivider1 = DetermineDiv(num, divider1)
+                                                                Dim StrDivider1 = resultdivider1 & " / " & divider1
 
-                                                        '        Dim strPrimes = String.Empty
-                                                        '        strPrimes = String.Join(" ", resultPrimes).TrimEnd(" ")
-                                                        '        For k% = 0 To countPrimes - 2
-                                                        '            strPrimes &= " *"
-                                                        '        Next
+                                                                Dim StrDivider = StrDivider0 & " - " & StrDivider1 & " + "
 
-                                                        '        Dim InFix = (StrDivider & strPrimes).TrimEnd(" ")
+                                                                Dim strPrimes = String.Empty
+                                                                strPrimes = String.Join(" ", resultPrimes).TrimEnd(" ")
+                                                                For k% = 0 To countPrimes - 2
+                                                                    strPrimes &= " *"
+                                                                Next
 
-                                                        '        Dim postfix = String.Empty
-                                                        '        Dim bResult = InfixToPostfixConvert(InFix, postfix)
+                                                                Dim InFix = (StrDivider & strPrimes).TrimEnd(" ")
 
-                                                        '        postfix = postfix.TrimEnd(" ").Replace(" ", ",")
+                                                                Dim postfix = String.Empty
+                                                                Dim bResult = InfixToPostfixConvert(InFix, postfix)
 
-                                                        '        mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
-                                                        '        mdFinal.Body = New MethodBody(mdFinal)
+                                                                postfix = postfix.TrimEnd(" ").Replace(" ", ",")
 
-                                                        '        Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                        '        With ilProc
-                                                        '            .Body.MaxStackSize = 2
-                                                        '            .Body.InitLocals = True
-                                                        '            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                        '            .Emit(OpCodes.Ldstr, postfix)
-                                                        '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
-                                                        '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
-                                                        '            .Emit(OpCodes.Stloc_0)
-                                                        '            .Emit(OpCodes.Ldloc_0)
-                                                        '            .Emit(OpCodes.Ret)
-                                                        '        End With
+                                                                mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
+                                                                mdFinal.Body = New MethodBody(mdFinal)
 
-                                                        '        md.DeclaringType.Methods.Add(mdFinal)
-                                                        '        MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                        '    Else
-                                                        '        Dim divider0 = 0
-                                                        '        Dim resultdivider0 = DetermineDiv(CInt(Instruct.Operand), divider0)
-                                                        '        Dim str = resultdivider0 & "," & divider0 & ",/"
+                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                                With ilProc
+                                                                    .Body.MaxStackSize = 2
+                                                                    .Body.InitLocals = True
+                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                                    .Emit(OpCodes.Ldstr, postfix)
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
+                                                                    .Emit(OpCodes.Stloc_0)
+                                                                    .Emit(OpCodes.Ldloc_0)
+                                                                    .Emit(OpCodes.Ret)
+                                                                End With
 
-                                                        '        mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
-                                                        '        mdFinal.Body = New MethodBody(mdFinal)
+                                                                md.DeclaringType.Methods.Add(mdFinal)
+                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                            Else
+                                                                Dim divider0 = 0
+                                                                Dim resultdivider0 = DetermineDiv(CInt(Instruct.Operand), divider0)
+                                                                Dim str = resultdivider0 & "," & divider0 & ",/"
 
-                                                        '        Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                        '        With ilProc
-                                                        '            .Body.MaxStackSize = 2
-                                                        '            .Body.InitLocals = True
-                                                        '            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                        '            .Emit(OpCodes.Ldstr, str)
-                                                        '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
-                                                        '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
-                                                        '            .Emit(OpCodes.Stloc_0)
-                                                        '            .Emit(OpCodes.Ldloc_0)
-                                                        '            .Emit(OpCodes.Ret)
-                                                        '        End With
+                                                                mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
+                                                                mdFinal.Body = New MethodBody(mdFinal)
 
-                                                        '        md.DeclaringType.Methods.Add(mdFinal)
-                                                        '        MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                        '    End If
-                                                        'End If
+                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                                With ilProc
+                                                                    .Body.MaxStackSize = 2
+                                                                    .Body.InitLocals = True
+                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                                    .Emit(OpCodes.Ldstr, str)
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
+                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
+                                                                    .Emit(OpCodes.Stloc_0)
+                                                                    .Emit(OpCodes.Ldloc_0)
+                                                                    .Emit(OpCodes.Ret)
+                                                                End With
+
+                                                                md.DeclaringType.Methods.Add(mdFinal)
+                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                            End If
+                                                        End If
                                                     Else
                                                         mdFinal = MethodByInteger.Item(CInt(Instruct.Operand))
                                                     End If
@@ -353,39 +352,22 @@ Namespace Core.Obfuscation.Protection
                     End If
                 Next
             Catch ex As Exception
-                MsgBox(ex.ToString)
+                MsgBox("Numeric encoding Error : " & vbNewLine & ex.ToString)
             End Try
             publicMethods.Clear()
         End Sub
 
-        Private Shared Function GetPrimes(n As Decimal) As List(Of Integer)
-            Dim storage As New List(Of Integer)()
-            While n > 1
-                Dim i% = 1
-                'While True
-                If IsPrime(i) Then
-                    If (CDec(n) / i) = Math.Round(CDec(n) / i) Then
-                        n /= i
-                        storage.Add(i)
-                        Exit While
-                    End If
-                End If
-                i += 1
-                'End While
+        Private Shared Function PrimeFactors(a As Integer) As List(Of Integer)
+            Dim retval As New List(Of Integer)()
+            Dim b As Integer = 2
+            While a > 1
+                While a Mod b = 0
+                    a /= b
+                    retval.Add(b)
+                End While
+                b += 1
             End While
-            Return storage
-        End Function
-
-        Private Shared Function IsPrime(n As Integer) As Boolean
-            If n <= 1 Then
-                Return False
-            End If
-            For i% = 2 To Math.Sqrt(n)
-                If n Mod i = 0 Then
-                    Return False
-                End If
-            Next
-            Return True
+            Return retval
         End Function
 
         Private Shared Function DetermineDiv(real As Integer, ByRef div As Integer) As Integer
@@ -394,10 +376,9 @@ Namespace Core.Obfuscation.Protection
             Dim v% = real
             Try
                 v = (real * num)
-            Catch ex As System.OverflowException
+            Catch ex As OverflowException
                 div = 1
             End Try
-
             Return v
         End Function
 

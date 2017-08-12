@@ -68,7 +68,7 @@ Namespace Core.Obfuscation.Protection
                                     Try
                                         Dim nmr% = Rand.Next(1, 1000)
                                         Dim flag As Boolean = Convert.ToBoolean(Rand.Next(0, 2))
-                                        Select Case If((num <> 0), If(((Convert.ToInt32(instruct.Operand) Mod num) = 0), Rand.Next(1, 5), Rand.Next(1, 4)), Rand.Next(1, 4))
+                                        Select Case If(num <> 0, If((Convert.ToInt32(instruct.Operand) Mod num = 0), Rand.Next(1, 4), Rand.Next(1, 4)), Rand.Next(1, 4))
                                             Case 1
                                                 Dim newOp = ((Convert.ToInt32(instruct.Operand) - num) + If(flag, -nmr, nmr))
                                                 With mDef.Body

@@ -540,7 +540,6 @@ Namespace CecilHelper
             Return offset
         End Function
 
-
         Public Shared Sub SimplifyBranches(ByVal instructions As IList(Of Instruction))
             IterateAll(instructions, Sub(ByVal list As IList(Of Instruction), ByVal index As Integer, ByVal instr As Instruction)
                                          Select Case instr.OpCode.Code

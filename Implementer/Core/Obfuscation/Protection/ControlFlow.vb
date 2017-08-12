@@ -5,6 +5,9 @@ Imports Helper.CecilHelper
 Imports Implementer.Core.Obfuscation.Exclusion
 
 Namespace Core.Obfuscation.Protection
+    ''' <summary>
+    ''' By Furious from DotnetVitamin
+    ''' </summary>
     Public NotInheritable Class ControlFlow
 
 #Region " Fields "
@@ -20,6 +23,7 @@ Namespace Core.Obfuscation.Protection
 
 #Region " Methods "
         Friend Shared Function DoJob(asm As AssemblyDefinition, Exclude As ExcludeList) As AssemblyDefinition
+
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
@@ -44,40 +48,40 @@ Namespace Core.Obfuscation.Protection
                                 If md.Body.ExceptionHandlers.Count = 0 Then
                                     Using optim As New Msil(md.Body)
                                         Dim incGroups As New InstructionGroups
-                                        Dim item As New InstructionGroup
-                                        Dim num As Integer = 0
-                                        Dim num2 As Integer = 0
+                                        Dim item1 As New InstructionGroup
+                                        Dim incremId As Integer = 0
+                                        Dim incremStackUsage As Integer = 0
                                         Dim flag As Boolean = False
                                         For i = 0 To md.Body.Instructions.Count - 1
                                             Dim Instruct = md.Body.Instructions(i)
-                                            Dim num3 As Integer
+                                            Dim stacks As Integer
                                             Dim pops As Integer = 0
-                                            Msil.CalculateStackUsage(Instruct, num3, pops)
-                                            item.Add(Instruct)
-                                            num2 = (num2 + (num3 - pops))
-                                            If (((num3 = 0) AndAlso (Not Instruct.OpCode = OpCodes.Nop)) AndAlso ((num2 = 0) OrElse (Instruct.OpCode = OpCodes.Ret))) Then
+                                            Msil.CalculateStackUsage(Instruct, stacks, pops)
+                                            item1.Add(Instruct)
+                                            incremStackUsage = (incremStackUsage + (stacks - pops))
+                                            If (((stacks = 0) AndAlso (Not Instruct.OpCode = OpCodes.Nop)) AndAlso ((incremStackUsage = 0) OrElse (Instruct.OpCode = OpCodes.Ret))) Then
                                                 If Not flag Then
-                                                    Dim group2 As New InstructionGroup
-                                                    group2.ID = num
-                                                    num += 1
-                                                    group2.nextGroup = (group2.ID + 1)
-                                                    incGroups.Add(group2)
-                                                    group2 = New InstructionGroup
-                                                    group2.ID = num
-                                                    num += 1
-                                                    group2.nextGroup = (group2.ID + 1)
-                                                    incGroups.Add(group2)
+                                                    Dim item2 As New InstructionGroup
+                                                    item2.ID = incremId
+                                                    incremId += 1
+                                                    item2.nextGroup = (item2.ID + 1)
+                                                    incGroups.Add(item2)
+                                                    item2 = New InstructionGroup
+                                                    item2.ID = incremId
+                                                    incremId += 1
+                                                    item2.nextGroup = (item2.ID + 1)
+                                                    incGroups.Add(item2)
                                                     flag = True
                                                 End If
-                                                item.ID = num
-                                                num += 1
-                                                item.nextGroup = (item.ID + 1)
-                                                incGroups.Add(item)
-                                                item = New InstructionGroup
+                                                item1.ID = incremId
+                                                incremId += 1
+                                                item1.nextGroup = (item1.ID + 1)
+                                                incGroups.Add(item1)
+                                                item1 = New InstructionGroup
                                             End If
                                         Next
                                         If (incGroups.Count <> 1) Then
-                                            Dim group3 As InstructionGroup = incGroups.getLast
+                                            Dim item3 As InstructionGroup = incGroups.getLast
                                             incGroups.Scramble(incGroups)
                                             md.Body.Instructions.Clear()
                                             Dim local As New VariableDefinition(td.Module.Assembly.MainModule.Import(GetType(Integer)))
@@ -90,7 +94,7 @@ Namespace Core.Obfuscation.Protection
                                             md.Body.Instructions.Add(target)
                                             Dim group4 As InstructionGroup
                                             For Each group4 In incGroups
-                                                If (Not group4 Is group3) Then
+                                                If (Not group4 Is item3) Then
                                                     md.Body.Instructions.Add(Instruction.Create(OpCodes.Ldloc, local))
                                                     md.Body.Instructions.Add(Instruction.Create(OpCodes.Ldc_I4, group4.ID))
                                                     md.Body.Instructions.Add(Instruction.Create(OpCodes.Ceq))
@@ -109,10 +113,10 @@ Namespace Core.Obfuscation.Protection
                                             md.Body.Instructions.Add(Instruction.Create(OpCodes.Ldc_I4, CInt((incGroups.Count - 1))))
                                             md.Body.Instructions.Add(Instruction.Create(OpCodes.Ceq))
                                             md.Body.Instructions.Add(Instruction.Create(OpCodes.Brfalse, instruction3))
-                                            md.Body.Instructions.Add(Instruction.Create(OpCodes.Br, group3.Item(0)))
+                                            md.Body.Instructions.Add(Instruction.Create(OpCodes.Br, item3.Item(0)))
                                             md.Body.Instructions.Add(instruction3)
                                             Dim instruction6 As Instruction
-                                            For Each instruction6 In group3
+                                            For Each instruction6 In item3
                                                 md.Body.Instructions.Add(instruction6)
                                             Next
                                         End If
