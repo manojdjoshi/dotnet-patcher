@@ -26,7 +26,6 @@ Namespace AssemblyHelper
                         If attca.MemberInfo.Name.ToString = "FrameworkDisplayName" Then
                             If att.ConstructorArguments.Count <> 0 Then
                                 If Not att.ConstructorArguments(0).Value Is Nothing Then
-                                    'MsgBox(att.ConstructorArguments(0).Value.ToString())
                                     If att.ConstructorArguments(0).Value.ToString().ToLower.Contains(",version=") Then
                                         FrmwkVersion = att.ConstructorArguments(0).Value.ToString().Split("=")(1).Replace(",Client", String.Empty).Replace(",Profile", String.Empty).Trim
                                         Exit For

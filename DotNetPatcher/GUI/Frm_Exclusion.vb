@@ -3,8 +3,6 @@ Imports System.ComponentModel
 Imports LoginTheme.XertzLoginTheme
 Imports Implementer.Core.Obfuscation.Exclusion
 Imports Implementer.Core.Dependencing
-Imports System.Security.Cryptography
-Imports System.Text
 Imports Helper.UtilsHelper
 Imports Helper.RandomizeHelper
 

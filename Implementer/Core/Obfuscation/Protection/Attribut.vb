@@ -35,7 +35,6 @@ Namespace Core.Obfuscation.Protection
                     ElseIf it = "AssemblyInfoAttribute" Then
                     Else
                         creatAttribut(assdef, item, it)
-                        'assdef.MainModule.Types.Add(item)
                     End If
                 End If
             Next

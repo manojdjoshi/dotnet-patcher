@@ -8,11 +8,11 @@
 #Region " Enumerations "
         Public Enum RenameEnum
             Alphabetic = 0
-            Dot = 1
+            Greek = 1
             Invisible = 2
             Chinese = 3
             Japanese = 4
-            Greek = 5
+            Dot = 5
             Symbols = 6
             Flowing = 7
         End Enum

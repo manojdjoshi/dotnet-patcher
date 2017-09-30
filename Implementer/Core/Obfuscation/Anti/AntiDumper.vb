@@ -12,7 +12,7 @@ Namespace Core.Obfuscation.Anti
 
             Dim reposit = New Stub("AntiDumping", "Initialize")
             With reposit
-                .ResolveTypeFromFile(GetType(Injections.AntiDumping).Assembly.Location, Finder.FindDefaultNamespace(AssDef, Pack), Randomizer.GenerateNew, Randomizer.GenerateNew)
+                .ResolveTypeFromFile(GetType(AntiDumping).Assembly.Location, Finder.FindDefaultNamespace(AssDef, Pack), Randomizer.GenerateNew, Randomizer.GenerateNew)
                 .InjectToCctor(AssDef)
                 .DeleteDll()
             End With

@@ -38,7 +38,7 @@ Namespace Engine.Processing
 #Region " Methods "
 
         ''' <summary>
-        ''' INFO : This is the EntryPoint of the renamer method ! Namespaces, Types and Resources renaming.
+        ''' INFO : This is the beginning of the renamer method ! Namespaces, Types and Resources renaming.
         ''' </summary>
         ''' <param name="type"></param>
         Public Sub ProcessType(type As TypeDefinition)

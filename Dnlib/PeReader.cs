@@ -187,7 +187,7 @@ namespace dnlib
 
         if (m_isManaged == true)
             {
-                ImageSectionHeader sect = m_peImage.ImageSectionHeaders.Where(f => f.DisplayName == ".rsrc").First();
+                ImageSectionHeader sect = m_peImage.ImageSectionHeaders.Where(f => f.DisplayName == ".rsrc").FirstOrDefault();
                 if ((sect != null))
                 {
                     ImageDataDirectory resourceTable = m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories[2];

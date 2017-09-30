@@ -2,7 +2,7 @@ using System;
 
 namespace SevenZipLib
 {
-	 struct RangeCoderBitTreeEncoder
+    struct RangeCoderBitTreeEncoder
 	{
 		RangeCoderBitEncoder[] Models;
 		int NumBitLevels;
@@ -100,58 +100,58 @@ namespace SevenZipLib
 		}
 	}
 
-     //public struct RangeCoderBitTreeDecoder
-     //{
-     //    RangeCoderBitDecoder[] Models;
-     //    int NumBitLevels;
+    //public struct RangeCoderBitTreeDecoder
+    //{
+    //    RangeCoderBitDecoder[] Models;
+    //    int NumBitLevels;
 
-     //    public RangeCoderBitTreeDecoder(int numBitLevels)
-     //    {
-     //        NumBitLevels = numBitLevels;
-     //        Models = new RangeCoderBitDecoder[1 << numBitLevels];
-     //    }
+    //    public RangeCoderBitTreeDecoder(int numBitLevels)
+    //    {
+    //        NumBitLevels = numBitLevels;
+    //        Models = new RangeCoderBitDecoder[1 << numBitLevels];
+    //    }
 
-     //    public void Init()
-     //    {
-     //        for (uint i = 1; i < (1 << NumBitLevels); i++)
-     //            Models[i].Init();
-     //    }
+    //    public void Init()
+    //    {
+    //        for (uint i = 1; i < (1 << NumBitLevels); i++)
+    //            Models[i].Init();
+    //    }
 
-     //    public uint Decode(RangeCoderDecoder rangeDecoder)
-     //    {
-     //        uint m = 1;
-     //        for (int bitIndex = NumBitLevels; bitIndex > 0; bitIndex--)
-     //            m = (m << 1) + Models[m].Decode(rangeDecoder);
-     //        return m - ((uint)1 << NumBitLevels);
-     //    }
+    //    public uint Decode(RangeCoderDecoder rangeDecoder)
+    //    {
+    //        uint m = 1;
+    //        for (int bitIndex = NumBitLevels; bitIndex > 0; bitIndex--)
+    //            m = (m << 1) + Models[m].Decode(rangeDecoder);
+    //        return m - ((uint)1 << NumBitLevels);
+    //    }
 
-     //    public uint ReverseDecode(RangeCoderDecoder rangeDecoder)
-     //    {
-     //        uint m = 1;
-     //        uint symbol = 0;
-     //        for (int bitIndex = 0; bitIndex < NumBitLevels; bitIndex++)
-     //        {
-     //            uint bit = Models[m].Decode(rangeDecoder);
-     //            m <<= 1;
-     //            m += bit;
-     //            symbol |= (bit << bitIndex);
-     //        }
-     //        return symbol;
-     //    }
+    //    public uint ReverseDecode(RangeCoderDecoder rangeDecoder)
+    //    {
+    //        uint m = 1;
+    //        uint symbol = 0;
+    //        for (int bitIndex = 0; bitIndex < NumBitLevels; bitIndex++)
+    //        {
+    //            uint bit = Models[m].Decode(rangeDecoder);
+    //            m <<= 1;
+    //            m += bit;
+    //            symbol |= (bit << bitIndex);
+    //        }
+    //        return symbol;
+    //    }
 
-     //    public static uint ReverseDecode(RangeCoderBitDecoder[] Models, UInt32 startIndex,
-     //        RangeCoderDecoder rangeDecoder, int NumBitLevels)
-     //    {
-     //        uint m = 1;
-     //        uint symbol = 0;
-     //        for (int bitIndex = 0; bitIndex < NumBitLevels; bitIndex++)
-     //        {
-     //            uint bit = Models[startIndex + m].Decode(rangeDecoder);
-     //            m <<= 1;
-     //            m += bit;
-     //            symbol |= (bit << bitIndex);
-     //        }
-     //        return symbol;
-     //    }
-     //}
+    //    public static uint ReverseDecode(RangeCoderBitDecoder[] Models, UInt32 startIndex,
+    //        RangeCoderDecoder rangeDecoder, int NumBitLevels)
+    //    {
+    //        uint m = 1;
+    //        uint symbol = 0;
+    //        for (int bitIndex = 0; bitIndex < NumBitLevels; bitIndex++)
+    //        {
+    //            uint bit = Models[startIndex + m].Decode(rangeDecoder);
+    //            m <<= 1;
+    //            m += bit;
+    //            symbol |= (bit << bitIndex);
+    //        }
+    //        return symbol;
+    //    }
+    //}
 }

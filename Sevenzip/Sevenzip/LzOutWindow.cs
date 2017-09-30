@@ -2,7 +2,7 @@
 
 namespace SevenZipLib
 {
-	public class LZOutWindow
+    public class LZOutWindow
 	{
 		byte[] _buffer = null;
 		uint _pos;

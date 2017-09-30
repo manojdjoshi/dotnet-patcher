@@ -22,7 +22,7 @@ Namespace CecilHelper
             member.CustomAttributes.Add(ca)
         End Sub
 
-        Public Shared Function InjectTypeDefinition(mdef As ModuleDefinition, name As String, ByVal baseType As TypeReference) As TypeDefinition
+        Public Shared Function CreateAndInjectTypeDefinition(mdef As ModuleDefinition, name As String, ByVal baseType As TypeReference) As TypeDefinition
             Dim str As String = String.Empty
             If name.Contains(".") Then
                 Dim length As Integer = name.LastIndexOf(".")
@@ -276,7 +276,7 @@ Namespace CecilHelper
                             Exit Select
                         Case ExceptionHandlerType.Filter
                             neh.FilterStart = bdy.Instructions(old.Instructions.IndexOf(eh.FilterStart))
-                            'neh.FilterEnd = bdy.Instructions[old.Instructions.IndexOf(eh.FilterEnd)];
+                            'neh.FilterEnd = bdy.Instructions(old.Instructions.IndexOf(eh.FilterEnd))
                             Exit Select
                     End Select
 
@@ -445,7 +445,8 @@ Namespace CecilHelper
             Return ret
         End Function
 
-        Public Shared Function Inject(m As ModuleDefinition, type As TypeDefinition) As TypeDefinition
+        Public Shared Function InjectTypeDefinition(m As ModuleDefinition, type As TypeDefinition) As TypeDefinition
+            'type.Module.FullLoad()
             Dim mems As New Dictionary(Of MetadataToken, IMemberDefinition)
             Dim definition As TypeDefinition = m_Inject(m, type, mems)
             PopulateDatas(m, type, mems)
@@ -458,6 +459,13 @@ Namespace CecilHelper
                 .ClassSize = type.ClassSize,
                 .PackingSize = type.PackingSize
             }
+            If type.HasCustomAttributes Then
+                For Each attr As CustomAttribute In type.CustomAttributes
+                    Dim nAttr As New CustomAttribute(ImportMethod(attr.Constructor, mDef, attr.Constructor, mems), attr.GetBlob())
+                    definition.CustomAttributes.Add(nAttr)
+                Next
+            End If
+
             If (Not type.BaseType Is Nothing) Then
                 definition.BaseType = mDef.Import(type.BaseType)
             End If

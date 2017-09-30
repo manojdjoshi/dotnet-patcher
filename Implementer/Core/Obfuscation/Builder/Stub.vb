@@ -18,7 +18,7 @@ Namespace Core.Obfuscation.Builder
 #End Region
 
 #Region " Properties "
-        Private m_className = String.Empty
+        Private m_className As String = String.Empty
         Friend ReadOnly Property className As String
             Get
                 Return m_className
@@ -89,26 +89,43 @@ Namespace Core.Obfuscation.Builder
             End If
             m_resolverDll = ResolverDll
             m_assDef = AssemblyDefinition.ReadAssembly(ResolverDll)
+
             m_typeDefResolver = Finder.FindType(m_assDef.MainModule, m_className)
 
             If Not replaceNamespace = "" Then m_typeDefResolver.Namespace = replaceNamespace
             If Not replaceClassName = "" Then m_typeDefResolver.Name = replaceClassName
 
             If Not FuncNewName1 = "" Then
-                Finder.FindMethod(m_typeDefResolver, m_funcName1).Name = FuncNewName1
+                Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName1)
+                m.Name = FuncNewName1
                 m_funcName1 = FuncNewName1
+                'If m.IsPInvokeImpl Then
+                '    m.PInvokeInfo.EntryPoint = m_funcName1
+                'End If
             End If
             If Not FuncNewName2 = "" Then
-                Finder.FindMethod(m_typeDefResolver, m_funcName2).Name = FuncNewName2
+                Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName2)
+                m.Name = FuncNewName2
                 m_funcName2 = FuncNewName2
+                'If m.IsPInvokeImpl Then
+                '    m.PInvokeInfo.EntryPoint = m_funcName2
+                'End If
             End If
             If Not FuncNewName3 = "" Then
-                Finder.FindMethod(m_typeDefResolver, m_funcName3).Name = FuncNewName3
+                Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName3)
+                m.Name = FuncNewName3
                 m_funcName3 = FuncNewName3
+                'If m.IsPInvokeImpl Then
+                '    m.PInvokeInfo.EntryPoint = m_funcName3
+                'End If
             End If
             If Not FuncNewName4 = "" Then
-                Finder.FindMethod(m_typeDefResolver, m_funcName4).Name = FuncNewName4
+                Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName4)
+                m.Name = FuncNewName4
                 m_funcName4 = FuncNewName4
+                'If m.IsPInvokeImpl Then
+                '    m.PInvokeInfo.EntryPoint = m_funcName4
+                'End If
             End If
 
             Return m_typeDefResolver
@@ -116,14 +133,14 @@ Namespace Core.Obfuscation.Builder
 
         Friend Function InjectType(assDefTarget As AssemblyDefinition) As TypeDefinition
             m_assDefTarget = assDefTarget
-            m_resolvedTypeDef = Injecter.Inject(assDefTarget.MainModule, m_typeDefResolver)
+            m_resolvedTypeDef = Injecter.InjectTypeDefinition(assDefTarget.MainModule, m_typeDefResolver)
             assDefTarget.MainModule.Types.Add(m_resolvedTypeDef)
             Return m_resolvedTypeDef
         End Function
 
         Friend Sub InjectToCctor(assDefTarget As AssemblyDefinition)
             m_assDefTarget = assDefTarget
-            m_resolvedTypeDef = Injecter.Inject(assDefTarget.MainModule, m_typeDefResolver)
+            m_resolvedTypeDef = Injecter.InjectTypeDefinition(assDefTarget.MainModule, m_typeDefResolver)
 
             Dim globalType = m_assDefTarget.MainModule.GetType("<Module>")
 
@@ -138,6 +155,7 @@ Namespace Core.Obfuscation.Builder
             End If
 
             m_assDefTarget.MainModule.Types.Add(m_resolvedTypeDef)
+
             Dim initializeMethod = Finder.FindMethod(m_assDefTarget, m_funcName1)
 
             If Not initializeMethod Is Nothing Then
@@ -146,7 +164,7 @@ Namespace Core.Obfuscation.Builder
                     Dim last = ilproc.Body.Instructions.Count
                     Dim init = ilproc.Create(OpCodes.Call, initializeMethod)
                     cctorMethod.Body.Instructions.Insert(last, init)
-                    ilproc.InsertAfter(init, ilproc.Create(Mono.Cecil.Cil.OpCodes.Ret))
+                    ilproc.InsertAfter(init, ilproc.Create(OpCodes.Ret))
                 End If
             End If
         End Sub

@@ -75,7 +75,6 @@
     <Compile Include="Cecil\InstructionGroup.vb" />
     <Compile Include="Cecil\InstructionGroups.vb" />
     <Compile Include="Cecil\NameChecker.vb" />
-    <Compile Include="Cecil\ProcessedIL.vb" />
     <Compile Include="CodeDom\Compiler.vb" />
     <Compile Include="Assembly\Data.vb" />
     <Compile Include="Assembly\Infos.vb" />

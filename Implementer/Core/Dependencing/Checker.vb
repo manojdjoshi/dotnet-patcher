@@ -28,7 +28,7 @@ Namespace Core.Dependencing
             itemEvent = Nothing
         End Sub
 
-        Public Sub AddReferences(ByVal filesToAdd As String())
+        Public Sub AddReferences(filesToAdd As String())
             Try
                 For Each f In filesToAdd
                     If New FileInfo(f).Length = 0 Then

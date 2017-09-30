@@ -16,3 +16,8 @@ D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\bin\Debug\Vestris.ResourceLib.
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Debug\ResourceLib.csprojResolveAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Debug\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Debug\Vestris.ResourceLib.pdb

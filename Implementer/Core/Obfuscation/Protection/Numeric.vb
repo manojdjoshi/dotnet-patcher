@@ -18,8 +18,8 @@ Namespace Core.Obfuscation.Protection
         Private Shared DecryptInt As Stub
         Private Shared DecryptRPN As Stub
         Private Shared MethodByInteger As New Dictionary(Of Integer, MethodDefinition)
-        Private Shared MethodByIntegerS As New Dictionary(Of Integer, MethodDefinition)
-        Private Shared MethodByInteger2 As New Dictionary(Of Integer, MethodDefinition)
+        Private Shared MethodByDouble As New Dictionary(Of Double, MethodDefinition)
+        Private Shared MethodBySingle As New Dictionary(Of Single, MethodDefinition)
         Private Shared Types As New List(Of TypeDefinition)()
 #End Region
 
@@ -82,273 +82,371 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute") AndAlso Utils.HasUnsafeInstructions(m) = False))
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
-                        If Utils.HasUnsafeInstructions(md) = False Then
-                            Using optim As New Msil(md.Body)
-                                For i = 0 To md.Body.Instructions.Count - 1
-                                    Dim Instruct = md.Body.Instructions(i)
+                        md.Body.SimplifyMacros
+                        For i = 0 To md.Body.Instructions.Count - 1
+                            Dim Instruct = md.Body.Instructions(i)
+                            If Not completedInstructions.Contains(Instruct) Then
+                                If Instruct.OpCode = OpCodes.Ldc_I4 OrElse Instruct.OpCode = OpCodes.Ldc_I4_2 OrElse Instruct.OpCode = OpCodes.Ldc_I4_3 _
+                                    OrElse Instruct.OpCode = OpCodes.Ldc_I4_4 OrElse Instruct.OpCode = OpCodes.Ldc_I4_5 OrElse Instruct.OpCode = OpCodes.Ldc_I4_6 _
+                                    OrElse Instruct.OpCode = OpCodes.Ldc_I4_7 OrElse Instruct.OpCode = OpCodes.Ldc_I4_8 OrElse Instruct.OpCode = OpCodes.Ldc_R4 _
+                                    OrElse Instruct.OpCode = OpCodes.Ldc_R8 Then
 
-                                    If Not completedInstructions.Contains(Instruct) Then
-                                        Dim mdFinal As MethodDefinition = Nothing
+                                    Select Case Instruct.OpCode
+                                        Case OpCodes.Ldc_I4_2, OpCodes.Ldc_I4_3, OpCodes.Ldc_I4_4, OpCodes.Ldc_I4_5,
+                                             OpCodes.Ldc_I4_6, OpCodes.Ldc_I4_7, OpCodes.Ldc_I4_8
+                                            Instruct.Operand = Integer.Parse(Instruct.OpCode.ToString().Split(".")(2))
+                                            Instruct.OpCode = OpCodes.Ldc_I4
+                                    End Select
 
-                                        Dim index As Integer = md.Body.Instructions.IndexOf(Instruct)
-                                        If ((Instruct.OpCode = OpCodes.Ldc_I4) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_S)) Then
-                                            If isValidOperand(Instruct) AndAlso CInt(Instruct.Operand) > 1 Then
-                                                If Instruct.OpCode = OpCodes.Ldc_I4 Then
-                                                    If Not MethodByInteger.TryGetValue(CInt(Instruct.Operand), mdFinal) Then
-                                                        If Randomizer.GenerateBoolean Then
+                                    If isValidOperand(Instruct) Then
+                                        If Instruct.OpCode = OpCodes.Ldc_I4 Then
+                                            Dim mdFinal As MethodDefinition = Nothing
 
-                                                            mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
-                                                            mdFinal.Body = New MethodBody(mdFinal)
+                                            If Not MethodByInteger.TryGetValue(CInt(Instruct.Operand), mdFinal) Then
+                                                If Randomizer.GenerateBoolean Then
+                                                    If Not Instruct.Operand >= Integer.MaxValue AndAlso Instruct.Operand > 8 Then
 
-                                                            If EncryptToResources = EncryptType.ToResources Then
-                                                                Dim integ = Randomizer.GenerateInvisible
+                                                        mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
+                                                        mdFinal.Body = New MethodBody(mdFinal)
+                                                        mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
 
-                                                                Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
-                                                                Dim dataKeyName = Randomizer.GenerateNew
-                                                                ResWriter.AddResource(dataKeyName, encStr)
+                                                        If EncryptToResources = EncryptType.ToResources Then
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
 
-                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                                With ilProc
-                                                                    .Body.MaxStackSize = 2
-                                                                    .Body.InitLocals = True
-                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                    .Emit(OpCodes.Ldstr, dataKeyName)
-                                                                    .Emit(OpCodes.Call, md.Module.Import(DecryptReadResources.GetMethod1))
-                                                                    .Emit(OpCodes.Ldc_I4, integ)
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
-                                                                    .Emit(OpCodes.Stloc_0)
-                                                                    .Emit(OpCodes.Ldloc_0)
-                                                                    .Emit(OpCodes.Ret)
-                                                                End With
+                                                            Dim integ = Randomizer.GenerateInvisible
+                                                            Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
+                                                            Dim dataKeyName = Randomizer.GenerateNew
+                                                            ResWriter.AddResource(dataKeyName, encStr)
 
-                                                                md.DeclaringType.Methods.Add(mdFinal)
-                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                            Else
-                                                                Dim integ = Randomizer.GenerateInvisible
-                                                                Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
+                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                            With ilProc
+                                                                .Body.MaxStackSize = 4
+                                                                .Body.InitLocals = True
 
-                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                                With ilProc
-                                                                    .Body.MaxStackSize = 2
-                                                                    .Body.InitLocals = True
-                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                    .Emit(OpCodes.Ldstr, encStr)
-                                                                    .Emit(OpCodes.Ldc_I4, integ)
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
-                                                                    .Emit(OpCodes.Stloc_0)
-                                                                    .Emit(OpCodes.Ldloc_0)
-                                                                    .Emit(OpCodes.Ret)
-                                                                End With
+                                                                .Emit(OpCodes.Ldstr, dataKeyName)
+                                                                .Emit(OpCodes.Stloc_1)
+                                                                .Emit(OpCodes.Ldloc_1)
+                                                                .Emit(OpCodes.Call, md.Module.Import(DecryptReadResources.GetMethod1))
+                                                                .Emit(OpCodes.Stloc_2)
+                                                                .Emit(OpCodes.Ldloc_2)
+                                                                .Emit(OpCodes.Ldc_I4, integ)
+                                                                .Emit(OpCodes.Stloc_3)
+                                                                .Emit(OpCodes.Ldloc_3)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
+                                                                .Emit(OpCodes.Stloc_0)
+                                                                .Emit(OpCodes.Ldloc_0)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
 
-                                                                md.DeclaringType.Methods.Add(mdFinal)
-                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
-                                                            End If
+                                                            md.DeclaringType.Methods.Add(mdFinal)
+                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
                                                         Else
-                                                            Dim resultPrimes = PrimeFactors(CInt(Instruct.Operand))
+                                                            Dim integ = Randomizer.GenerateInvisible
+                                                            Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
 
-                                                            Dim countPrimes = resultPrimes.Count
-                                                            If countPrimes > 2 Then
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
 
-                                                                Dim num = CInt(Instruct.Operand)
-                                                                Dim divider0 = 0
-                                                                Dim resultdivider0 = DetermineDiv(num, divider0)
-                                                                Dim StrDivider0 = resultdivider0 & " / " & divider0
-                                                                Dim divider1 = 0
-                                                                Dim resultdivider1 = DetermineDiv(num, divider1)
-                                                                Dim StrDivider1 = resultdivider1 & " / " & divider1
+                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                            With ilProc
+                                                                .Body.MaxStackSize = 4
+                                                                .Body.InitLocals = True
+                                                                .Emit(OpCodes.Ldstr, encStr)
+                                                                .Emit(OpCodes.Stloc_1)
+                                                                .Emit(OpCodes.Ldloc_1)
+                                                                .Emit(OpCodes.Ldc_I4, integ)
+                                                                .Emit(OpCodes.Stloc_2)
+                                                                .Emit(OpCodes.Ldloc_2)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
+                                                                .Emit(OpCodes.Stloc_0)
+                                                                .Emit(OpCodes.Ldloc_0)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
 
-                                                                Dim StrDivider = StrDivider0 & " - " & StrDivider1 & " + "
+                                                            md.DeclaringType.Methods.Add(mdFinal)
+                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                        End If
+                                                    ElseIf CInt(Instruct.Operand) > 1 AndAlso CInt(Instruct.Operand) < 9 Then
+                                                        mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), md.DeclaringType.Module.Import(GetType(Integer)))
+                                                        mdFinal.Body = New MethodBody(mdFinal)
+                                                        mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
 
-                                                                Dim strPrimes = String.Empty
-                                                                strPrimes = String.Join(" ", resultPrimes).TrimEnd(" ")
-                                                                For k% = 0 To countPrimes - 2
-                                                                    strPrimes &= " *"
-                                                                Next
+                                                        Dim integ = Randomizer.GenerateInvisible
+                                                        Dim encStr = Generator.IntEncrypt(CInt(Instruct.Operand), integ)
 
-                                                                Dim InFix = (StrDivider & strPrimes).TrimEnd(" ")
+                                                        Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                        With ilProc
+                                                            .Body.MaxStackSize = 4
+                                                            .Body.InitLocals = True
 
-                                                                Dim postfix = String.Empty
-                                                                Dim bResult = InfixToPostfixConvert(InFix, postfix)
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
 
-                                                                postfix = postfix.TrimEnd(" ").Replace(" ", ",")
+                                                            .Emit(OpCodes.Ldstr, encStr)
+                                                            .Emit(OpCodes.Stloc_1)
+                                                            .Emit(OpCodes.Ldloc_1)
+                                                            .Emit(OpCodes.Ldc_I4, integ)
+                                                            .Emit(OpCodes.Stloc_2)
+                                                            .Emit(OpCodes.Ldloc_2)
+                                                            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptInt.GetMethod1))
+                                                            .Emit(OpCodes.Stloc_0)
+                                                            .Emit(OpCodes.Ldloc_0)
+                                                            .Emit(OpCodes.Ret)
+                                                        End With
 
-                                                                mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
-                                                                mdFinal.Body = New MethodBody(mdFinal)
+                                                        md.DeclaringType.Methods.Add(mdFinal)
+                                                        MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                    End If
+                                                Else
+                                                    If Not Instruct.Operand >= Integer.MaxValue Then
 
-                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                                With ilProc
-                                                                    .Body.MaxStackSize = 2
+                                                        Dim resultPrimes = PrimeFactors(Instruct.Operand)
+                                                        Dim countPrimes = resultPrimes.Count
+                                                        If countPrimes > 2 Then
+                                                            Dim num = CInt(Instruct.Operand)
+                                                            Dim divider0 = 0
+                                                            Dim resultdivider0 = DetermineDiv(num, divider0)
+                                                            Dim StrDivider0 = resultdivider0 & " / " & divider0
+                                                            Dim divider1 = 0
+                                                            Dim resultdivider1 = DetermineDiv(num, divider1)
+                                                            Dim StrDivider1 = resultdivider1 & " / " & divider1
+                                                            Dim StrDivider = StrDivider0 & " - " & StrDivider1 & " + "
+
+                                                            Dim strPrimes = String.Empty
+                                                            strPrimes = String.Join(" ", resultPrimes).TrimEnd(" ")
+                                                            For k% = 0 To countPrimes - 2
+                                                                strPrimes &= " *"
+                                                            Next
+
+                                                            Dim InFix = (StrDivider & strPrimes).TrimEnd(" ")
+                                                            Dim postfix = String.Empty
+                                                            Dim bResult = InfixToPostfixConvert(InFix, postfix)
+                                                            postfix = postfix.TrimEnd(" ").Replace(" ", ",")
+
+                                                            mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
+                                                            mdFinal.Body = New MethodBody(mdFinal)
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String()))))
+
+                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                            With ilProc
+                                                                .Body.MaxStackSize = 4
+                                                                .Body.InitLocals = True
+                                                                .Emit(OpCodes.Ldstr, postfix)
+                                                                .Emit(OpCodes.Stloc_1)
+                                                                .Emit(OpCodes.Ldloc_1)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
+                                                                .Emit(OpCodes.Stloc_2)
+                                                                .Emit(OpCodes.Ldloc_2)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
+                                                                .Emit(OpCodes.Stloc_0)
+                                                                .Emit(OpCodes.Ldloc_0)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
+
+                                                            md.DeclaringType.Methods.Add(mdFinal)
+                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                        Else
+                                                            Dim divider0 = 0
+                                                            Dim resultdivider0 = DetermineDiv(CInt(Instruct.Operand), divider0)
+                                                            Dim str = resultdivider0 & "," & divider0 & ",/"
+
+                                                            mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
+                                                            mdFinal.Body = New MethodBody(mdFinal)
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String()))))
+
+                                                            Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                            With ilProc
+                                                                .Body.MaxStackSize = 4
+                                                                .Body.InitLocals = True
+
+                                                                .Emit(OpCodes.Ldstr, str)
+                                                                .Emit(OpCodes.Stloc_1)
+                                                                .Emit(OpCodes.Ldloc_1)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
+                                                                .Emit(OpCodes.Stloc_2)
+                                                                .Emit(OpCodes.Ldloc_2)
+                                                                .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
+                                                                .Emit(OpCodes.Stloc_0)
+                                                                .Emit(OpCodes.Ldloc_0)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
+
+                                                            md.DeclaringType.Methods.Add(mdFinal)
+                                                            MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                        End If
+                                                    End If
+                                                End If
+                                            Else
+                                                mdFinal = MethodByInteger.Item(CInt(Instruct.Operand))
+                                            End If
+                                            If (Not mdFinal Is Nothing) Then
+                                                If mdFinal.DeclaringType.IsNotPublic Then
+                                                    mdFinal.DeclaringType.IsPublic = True
+                                                End If
+                                                md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                                completedMethods.Add(mdFinal)
+                                                completedInstructions.Add(Instruct)
+                                            End If
+
+                                            'ElseIf Instruct.OpCode = OpCodes.Ldc_I4_S Then
+                                            '    Dim mdFinal As MethodDefinition = Nothing
+
+                                            '    If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
+
+
+                                            '        MsgBox(CDbl(Instruct.Operand).ToString)
+                                            '        Dim num4 As Double = Math.Log10(Convert.ToDouble(Instruct.Operand))
+
+                                            '        Dim methodName = Randomizer.GenerateNew
+                                            '        mdFinal = New MethodDefinition(methodName, MethodAttributes.[Static] Or MethodAttributes.[Public] Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(Integer)))
+                                            '        mdFinal.Body = New MethodBody(mdFinal)
+
+                                            '        Dim ilProc = mdFinal.Body.GetILProcessor()
+                                            '        With ilProc
+                                            '            .Body.MaxStackSize = 8
+                                            '            .Body.InitLocals = True
+                                            '            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                            '            .Emit(OpCodes.Ldc_R8, CDbl(10))
+                                            '            .Emit(OpCodes.Ldc_R8, num4)
+                                            '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Math).GetMethod("Pow", New Type() {GetType(Double), GetType(Double)})))
+                                            '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Convert).GetMethod("ToInt32", New Type() {GetType(Double)})))
+                                            '            .Emit(OpCodes.Stloc_0)
+                                            '            .Emit(OpCodes.Ldloc_0)
+                                            '            .Emit(OpCodes.Ret)
+                                            '        End With
+                                            '        md.DeclaringType.Methods.Add(mdFinal)
+                                            '    Else
+                                            '        mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
+                                            '    End If
+                                            '    If (Not mdFinal Is Nothing) Then
+                                            '        If mdFinal.DeclaringType.IsNotPublic Then
+                                            '            mdFinal.DeclaringType.IsPublic = True
+                                            '        End If
+                                            '        md.Body.Instructions.Item(index).OpCode = OpCodes.Call
+                                            '        md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                            '        completedMethods.Add(mdFinal)
+                                            '        completedInstructions.Add(Instruct)
+                                            '    End If
+                                            ElseIf (Instruct.OpCode = OpCodes.Ldc_R4) Then
+                                                If isValidOperand(Instruct) AndAlso CSng(Instruct.Operand) >= 0 Then
+                                                    Dim mdFinal As MethodDefinition = Nothing
+
+                                                    If Not MethodBySingle.TryGetValue(CSng(Instruct.Operand), mdFinal) Then
+                                                        Dim Sng As Single
+                                                        If Single.TryParse(Instruct.Operand, Sng) Then
+                                                            Dim pdefName = Randomizer.GenerateNew
+
+                                                            Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Single)))
+                                                            md.DeclaringType.Properties.Add(pdef)
+
+                                                            mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
+                                                            mdFinal.Body = New MethodBody(mdFinal)
+                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Single))))
+
+                                                            pdef.GetMethod = mdFinal
+                                                            pdef.DeclaringType.Methods.Add(mdFinal)
+
+                                                            If Not pdef.DeclaringType.IsInterface Then
+                                                                Dim iLProcessor = mdFinal.Body.GetILProcessor
+                                                                With iLProcessor
+                                                                    .Body.MaxStackSize = 1
                                                                     .Body.InitLocals = True
-                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                    .Emit(OpCodes.Ldstr, postfix)
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
-                                                                    .Emit(OpCodes.Stloc_0)
-                                                                    .Emit(OpCodes.Ldloc_0)
+
+                                                                    .Emit(OpCodes.Ldc_R4, Sng)
                                                                     .Emit(OpCodes.Ret)
                                                                 End With
-
-                                                                md.DeclaringType.Methods.Add(mdFinal)
-                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
                                                             Else
-                                                                Dim divider0 = 0
-                                                                Dim resultdivider0 = DetermineDiv(CInt(Instruct.Operand), divider0)
-                                                                Dim str = resultdivider0 & "," & divider0 & ",/"
-
-                                                                mdFinal = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Integer)))
-                                                                mdFinal.Body = New MethodBody(mdFinal)
-
-                                                                Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                                With ilProc
-                                                                    .Body.MaxStackSize = 2
-                                                                    .Body.InitLocals = True
-                                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                                    .Emit(OpCodes.Ldstr, str)
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod2))
-                                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptRPN.GetMethod1))
-                                                                    .Emit(OpCodes.Stloc_0)
-                                                                    .Emit(OpCodes.Ldloc_0)
-                                                                    .Emit(OpCodes.Ret)
-                                                                End With
-
-                                                                md.DeclaringType.Methods.Add(mdFinal)
-                                                                MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
+                                                                mdFinal.IsAbstract = True
+                                                                mdFinal.IsVirtual = True
+                                                                mdFinal.IsNewSlot = True
                                                             End If
+                                                            mdFinal.IsSpecialName = True
+                                                            mdFinal.IsGetter = True
+
+                                                            MethodBySingle.Add(CSng(Instruct.Operand), mdFinal)
                                                         End If
                                                     Else
-                                                        mdFinal = MethodByInteger.Item(CInt(Instruct.Operand))
+                                                        mdFinal = MethodBySingle.Item(CSng(Instruct.Operand))
                                                     End If
-                                                ElseIf Instruct.OpCode = OpCodes.Ldc_I4_S Then
-                                                    Dim num4 As Double = Math.Log10(Convert.ToDouble(Instruct.Operand))
+                                                    If (Not mdFinal Is Nothing) Then
+                                                        md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                        md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
 
-                                                    Dim methodName = Randomizer.GenerateNew
-                                                    mdFinal = New MethodDefinition(methodName, MethodAttributes.[Static] Or MethodAttributes.[Public] Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(Integer)))
-                                                    mdFinal.Body = New MethodBody(mdFinal)
-
-                                                    Dim ilProc = mdFinal.Body.GetILProcessor()
-                                                    With ilProc
-                                                        .Body.MaxStackSize = 8
-                                                        .Body.InitLocals = True
-                                                        mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                                        .Emit(OpCodes.Ldc_R8, CDbl(10))
-                                                        .Emit(OpCodes.Ldc_R8, num4)
-                                                        .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Math).GetMethod("Pow", New Type() {GetType(Double), GetType(Double)})))
-                                                        .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Convert).GetMethod("ToInt32", New Type() {GetType(Double)})))
-                                                        .Emit(OpCodes.Stloc_0)
-                                                        .Emit(OpCodes.Ldloc_0)
-                                                        .Emit(OpCodes.Ret)
-                                                    End With
-
-                                                    md.DeclaringType.Methods.Add(mdFinal)
-                                                End If
-                                                If (Not mdFinal Is Nothing) Then
-                                                    If mdFinal.DeclaringType.IsNotPublic Then
-                                                        mdFinal.DeclaringType.IsPublic = True
+                                                        completedMethods.Add(mdFinal)
+                                                        completedInstructions.Add(Instruct)
                                                     End If
-                                                    md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                                    md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                    completedMethods.Add(mdFinal)
-                                                    completedInstructions.Add(Instruct)
                                                 End If
-                                            End If
-                                        ElseIf (Instruct.OpCode = OpCodes.Ldc_R4) Then
-                                            If isValidOperand(Instruct) AndAlso CSng(Instruct.Operand) >= 0 Then
-                                                Dim integ As Single
-                                                If Single.TryParse(Instruct.Operand, integ) Then
-                                                    Dim pdefName = Randomizer.GenerateNew
+                                            ElseIf (Instruct.OpCode = OpCodes.Ldc_R8) Then
+                                                If isValidOperand(Instruct) AndAlso CDbl(Instruct.Operand) >= 0 Then
+                                                    Dim mdFinal As MethodDefinition = Nothing
 
-                                                    Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Single)))
-                                                    md.DeclaringType.Properties.Add(pdef)
+                                                    If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
+                                                        Dim integ As Double
+                                                        If Double.TryParse(Instruct.Operand, integ) Then
+                                                            Dim pdefName = Randomizer.GenerateNew
 
-                                                    mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
-                                                    mdFinal.Body = New MethodBody(mdFinal)
+                                                            Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Double)))
+                                                            md.DeclaringType.Properties.Add(pdef)
 
-                                                    pdef.GetMethod = mdFinal
-                                                    pdef.DeclaringType.Methods.Add(mdFinal)
-
-                                                    If Not pdef.DeclaringType.IsInterface Then
-                                                        Dim iLProcessor = mdFinal.Body.GetILProcessor
-                                                        With iLProcessor
-                                                            .Body.MaxStackSize = 1
-                                                            .Body.InitLocals = True
-                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Single))))
-                                                            .Emit(OpCodes.Ldc_R4, integ)
-                                                            .Emit(OpCodes.Ret)
-                                                        End With
-                                                    Else
-                                                        mdFinal.IsAbstract = True
-                                                        mdFinal.IsVirtual = True
-                                                        mdFinal.IsNewSlot = True
-                                                    End If
-                                                    mdFinal.IsSpecialName = True
-                                                    mdFinal.IsGetter = True
-                                                End If
-                                                If (Not mdFinal Is Nothing) Then
-                                                    If mdFinal.DeclaringType.IsNotPublic Then
-                                                        mdFinal.DeclaringType.IsPublic = True
-                                                    End If
-                                                    md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                                    md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                    completedMethods.Add(mdFinal)
-                                                    completedInstructions.Add(Instruct)
-                                                End If
-                                            End If
-                                        ElseIf (Instruct.OpCode = OpCodes.Ldc_R8) Then
-                                            If isValidOperand(Instruct) AndAlso CDbl(Instruct.Operand) >= 0 Then
-
-                                                Dim integ As Double
-                                                If Double.TryParse(Instruct.Operand, integ) Then
-
-                                                    Dim pdefName = Randomizer.GenerateNew
-
-                                                    Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Double)))
-                                                    md.DeclaringType.Properties.Add(pdef)
-
-                                                    mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
-                                                    mdFinal.Body = New MethodBody(mdFinal)
-
-                                                    pdef.GetMethod = mdFinal
-                                                    pdef.DeclaringType.Methods.Add(mdFinal)
-
-                                                    If Not pdef.DeclaringType.IsInterface Then
-                                                        Dim iLProcessor = mdFinal.Body.GetILProcessor
-                                                        With iLProcessor
-                                                            .Body.MaxStackSize = 1
-                                                            .Body.InitLocals = True
+                                                            mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
+                                                            mdFinal.Body = New MethodBody(mdFinal)
                                                             mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Double))))
-                                                            .Emit(OpCodes.Ldc_R8, integ)
-                                                            .Emit(OpCodes.Ret)
-                                                        End With
-                                                    Else
-                                                        mdFinal.IsAbstract = True
-                                                        mdFinal.IsVirtual = True
-                                                        mdFinal.IsNewSlot = True
-                                                    End If
-                                                    mdFinal.IsSpecialName = True
-                                                    mdFinal.IsGetter = True
-                                                End If
 
-                                                If (Not mdFinal Is Nothing) Then
-                                                    If mdFinal.DeclaringType.IsNotPublic Then
-                                                        mdFinal.DeclaringType.IsPublic = True
+                                                            pdef.GetMethod = mdFinal
+                                                            pdef.DeclaringType.Methods.Add(mdFinal)
+
+                                                            If Not pdef.DeclaringType.IsInterface Then
+                                                                Dim iLProcessor = mdFinal.Body.GetILProcessor
+                                                                With iLProcessor
+                                                                    .Body.MaxStackSize = 1
+                                                                    .Body.InitLocals = True
+                                                                    .Emit(OpCodes.Ldc_R8, integ)
+                                                                    .Emit(OpCodes.Ret)
+                                                                End With
+                                                            Else
+                                                                mdFinal.IsAbstract = True
+                                                                mdFinal.IsVirtual = True
+                                                                mdFinal.IsNewSlot = True
+                                                            End If
+                                                            mdFinal.IsSpecialName = True
+                                                            mdFinal.IsGetter = True
+
+                                                            MethodByDouble.Add(CDbl(Instruct.Operand), mdFinal)
+                                                        End If
+                                                    Else
+                                                        mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
                                                     End If
-                                                    md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                                    md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                    completedMethods.Add(mdFinal)
-                                                    completedInstructions.Add(Instruct)
+                                                    If (Not mdFinal Is Nothing) Then
+                                                        md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                        md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+
+                                                        completedMethods.Add(mdFinal)
+                                                        completedInstructions.Add(Instruct)
+                                                    End If
                                                 End If
-                                            End If
                                         End If
+                                        'End If
                                     End If
-                                Next
-                                optim.FixBranchOffsets()
-                                optim.MethodBody.SimplifyMacros()
-                            End Using
-                        End If
+                                End If
+                                'completedInstructions.Add(Instruct)
+                            End If
+                        Next
+                        md.Body.OptimizeMacros
+                        md.Body.ComputeOffsets()
+                        md.Body.ComputeHeader()
                     End If
                 Next
             Catch ex As Exception
@@ -358,7 +456,7 @@ Namespace Core.Obfuscation.Protection
         End Sub
 
         Private Shared Function PrimeFactors(a As Integer) As List(Of Integer)
-            Dim retval As New List(Of Integer)()
+            Dim retval As New List(Of Integer)
             Dim b As Integer = 2
             While a > 1
                 While a Mod b = 0
@@ -371,7 +469,7 @@ Namespace Core.Obfuscation.Protection
         End Function
 
         Private Shared Function DetermineDiv(real As Integer, ByRef div As Integer) As Integer
-            Dim num% = rand.Next(5, 40)
+            Dim num As Integer = rand.Next(5, 40)
             div = num
             Dim v% = real
             Try
@@ -444,8 +542,8 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub MethodByClear()
             MethodByInteger.Clear()
-            MethodByIntegerS.Clear()
-            MethodByInteger2.Clear()
+            MethodByDouble.Clear()
+            MethodBySingle.Clear()
         End Sub
 #End Region
 

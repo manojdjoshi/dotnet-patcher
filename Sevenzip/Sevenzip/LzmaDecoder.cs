@@ -2,11 +2,11 @@
 
 using System;
 
-namespace SevenZip
-{
+//namespace SevenZip
+//{
     //using RangeCoder;
 
-	public class LZMADecoder : ICoder, ISetDecoderProperties // ,System.IO.Stream
+    public class LZMADecoder : ICoder, ISetDecoderProperties // ,System.IO.Stream
 	{
 		class LenDecoder
 		{
@@ -393,4 +393,4 @@ namespace SevenZip
 		public override void SetLength(long value) {}
 		*/
 	}
-}
+//}

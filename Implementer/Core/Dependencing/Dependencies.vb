@@ -42,7 +42,9 @@ Namespace Core.Dependencing
                                     read.GetResourceData(Dat.Key, dataType, data)
                                     If dataType = "ResourceTypeCode.ByteArray" Then m_resourcesDependencies.Add(Dat.Key.ToString.Replace("_", "."))
                                 Next
+                                read.Close()
                             End Using
+                            Res.Close()
                         Next
                     End If
                 End If
@@ -118,7 +120,7 @@ Namespace Core.Dependencing
             Return resultsExt
         End Function
 
-        Private Function IsAssemblyInGAC(ByVal assemblyFullName As String) As Boolean
+        Private Function IsAssemblyInGAC(assemblyFullName As String) As Boolean
             Try
                 Return Assembly.ReflectionOnlyLoad(assemblyFullName).GlobalAssemblyCache
             Catch
@@ -126,7 +128,7 @@ Namespace Core.Dependencing
             End Try
         End Function
 
-        Private Function IsAssemblyInGAC(ByVal assembly As Assembly) As Boolean
+        Private Function IsAssemblyInGAC(assembly As Assembly) As Boolean
             Try
                 Return assembly.GlobalAssemblyCache
             Catch ex As Exception

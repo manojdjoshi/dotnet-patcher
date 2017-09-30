@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Injections
-{
+//namespace Injections
+//{
     public class AntiDumping
     {
         [DllImportAttribute("kernel32.dll")]
@@ -248,7 +248,7 @@ namespace Injections
             }
             //Marshal.FreeHGlobal((IntPtr)@new);
         }
-    }
+    //}
 
 
 

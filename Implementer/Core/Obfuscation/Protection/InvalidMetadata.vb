@@ -27,7 +27,7 @@ Namespace Core.Obfuscation.Protection
             Try
                 AddHandler psr.BeforeWriteTables, Function(accessor)
 
-                                                      accessor.TableHeap.GetTable(Of DeclSecurityTable)(Table.DeclSecurity).AddRow(New Row(Of SecurityAction, UInt32, UInt32)(&HFFFF, UInt32.MaxValue, UInt32.MaxValue))
+                                                      accessor.TableHeap.GetTable(Of DeclSecurityTable)(Table.DeclSecurity).AddRow(New Row(Of SecurityAction, UInteger, UInteger)(&HFFFF, UInteger.MaxValue, UInteger.MaxValue))
                                                       accessor.TableHeap.GetTable(Of TypeDefTable)(2).Item(0).Col2 = 65535
 
                                                       If ExcludeReflection.HasItems = False Then
@@ -57,13 +57,13 @@ Namespace Core.Obfuscation.Protection
                                                           End If
                                                       End If
 
-                                                      accessor.TableHeap.GetTable(Of ModuleTable)(Table.Module).AddRow(New Row(Of UInt16, UInt32, UInt16, UInt16, UInt16)(0, &H7FFF7FFF, 0, 0, 0).Col2)
-                                                      accessor.TableHeap.GetTable(Of AssemblyTable)(Table.Assembly).AddRow(New Row(Of AssemblyHashAlgorithm, UInt16, UInt16, UInt16, UInt16, AssemblyAttributes, UInt32, UInt32, UInt32)(0, 0, 0, 0, 0, 0, 0, &H7FFF7FFF, 0))
+                                                      accessor.TableHeap.GetTable(Of ModuleTable)(Table.Module).AddRow(New Row(Of UShort, UInteger, UShort, UShort, UShort)(0, &H7FFF7FFF, 0, 0, 0).Col2)
+                                                      accessor.TableHeap.GetTable(Of AssemblyTable)(Table.Assembly).AddRow(New Row(Of AssemblyHashAlgorithm, UShort, UShort, UShort, UShort, AssemblyAttributes, UInteger, UInteger, UInteger)(0, 0, 0, 0, 0, 0, 0, &H7FFF7FFF, 0))
 
                                                       Dim num% = rand.Next(8, &H10)
                                                       Dim i%
                                                       For i = 0 To num - 1
-                                                          accessor.TableHeap.GetTable(Of ENCLogTable)(Table.EncLog).AddRow(New Row(Of UInt32, UInt32)(rand.Next, rand.Next))
+                                                          accessor.TableHeap.GetTable(Of ENCLogTable)(Table.EncLog).AddRow(New Row(Of UInteger, UInteger)(rand.Next, rand.Next))
                                                       Next i
                                                       num = rand.Next(8, &H10)
                                                       Dim j%
@@ -71,8 +71,8 @@ Namespace Core.Obfuscation.Protection
                                                           accessor.TableHeap.GetTable(Of ENCMapTable)(Table.EncMap).AddRow(rand.Next)
                                                       Next j
 
-                                                      accessor.TableHeap.GetTable(Of AssemblyRefTable)(Table.AssemblyRef).AddRow(New Row(Of UInt16, UInt16, UInt16, UInt16, AssemblyAttributes, UInt32, UInt32, UInt32, UInt32)(0, 0, 0, 0, 0, 0, &HFFFF, 0, &HFFFF))
-                                                      Randomize(Of Row(Of UInt32, UInt32))(accessor.TableHeap.GetTable(Of NestedClassTable)(Table.NestedClass))
+                                                      accessor.TableHeap.GetTable(Of AssemblyRefTable)(Table.AssemblyRef).AddRow(New Row(Of UShort, UShort, UShort, UShort, AssemblyAttributes, UInt32, UInt32, UInt32, UInt32)(0, 0, 0, 0, 0, 0, &HFFFF, 0, &HFFFF))
+                                                      Randomize(accessor.TableHeap.GetTable(Of NestedClassTable)(Table.NestedClass))
 
                                                       If ExcludeReflection.HasItems = False Then
                                                           Dim pad As Char() = New Char(65535) {}

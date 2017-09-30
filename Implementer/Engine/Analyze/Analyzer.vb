@@ -119,6 +119,10 @@ Namespace Engine.Analyze
             Return False
         End Function
 
+        'Public Function HasSerializableAttributes() As Boolean
+        '    Return
+        'End Function
+
         Public Function getTreeViewHandler() As ExclusionTreeview
             Return New ExclusionTreeview(_inputFile)
         End Function

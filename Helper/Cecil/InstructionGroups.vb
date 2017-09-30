@@ -4,6 +4,8 @@ Namespace CecilHelper
     Public Class InstructionGroups
         Inherits List(Of InstructionGroup)
 
+        Private Shared r As Random = New Random
+
         Public Function getGroup(ByVal id As Integer) As InstructionGroup
             Dim group As InstructionGroup
             For Each group In Me
@@ -27,6 +29,6 @@ Namespace CecilHelper
             incGroups = groups
         End Sub
 
-        Private Shared r As Random = New Random
+
     End Class
 End Namespace

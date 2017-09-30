@@ -163,6 +163,8 @@ Namespace UtilsHelper
             imgOrg.Dispose()
             Return imgShow
         End Function
+
+
 #End Region
 
     End Class

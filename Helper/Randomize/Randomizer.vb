@@ -222,7 +222,7 @@ Namespace RandomizeHelper
                 Case 0
                     Return RenameEnum.Alphabetic
                 Case 1
-                    Return RenameEnum.Dot
+                    Return RenameEnum.Greek
                 Case 2
                     Return RenameEnum.Invisible
                 Case 3
@@ -230,7 +230,7 @@ Namespace RandomizeHelper
                 Case 4
                     Return RenameEnum.Japanese
                 Case 5
-                    Return RenameEnum.Greek
+                    Return RenameEnum.Dot
                 Case 6
                     Return RenameEnum.Symbols
                 Case 7

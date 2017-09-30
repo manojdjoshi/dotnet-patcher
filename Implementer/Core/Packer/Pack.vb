@@ -11,6 +11,7 @@ Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.IconChanger
 Imports Implementer.Core.ManifestRequest
 Imports System.Drawing
+Imports System.IO.Compression
 
 Namespace Core.Packer
     Friend Class Pack
@@ -38,15 +39,33 @@ Namespace Core.Packer
             Dim tmpFile = Functions.GetTempFolder & "\" & New FileInfo(m_FilePathToPack).Name.Replace(".exe", Randomizer.GenerateNewAlphabetic & ".exe")
             Try
                 Frmwk = framework
+                Dim targetRuntime As TargetRuntime = TargetRuntime.Net_4_0
+                Select Case Environment.Version.Major
+                    Case 2
+                        targetRuntime = TargetRuntime.Net_2_0
+                    Case 3
+                        targetRuntime = TargetRuntime.Net_2_0
+                    Case 4
+                        targetRuntime = TargetRuntime.Net_4_0
+                End Select
 
                 Dim mainmodule = AssemblyDefinition.ReadAssembly(m_FilePathToPack).MainModule
-
-                Dim parameters As New ModuleParameters With {.Architecture = mainmodule.Architecture, _
-                                                             .Kind = mainmodule.Kind, _
+                mainmodule.Runtime = targetRuntime
+                Dim parameters As New ModuleParameters With {.Architecture = mainmodule.Architecture,
+                                                             .Kind = mainmodule.Kind,
                                                              .Runtime = mainmodule.Runtime}
 
                 Dim asm = AssemblyDefinition.CreateAssembly(mainmodule.Assembly.Name, mainmodule.Name, parameters)
                 Dim asmModule = asm.MainModule
+
+                For Each m In mainmodule.AssemblyReferences
+                    asmModule.AssemblyReferences.Add(m)
+                Next
+
+                For Each m In mainmodule.ModuleReferences
+                    asmModule.ModuleReferences.Add(m)
+                Next
+
                 asmModule.Attributes = (asmModule.Attributes Or (mainmodule.Attributes And ModuleAttributes.Required32Bit))
 
                 File.Copy(m_FilePathToPack, tmpFile, True)
@@ -67,7 +86,9 @@ Namespace Core.Packer
                 If m_reverse Then Array.Reverse(byt)
 
                 Injecter.InjectResource(asm.MainModule, EncodedResName, ResourceType.Embedded, CompressWithSevenZip(byt).ToArray)
-                asm.MainModule.Assembly.EntryPoint = Enumerable.FirstOrDefault(Of MethodDefinition)(PackerLoader.resolvedTypeDef.Methods, DirectCast(Function(mtd) (mtd.Name = "Main"), Func(Of MethodDefinition, Boolean)))
+                'Injecter.InjectResource(asm.MainModule, EncodedResName, ResourceType.Embedded, CompressWithGzip(byt).ToArray)
+
+                asm.MainModule.Assembly.EntryPoint = Enumerable.FirstOrDefault(PackerLoader.resolvedTypeDef.Methods, Function(mtd) (mtd.Name = "Main"))
                 asm.Write(m_FilePathToPack)
 
                 Return m_FilePathToPack
@@ -106,6 +127,15 @@ Namespace Core.Packer
 
         Private Function CompressWithSevenZip(raw As Byte()) As Byte()
             Return SevenZipHelper.Compress(raw)
+        End Function
+
+        Private Function CompressWithGzip(raw As Byte()) As Byte()
+            Using memory As New MemoryStream()
+                Using gzip As New DeflateStream(memory, CompressionMode.Compress)
+                    gzip.Write(raw, 0, raw.Length)
+                End Using
+                Return memory.ToArray()
+            End Using
         End Function
 #End Region
 

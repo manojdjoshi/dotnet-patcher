@@ -45,6 +45,7 @@ Namespace Engine.Processing
                     NamespaceObfuscated = m_ObfTypes.Item(Type)
                 End If
             End If
+
             Return NamespaceObfuscated
         End Function
 

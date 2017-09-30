@@ -5,7 +5,7 @@ Imports Helper.RandomizeHelper
 Namespace CryptoHelper
     Public Class Crypt
 
-#Region "Properties "
+#Region " Properties "
         Public ReadOnly Property SaltSize() As Integer
         Public ReadOnly Property key() As Byte()
 #End Region
@@ -26,7 +26,7 @@ Namespace CryptoHelper
             For i As Integer = 0 To input.Length - 1
                 Output(i) = CByte(input(i) Xor key(i Mod key.Length) Xor Salt(i Mod Salt.Length))
             Next
-            Array.Resize(Of Byte)(Output, Output.Length + SaltSize)
+            Array.Resize(Output, Output.Length + SaltSize)
             Buffer.BlockCopy(Salt, 0, Output, Output.Length - SaltSize, SaltSize)
             Return Output
         End Function

@@ -89,7 +89,7 @@ Namespace Engine.Context
         ''' </summary>
         Private Sub ReadAssembly()
             AssDef = AssemblyDefinition.ReadAssembly(m_parameters.inputFile)
-            m_framework = Finder.frameworkVersion(AssDef)
+            m_framework = Finder.FindFrameworkVersion(AssDef)
             m_i += 1
             m_fi = New FileInfo(m_parameters.inputFile)
             m_parameters.outputFile = m_parameters.inputFile.Replace(m_fi.Name, m_i.ToString & ".exe")
@@ -124,14 +124,14 @@ Namespace Engine.Context
 
         Private Function HasRenameTask()
             With m_parameters
-                If .TaskAccept.Obfuscation.Enabled AndAlso _
-                (.RenamingAccept.Namespaces OrElse _
-                .RenamingAccept.Types OrElse _
-                .RenamingAccept.Methods OrElse _
-                .RenamingAccept.Fields OrElse _
-                .RenamingAccept.Events OrElse _
-                .RenamingAccept.Properties OrElse _
-                .TaskAccept.Obfuscation.RenameResourcesContent OrElse _
+                If .TaskAccept.Obfuscation.Enabled AndAlso
+                (.RenamingAccept.Namespaces OrElse
+                .RenamingAccept.Types OrElse
+                .RenamingAccept.Methods OrElse
+                .RenamingAccept.Fields OrElse
+                .RenamingAccept.Events OrElse
+                .RenamingAccept.Properties OrElse
+                .TaskAccept.Obfuscation.RenameResourcesContent OrElse
                 .RenamingAccept.CustomAttributes) Then
                     Return True
                 End If
@@ -219,6 +219,8 @@ Namespace Engine.Context
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PreCompressResources()
 
                     If .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False Then HidePinvokeCalls()
+                    'If .Obfuscation.HidePublicCalls Then HidePinvokeCalls()
+
                     If .Obfuscation.EncryptString Then EncryptString()
                     If .Obfuscation.HidePublicCalls Then MildCalls()
                     If .Obfuscation.EncryptNumeric Then HideConstants()
@@ -226,7 +228,7 @@ Namespace Engine.Context
                     If HasRenameTask() Then RenameAssembly()
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PostCompressResources()
 
-                    If .Obfuscation.ControlFlow Then ControlFlow()
+                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then ControlFlow()
                     If HasObfuscationTask() Then InjectDnpWatermark()
 
                     If .Obfuscation.InvalidMetadata AndAlso .Packer.Enabled = False Then InvalidMetadata()
@@ -256,6 +258,8 @@ Namespace Engine.Context
                     PreCompressResolver()
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False Then HidePinvokeCalls(True)
+                    'If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls Then HidePinvokeCalls(True)
+
                     If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptString Then EncryptString(True)
                     If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls Then MildCalls(True)
                     If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptNumeric Then HideConstants(True)
@@ -279,7 +283,7 @@ Namespace Engine.Context
             m_i += 1
             m_fi = New FileInfo(m_parameters.inputFile)
             Dim AssDef = AssemblyDefinition.ReadAssembly(m_parameters.inputFile)
-            m_framework = Finder.frameworkVersion(AssDef)
+            m_framework = Finder.FindFrameworkVersion(AssDef)
             m_parameters.outputFile = m_parameters.inputFile.Replace(m_fi.Name, m_i.ToString & ".exe")
 
             File.Copy(m_parameters.inputFile, m_parameters.outputFile, True)
@@ -458,6 +462,7 @@ Namespace Engine.Context
             End If
 
             m_bgw.ReportProgress(85, If(pack, "Packing", "Obfuscating") & " (Renaming assembly...)")
+
             For Each modul In AssDef.Modules
                 If modul.HasTypes Then
                     For Each type In modul.GetAllTypes

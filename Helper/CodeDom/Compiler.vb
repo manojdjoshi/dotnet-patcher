@@ -37,15 +37,15 @@ Namespace CodeDomHelper
                 Dim cResults As CompilerResults = cProv.CompileAssemblyFromSource(cParams, str)
                 If cResults.Errors.Count <> 0 Then
                     For Each er In cResults.Errors
-                        MsgBox("Error on line : " & er.Line.ToString & vbNewLine & _
-                              "Error description : " & er.ErrorText & vbNewLine & _
+                        MsgBox("Error on line : " & vbNewLine & er.Line.ToString & vbNewLine &
+                              "Error description : " & er.ErrorText & vbNewLine &
                               "File : " & vbNewLine & str)
                     Next
                 Else
                     Return My.Computer.FileSystem.SpecialDirectories.Temp & "\" & nam
                 End If
             Catch ex As Exception
-                MsgBox("Error (CreateStubFromString) : " & ex.ToString)
+                MsgBox("Error (CreateStubFromString) : " & vbNewLine & ex.ToString)
             End Try
 
             Return Nothing
@@ -71,15 +71,15 @@ Namespace CodeDomHelper
                 Dim cResults As CompilerResults = cProv.CompileAssemblyFromSource(cParams, Str)
                 If cResults.Errors.Count <> 0 Then
                     For Each er In cResults.Errors
-                        MsgBox("Error on line : " & er.Line.ToString & vbNewLine & _
-                               "Error description : " & er.ErrorText & vbNewLine & _
+                        MsgBox("Error on line : " & vbNewLine & er.Line.ToString & vbNewLine &
+                               "Error description : " & er.ErrorText & vbNewLine &
                                "File : " & vbNewLine & str)
                     Next
                 Else
                     Return cResults.CompiledAssembly.CreateInstance(MainClass).GetType()
                 End If
             Catch ex As Exception
-                MsgBox("Error (CreateTypeFromString) : " & ex.ToString)
+                MsgBox("Error (CreateTypeFromString) : " & vbNewLine & ex.ToString)
             End Try
 
             Return Nothing

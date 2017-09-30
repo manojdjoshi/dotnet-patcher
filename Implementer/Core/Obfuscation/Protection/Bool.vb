@@ -63,11 +63,9 @@ Namespace Core.Obfuscation.Protection
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    'If NameChecker.IsRenamable(type) Then
                     If Exclude.isBooleanEncryptExclude(type) = False Then
-                            IterateType(type)
-                        End If
-                    'End If
+                        IterateType(type)
+                    End If
                 Next
                 Types.Clear()
             Next
@@ -101,64 +99,57 @@ Namespace Core.Obfuscation.Protection
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
-                        Using optim As New Msil(md.Body)
-                            For i = 0 To md.Body.Instructions.Count - 1
-                                Dim Instruct = md.Body.Instructions(i)
+                        md.Body.SimplifyMacros
+                        For i = 0 To md.Body.Instructions.Count - 1
 
-                                If Not completedInstructions.Contains(Instruct) Then
-                                    Dim mdFinal As MethodDefinition = Nothing
-                                    Dim index = md.Body.Instructions.IndexOf(Instruct)
+                            Dim Instruct = md.Body.Instructions(i)
 
-                                    If ((Instruct.OpCode = OpCodes.Ldc_I4) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_S)) Then
-                                        If isValidOperand(Instruct) AndAlso (CInt(Instruct.Operand) = 0 OrElse CInt(Instruct.Operand) = 1) Then
-                                            Dim value%
-                                            If CInt(Instruct.Operand) = 0 Then
-                                                value = 0
-                                            ElseIf CInt(Instruct.Operand) = 1 Then
-                                                value = 1
-                                            End If
-                                            Dim instructNext = Instruct.Next
-                                            If isValidOperand(instructNext) Then
-                                                If instructNext.Operand.ToString.ToLower.EndsWith("system.boolean)") Then
-                                                    CreateMethod(mdFinal, value, md)
-                                                End If
+                            If Not completedInstructions.Contains(Instruct) Then
+                                Dim mdFinal As MethodDefinition = Nothing
+                                Dim index = md.Body.Instructions.IndexOf(Instruct)
 
-                                                If (Not mdFinal Is Nothing) Then
-                                                    If mdFinal.DeclaringType.IsNotPublic Then
-                                                        mdFinal.DeclaringType.IsPublic = True
-                                                    End If
-                                                    md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                                    md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                    completedMethods.Add(mdFinal)
-                                                    completedInstructions.Add(Instruct)
-                                                End If
-                                            End If
-                                        End If
-                                    ElseIf ((Instruct.OpCode = OpCodes.Ldc_I4_0) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_1)) Then
+                                If ((Instruct.OpCode = OpCodes.Ldc_I4) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_S)) Then
+                                    If isValidOperand(Instruct) AndAlso (CInt(Instruct.Operand) = 0 OrElse CInt(Instruct.Operand) = 1) Then
                                         Dim value%
-                                        If Instruct.OpCode = OpCodes.Ldc_I4_0 Then
+                                        If CInt(Instruct.Operand) = 0 Then
                                             value = 0
-                                        ElseIf Instruct.OpCode = OpCodes.Ldc_I4_1 Then
+                                        ElseIf CInt(Instruct.Operand) = 1 Then
                                             value = 1
                                         End If
-
-                                        CreateMethod(mdFinal, value, md)
-
-                                        If (Not mdFinal Is Nothing) Then
-                                            If mdFinal.DeclaringType.IsNotPublic Then
-                                                mdFinal.DeclaringType.IsPublic = True
+                                        Dim instructNext = Instruct.Next
+                                        If isValidOperand(instructNext) Then
+                                            If instructNext.Operand.ToString.ToLower.EndsWith("system.boolean)") Then
+                                                CreateMethod(mdFinal, value, md)
                                             End If
-                                            md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                            md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                            completedMethods.Add(mdFinal)
-                                            completedInstructions.Add(Instruct)
+
+                                            If (Not mdFinal Is Nothing) Then
+                                                If mdFinal.DeclaringType.IsNotPublic Then
+                                                    mdFinal.DeclaringType.IsPublic = True
+                                                End If
+                                                md.Body.Instructions.Item(index).OpCode = OpCodes.Call
+                                                md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                                completedMethods.Add(mdFinal)
+                                                completedInstructions.Add(Instruct)
+                                            End If
                                         End If
                                     End If
+                                ElseIf ((Instruct.OpCode = OpCodes.Ldc_I4_0) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_1)) Then
+                                    CreateMethod(mdFinal, If(Instruct.OpCode = OpCodes.Ldc_I4_0, 0, 1), md)
+                                    If (Not mdFinal Is Nothing) Then
+                                        If mdFinal.DeclaringType.IsNotPublic Then
+                                            mdFinal.DeclaringType.IsPublic = True
+                                        End If
+                                        md.Body.Instructions.Item(index).OpCode = OpCodes.Call
+                                        md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                        completedMethods.Add(mdFinal)
+                                        completedInstructions.Add(Instruct)
+                                    End If
                                 End If
-                            Next
-                            optim.FixBranchOffsets()
-                            optim.MethodBody.SimplifyMacros()
-                        End Using
+                            End If
+                        Next
+                        md.Body.OptimizeMacros
+                        md.Body.ComputeOffsets()
+                        md.Body.ComputeHeader()
                     End If
                 Next
             Catch ex As Exception
@@ -200,7 +191,7 @@ Namespace Core.Obfuscation.Protection
                     Dim encStr = testNumber(If(CInt(value) = 0, False, True))
                     Dim IlProc1 As ILProcessor = mDef.Body.GetILProcessor()
                     With IlProc1
-                        .Body.MaxStackSize = 2
+                        .Body.MaxStackSize = 4
                         .Body.InitLocals = True
                         mDef.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Boolean))))
                         .Emit(OpCodes.Ldc_I4, encStr)
@@ -225,11 +216,13 @@ Namespace Core.Obfuscation.Protection
 
                 mDef = New MethodDefinition(Randomizer.GenerateNew, (MethodAttributes.CompilerControlled Or (MethodAttributes.FamANDAssem Or (MethodAttributes.Family Or MethodAttributes.Static))), AssemblyDef.MainModule.Import(GetType(Boolean)))
                 mDef.Body = New MethodBody(mDef)
+                mDef.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Boolean))))
+
                 Dim IlProc1 As ILProcessor = mDef.Body.GetILProcessor()
                 With IlProc1
-                    .Body.MaxStackSize = 2
+                    .Body.MaxStackSize = 4
                     .Body.InitLocals = True
-                    mDef.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Boolean))))
+
                     .Emit(OpCodes.Ldc_I4, valFinale)
                     .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptPrime.GetMethod1))
                     .Emit(OpCodes.Stloc_0)

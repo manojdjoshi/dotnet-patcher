@@ -26,3 +26,7 @@ D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\bin\Debug\Injections
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Debug\Injections.csprojResolveAssemblyReference.cache
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Debug\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Debug\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Debug\Injections.pdb

@@ -63,3 +63,8 @@ D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Debug\Implementer.Resource
 D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.Cache
 D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Debug\Implementer.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Implementer\obj\Debug\Implementer.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.dll
+D:\Documents\Bitbucket\DotNetPatcher\Implementer\obj\Debug\Implementer.pdb

@@ -123,7 +123,7 @@ Namespace CecilHelper
             Return If(Pack = True, String.Empty, assDef.MainModule.EntryPoint.DeclaringType.Namespace)
         End Function
 
-        Public Shared Function frameworkVersion(assDef As AssemblyDefinition) As String
+        Public Shared Function FindFrameworkVersion(assDef As AssemblyDefinition) As String
             Return If(assDef.MainModule.Runtime.ToString.StartsWith("Net_4"), "v4.0", "v2.0")
         End Function
 

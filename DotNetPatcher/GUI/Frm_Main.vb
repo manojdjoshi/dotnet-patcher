@@ -13,6 +13,7 @@ Imports Implementer.Core.Packer
 Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Core.Obfuscation.Exclusion
 Imports LoginTheme.XertzLoginTheme
+Imports Helper
 
 Public Class Frm_Main
 
@@ -131,7 +132,25 @@ Public Class Frm_Main
                         Modified()
                         Exit Select
                     Case "Empty"
-                        UnModified()
+                        Dim infos = AssemblyHelper.Loader.Full(e.assembly.Location)
+                        Dim HasSerializableAttributes As Boolean = False
+                        Dim mods = infos.Modules
+
+                        For Each modul In mods
+                            If HasSerializableAttributes Then Exit For
+                            For Each typ In modul.GetTypes
+                                If HasSerializableAttributes Then Exit For
+                                Dim customAttributes = typ.GetCustomAttributes(True)
+                                For Each att In customAttributes
+                                    If att.ToString = "System.SerializableAttribute" Then
+                                        HasSerializableAttributes = True
+                                        Exit For
+                                    End If
+                                Next
+                            Next
+                        Next
+
+                        UnModified(HasSerializableAttributes)
                         Exit Select
                 End Select
             End With
@@ -172,7 +191,7 @@ Public Class Frm_Main
         LbxDependenciesAdd.Items.Clear()
     End Sub
 
-    Private Sub UnModified()
+    Private Sub UnModified(HasSerializableAttribute As Boolean)
         With TbcTask
             If Not .TabPages.Contains(TpDependencies) Then .TabPages.Add(TpDependencies)
             If Not .TabPages.Contains(TpObfuscator) Then .TabPages.Add(TpObfuscator)
@@ -209,8 +228,27 @@ Public Class Frm_Main
         ChbObfuscatorNamespacesRP.Checked = True
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = True
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = False
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
-        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
+
+        If HasSerializableAttribute Then
+            CbxObfuscatorScheme.Items.Clear()
+            CbxObfuscatorScheme.Items.Add("Alphabetic")
+            CbxObfuscatorScheme.Items.Add("Greek")
+            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = False
+            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = False
+        Else
+            CbxObfuscatorScheme.Items.Clear()
+            CbxObfuscatorScheme.Items.Add("Alphabetic")
+            CbxObfuscatorScheme.Items.Add("Greek")
+            CbxObfuscatorScheme.Items.Add("Invisible")
+            CbxObfuscatorScheme.Items.Add("Chinese")
+            CbxObfuscatorScheme.Items.Add("Japanese")
+            CbxObfuscatorScheme.Items.Add("Dot")
+            CbxObfuscatorScheme.Items.Add("Symbols")
+            CbxObfuscatorScheme.Items.Add("Flowing")
+            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = True
+            ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True
+        End If
+
         ChbObfuscatorTypesRP.Enabled = True
         ChbObfuscatorTypesRP.Checked = True
         ChbObfuscatorMethodsRP.Enabled = True
@@ -242,7 +280,7 @@ Public Class Frm_Main
         ChbObfuscatorControlFlow.Enabled = True
         ChbObfuscatorControlFlow.Checked = True
         ChbObfuscatorInvalidMetadata.Enabled = True
-        ChbObfuscatorInvalidMetadata.Checked = True
+        ChbObfuscatorInvalidMetadata.Checked = False
         CbxObfuscatorScheme.SelectedIndex = 0
         CbxDependenciesEmbedded.SelectedIndex = 0
         RdbDependenciesMerged.Checked = True
@@ -698,14 +736,14 @@ Public Class Frm_Main
 
     End Sub
 
-    Private Sub BgwRenameTask_ProgressChanged(sender As Object, e As System.ComponentModel.ProgressChangedEventArgs) Handles BgwRenameTask.ProgressChanged
+    Private Sub BgwRenameTask_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BgwRenameTask.ProgressChanged
         If Not e.UserState Is Nothing Then
             PgbStart.TextToShow = e.UserState.ToString
             PgbStart.Value = e.ProgressPercentage
         End If
     End Sub
 
-    Private Sub BgwRenameTask_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgwRenameTask.RunWorkerCompleted
+    Private Sub BgwRenameTask_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BgwRenameTask.RunWorkerCompleted
         If Not e.Result Is Nothing Then
             Select Case e.Result(0)
                 Case "Error"

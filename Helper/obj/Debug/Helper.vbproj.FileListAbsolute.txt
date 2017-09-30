@@ -36,3 +36,10 @@ D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.Resources.resource
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.vbproj.GenerateResource.Cache
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Debug\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Debug\Helper.pdb

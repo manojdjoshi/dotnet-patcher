@@ -122,9 +122,9 @@ Namespace Core.Obfuscation.Builder
 
         Protected Shared Function ReadFromResourcesStub(ClassName$, ReadFromResourcesFuncName$) As String
             LoadNamespacesHeaders()
-            Dim str = _
-                "Imports System" & vbNewLine & _
-                "Imports Microsoft.VisualBasic" & vbNewLine & _
+            Dim str =
+                "Imports System" & vbNewLine &
+                "Imports Microsoft.VisualBasic" & vbNewLine &
                 "Imports System.Resources" & vbNewLine _
                           & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
                           & m_AddedNamespaceStart & vbNewLine _
@@ -170,9 +170,9 @@ Namespace Core.Obfuscation.Builder
 
         Protected Shared Function DecryptPrimeStub(className$, DecryptPrimeFuncName$) As String
             LoadNamespacesHeaders()
-            Dim str = _
-                "Imports System.Collections.Generic" & vbNewLine & _
-                "Imports System" & vbNewLine & _
+            Dim str =
+                "Imports System.Collections.Generic" & vbNewLine &
+                "Imports System" & vbNewLine &
                       Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
                     & m_AddedNamespaceStart & vbNewLine _
                     & "Public Class " & className & vbNewLine _
@@ -200,9 +200,11 @@ Namespace Core.Obfuscation.Builder
 
         Protected Shared Function FromBase64Stub(ClassName$, Base64FuncName$, GetStringFuncName$) As String
             LoadNamespacesHeaders()
-            Dim str = _
-                "Imports System" & vbNewLine & _
-                "Imports System.Text" & vbNewLine _
+            Dim str =
+                "Imports System" & vbNewLine &
+                "Imports System.Text" & vbNewLine &
+                "Imports System.IO" & vbNewLine &
+                "Imports System.Security.Cryptography" & vbNewLine _
                       & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
                       & m_AddedNamespaceStart & vbNewLine _
                       & Generator.GenerateFromBase64Func(ClassName, Base64FuncName, GetStringFuncName) & vbNewLine _
@@ -214,18 +216,45 @@ Namespace Core.Obfuscation.Builder
             Dim reverseStr = If(encrypt = True, "                    Array.Reverse(d)", String.Empty)
             Dim DecompressStr0 = "                d = " & Decompress0 & "(cm.ToArray)"
 
-            Dim str = _
-                "Imports System.Windows.Forms" & vbNewLine & _
-                "Imports System.Collections.Generic" & vbNewLine & _
-                "Imports System" & vbNewLine & _
-                "Imports System.IO" & vbNewLine & _
+            Dim str =
+                "Imports System.Windows.Forms" & vbNewLine &
+                "Imports System.Collections.Generic" & vbNewLine &
+                "Imports System" & vbNewLine &
+                "Imports System.Xml" & vbNewLine &
+                "Imports System.IO" & vbNewLine &
                 "Imports System.IO.Compression" & vbNewLine & vbNewLine _
                        & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
                        & "Public Class " & ClassName & vbNewLine _
                        & "    Private Shared Function " & resolverName & " (ByVal sender As Object, ByVal args As ResolveEventArgs) As Assembly" & vbNewLine _
                        & "        Dim names As String() = Nothing" & vbNewLine _
+                       & "        Dim k As String = Cstr(New AssemblyName(args.Name).Name)" & vbNewLine _
+                       & "        'Dim directoryName As String = Path.GetDirectoryName(Assembly.GetEntryAssembly.Location)" & vbNewLine _
+                       & "        'msgbox(directoryName)" & vbNewLine _
+                       & "        'For each f As String in Directory.GetFiles(""*.dll"", Assembly.GetExecutingAssembly.Location)" & vbNewLine _
+                       & "            'MsgbOx(Assembly.GetExecutingAssembly.Location)" & vbNewLine _
+                       & "            'Try" & vbNewLine _
+                       & "                'If f.EndsWith("".xmlserializers.dll"", StringComparison.OrdinalIgnoreCase) Then" & vbNewLine _
+                       & "                    'Msgbox(""oui"")" & vbNewLine _
+                       & "                    'Return Assembly.LoadFrom(f)" & vbNewLine _
+                       & "                'End If" & vbNewLine _
+                       & "             " & vbNewLine _
+                       & "            'Catch Ex As Exception" & vbNewLine _
+                       & "            'End Try" & vbNewLine _
+                       & "        'Next" & vbNewLine _
                        & "        Dim ass As Assembly = Nothing" & vbNewLine _
                        & "        Dim d as Byte()" & vbNewLine _
+                       & "        'Dim k As String = Cstr(New AssemblyName(args.Name).Name)" & vbNewLine _
+                       & "        'MsGbox(k & vbnewline)" & vbNewLine _
+                       & "        If k.EndsWith("".xmlserializers"", StringComparison.OrdinalIgnoreCase) Then" & vbNewLine _
+                       & "            Return Nothing" & vbNewLine _
+                       & "        End If" & vbNewLine _
+                       & "        If k.EndsWith("".resources"", StringComparison.OrdinalIgnoreCase) Then" & vbNewLine _
+                       & "            Return Nothing" & vbNewLine _
+                       & "        End If" & vbNewLine _
+                       & "        SyncLock hashtable" & vbNewLine _
+                       & "            If hashtable.ContainsKey(""" & ResName & """) Then" & vbNewLine _
+                       & "                Return Nothing" & vbNewLine _
+                       & "            End If" & vbNewLine _
                        & "        Using cs As Stream = (GetType(System.Reflection.Assembly).GetMethod(""GetExecutingAssembly"").Invoke(Nothing, Nothing)).GetManifestResourceStream(""" & ResName & """)" & vbNewLine _
                        & "            If cs Is Nothing Then" & vbNewLine _
                        & "                Return Nothing" & vbNewLine _
@@ -241,11 +270,19 @@ Namespace Core.Obfuscation.Builder
                        & If(compress = True, DecompressStr0, "d = cm.ToArray()") & vbNewLine _
                        & "                " & reverseStr & vbNewLine _
                        & "                ass = Assembly.Load(d)" & vbNewLine _
+                       & "                hashtable.Item(""" & ResName & """) = ass" & vbNewLine _
+                       & "                Return ass" & vbNewLine _
+                       & "                'Msgbox(""Test"" & vbnewline & ass.GetName.Name)" & vbNewLine _
                        & "            End Using" & vbNewLine _
                        & "        End Using" & vbNewLine _
-                       & "        Return ass" & vbNewLine _
+                       & "        End SyncLock" & vbNewLine _
+                       & "        Return Nothing" & vbNewLine _
                        & "    End Function" & vbNewLine _
+                       & "    Shared Sub new" & vbNewLine _
+                       & "        hashtable = New Dictionary(Of String, Assembly)" & vbNewLine _
+                       & "    End Sub" & vbNewLine _
                        & If(compress = True, Generator.GenerateCompressWithGzipByteFunc(Decompress0, Decompress1), "") & vbNewLine _
+                       & "    Private Shared hashtable As Dictionary(Of String, Assembly)" & vbNewLine _
                        & "    Public Shared Sub " & initializeFuncName & vbNewLine _
                        & "        AddHandler AppDomain.CurrentDomain.AssemblyResolve, New ResolveEventHandler(AddressOf " & resolverName & ")" & vbNewLine _
                        & "    End Sub" & vbNewLine _
@@ -253,6 +290,83 @@ Namespace Core.Obfuscation.Builder
 
             Return Compiler.CreateStubFromString(ClassName, Frmwk, str)
         End Function
+
+        'Protected Shared Function PackerStub(Resolver As Stub, EncodedResName$, m_polyXor As Crypt, encrypt As Boolean) As String
+        '    Dim ResourceAssembly = Randomizer.GenerateNewAlphabetic
+        '    Dim decodeString = Randomizer.GenerateNewAlphabetic
+        '    Dim Decrypt = Randomizer.GenerateNewAlphabetic
+        '    Dim fromBase64 = Randomizer.GenerateNewAlphabetic
+
+        '    Dim reverseStr As String = String.Empty
+        '    If encrypt Then
+        '        reverseStr = "                    Array.Reverse(b)"
+        '    End If
+
+        '    Dim aesStr As String = "    Private Shared Function " & Decrypt & "(ByVal i As Byte()) As Byte()" & vbNewLine _
+        '                & "        Dim k as Byte() = " & Resolver.ReferencedZipperAssembly.refNewTypeName & ".pKey(""" & Convert.ToBase64String(SevenZipLib.SevenZipHelper.Compress(m_polyXor.key)) & """)" & vbNewLine _
+        '                & "        Dim O As Byte() = New Byte(i.Length - " & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
+        '                & "        Dim S As Byte() = New Byte(" & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
+        '                & "        Buffer.BlockCopy(i, i.Length - " & m_polyXor.SaltSize.ToString & ", S, 0, " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+        '                & "        Array.Resize(Of Byte)(i, i.Length - " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+        '                & "        For j As Integer = 0 To i.Length - 1" & vbNewLine _
+        '                & "            O(j) = CByte(i(j) Xor k(j Mod k.Length) Xor S(j Mod S.Length))" & vbNewLine _
+        '                & "        Next" & vbNewLine _
+        '                & "        Return O" & vbNewLine _
+        '                & "    End Function"
+
+
+
+        '    Dim str = "Imports System.Windows.Forms" & vbNewLine &
+        '            "Imports System.Security.Cryptography" & vbNewLine &
+        '            "Imports System" & vbNewLine &
+        '            "Imports System.Threading" & vbNewLine &
+        '            "Imports System.Text" & vbNewLine &
+        '            "Imports System.IO" & vbNewLine &
+        '            "Imports System.Resources" & vbNewLine &
+        '            "Imports Microsoft.VisualBasic" & vbNewLine &
+        '            "Imports System.IO.Compression" & vbNewLine &
+        '            "Imports " & Resolver.ReferencedZipperAssembly.refNewNamespaceName & vbNewLine & vbNewLine _
+        '  & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
+        '  & "Friend Class " & Resolver.className & vbNewLine & vbNewLine _
+        '  & "    Private Delegate Function z() As Assembly" & vbNewLine _
+        '  & "    <STAThread()> _" & vbNewLine _
+        '  & "    Public Shared Sub Main(ByVal args As String())" & vbNewLine _
+        '  & "        Dim yassembly As Assembly = " & ResourceAssembly & "((""app, version=0.0.0.0, culture=neutral, publickeytoken=null"").Replace("".resources"",""""))" & vbNewLine _
+        '  & "        Dim yentryPoint As MethodInfo = yassembly.EntryPoint" & vbNewLine _
+        '  & "        Dim yparameters As ParameterInfo() = yentryPoint.GetParameters" & vbNewLine _
+        '  & "        Dim yobjArray As Object() = Nothing" & vbNewLine _
+        '  & "        If ((Not yparameters Is Nothing) AndAlso (yparameters.Length > 0)) Then" & vbNewLine _
+        '  & "            yobjArray = New Object() {args}" & vbNewLine _
+        '  & "        End If" & vbNewLine _
+        '  & "        yentryPoint.Invoke(Nothing, yobjArray)" & vbNewLine _
+        '  & "    End Sub" & vbNewLine _
+        '  & "    Private Shared Function " & decodeString & "(Byval S as String) As String" & vbNewLine _
+        '  & "        Return Encoding.Default.GetString(" & fromBase64 & "(S))" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    Private Shared Function " & ResourceAssembly & "(n As String) As Assembly" & vbNewLine _
+        '  & "        Dim a As Assembly = Nothing" & vbNewLine _
+        '  & "        Using st As Stream = DirectCast([Delegate].CreateDelegate(GetType(z), GetType(Assembly).GetMethod(""GetExecutingAssembly"", New Type() {})), z).Invoke.GetManifestResourceStream(n & "".resources"")" & vbNewLine _
+        '  & "            If st Is Nothing Then" & vbNewLine _
+        '  & "                Exit Function" & vbNewLine _
+        '  & "            End If" & vbNewLine _
+        '  & "            Dim b As Byte() = " & Resolver.ReferencedZipperAssembly.refNewTypeName & "." & Resolver.ReferencedZipperAssembly.refNewMethodName & "(New BinaryReader(st).ReadBytes(CInt(st.Length)))" & vbNewLine _
+        '  & "            " & reverseStr & vbNewLine _
+        '  & "            a = Assembly.Load(" & Decrypt & "(b))" & vbNewLine _
+        '  & "        End Using" & vbNewLine _
+        '  & "        Return a" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & Generator.GenerateCompressWithGzipByteFunc(Resolver.funcName1, Resolver.funcName2) & vbNewLine _
+        '  & "    Private Shared Function " & fromBase64 & "(ByVal i As String) As Byte()" & vbNewLine _
+        '  & "        Return Convert.FromBase64String(i)" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    " & aesStr & vbNewLine _
+        '  & "End Class"
+
+        '    Dim dic As New Dictionary(Of String, Byte())
+        '    dic.Add(Resolver.ReferencedZipperAssembly.fPath, Resolver.ReferencedZipperAssembly.refByte)
+
+        '    Return Compiler.CreateStubFromString(Resolver.className, Frmwk, str.Replace("app, version=0.0.0.0, culture=neutral, publickeytoken=null", EncodedResName), dic)
+        'End Function
 
         Protected Shared Function PackerStub(Resolver As Stub, EncodedResName$, m_polyXor As Crypt, encrypt As Boolean) As String
             Dim ResourceAssembly = Randomizer.GenerateNewAlphabetic
@@ -262,61 +376,62 @@ Namespace Core.Obfuscation.Builder
 
             Dim reverseStr As String = String.Empty
             If encrypt Then
-                reverseStr = "                    Array.Reverse(b)"
+                reverseStr = "                    Array.Reverse(byt)"
             End If
 
-            Dim aesStr As String = "    Private Shared Function " & Decrypt & "(ByVal i As Byte()) As Byte()" & vbNewLine _
+            Dim aesStr As String = "    Private Shared Function " & Decrypt & "(ByVal iByte As Byte()) As Byte()" & vbNewLine _
                         & "        Dim k as Byte() = " & Resolver.ReferencedZipperAssembly.refNewTypeName & ".pKey(""" & Convert.ToBase64String(SevenZipLib.SevenZipHelper.Compress(m_polyXor.key)) & """)" & vbNewLine _
-                        & "        Dim O As Byte() = New Byte(i.Length - " & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
+                        & "        Dim O As Byte() = New Byte(iByte.Length - " & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
                         & "        Dim S As Byte() = New Byte(" & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
-                        & "        Buffer.BlockCopy(i, i.Length - " & m_polyXor.SaltSize.ToString & ", S, 0, " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
-                        & "        Array.Resize(Of Byte)(i, i.Length - " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
-                        & "        For j As Integer = 0 To i.Length - 1" & vbNewLine _
-                        & "            O(j) = CByte(i(j) Xor k(j Mod k.Length) Xor S(j Mod S.Length))" & vbNewLine _
+                        & "        Buffer.BlockCopy(iByte, iByte.Length - " & m_polyXor.SaltSize.ToString & ", S, 0, " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+                        & "        Array.Resize(Of Byte)(iByte, iByte.Length - " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+                        & "        For j As Integer = 0 To iByte.Length - 1" & vbNewLine _
+                        & "            O(j) = CByte(iByte(j) Xor k(j Mod k.Length) Xor S(j Mod S.Length))" & vbNewLine _
                         & "        Next" & vbNewLine _
                         & "        Return O" & vbNewLine _
                         & "    End Function"
 
-
-            Dim str = "Imports System.Windows.Forms" & vbNewLine & _
-                    "Imports System.Security.Cryptography" & vbNewLine & _
-                    "Imports System" & vbNewLine & _
-                    "Imports System.Threading" & vbNewLine & _
-                    "Imports System.Text" & vbNewLine & _
-                    "Imports System.IO" & vbNewLine & _
-                    "Imports System.Resources" & vbNewLine & _
-                    "Imports System.IO.Compression" & vbNewLine & _
+            Dim str = "Imports System.Windows.Forms" & vbNewLine &
+                    "Imports System.Security.Cryptography" & vbNewLine &
+                    "Imports System" & vbNewLine &
+                    "Imports System.Threading" & vbNewLine &
+                    "Imports System.Text" & vbNewLine &
+                    "Imports System.IO" & vbNewLine &
+                    "Imports System.Resources" & vbNewLine &
+                    "Imports System.IO.Compression" & vbNewLine &
                     "Imports " & Resolver.ReferencedZipperAssembly.refNewNamespaceName & vbNewLine & vbNewLine _
           & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
           & "Friend Class " & Resolver.className & vbNewLine & vbNewLine _
           & "    Private Delegate Function z() As Assembly" & vbNewLine _
           & "    <STAThread()> _" & vbNewLine _
-          & "    Public Shared Sub Main(ByVal a As String())" & vbNewLine _
-          & "        Dim y As Assembly = " & ResourceAssembly & "((""app, version=0.0.0.0, culture=neutral, publickeytoken=null"").Replace("".resources"",""""))" & vbNewLine _
-          & "        If y.EntryPoint.GetParameters().Length = 0 Then" & vbNewLine _
-          & "            y.EntryPoint.Invoke(Nothing, New Object(-1) {})" & vbNewLine _
-          & "        Else" & vbNewLine _
-          & "            y.EntryPoint.Invoke(Nothing, New Object() {a})" & vbNewLine _
+          & "    Public Shared Sub Main(ByVal args As String())" & vbNewLine _
+          & "        Dim yassembly As Assembly = " & ResourceAssembly & "((""app, version=0.0.0.0, culture=neutral, publickeytoken=null"").Replace("".resources"",""""))" & vbNewLine _
+          & "        Dim yentryPoint As MethodInfo = yassembly.EntryPoint" & vbNewLine _
+          & "        Dim yparameters As ParameterInfo() = yentryPoint.GetParameters" & vbNewLine _
+          & "        Dim yobjArray As Object() = Nothing" & vbNewLine _
+          & "        If ((Not yparameters Is Nothing) AndAlso (yparameters.Length > 0)) Then" & vbNewLine _
+          & "            yobjArray = New Object() {args}" & vbNewLine _
           & "        End If" & vbNewLine _
+          & "        yentryPoint.Invoke(Nothing, yobjArray)" & vbNewLine _
           & "    End Sub" & vbNewLine _
-          & "    Private Shared Function " & decodeString & "(Byval S as String) As String" & vbNewLine _
-          & "        Return Encoding.Default.GetString(" & fromBase64 & "(S))" & vbNewLine _
+          & "    Private Shared Function " & decodeString & "(Byval Str as String) As String" & vbNewLine _
+          & "        Return Encoding.Default.GetString(" & fromBase64 & "(Str))" & vbNewLine _
           & "    End Function" & vbNewLine _
-          & "    Private Shared Function " & ResourceAssembly & "(n As String) As Assembly" & vbNewLine _
-          & "        Dim a As Assembly = Nothing" & vbNewLine _
-          & "        Using st As Stream = DirectCast([Delegate].CreateDelegate(GetType(z), GetType(Assembly).GetMethod(""GetExecutingAssembly"", New Type() {})), z).Invoke.GetManifestResourceStream(n & "".resources"")" & vbNewLine _
+          & "    Private Shared Function " & ResourceAssembly & "(nAss As String) As Assembly" & vbNewLine _
+          & "        Dim asm As Assembly = Nothing" & vbNewLine _
+          & "        Using st As Stream = DirectCast([Delegate].CreateDelegate(GetType(z), GetType(Assembly).GetMethod(""GetExecutingAssembly"", New Type() {})), z).Invoke.GetManifestResourceStream(nAss & "".resources"")" & vbNewLine _
           & "            If st Is Nothing Then" & vbNewLine _
-          & "                Exit Function" & vbNewLine _
+          & "                Return asm" & vbNewLine _
           & "            End If" & vbNewLine _
-          & "            Dim b As Byte() = " & Resolver.ReferencedZipperAssembly.refNewTypeName & "." & Resolver.ReferencedZipperAssembly.refNewMethodName & "(New BinaryReader(st).ReadBytes(CInt(st.Length)))" & vbNewLine _
+          & "            Dim byt As Byte() = " & Resolver.ReferencedZipperAssembly.refNewTypeName & "." & Resolver.ReferencedZipperAssembly.refNewMethodName & "(New BinaryReader(st).ReadBytes(CInt(st.Length)))" & vbNewLine _
           & "            " & reverseStr & vbNewLine _
-          & "            a = Assembly.Load(" & Decrypt & "(b))" & vbNewLine _
+          & "            asm = Assembly.Load(" & Decrypt & "(byt))" & vbNewLine _
           & "        End Using" & vbNewLine _
-          & "        Return a" & vbNewLine _
+          & "        Return asm" & vbNewLine _
           & "    End Function" & vbNewLine _
           & Generator.GenerateCompressWithGzipByteFunc(Resolver.funcName1, Resolver.funcName2) & vbNewLine _
-          & "    Private Shared Function " & fromBase64 & "(ByVal i As String) As Byte()" & vbNewLine _
-          & "        Return Convert.FromBase64String(i)" & vbNewLine _
+          & "    Private Shared Function " & fromBase64 & "(ByVal iStr As String) As Byte()" & vbNewLine _
+          & "        Return Convert.FromBase64String(iStr)" & vbNewLine _
           & "    End Function" & vbNewLine _
           & "    " & aesStr & vbNewLine _
           & "End Class"
@@ -327,17 +442,115 @@ Namespace Core.Obfuscation.Builder
             Return Compiler.CreateStubFromString(Resolver.className, Frmwk, str.Replace("app, version=0.0.0.0, culture=neutral, publickeytoken=null", EncodedResName), dic)
         End Function
 
+        'Protected Shared Function PackerStub(Resolver As Stub, EncodedResName$, m_polyXor As Crypt, encrypt As Boolean) As String
+        '    Dim ResourceAssembly = Randomizer.GenerateNewAlphabetic
+        '    Dim decodeString = Randomizer.GenerateNewAlphabetic
+        '    Dim Decrypt = Randomizer.GenerateNewAlphabetic
+        '    Dim fromBase64 = Randomizer.GenerateNewAlphabetic
+
+        '    Dim decompress0 = Randomizer.GenerateNewAlphabetic
+        '    Dim decompress1 = Randomizer.GenerateNewAlphabetic
+
+        '    Dim SevenZipLibAssembly As String = Randomizer.GenerateNewAlphabetic
+
+        '    Dim reverseStr As String = String.Empty
+        '    If encrypt Then
+        '        reverseStr = "                    Array.Reverse(b)"
+        '    End If
+
+        '    Dim aesStr As String = "    Private Shared Function " & Decrypt & "(ByVal i As Byte()) As Byte()" & vbNewLine _
+        '                & "        Dim k as Byte() = " & fromBase64 & "(""" & Convert.ToBase64String(m_polyXor.key) & """)" & vbNewLine _
+        '                & "        Dim O As Byte() = New Byte(i.Length - " & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
+        '                & "        Dim S As Byte() = New Byte(" & m_polyXor.SaltSize.ToString & " - 1) {}" & vbNewLine _
+        '                & "        Buffer.BlockCopy(i, i.Length - " & m_polyXor.SaltSize.ToString & ", S, 0, " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+        '                & "        Array.Resize(Of Byte)(i, i.Length - " & m_polyXor.SaltSize.ToString & ")" & vbNewLine _
+        '                & "        For j As Integer = 0 To i.Length - 1" & vbNewLine _
+        '                & "            O(j) = CByte(i(j) Xor k(j Mod k.Length) Xor S(j Mod S.Length))" & vbNewLine _
+        '                & "        Next" & vbNewLine _
+        '                & "        Return O" & vbNewLine _
+        '                & "    End Function"
+
+        '    Dim str = "Imports System.Windows.Forms" & vbNewLine &
+        '            "Imports System.Security.Cryptography" & vbNewLine &
+        '            "Imports System" & vbNewLine &
+        '            "Imports System.Threading" & vbNewLine &
+        '            "Imports System.Text" & vbNewLine &
+        '            "Imports System.IO" & vbNewLine &
+        '            "Imports System.Resources" & vbNewLine &
+        '            "Imports Microsoft.VisualBasic" & vbNewLine &
+        '            "Imports System.IO.Compression" & vbNewLine _
+        '  & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
+        '  & "Friend Class " & Resolver.className & vbNewLine & vbNewLine _
+        '  & "    Private Delegate Function z() As Assembly" & vbNewLine _
+        '  & "    <STAThread()> _" & vbNewLine _
+        '  & "    Public Shared Sub Main(ByVal args As String())" & vbNewLine _
+        '  & "        Dim yassembly As Assembly = " & ResourceAssembly & "((""app, version=0.0.0.0, culture=neutral, publickeytoken=null"").Replace("".resources"",""""))" & vbNewLine _
+        '  & "        Dim yentryPoint As MethodInfo = yassembly.EntryPoint" & vbNewLine _
+        '  & "        Dim yparameters As ParameterInfo() = yentryPoint.GetParameters" & vbNewLine _
+        '  & "        Dim yobjArray As Object() = Nothing" & vbNewLine _
+        '  & "        If ((Not yparameters Is Nothing) AndAlso (yparameters.Length > 0)) Then" & vbNewLine _
+        '  & "            yobjArray = New Object() {args}" & vbNewLine _
+        '  & "        End If" & vbNewLine _
+        '  & "        yentryPoint.Invoke(Nothing, yobjArray)" & vbNewLine _
+        '  & "    End Sub" & vbNewLine _
+        '  & "    Private Shared Function " & decodeString & "(Byval Str as String) As String" & vbNewLine _
+        '  & "        Return Encoding.Default.GetString(" & fromBase64 & "(Str))" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    Private Shared Function " & ResourceAssembly & "(n As String) As Assembly" & vbNewLine _
+        '  & "        Dim a As Assembly = Nothing" & vbNewLine _
+        '  & "        'MsgBox(n)" & vbNewLine _
+        '  & "        Using st As Stream = DirectCast([Delegate].CreateDelegate(GetType(z), GetType(Assembly).GetMethod(""GetExecutingAssembly"", New Type() {})), z).Invoke.GetManifestResourceStream(n & "".resources"")" & vbNewLine _
+        '  & "            If st Is Nothing Then" & vbNewLine _
+        '  & "                Return a" & vbNewLine _
+        '  & "            End If" & vbNewLine _
+        '  & "            Dim b As Byte() = " & decompress0 & "(New BinaryReader(st).ReadBytes(CInt(st.Length)))" & vbNewLine _
+        '  & "            " & reverseStr & vbNewLine _
+        '  & "            a = Assembly.Load(" & Decrypt & "(b))" & vbNewLine _
+        '  & "        End Using" & vbNewLine _
+        '  & "        Return a" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & " " & vbNewLine _
+        '  & "    Private Shared Function " & decompress0 & "(ByVal d() As Byte) As Byte()" & vbNewLine _
+        '  & "        Try : Return " & decompress1 & "(New DeflateStream(New MemoryStream(d), CompressionMode.Decompress, False), d.Length)" & vbNewLine _
+        '  & "        Catch : Return Nothing : End Try" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    Private Shared Function " & decompress1 & "(ByVal s As Stream, ByVal C As Integer) As Byte()" & vbNewLine _
+        '  & "        Dim d() As Byte : Dim t As Int32 = 0" & vbNewLine _
+        '  & "        Try : While True" & vbNewLine _
+        '  & "            ReDim Preserve d(t + C)" & vbNewLine _
+        '  & "            Dim b As Int32 = s.Read(d, t, C)" & vbNewLine _
+        '  & "            If b = 0 Then Exit While" & vbNewLine _
+        '  & "                t += b" & vbNewLine _
+        '  & "              End While" & vbNewLine _
+        '  & "            ReDim Preserve d(t - 1)" & vbNewLine _
+        '  & "            Return d" & vbNewLine _
+        '  & "        Catch : Return Nothing : End Try" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    Private Shared Function " & fromBase64 & "(ByVal iStr As String) As Byte()" & vbNewLine _
+        '  & "        Return Convert.FromBase64String(iStr)" & vbNewLine _
+        '  & "    End Function" & vbNewLine _
+        '  & "    " & aesStr & vbNewLine _
+        '  & "End Class"
+
+
+
+        '    Dim dic As New Dictionary(Of String, Byte())
+        '    'dic.Add(Resolver.ReferencedZipperAssembly.fPath, Resolver.ReferencedZipperAssembly.refByte)
+
+        '    Return Compiler.CreateStubFromString(Resolver.className, Frmwk, str.Replace("app, version=0.0.0.0, culture=neutral, publickeytoken=null", EncodedResName), dic)
+        'End Function
+
         Protected Shared Function ResourcesStub(ClassName$, initializeFuncName$, resolverName$, Decompress0$, Decompress1$, encrypt As Boolean, compress As Boolean) As String
             LoadNamespacesHeaders()
 
             Dim reverseStr = If(encrypt = True, "                    Array.Reverse(d)", String.Empty)
             Dim DecompressStr0 = "                d = " & Decompress0 & "(cm.ToArray)"
 
-            Dim str = _
-                "Imports System.Windows.Forms" & vbNewLine & _
-                "Imports System.Collections.Generic" & vbNewLine & _
-                "Imports System" & vbNewLine & _
-                "Imports System.IO" & vbNewLine & _
+            Dim str =
+                "Imports System.Windows.Forms" & vbNewLine &
+                "Imports System.Collections.Generic" & vbNewLine &
+                "Imports System" & vbNewLine &
+                "Imports System.IO" & vbNewLine &
                 "Imports System.IO.Compression" & vbNewLine & vbNewLine _
                        & Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
                        & m_AddedNamespaceStart & vbNewLine _

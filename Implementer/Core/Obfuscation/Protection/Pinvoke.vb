@@ -33,13 +33,10 @@ Namespace Core.Obfuscation.Protection
             Dim HasPinvokeCalls As Boolean
             For Each mo As ModuleDefinition In asm.Modules
                 For Each t In mo.GetAllTypes()
-                    Types.Add(t)
-                    For Each m In t.Methods
-                        If m.IsPInvokeImpl Then
-                            HasPinvokeCalls = True
-                            Exit For
-                        End If
-                    Next
+                    If t.Methods.Any(Function(f) f.IsPInvokeImpl) Then
+                        Types.Add(t)
+                        HasPinvokeCalls = True
+                    End If
                 Next
             Next
 
@@ -73,44 +70,49 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 1 AndAlso Not completedMethods.Contains(m)))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 1 AndAlso Not completedMethods.Contains(m) AndAlso Utils.HasUnsafeInstructions(m) = False))
 
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
-                        If Utils.HasUnsafeInstructions(md) = False Then
-                            Using optim As New Msil(md.Body)
-                                For i = 0 To md.Body.Instructions.Count - 1
-                                    Dim item As Instruction = md.Body.Instructions.Item(i)
-                                    If (item.OpCode = OpCodes.Call) Then
-                                        Try
-                                            Dim originalReference As MethodReference = DirectCast(item.Operand, MethodReference)
-                                            Dim originalMethod As MethodDefinition = originalReference.Resolve
+                        md.Body.SimplifyMacros
+                        For i = 0 To md.Body.Instructions.Count - 1
 
-                                            If Not originalMethod Is Nothing AndAlso Not originalMethod.DeclaringType Is Nothing AndAlso Not completedMethods.Contains(originalMethod) Then
-                                                If originalMethod.IsPInvokeImpl Then
-                                                    If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" OrElse Not originalMethod.ReturnType.ToString = "System.Void" Then
-                                                        Continue For
-                                                    End If
+                            Dim item As Instruction = md.Body.Instructions.Item(i)
+                            If (item.OpCode = OpCodes.Call) Then
+                                Try
+                                    Dim originalReference As MethodReference = DirectCast(item.Operand, MethodReference)
+                                    Dim originalMethod As MethodDefinition = originalReference.Resolve
 
-                                                    If originalMethod.PInvokeInfo.EntryPoint.StartsWith("#") Then
-                                                        originalMethod = Renamer.RenameMethod(originalMethod.DeclaringType, originalMethod)
-                                                    Else
-                                                        PinvokeCreate.InitPinvokeInfos(originalMethod, td)
-                                                        PinvokeCreate.CreatePinvokeBody(LoaderInvoke)
-                                                    End If
-                                                    completedMethods.Add(originalMethod)
-                                                End If
+                                    If Not originalMethod Is Nothing AndAlso Not originalMethod.DeclaringType Is Nothing AndAlso Not completedMethods.Contains(originalMethod) Then
+                                        If originalMethod.IsPInvokeImpl Then
+
+                                            'If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" OrElse Not originalMethod.ReturnType.ToString = "System.Void" Then
+                                            '    Continue For
+                                            'End If
+
+                                            If originalMethod.Name = "SendMessage" OrElse originalMethod.Name = "PostMessage" OrElse Not originalMethod.ReturnType.IsGenericInstance Then
+                                                Continue For
                                             End If
-                                        Catch ex As AssemblyResolutionException
-                                            Continue For
-                                        End Try
+
+                                            If originalMethod.PInvokeInfo.EntryPoint.StartsWith("#") Then
+                                                originalMethod = Renamer.RenameMethod(originalMethod.DeclaringType, originalMethod)
+                                            Else
+                                                PinvokeCreate.InitPinvokeInfos(originalMethod, td)
+                                                PinvokeCreate.CreatePinvokeBody(LoaderInvoke)
+                                            End If
+                                            completedMethods.Add(originalMethod)
+                                        End If
                                     End If
-                                Next
-                                optim.FixBranchOffsets()
-                                optim.MethodBody.SimplifyMacros()
-                            End Using
-                        End If
+                                Catch ex As AssemblyResolutionException
+                                    Continue For
+                                End Try
+                            End If
+
+                        Next
+                        md.Body.OptimizeMacros
+                        md.Body.ComputeOffsets()
+                        md.Body.ComputeHeader()
                     End If
                 Next
             Catch ex As Exception

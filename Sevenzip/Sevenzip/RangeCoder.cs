@@ -2,7 +2,7 @@ using System;
 
 namespace SevenZipLib
 {
-	public class RangeCoderEncoder
+    public class RangeCoderEncoder
 	{
 		public const uint kTopValue = (1 << 24);
 

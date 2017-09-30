@@ -45,10 +45,19 @@ Namespace CecilHelper
         Public Shared Function isStronglyTypedResourceBuilder(td As TypeDefinition) As Boolean
             If td.HasCustomAttributes Then
                 For Each ca In (From c In td.CustomAttributes
-                    Where c IsNot Nothing AndAlso c.AttributeType.Name = "GeneratedCodeAttribute" AndAlso c.HasConstructorArguments AndAlso c.ConstructorArguments(0).Value = "System.Resources.Tools.StronglyTypedResourceBuilder"
-                    Select c)
+                                Where c IsNot Nothing AndAlso c.AttributeType.Name = "GeneratedCodeAttribute" AndAlso c.HasConstructorArguments AndAlso c.ConstructorArguments(0).Value = "System.Resources.Tools.StronglyTypedResourceBuilder"
+                                Select c)
                     Return True
                 Next
+            End If
+            Return False
+        End Function
+
+        Public Shared Function IsSettingStr(md As MethodDefinition, str$) As Boolean
+            If md.IsGetter Then
+                Return md.Name.ToLower = "get_" & str.ToLower
+            ElseIf md.IsSetter Then
+                Return md.Name.ToLower = "set_" & str.ToLower
             End If
             Return False
         End Function

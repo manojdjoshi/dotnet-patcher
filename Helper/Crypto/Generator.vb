@@ -35,14 +35,14 @@
 
         Public Shared Function GenerateDecryptIntFunc(_ClassIntName$, _DecryptIntFuncName$) As String
             Dim str = "Public Class " & _ClassIntName & vbNewLine _
-                              & "    Public Shared Function " & _DecryptIntFuncName & " (ByVal d$, Byval integ%) As Integer" & vbNewLine _
-                              & "        Dim s As String() = d.Split(New Char() {Strings.ChrW(integ)})" & vbNewLine _
-                              & "        Dim n As Integer() = New Integer((s.Length - 1) - 1) {}" & vbNewLine _
+                              & "    Public Shared Function " & _DecryptIntFuncName & " (ByVal dString$, Byval integ%) As Integer" & vbNewLine _
+                              & "        Dim sString As String() = dString.Split(New Char() {Strings.ChrW(integ)})" & vbNewLine _
+                              & "        Dim nString As Integer() = New Integer((sString.Length - 1) - 1) {}" & vbNewLine _
                               & "        Dim i%" & vbNewLine _
-                              & "        For i = 0 To n.Length - 1" & vbNewLine _
-                              & "            n(i) = Integer.Parse(s(i))" & vbNewLine _
+                              & "        For i = 0 To nString.Length - 1" & vbNewLine _
+                              & "            nString(i) = Integer.Parse(sString(i))" & vbNewLine _
                               & "        Next i" & vbNewLine _
-                              & "        Return n(n(n.Length - 1))" & vbNewLine _
+                              & "        Return nString(nString(nString.Length - 1))" & vbNewLine _
                               & "    End Function" & vbNewLine _
                               & "End Class"
             Return str
@@ -50,8 +50,8 @@
 
         Public Shared Function GenerateDecryptOddFunc(_ClassOddName$, _DecryptOddFuncName$) As String
             Dim str = "Public Class " & _ClassOddName & vbNewLine _
-                              & "    Public Shared Function " & _DecryptOddFuncName & " (ByVal n%) As Boolean" & vbNewLine _
-                              & "        Return n Mod 2 <> 0" & vbNewLine _
+                              & "    Public Shared Function " & _DecryptOddFuncName & " (ByVal numInteg%) As Boolean" & vbNewLine _
+                              & "        Return numInteg Mod 2 <> 0" & vbNewLine _
                               & "    End Function" & vbNewLine _
                               & "End Class"
             Return str
@@ -59,113 +59,148 @@
 
         Public Shared Function GenerateDecryptXorFunc(_ClassXorName$, _DecryptXorFuncName$) As String
             Dim str = "Public Class " & _ClassXorName & vbNewLine _
-                              & "    Public Shared Function " & _DecryptXorFuncName & " (ByVal t$, ByVal n%) As String" & vbNewLine _
-                              & "        Dim s$ = String.Empty" & vbNewLine _
-                              & "        Dim o% = (t.Length - 1)" & vbNewLine _
+                              & "    Public Shared Function " & _DecryptXorFuncName & " (ByVal tString$, ByVal numInteg%) As String" & vbNewLine _
+                              & "        Dim sResult$ = String.Empty" & vbNewLine _
+                              & "        Dim sLength% = (tString.Length - 1)" & vbNewLine _
                               & "        Dim j% = 0" & vbNewLine _
-                              & "        Do While (j <= o)" & vbNewLine _
-                              & "            Dim p% = (Convert.ToInt32(t.Chars(j)) Xor n)" & vbNewLine _
-                              & "            s = (s & Char.ConvertFromUtf32(p))" & vbNewLine _
+                              & "        Do While (j <= sLength)" & vbNewLine _
+                              & "            Dim p% = (Convert.ToInt32(tString.Chars(j)) Xor numInteg)" & vbNewLine _
+                              & "            sResult = (sResult & Char.ConvertFromUtf32(p))" & vbNewLine _
                               & "            j += 1" & vbNewLine _
                               & "        Loop" & vbNewLine _
-                              & "        Return s" & vbNewLine _
+                              & "        Return sResult" & vbNewLine _
                               & "    End Function" & vbNewLine _
                               & "End Class"
+
             Return str
         End Function
 
         Public Shared Function GenerateCompressWithGzipByteFunc(_Decompress0$, Decompress1$) As String
-            Return "    Public Shared Function " & _Decompress0 & "(ByVal d As Byte()) As Byte()" & vbNewLine _
-                     & "        Try : Return " & Decompress1 & "(New GZipStream(New MemoryStream(d), CompressionMode.Decompress, False), d.Length)" & vbNewLine _
+            Return "    Public Shared Function " & _Decompress0 & "(ByVal datByte As Byte()) As Byte()" & vbNewLine _
+                     & "        Try : Return " & Decompress1 & "(New GZipStream(New MemoryStream(datByte), CompressionMode.Decompress, False), datByte.Length)" & vbNewLine _
                      & "        Catch : Return Nothing : End Try" & vbNewLine _
                      & "    End Function" & vbNewLine _
                      & GenerateDeCompressWithGzipFunc(Decompress1)
         End Function
 
         Public Shared Function GenerateDeCompressWithGzipStreamFunc(_Decompress0$, Decompress1$) As String
-            Return "    Private Shared Function " & _Decompress0 & "(ByVal d As Stream) As Byte()" & vbNewLine _
-                     & "        Try : Return " & Decompress1 & "(New GZipStream(d, CompressionMode.Decompress, False), d.Length)" & vbNewLine _
+            Return "    Private Shared Function " & _Decompress0 & "(ByVal datStream As Stream) As Byte()" & vbNewLine _
+                     & "        Try : Return " & Decompress1 & "(New GZipStream(datStream, CompressionMode.Decompress, False), datStream.Length)" & vbNewLine _
                      & "        Catch : Return Nothing : End Try" & vbNewLine _
                      & "    End Function" & vbNewLine _
                      & GenerateDeCompressWithGzipFunc(Decompress1)
         End Function
 
         Private Shared Function GenerateDeCompressWithGzipFunc(Decompress1$) As String
-            Return "    Public Shared Function " & Decompress1 & "(ByVal ds As Stream, ByVal c As Integer) As Byte()" & vbNewLine _
-                     & "        Dim d() As Byte : Dim tb As Int32 = 0" & vbNewLine _
+            Return "    Public Shared Function " & Decompress1 & "(ByVal datStream As Stream, ByVal KeyInteg As Integer) As Byte()" & vbNewLine _
+                     & "        Dim datByte() As Byte : Dim tbyte As Int32 = 0" & vbNewLine _
                      & "        Try : While True" & vbNewLine _
-                     & "            ReDim Preserve d(tb + c)" & vbNewLine _
-                     & "            Dim br As Int32 = ds.Read(d, tb, c)" & vbNewLine _
+                     & "            ReDim Preserve datByte(tbyte + KeyInteg)" & vbNewLine _
+                     & "            Dim br As Int32 = datStream.Read(datByte, tbyte, KeyInteg)" & vbNewLine _
                      & "            If br = 0 Then Exit While" & vbNewLine _
-                     & "                tb += br" & vbNewLine _
+                     & "                tbyte += br" & vbNewLine _
                      & "              End While" & vbNewLine _
-                     & "            ReDim Preserve d(tb - 1)" & vbNewLine _
-                     & "            Return d" & vbNewLine _
+                     & "            ReDim Preserve datByte(tbyte - 1)" & vbNewLine _
+                     & "            Return datByte" & vbNewLine _
                      & "        Catch : Return Nothing : End Try" & vbNewLine _
                      & "    End Function" & vbNewLine
         End Function
 
         Public Shared Function GenereateDecryptPrimeFunc(_FunctionName$) As String
-            Return "Public Shared Function " & _FunctionName & " (n as Integer) As Boolean" & vbNewLine _
-                 & "        Dim b As Boolean = True" & vbNewLine _
-                 & "        Dim f as integer = n / 2" & vbNewLine _
+            Return "Public Shared Function " & _FunctionName & " (Byval numberInteg as Integer) As Boolean" & vbNewLine _
+                 & "        Dim boolVal As Boolean = True" & vbNewLine _
+                 & "        Dim halfNum as integer = numberInteg / 2" & vbNewLine _
                  & "        Dim i as integer = 0" & vbNewLine _
-                 & "        For i = 2 To f" & vbNewLine _
-                 & "            If (n Mod i) = 0 Then" & vbNewLine _
-                 & "                b = False" & vbNewLine _
+                 & "        For i = 2 To halfNum" & vbNewLine _
+                 & "            If (numberInteg Mod i) = 0 Then" & vbNewLine _
+                 & "                boolVal = False" & vbNewLine _
                  & "            End If" & vbNewLine _
                  & "        Next" & vbNewLine _
-                 & "        Return b" & vbNewLine _
+                 & "        Return boolVal" & vbNewLine _
                  & "     End Function"
         End Function
 
         Public Shared Function GenerateDecryptRPNFunc(_FunctionName0$, _FunctionName1$) As String
             Return "    Public Shared Function " & _FunctionName0 & " (ByVal operands As String()) As Integer" & vbNewLine _
-                 & "        Dim sta As New Stack(Of Integer)" & vbNewLine _
-                 & "        For Each op As String In operands" & vbNewLine _
-                 & "            Select Case op" & vbNewLine _
+                 & "        Dim stackI As New Stack(Of Integer)" & vbNewLine _
+                 & "        For Each opCod As String In operands" & vbNewLine _
+                 & "            Select Case opCod" & vbNewLine _
                  & "                Case ""+""" & vbNewLine _
-                 & "                    sta.Push(sta.Pop() + sta.Pop())" & vbNewLine _
+                 & "                    stackI.Push(stackI.Pop() + stackI.Pop())" & vbNewLine _
                  & "                Case ""-""" & vbNewLine _
-                 & "                    sta.Push(-sta.Pop() + sta.Pop())" & vbNewLine _
+                 & "                    stackI.Push(-stackI.Pop() + stackI.Pop())" & vbNewLine _
                  & "                Case ""*""" & vbNewLine _
-                 & "                    sta.Push(sta.Pop() * sta.Pop())" & vbNewLine _
+                 & "                    stackI.Push(stackI.Pop() * stackI.Pop())" & vbNewLine _
                  & "                Case ""/""" & vbNewLine _
-                 & "                    Dim tmp As Integer = sta.Pop()" & vbNewLine _
-                 & "                    sta.Push(sta.Pop() / tmp)" & vbNewLine _
+                 & "                    Dim tmpInt As Integer = stackI.Pop()" & vbNewLine _
+                 & "                    stackI.Push(stackI.Pop() / tmpInt)" & vbNewLine _
                  & "                Case ""sqrt""" & vbNewLine _
-                 & "                    sta.Push(Math.Sqrt(sta.Pop()))" & vbNewLine _
+                 & "                    stackI.Push(Math.Sqrt(stackI.Pop()))" & vbNewLine _
                  & "                Case Else" & vbNewLine _
-                 & "                    sta.Push(Integer.Parse(op))" & vbNewLine _
+                 & "                    stackI.Push(Integer.Parse(opCod))" & vbNewLine _
                  & "            End Select" & vbNewLine _
                  & "        Next" & vbNewLine _
-                 & "        'If sta.Count <> 1 Then Throw New ArgumentException(" & _FunctionName0 & ")" & vbNewLine _
-                 & "        Return sta.Pop()" & vbNewLine _
+                 & "        Return stackI.Pop()" & vbNewLine _
                  & "    End Function" & vbNewLine _
-                 & "    Public Shared Function " & _FunctionName1 & " (ByVal expression As String) As String()" & vbNewLine _
-                 & "        Return expression.ToLower().Split(New Char() {"",""c}, StringSplitOptions.RemoveEmptyEntries)" & vbNewLine _
+                 & "    Public Shared Function " & _FunctionName1 & " (ByVal expressionStr As String) As String()" & vbNewLine _
+                 & "        Return expressionStr.ToLower().Split(New Char() {"",""c}, StringSplitOptions.RemoveEmptyEntries)" & vbNewLine _
                  & "    End Function" & vbNewLine
         End Function
 
         Public Shared Function GenerateReadFromResourcesFunc(ClassName$, ReadFromResourcesFuncName$, ResName$) As String
             Return "Public Class " & ClassName & vbNewLine _
-                          & "    Public Shared Function " & ReadFromResourcesFuncName & " (ByVal N As String) As String" & vbNewLine _
-                          & "        Dim m As New ResourceManager(""" & ResName & """, GetType(System.Reflection.Assembly).GetMethod(""GetExecutingAssembly"").Invoke(Nothing, Nothing))" & vbNewLine _
-                          & "        Dim s As String = DirectCast(m.GetObject(N), String)" & vbNewLine _
-                          & "        m.ReleaseAllResources()" & vbNewLine _
-                          & "        Return s" & vbNewLine _
+                          & "    Public Shared Function " & ReadFromResourcesFuncName & " (ByVal ValueStr As String) As String" & vbNewLine _
+                          & "        Dim ResourceMan As New ResourceManager(""" & ResName & """, GetType(System.Reflection.Assembly).GetMethod(""GetExecutingAssembly"").Invoke(Nothing, Nothing))" & vbNewLine _
+                          & "        Dim strObject As String = DirectCast(ResourceMan.GetObject(ValueStr), String)" & vbNewLine _
+                          & "        ResourceMan.ReleaseAllResources()" & vbNewLine _
+                          & "        Return strObject" & vbNewLine _
                           & "    End Function" & vbNewLine _
                           & "End Class" & vbNewLine
-
         End Function
 
         Public Shared Function GenerateFromBase64Func(ClassName$, FromBase64FuncName$, GetStringFuncName$) As String
             Return "Public Class " & ClassName & vbNewLine _
-                          & "    Public Shared Function " & FromBase64FuncName & " (ByVal bbbb As String) As Byte()" & vbNewLine _
-                          & "        Return Convert.FromBase64String(bbbb)" & vbNewLine _
+                          & "    Public Shared Function " & FromBase64FuncName & " (stringStr As String, defEnc As Boolean) As Byte()" & vbNewLine _
+                          & "        Dim bytes As Byte()" & vbNewLine _
+                          & "        Using writer As MemoryStream = New MemoryStream()" & vbNewLine _
+                          & "            Dim bufferedOutputBytes As Byte()" & vbNewLine _
+                          & "            Dim inputBytes As Byte()" & vbNewLine _
+                          & "            If defEnc Then" & vbNewLine _
+                          & "                inputBytes = Encoding.Default.GetBytes(stringStr)" & vbNewLine _
+                          & "            Else" & vbNewLine _
+                          & "                inputBytes = Encoding.UTF8.GetBytes(stringStr)" & vbNewLine _
+                          & "            End If" & vbNewLine _
+                          & "            Using transformation As FromBase64Transform = New FromBase64Transform()" & vbNewLine _
+                          & "                bufferedOutputBytes = New Byte(transformation.OutputBlockSize - 1) {}" & vbNewLine _
+                          & "                Dim i As Integer = 0" & vbNewLine _
+                          & "                While inputBytes.Length - i > 4" & vbNewLine _
+                          & "                    transformation.TransformBlock(inputBytes, i, 4, bufferedOutputBytes, 0)" & vbNewLine _
+                          & "                    i += 4" & vbNewLine _
+                          & "                    writer.Write(bufferedOutputBytes, 0, transformation.OutputBlockSize)" & vbNewLine _
+                          & "                End While" & vbNewLine _
+                          & "                bufferedOutputBytes = transformation.TransformFinalBlock(inputBytes, i, inputBytes.Length - i)" & vbNewLine _
+                          & "                writer.Write(bufferedOutputBytes, 0, bufferedOutputBytes.Length)" & vbNewLine _
+                          & "                transformation.Clear()" & vbNewLine _
+                          & "            End Using" & vbNewLine _
+                          & "            writer.Position = 0" & vbNewLine _
+                          & "            Dim lengthInteg As Integer" & vbNewLine _
+                          & "            If writer.Length > Integer.MaxValue Then" & vbNewLine _
+                          & "                lengthInteg = Integer.MaxValue" & vbNewLine _
+                          & "            Else" & vbNewLine _
+                          & "                lengthInteg = Convert.ToInt32(writer.Length)" & vbNewLine _
+                          & "            End If" & vbNewLine _
+                          & "            Dim bufferByt As Byte() = New Byte(lengthInteg - 1) {}" & vbNewLine _
+                          & "            writer.Read(bufferByt, 0, lengthInteg)" & vbNewLine _
+                          & "            writer.Close()" & vbNewLine _
+                          & "            bytes = bufferByt" & vbNewLine _
+                          & "        End Using" & vbNewLine _
+                          & "        Return bytes" & vbNewLine _
                           & "    End Function" & vbNewLine _
-                          & "    Public Shared Function " & GetStringFuncName & " (ByVal aaaa As Byte()) As String" & vbNewLine _
-                          & "        Return Encoding.Unicode.GetString(aaaa)" & vbNewLine _
+                          & "    Public Shared Function " & GetStringFuncName & " (strByt As Byte(), defEnc As Boolean) As String" & vbNewLine _
+                          & "        If defEnc Then" & vbNewLine _
+                          & "            Return Encoding.Default.GetString(strByt)" & vbNewLine _
+                          & "        End If" & vbNewLine _
+                          & "        Return Encoding.UTF8.GetString(strByt)" & vbNewLine _
                           & "    End Function" & vbNewLine _
                           & "End Class" & vbNewLine
         End Function

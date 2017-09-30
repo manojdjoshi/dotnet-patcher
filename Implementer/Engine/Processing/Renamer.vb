@@ -78,16 +78,16 @@ Namespace Engine.Processing
                 If Utils.isStronglyTypedResourceBuilder(TypeDef) Then
                     If NamespaceOriginal.EndsWith(".My.Resources") Then
                         If EmbRes.Name = NamespaceOriginal.Replace(".My.Resources", "") & "." & TypeOriginal & ".resources" Then
-                            EmbRes.Name = If(NamespaceObfuscated = String.Empty, TypeObfuscated & ".resources", NamespaceObfuscated & "." & TypeObfuscated & ".resources")
+                            RenameResourceName(EmbRes, NamespaceObfuscated, TypeObfuscated)
                         End If
                     Else
                         If EmbRes.Name = NamespaceOriginal & "." & TypeOriginal & ".resources" Then
-                            EmbRes.Name = If(NamespaceObfuscated = String.Empty, TypeObfuscated & ".resources", NamespaceObfuscated & "." & TypeObfuscated & ".resources")
+                            RenameResourceName(EmbRes, NamespaceObfuscated, TypeObfuscated)
                         End If
                     End If
                 Else
                     If EmbRes.Name = NamespaceOriginal & "." & TypeOriginal & ".resources" Then
-                        EmbRes.Name = If(NamespaceObfuscated = String.Empty, TypeObfuscated & ".resources", NamespaceObfuscated & "." & TypeObfuscated & ".resources")
+                        RenameResourceName(EmbRes, NamespaceObfuscated, TypeObfuscated)
                     End If
                 End If
             Next
@@ -111,6 +111,10 @@ Namespace Engine.Processing
                     End If
                 Next
             End If
+        End Sub
+
+        Private Shared Sub RenameResourceName(EmbRes As Resource, NamespaceObfuscated As String, TypeObfuscated As String)
+            EmbRes.Name = If(NamespaceObfuscated = String.Empty, TypeObfuscated & ".resources", NamespaceObfuscated & "." & TypeObfuscated & ".resources")
         End Sub
 
         ''' <summary>

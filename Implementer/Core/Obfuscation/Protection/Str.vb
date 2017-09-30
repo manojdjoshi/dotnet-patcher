@@ -7,6 +7,10 @@ Imports System.IO
 Imports System.IO.Compression
 Imports Implementer.Core.Obfuscation.Builder
 Imports Implementer.Core.Obfuscation.Exclusion
+Imports System.Text
+Imports System.Security.Cryptography
+Imports Helper.CryptoHelper
+Imports System.Runtime.CompilerServices
 
 Namespace Core.Obfuscation.Protection
     Public NotInheritable Class Str
@@ -16,10 +20,16 @@ Namespace Core.Obfuscation.Protection
         Private Shared DecryptReadStringResources As Stub
         Private Shared DecryptXor As Stub
         Private Shared DecryptBase64 As Stub
+        Private Shared DecryptPrime As Stub
+        Private Shared DecryptString As Stub
+        Private Shared DecryptStringKey As Byte
+        Private Shared DecryptStringFieldHost As TypeDefinition
+        Private Shared DecryptStringLength As Integer
         Private Shared m_s As MemoryStream = Nothing
         Private Shared m_bw As BinaryWriter = Nothing
         Private Shared randSalt As Random
         Private Shared Types As New List(Of TypeDefinition)
+        Private Shared m_IsDefaultEncoding As Boolean
 #End Region
 
 #Region " Properties "
@@ -30,6 +40,7 @@ Namespace Core.Obfuscation.Protection
 #Region " Constructor "
         Shared Sub New()
             randSalt = New Random
+            DecryptStringKey = New Random().Next(1, 255)
         End Sub
 #End Region
 
@@ -70,14 +81,19 @@ Namespace Core.Obfuscation.Protection
                 completedMethods.Add(.GetMethod2)
             End With
 
+            DecryptPrime = New Stub(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic)
+            With DecryptPrime
+                .ResolveTypeFromFile(DecryptPrimeStub(.className, .funcName1), Finder.FindDefaultNamespace(asm, Pack), Randomizer.GenerateNew, Randomizer.GenerateNew)
+                .InjectType(asm)
+                completedMethods.Add(.GetMethod1)
+            End With
+
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
-                    'If NameChecker.IsRenamable(type) Then
                     If Exclude.isStringEncryptExclude(type) = False Then
-                            IterateType(type)
-                        End If
-                    'End If
+                        IterateType(type)
+                    End If
                 Next
                 Types.Clear()
             Next
@@ -100,6 +116,25 @@ Namespace Core.Obfuscation.Protection
             Return IntegPosit
         End Function
 
+        Private Shared Function encrypt(str As String) As Byte()
+            Dim list As New List(Of Byte)
+            str = xorEncrypt(str, ChrW(DecryptStringKey))
+            Dim ch As Char
+            For Each ch In str.ToCharArray
+                list.Add(AscW(ch))
+            Next
+            Return list.ToArray
+        End Function
+
+        Private Shared Function xorEncrypt(str As String, key As Char) As String
+            Dim result As String = String.Empty
+            Dim i As Integer
+            For i = 0 To str.Length - 1
+                result = (result & (AscW(str.Chars(i)) Xor AscW(key)))
+            Next i
+            Return result
+        End Function
+
         Private Shared Sub DeleteStubs()
             If Not DecryptReadStringResources Is Nothing Then DecryptReadStringResources.DeleteDll()
             If Not DecryptXor Is Nothing Then DecryptXor.DeleteDll()
@@ -108,104 +143,112 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 1 AndAlso Not completedMethods.Contains(m) AndAlso Not m.Name = "get_ResourceManager" AndAlso Not Utils.isStronglyTypedResourceBuilder(m.DeclaringType) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 1 AndAlso Not completedMethods.Contains(m) AndAlso Not m.Name = "get_ResourceManager" AndAlso Not Utils.isStronglyTypedResourceBuilder(m.DeclaringType)))
+            'publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 1 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
 
             Try
                 For Each md In publicMethods
                     If publicMethods.Contains(md) Then
+                        md.Body.SimplifyMacros
+                        For i = 0 To md.Body.Instructions.Count - 1
+                            Dim Instruction As Instruction = md.Body.Instructions(i)
+                            If Not completedInstructions.Contains(Instruction) Then
+                                Dim mdFinal As MethodDefinition = Nothing
+                                If (Instruction.OpCode = OpCodes.Ldstr AndAlso Not Instruction.OpCode.ToString.Contains("Lambda$")) Then
+                                    Dim str = TryCast(Instruction.Operand, String)
 
-                        Using optim As New Msil(md.Body)
-                            For i = 0 To md.Body.Instructions.Count - 1
-                                Dim Instruction As Instruction = md.Body.Instructions(i)
-                                If Not completedInstructions.Contains(Instruction) Then
-                                    Dim mdFinal As MethodDefinition = Nothing
-                                    Dim index As Integer = md.Body.Instructions.IndexOf(Instruction)
-                                    If (Instruction.OpCode = OpCodes.Ldstr AndAlso Not Instruction.OpCode.ToString.Contains("Lambda$")) Then
-                                        Dim str = TryCast(Instruction.Operand, String)
-                                        Dim salt = randSalt.Next(1, 255)
-                                        Dim addProperty As Boolean = Randomizer.GenerateBoolean
+                                    Dim salt = randSalt.Next(1, 255)
+                                    Dim addProperty As Boolean = Randomizer.GenerateBoolean
 
-                                        If Not String.IsNullOrWhiteSpace(str) And str.Length > 0 Then
-                                            If optim.IsSettingStr(str) = False Then
-                                                If Not str = ResName Then
-                                                    'If Functions.isBase64StringEncoded(str) = False Then
+                                    If Not String.IsNullOrWhiteSpace(str) And str.Length > 0 Then
+                                        If Utils.IsSettingStr(md, str) = False Then
+                                            If Not str = ResName Then
 
-                                                    mdFinal = New MethodDefinition(Randomizer.GenerateNew, MethodAttributes.[Static] Or MethodAttributes.[Public] Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(String)))
-                                                    mdFinal.Body = New MethodBody(mdFinal)
+                                                m_IsDefaultEncoding = False
+                                                'm_IsDefaultEncoding = Randomizer.GenerateBoolean()
 
-                                                    Dim encXor = EncryptXor(EncodeTo_64(str), salt)
+                                                mdFinal = New MethodDefinition(Randomizer.GenerateNew, MethodAttributes.[Static] Or MethodAttributes.Private Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(String)))
+                                                mdFinal.Parameters.Add(New ParameterDefinition(AssemblyDef.MainModule.Import(GetType(Boolean))))
+                                                mdFinal.Body = New MethodBody(mdFinal)
+                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
 
-                                                    Dim ilProc As ILProcessor = mdFinal.Body.GetILProcessor()
-                                                    ilProc.Body.MaxStackSize = 8
-                                                    ilProc.Body.InitLocals = True
+                                                Dim encXor = EncryptXor(EncodeTo_64(str, m_IsDefaultEncoding), salt)
+
+                                                Dim ilProc As ILProcessor = mdFinal.Body.GetILProcessor()
+                                                ilProc.Body.MaxStackSize = 8
+                                                ilProc.Body.InitLocals = True
+
+                                                Dim resEncrypted As Boolean = If((EncryptToResources = EncryptType.ToResources), True, False)
+                                                'Dim resEncrypted As Boolean = If((EncryptToResources = EncryptType.ToResources) AndAlso (Finder.HasCustomAttributeByName(md, "ObfuscationAttribute") = False), True, False)
+                                                If resEncrypted Then
+                                                    'Dim si As Type = GetType(Reflection.ObfuscationAttribute)
+                                                    'Dim ca As New CustomAttribute(AssemblyDef.MainModule.Import(si.GetConstructor(Type.EmptyTypes)))
+                                                    'mdFinal.CustomAttributes.Add(ca)
+
+                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
                                                     mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
-
-                                                    If EncryptToResources = EncryptType.ToResources Then
-                                                        Dim inte = writeData(encXor)
-                                                        ilProc.Emit(OpCodes.Ldc_I4, inte)
-                                                        ilProc.Emit(OpCodes.Call, DecryptReadStringResources.GetMethod1)
-                                                    Else
-                                                        ilProc.Emit(OpCodes.Ldstr, encXor)
-                                                    End If
-
-                                                    ilProc.Emit(OpCodes.Ldc_I4, salt)
-                                                    ilProc.Emit(OpCodes.Call, DecryptXor.GetMethod1)
-                                                    ilProc.Emit(OpCodes.Call, DecryptBase64.GetMethod1)
-                                                    ilProc.Emit(OpCodes.Call, DecryptBase64.GetMethod2)
-                                                    ilProc.Emit(OpCodes.Stloc_0)
-                                                    ilProc.Emit(OpCodes.Ldloc_0)
-                                                    ilProc.Emit(OpCodes.Ret)
-
-                                                    md.DeclaringType.Methods.Add(mdFinal)
-
-                                                    If addProperty Then
-                                                        Dim pDefinit As New PropertyDefinition(Randomizer.GenerateNew, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(String)))
-                                                        md.DeclaringType.Properties.Add(pDefinit)
-
-                                                        Dim mDefinit = New MethodDefinition(("get_" & pDefinit.Name), MethodAttributes.Static Or MethodAttributes.Public, pDefinit.PropertyType)
-                                                        mDefinit.Body = New MethodBody(mDefinit)
-                                                        pDefinit.GetMethod = mDefinit
-                                                        pDefinit.DeclaringType.Methods.Add(mDefinit)
-
-                                                        If Not pDefinit.DeclaringType.IsInterface Then
-                                                            Dim iLProcessor As ILProcessor = mDefinit.Body.GetILProcessor
-                                                            With iLProcessor
-                                                                .Body.MaxStackSize = 1
-                                                                .Body.InitLocals = True
-                                                                mDefinit.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
-                                                                .Emit(OpCodes.Call, mdFinal)
-                                                                .Emit(OpCodes.Stloc_0)
-                                                                .Emit(OpCodes.Ldloc_0)
-                                                                .Emit(OpCodes.Ret)
-                                                            End With
-                                                        Else
-                                                            mDefinit.IsAbstract = True
-                                                            mDefinit.IsVirtual = True
-                                                            mDefinit.IsNewSlot = True
-                                                        End If
-                                                        mDefinit.IsSpecialName = True
-                                                        mDefinit.IsGetter = True
-                                                    End If
-                                                    'End If
+                                                    ilProc.Emit(OpCodes.Ldc_I4, writeData(encXor))
+                                                    ilProc.Emit(OpCodes.Stloc_1)
+                                                    ilProc.Emit(OpCodes.Ldloc_1)
+                                                    ilProc.Emit(OpCodes.Call, DecryptReadStringResources.GetMethod1)
+                                                    ilProc.Emit(OpCodes.Stloc_2)
+                                                    ilProc.Emit(OpCodes.Ldloc_2)
+                                                Else
+                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                    ilProc.Emit(OpCodes.Ldstr, encXor)
+                                                    ilProc.Emit(OpCodes.Stloc_1)
+                                                    ilProc.Emit(OpCodes.Ldloc_1)
                                                 End If
-                                            End If
-                                        End If
-                                        If (Not mdFinal Is Nothing) Then
-                                            If mdFinal.DeclaringType.IsNotPublic Then
-                                                mdFinal.DeclaringType.IsPublic = True
-                                            End If
-                                            md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                            md.Body.Instructions.Item(index).Operand = mdFinal
 
-                                            completedMethods.Add(mdFinal)
-                                            completedInstructions.Add(Instruction)
+                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(String))))
+                                                mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Byte()))))
+
+                                                ilProc.Emit(OpCodes.Ldc_I4, salt)
+                                                ilProc.Emit(OpCodes.Stloc, If(resEncrypted, 3, 2))
+                                                ilProc.Emit(OpCodes.Ldloc, If(resEncrypted, 3, 2))
+                                                ilProc.Emit(OpCodes.Call, DecryptXor.GetMethod1)
+                                                ilProc.Emit(OpCodes.Stloc, If(resEncrypted, 4, 3))
+                                                ilProc.Emit(OpCodes.Ldloc, If(resEncrypted, 4, 3))
+                                                ilProc.Emit(OpCodes.Ldarg_0)
+                                                ilProc.Emit(OpCodes.Call, DecryptBase64.GetMethod1)
+                                                ilProc.Emit(OpCodes.Stloc, If(resEncrypted, 5, 4))
+                                                ilProc.Emit(OpCodes.Ldloc, If(resEncrypted, 5, 4))
+                                                ilProc.Emit(OpCodes.Ldarg_0)
+                                                ilProc.Emit(OpCodes.Call, DecryptBase64.GetMethod2)
+                                                ilProc.Emit(OpCodes.Stloc_0)
+                                                ilProc.Emit(OpCodes.Ldloc_0)
+                                                ilProc.Emit(OpCodes.Ret)
+
+                                                md.DeclaringType.Methods.Add(mdFinal)
+                                                completedInstructions.Add(Instruction)
+                                            End If
                                         End If
                                     End If
+                                    If (Not mdFinal Is Nothing) Then
+
+                                        Dim UnPrime = rand.Next(Generator.numberUnPrime.Length)
+                                        Dim Prime = rand.Next(Generator.numberPrime.Length)
+                                        Dim valFinale% = If(m_IsDefaultEncoding, Generator.numberPrime(Prime), Generator.numberUnPrime(UnPrime))
+
+                                        Dim IL = md.Body.GetILProcessor()
+                                        Dim instruct = IL.Create(OpCodes.Ldc_I4, valFinale)
+                                        IL.Replace(Instruction, instruct)
+                                        IL.InsertAfter(md.Body.Instructions.Item(i), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptPrime.GetMethod1)))
+                                        IL.InsertAfter(md.Body.Instructions.Item(i + 1), IL.Create(OpCodes.Call, mdFinal))
+
+                                        'Dim IL = md.Body.GetILProcessor()
+                                        'IL.Replace(Instruction, IL.Create(If(m_IsDefaultEncoding, OpCodes.Ldc_I4_1, OpCodes.Ldc_I4_0)))
+                                        'IL.InsertAfter(md.Body.Instructions.Item(i), IL.Create(OpCodes.Call, mdFinal))
+
+                                        completedMethods.Add(mdFinal)
+                                    End If
                                 End If
-                            Next
-                            optim.FixBranchOffsets()
-                            optim.MethodBody.SimplifyMacros()
-                        End Using
+                            End If
+                        Next
+                        md.Body.OptimizeMacros
+                        md.Body.ComputeOffsets()
+                        md.Body.ComputeHeader()
                     End If
                 Next
             Catch ex As Exception
@@ -223,8 +266,52 @@ Namespace Core.Obfuscation.Protection
             End Using
         End Function
 
-        Private Shared Function EncodeTo_64(toEncode$) As String
-            Return Convert.ToBase64String(Text.Encoding.Unicode.GetBytes(toEncode))
+        Private Shared Function EncodeTo_64(toEncode$, defaultEnc As Boolean) As String
+            'If defaultEnc Then
+            '    Convert.ToBase64String(GetByte(toEncode, defaultEnc))
+            'End If
+            Dim strByte = GetByte(toEncode, defaultEnc)
+            Return ConvertToBase64String(strByte, defaultEnc)
+        End Function
+
+        Public Shared Function GetByte(s As String, defaultEnc As Boolean) As Byte()
+            Return If(defaultEnc, Encoding.Default.GetBytes(s), Encoding.UTF8.GetBytes(s))
+        End Function
+
+        'Private Shared Function EncodeTo_64(toEncode$) As String
+        '    Return Convert.ToBase64String(Text.Encoding.Unicode.GetBytes(toEncode))
+        'End Function
+
+        Private Shared Function ConvertToBase64String(data As Byte(), defaultEnc As Boolean) As String
+            Dim builder = New StringBuilder()
+
+            Using writer = New StringWriter(builder)
+                Using transformation = New ToBase64Transform()
+                    ' Transform the data in chunks the size of InputBlockSize.
+                    Dim bufferedOutputBytes = New Byte(transformation.OutputBlockSize - 1) {}
+                    Dim i = 0
+                    Dim inputBlockSize = transformation.InputBlockSize
+
+                    While data.Length - i > inputBlockSize
+                        transformation.TransformBlock(data, i, data.Length - i, bufferedOutputBytes, 0)
+                        i += inputBlockSize
+                        Dim str = If(defaultEnc, Encoding.Default.GetString(bufferedOutputBytes), Encoding.UTF8.GetString(bufferedOutputBytes))
+                        writer.Write(str)
+                    End While
+
+                    ' Transform the final block of data.
+                    bufferedOutputBytes = transformation.TransformFinalBlock(data, i, data.Length - i)
+                    Dim strFinal = If(defaultEnc, Encoding.Default.GetString(bufferedOutputBytes), Encoding.UTF8.GetString(bufferedOutputBytes))
+                    writer.Write(strFinal)
+
+                    ' Free up any used resources.
+                    transformation.Clear()
+                End Using
+
+                writer.Close()
+            End Using
+
+            Return builder.ToString()
         End Function
 
         Private Shared Function GenerateEncryptXor() As Type
