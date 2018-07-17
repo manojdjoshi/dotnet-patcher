@@ -548,28 +548,10 @@ Namespace Engine.Identification
         'OTHER
         Private Shared Function findOtherAttribute(ByRef found As Boolean) As IdentifierResult
             Try
-                If m_assDef.MainModule.HasResources Then
-                    If m_assDefTypes.Any(Function(typeDef) typeDef.FullName.Contains("Resources")) = False Then
-                        found = True
-                        Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
-                    End If
-                End If
-
-                If m_assDef.MainModule.GetType("<Module>") Is Nothing Then
+                If Not m_assDef.MainModule.GetType("<Module>") Is Nothing AndAlso Not m_assDef.MainModule.GetType("<Module>").GetStaticConstructor Is Nothing Then
                     found = True
                     Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
-                Else
-                    If Not m_assDef.MainModule.GetType("<Module>") Is Nothing AndAlso Not m_assDef.MainModule.GetType("<Module>").GetStaticConstructor Is Nothing Then
-                        found = True
-                        Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
-                    End If
                 End If
-
-                'Dim TDef As IEnumerable(Of TypeDefinition) = asmDef.Modules.SelectMany(Function(modDef) modDef.Types).Where(Function(typeDef) typeDef.Namespace = "").Where(Function(typeDef) Not typeDef.Name.ToString.StartsWith("<"))
-                'If TDef.Count > 1 Then
-                '    found = True
-                '    Return New Cls_IdentifierResult(Cls_IdentifierEnum.ResultName.Unknown, Cls_IdentifierEnum.ResultType.Other)
-                'End If
             Catch
                 found = True
                 Return New IdentifierResult(IdentifierEnum.ResultName.Unknown, IdentifierEnum.ResultType.Other, My.Resources.Warning)
