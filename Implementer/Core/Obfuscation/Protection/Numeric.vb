@@ -204,8 +204,7 @@ Namespace Core.Obfuscation.Protection
                                                         MethodByInteger.Add(CInt(Instruct.Operand), mdFinal)
                                                     End If
                                                 Else
-                                                    If Not Instruct.Operand >= Integer.MaxValue Then
-
+                                                    If Not Instruct.Operand >= Integer.MaxValue AndAlso Instruct.Operand >= 2 Then
                                                         Dim resultPrimes = PrimeFactors(Instruct.Operand)
                                                         Dim countPrimes = resultPrimes.Count
                                                         If countPrimes > 2 Then
@@ -301,142 +300,139 @@ Namespace Core.Obfuscation.Protection
                                                 completedInstructions.Add(Instruct)
                                             End If
 
-                                            'ElseIf Instruct.OpCode = OpCodes.Ldc_I4_S Then
-                                            '    Dim mdFinal As MethodDefinition = Nothing
+                                        ElseIf Instruct.OpCode = OpCodes.Ldc_I4_S Then
+                                            Dim mdFinal As MethodDefinition = Nothing
 
-                                            '    If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
+                                            If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
+                                                Dim num4 As Double = Math.Log10(Convert.ToDouble(Instruct.Operand))
 
+                                                Dim methodName = Randomizer.GenerateNew
+                                                mdFinal = New MethodDefinition(methodName, MethodAttributes.[Static] Or MethodAttributes.[Public] Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(Integer)))
+                                                mdFinal.Body = New MethodBody(mdFinal)
 
-                                            '        MsgBox(CDbl(Instruct.Operand).ToString)
-                                            '        Dim num4 As Double = Math.Log10(Convert.ToDouble(Instruct.Operand))
-
-                                            '        Dim methodName = Randomizer.GenerateNew
-                                            '        mdFinal = New MethodDefinition(methodName, MethodAttributes.[Static] Or MethodAttributes.[Public] Or MethodAttributes.HideBySig, AssemblyDef.MainModule.Import(GetType(Integer)))
-                                            '        mdFinal.Body = New MethodBody(mdFinal)
-
-                                            '        Dim ilProc = mdFinal.Body.GetILProcessor()
-                                            '        With ilProc
-                                            '            .Body.MaxStackSize = 8
-                                            '            .Body.InitLocals = True
-                                            '            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
-                                            '            .Emit(OpCodes.Ldc_R8, CDbl(10))
-                                            '            .Emit(OpCodes.Ldc_R8, num4)
-                                            '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Math).GetMethod("Pow", New Type() {GetType(Double), GetType(Double)})))
-                                            '            .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Convert).GetMethod("ToInt32", New Type() {GetType(Double)})))
-                                            '            .Emit(OpCodes.Stloc_0)
-                                            '            .Emit(OpCodes.Ldloc_0)
-                                            '            .Emit(OpCodes.Ret)
-                                            '        End With
-                                            '        md.DeclaringType.Methods.Add(mdFinal)
-                                            '    Else
-                                            '        mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
-                                            '    End If
-                                            '    If (Not mdFinal Is Nothing) Then
-                                            '        If mdFinal.DeclaringType.IsNotPublic Then
-                                            '            mdFinal.DeclaringType.IsPublic = True
-                                            '        End If
-                                            '        md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                            '        md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                            '        completedMethods.Add(mdFinal)
-                                            '        completedInstructions.Add(Instruct)
-                                            '    End If
-                                            ElseIf (Instruct.OpCode = OpCodes.Ldc_R4) Then
-                                                If isValidOperand(Instruct) AndAlso CSng(Instruct.Operand) >= 0 Then
-                                                    Dim mdFinal As MethodDefinition = Nothing
-
-                                                    If Not MethodBySingle.TryGetValue(CSng(Instruct.Operand), mdFinal) Then
-                                                        Dim Sng As Single
-                                                        If Single.TryParse(Instruct.Operand, Sng) Then
-                                                            Dim pdefName = Randomizer.GenerateNew
-
-                                                            Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Single)))
-                                                            md.DeclaringType.Properties.Add(pdef)
-
-                                                            mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
-                                                            mdFinal.Body = New MethodBody(mdFinal)
-                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Single))))
-
-                                                            pdef.GetMethod = mdFinal
-                                                            pdef.DeclaringType.Methods.Add(mdFinal)
-
-                                                            If Not pdef.DeclaringType.IsInterface Then
-                                                                Dim iLProcessor = mdFinal.Body.GetILProcessor
-                                                                With iLProcessor
-                                                                    .Body.MaxStackSize = 1
-                                                                    .Body.InitLocals = True
-
-                                                                    .Emit(OpCodes.Ldc_R4, Sng)
-                                                                    .Emit(OpCodes.Ret)
-                                                                End With
-                                                            Else
-                                                                mdFinal.IsAbstract = True
-                                                                mdFinal.IsVirtual = True
-                                                                mdFinal.IsNewSlot = True
-                                                            End If
-                                                            mdFinal.IsSpecialName = True
-                                                            mdFinal.IsGetter = True
-
-                                                            MethodBySingle.Add(CSng(Instruct.Operand), mdFinal)
-                                                        End If
-                                                    Else
-                                                        mdFinal = MethodBySingle.Item(CSng(Instruct.Operand))
-                                                    End If
-                                                    If (Not mdFinal Is Nothing) Then
-                                                        md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                                        md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-
-                                                        completedMethods.Add(mdFinal)
-                                                        completedInstructions.Add(Instruct)
-                                                    End If
+                                                Dim ilProc = mdFinal.Body.GetILProcessor()
+                                                With ilProc
+                                                    .Body.MaxStackSize = 8
+                                                    .Body.InitLocals = True
+                                                    mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Integer))))
+                                                    .Emit(OpCodes.Ldc_R8, CDbl(10))
+                                                    .Emit(OpCodes.Ldc_R8, num4)
+                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Math).GetMethod("Pow", New Type() {GetType(Double), GetType(Double)})))
+                                                    .Emit(OpCodes.Call, AssemblyDef.MainModule.Import(GetType(Convert).GetMethod("ToInt32", New Type() {GetType(Double)})))
+                                                    .Emit(OpCodes.Stloc_0)
+                                                    .Emit(OpCodes.Ldloc_0)
+                                                    .Emit(OpCodes.Ret)
+                                                End With
+                                                md.DeclaringType.Methods.Add(mdFinal)
+                                            Else
+                                                mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
+                                            End If
+                                            If (Not mdFinal Is Nothing) Then
+                                                If mdFinal.DeclaringType.IsNotPublic Then
+                                                    mdFinal.DeclaringType.IsPublic = True
                                                 End If
-                                            ElseIf (Instruct.OpCode = OpCodes.Ldc_R8) Then
-                                                If isValidOperand(Instruct) AndAlso CDbl(Instruct.Operand) >= 0 Then
-                                                    Dim mdFinal As MethodDefinition = Nothing
+                                                md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                                completedMethods.Add(mdFinal)
+                                                completedInstructions.Add(Instruct)
+                                            End If
+                                        ElseIf (Instruct.OpCode = OpCodes.Ldc_R4) Then
+                                            If isValidOperand(Instruct) AndAlso CSng(Instruct.Operand) >= 0 Then
+                                                Dim mdFinal As MethodDefinition = Nothing
 
-                                                    If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
-                                                        Dim integ As Double
-                                                        If Double.TryParse(Instruct.Operand, integ) Then
-                                                            Dim pdefName = Randomizer.GenerateNew
+                                                If Not MethodBySingle.TryGetValue(CSng(Instruct.Operand), mdFinal) Then
+                                                    Dim Sng As Single
+                                                    If Single.TryParse(Instruct.Operand, Sng) Then
+                                                        Dim pdefName = Randomizer.GenerateNew
 
-                                                            Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Double)))
-                                                            md.DeclaringType.Properties.Add(pdef)
+                                                        Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Single)))
+                                                        md.DeclaringType.Properties.Add(pdef)
 
-                                                            mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
-                                                            mdFinal.Body = New MethodBody(mdFinal)
-                                                            mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Double))))
+                                                        mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
+                                                        mdFinal.Body = New MethodBody(mdFinal)
+                                                        mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Single))))
 
-                                                            pdef.GetMethod = mdFinal
-                                                            pdef.DeclaringType.Methods.Add(mdFinal)
+                                                        pdef.GetMethod = mdFinal
+                                                        pdef.DeclaringType.Methods.Add(mdFinal)
 
-                                                            If Not pdef.DeclaringType.IsInterface Then
-                                                                Dim iLProcessor = mdFinal.Body.GetILProcessor
-                                                                With iLProcessor
-                                                                    .Body.MaxStackSize = 1
-                                                                    .Body.InitLocals = True
-                                                                    .Emit(OpCodes.Ldc_R8, integ)
-                                                                    .Emit(OpCodes.Ret)
-                                                                End With
-                                                            Else
-                                                                mdFinal.IsAbstract = True
-                                                                mdFinal.IsVirtual = True
-                                                                mdFinal.IsNewSlot = True
-                                                            End If
-                                                            mdFinal.IsSpecialName = True
-                                                            mdFinal.IsGetter = True
+                                                        If Not pdef.DeclaringType.IsInterface Then
+                                                            Dim iLProcessor = mdFinal.Body.GetILProcessor
+                                                            With iLProcessor
+                                                                .Body.MaxStackSize = 1
+                                                                .Body.InitLocals = True
 
-                                                            MethodByDouble.Add(CDbl(Instruct.Operand), mdFinal)
+                                                                .Emit(OpCodes.Ldc_R4, Sng)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
+                                                        Else
+                                                            mdFinal.IsAbstract = True
+                                                            mdFinal.IsVirtual = True
+                                                            mdFinal.IsNewSlot = True
                                                         End If
-                                                    Else
-                                                        mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
-                                                    End If
-                                                    If (Not mdFinal Is Nothing) Then
-                                                        md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                                        md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+                                                        mdFinal.IsSpecialName = True
+                                                        mdFinal.IsGetter = True
 
-                                                        completedMethods.Add(mdFinal)
-                                                        completedInstructions.Add(Instruct)
+                                                        MethodBySingle.Add(CSng(Instruct.Operand), mdFinal)
                                                     End If
+                                                Else
+                                                    mdFinal = MethodBySingle.Item(CSng(Instruct.Operand))
                                                 End If
+                                                If (Not mdFinal Is Nothing) Then
+                                                    md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                    md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+
+                                                    completedMethods.Add(mdFinal)
+                                                    completedInstructions.Add(Instruct)
+                                                End If
+                                            End If
+                                        ElseIf (Instruct.OpCode = OpCodes.Ldc_R8) Then
+                                            If isValidOperand(Instruct) AndAlso CDbl(Instruct.Operand) >= 0 Then
+                                                Dim mdFinal As MethodDefinition = Nothing
+
+                                                If Not MethodByDouble.TryGetValue(CDbl(Instruct.Operand), mdFinal) Then
+                                                    Dim integ As Double
+                                                    If Double.TryParse(Instruct.Operand, integ) Then
+                                                        Dim pdefName = Randomizer.GenerateNew
+
+                                                        Dim pdef As New PropertyDefinition(pdefName, PropertyAttributes.None, AssemblyDef.MainModule.Import(GetType(Double)))
+                                                        md.DeclaringType.Properties.Add(pdef)
+
+                                                        mdFinal = New MethodDefinition(("get_" & pdef.Name), MethodAttributes.Static Or MethodAttributes.Public, pdef.PropertyType)
+                                                        mdFinal.Body = New MethodBody(mdFinal)
+                                                        mdFinal.Body.Variables.Add(New VariableDefinition(AssemblyDef.MainModule.Import(GetType(Double))))
+
+                                                        pdef.GetMethod = mdFinal
+                                                        pdef.DeclaringType.Methods.Add(mdFinal)
+
+                                                        If Not pdef.DeclaringType.IsInterface Then
+                                                            Dim iLProcessor = mdFinal.Body.GetILProcessor
+                                                            With iLProcessor
+                                                                .Body.MaxStackSize = 1
+                                                                .Body.InitLocals = True
+                                                                .Emit(OpCodes.Ldc_R8, integ)
+                                                                .Emit(OpCodes.Ret)
+                                                            End With
+                                                        Else
+                                                            mdFinal.IsAbstract = True
+                                                            mdFinal.IsVirtual = True
+                                                            mdFinal.IsNewSlot = True
+                                                        End If
+                                                        mdFinal.IsSpecialName = True
+                                                        mdFinal.IsGetter = True
+
+                                                        MethodByDouble.Add(CDbl(Instruct.Operand), mdFinal)
+                                                    End If
+                                                Else
+                                                    mdFinal = MethodByDouble.Item(CDbl(Instruct.Operand))
+                                                End If
+                                                If (Not mdFinal Is Nothing) Then
+                                                    md.Body.Instructions.Item(i).OpCode = OpCodes.Call
+                                                    md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
+
+                                                    completedMethods.Add(mdFinal)
+                                                    completedInstructions.Add(Instruct)
+                                                End If
+                                            End If
                                         End If
                                         'End If
                                     End If

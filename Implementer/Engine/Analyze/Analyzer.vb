@@ -59,6 +59,7 @@ Namespace Engine.Analyze
                             m_targetFramework = infos.FrameworkVersion
                             m_assemblyVersion = infos.AssVersion
                             m_isWpfProgram = infos.IsWpf
+
                             If m_isWpfProgram = False Then
                                 RaiseEvent FileValidated(Me, New ValidatedFile(True, m_pe, infos))
                                 Return True

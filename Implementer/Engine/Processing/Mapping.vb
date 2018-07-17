@@ -20,9 +20,26 @@ Namespace Engine.Processing
         Private Shared m_ObfProperties As New Dictionary(Of PropertyDefinition, String)
         Private Shared m_ObfEvents As New Dictionary(Of EventDefinition, String)
         Private Shared m_ObfFields As New Dictionary(Of FieldDefinition, String)
+
+
+        'Private Shared m_ObfResources As New Dictionary(Of Resource, String)
+
+        'Private Shared m_ObfCustomAttributes As New Dictionary(Of CustomAttribute, String)
 #End Region
 
 #Region " Methods "
+
+        'Friend Shared NameToResource As New Dictionary(Of String, Resource)
+
+        'Friend Shared Function RenameResource(Member As Resource, ByRef ResourceObfuscated$) As String
+        '    If Not m_ObfResources.ContainsKey(Member) Then
+        '        m_ObfResources.Add(Member, ResourceObfuscated)
+        '        Tasks.RaiseRenamedItemEvent(New RenamedItem(RenamedItemType.ItemType.Methods, Member.Name, ResourceObfuscated))
+        '    Else
+        '        ResourceObfuscated = m_ObfResources.Item(Member)
+        '    End If
+        '    Return ResourceObfuscated
+        'End Function
 
         ''' <summary>
         ''' INFO : Store Key/Value pair (TypeDefinition/ObfuscatedName and third arg set to True if this is a namespace) to dictionary only if key not exists. Return NamespaceObfuscated value.
@@ -167,6 +184,8 @@ Namespace Engine.Processing
             If Not m_ObfProperties.Count <> 0 Then m_ObfProperties.Clear()
             If Not m_ObfEvents.Count <> 0 Then m_ObfEvents.Clear()
             If Not m_ObfFields.Count <> 0 Then m_ObfFields.Clear()
+
+            'If Not m_ObfCustomAttributes.Count <> 0 Then m_ObfCustomAttributes.Clear()
         End Sub
 #End Region
 

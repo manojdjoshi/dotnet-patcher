@@ -219,7 +219,6 @@ Namespace Engine.Context
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PreCompressResources()
 
                     If .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False Then HidePinvokeCalls()
-                    'If .Obfuscation.HidePublicCalls Then HidePinvokeCalls()
 
                     If .Obfuscation.EncryptString Then EncryptString()
                     If .Obfuscation.HidePublicCalls Then MildCalls()
@@ -258,7 +257,6 @@ Namespace Engine.Context
                     PreCompressResolver()
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False Then HidePinvokeCalls(True)
-                    'If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls Then HidePinvokeCalls(True)
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptString Then EncryptString(True)
                     If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls Then MildCalls(True)
@@ -335,7 +333,7 @@ Namespace Engine.Context
         Private Sub ControlFlow(Optional pack As Boolean = False)
             m_bgw.ReportProgress(90, If(pack, "Packing", "Obfuscating") & " (ControlFlow...)")
             ReadAssembly()
-            m_processing.ProcessControlFlow(AssDef)
+            m_processing.ProcessControlFlow(AssDef, m_framework)
             WriteAssembly()
         End Sub
 
@@ -470,6 +468,17 @@ Namespace Engine.Context
                             RenameSelectedNamespace(type, assemblyMainName)
                         End If
                     Next
+                    'Dim lst = modul.GetAllTypes.ToList
+                    'lst.Sort(Function(a, b)
+                    '             If b.FullName.Length <> a.FullName.Length Then Return b.FullName.Length.CompareTo(a.FullName.Length)
+                    '             Return b.FullName.CompareTo(a.FullName)
+                    '         End Function)
+
+                    'For Each type In lst
+                    '    If m_parameters.ExcludeList.isRenamingExclude(type) = False Then
+                    '        RenameSelectedNamespace(type, assemblyMainName)
+                    '    End If
+                    'Next
                 End If
             Next
             WriteAssembly()

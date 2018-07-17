@@ -9,6 +9,7 @@ using dnlib.W32Resources;
 using System.Linq;
 using dnlib.IO;
 using System.Diagnostics;
+using Microsoft.VisualBasic;
 
 namespace dnlib
 {
@@ -164,81 +165,84 @@ namespace dnlib
     #region " Constructor "
     public PeReader(string fPath)
     {
-        m_fPath = fPath;
-        m_peImage = new PEImage(File.ReadAllBytes(fPath));
-
-        if (m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories.Length >= 14)
-        {
-            ImageDataDirectory DotNetDir = m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories[14];
-            if (m_peImage.ToFileOffset(DotNetDir.VirtualAddress) != 0 && DotNetDir.Size >= 72)
+            try
             {
-                m_cor20Header = new ImageCor20Header(m_peImage.CreateStream(m_peImage.ToFileOffset(DotNetDir.VirtualAddress), 0x48), false);
-                if (m_peImage.ToFileOffset(m_cor20Header.MetaData.VirtualAddress) != 0 && m_cor20Header.MetaData.Size >= 16)
-                {
-                    m_isManaged = true;
-                    uint mdSize = m_cor20Header.MetaData.Size;
-                    RVA mdRva = m_cor20Header.MetaData.VirtualAddress;
-                    MetaDataHeader mdHeader = new MetaDataHeader(m_peImage.CreateStream(m_peImage.ToFileOffset(mdRva), mdSize), false);
-                    m_RunTimeVersion = mdHeader.VersionString;
+                m_fPath = fPath;
+                m_peImage = new PEImage(File.ReadAllBytes(fPath));
 
-                    }
-            }
-        }
-
-        if (m_isManaged == true)
-            {
-                ImageSectionHeader sect = m_peImage.ImageSectionHeaders.Where(f => f.DisplayName == ".rsrc").FirstOrDefault();
-                if ((sect != null))
+                if (m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories.Length >= 14)
                 {
-                    ImageDataDirectory resourceTable = m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories[2];
-                    if ((resourceTable != null))
+                    ImageDataDirectory DotNetDir = m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories[14];
+                    if (m_peImage.ToFileOffset(DotNetDir.VirtualAddress) != 0 && DotNetDir.Size >= 72)
                     {
-                        uint rva = (uint)resourceTable.VirtualAddress;
-                        uint size = sect.VirtualSize > 0 ? sect.VirtualSize : sect.SizeOfRawData;
-
-                        if (rva >= (uint)sect.VirtualAddress && rva < (uint)sect.VirtualAddress + size)
+                        m_cor20Header = new ImageCor20Header(m_peImage.CreateStream(m_peImage.ToFileOffset(DotNetDir.VirtualAddress), 0x48), false);
+                        if (m_peImage.ToFileOffset(m_cor20Header.MetaData.VirtualAddress) != 0 && m_cor20Header.MetaData.Size >= 16)
                         {
-                            Stream StreamRead = m_peImage.CreateFullStream().CreateStream();
-                            long baseAddress = StreamRead.Seek(sect.PointerToRawData + (rva - (uint)sect.VirtualAddress), SeekOrigin.Begin);
-                            ResourceDirectory dirInfo = new ResourceDirectory(StreamRead, baseAddress);
+                            m_isManaged = true;
+                            uint mdSize = m_cor20Header.MetaData.Size;
+                            RVA mdRva = m_cor20Header.MetaData.VirtualAddress;
+                            MetaDataHeader mdHeader = new MetaDataHeader(m_peImage.CreateStream(m_peImage.ToFileOffset(mdRva), mdSize), false);
+                            m_RunTimeVersion = mdHeader.VersionString;
 
-                            if ((dirInfo != null))
+                        }
+                    }
+                }
+
+                if (m_isManaged == true)
+                {
+                    ImageSectionHeader sect = m_peImage.ImageSectionHeaders.Where(f => f.DisplayName == ".rsrc").FirstOrDefault();
+                    if ((sect != null))
+                    {
+                        ImageDataDirectory resourceTable = m_peImage.ImageNTHeaders.OptionalHeader.DataDirectories[2];
+                        if ((resourceTable != null))
+                        {
+                            uint rva = (uint)resourceTable.VirtualAddress;
+                            uint size = sect.VirtualSize > 0 ? sect.VirtualSize : sect.SizeOfRawData;
+
+                            if (rva >= (uint)sect.VirtualAddress && rva < (uint)sect.VirtualAddress + size)
                             {
-                                using (BinaryReader reader = new BinaryReader(StreamRead))
+                                Stream StreamRead = m_peImage.CreateFullStream().CreateStream();
+                                long baseAddress = StreamRead.Seek(sect.PointerToRawData + (rva - (uint)sect.VirtualAddress), SeekOrigin.Begin);
+                                ResourceDirectory dirInfo = new ResourceDirectory(StreamRead, baseAddress);
+
+                                if ((dirInfo != null))
                                 {
-                                    dirInfo.Read(reader, true, 0);
-
-                                    ResourceEntry IconGroup = null;
-                                    List<ResourceEntry> IconImages = new List<ResourceEntry>();
-
-                                    foreach (ResourceDirectory dir in dirInfo.Directorys)
+                                    using (BinaryReader reader = new BinaryReader(StreamRead))
                                     {
-                                        if (dir.DirectoryEntry.Name == Convert.ToUInt32(Win32ResourceType.RT_GROUP_ICON))
-                                        {
-                                            IconGroup = dir.GetFirstEntry();
-                                            break;
-                                        }
-                                    }
+                                        dirInfo.Read(reader, true, 0);
 
-                                    foreach (ResourceDirectory dir in dirInfo.Directorys)
-                                    {
-                                        if (dir.DirectoryEntry.Name == Convert.ToUInt32(Win32ResourceType.RT_ICON))
-                                        {
-                                            IconImages = dir.GetAllEntrys();
-                                            IconImages.Reverse();
-                                            break;
-                                        }
-                                    }
+                                        ResourceEntry IconGroup = null;
+                                        List<ResourceEntry> IconImages = new List<ResourceEntry>();
 
-                                    if (IconGroup != null)
-                                    {
-                                        IconResource icon = new IconResource(StreamRead, IconGroup.DataAddress, sect.PointerToRawData, (uint)sect.VirtualAddress);
-                                        icon.Seek();
-                                        if (!icon.Read(reader, IconImages))
+                                        foreach (ResourceDirectory dir in dirInfo.Directorys)
                                         {
-                                            m_MainIcon = null;
+                                            if (dir.DirectoryEntry.Name == Convert.ToUInt32(Win32ResourceType.RT_GROUP_ICON))
+                                            {
+                                                IconGroup = dir.GetFirstEntry();
+                                                break;
+                                            }
                                         }
-                                        m_MainIcon = icon.GetIcon(reader);
+
+                                        foreach (ResourceDirectory dir in dirInfo.Directorys)
+                                        {
+                                            if (dir.DirectoryEntry.Name == Convert.ToUInt32(Win32ResourceType.RT_ICON))
+                                            {
+                                                IconImages = dir.GetAllEntrys();
+                                                IconImages.Reverse();
+                                                break;
+                                            }
+                                        }
+
+                                        if (IconGroup != null)
+                                        {
+                                            IconResource icon = new IconResource(StreamRead, IconGroup.DataAddress, sect.PointerToRawData, (uint)sect.VirtualAddress);
+                                            icon.Seek();
+                                            if (!icon.Read(reader, IconImages))
+                                            {
+                                                m_MainIcon = null;
+                                            }
+                                            m_MainIcon = icon.GetIcon(reader);
+                                        }
                                     }
                                 }
                             }
@@ -246,6 +250,13 @@ namespace dnlib
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                Interaction.MsgBox(ex);
+            }
+
+       
+  
         }
     #endregion
 

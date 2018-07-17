@@ -180,12 +180,12 @@ D:\Documents\Bitbucket\DotNetPatcher0\Sevenzip\Sevenzip\bin\Release\SevenzipLib.
 D:\Documents\Bitbucket\DotNetPatcher0\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher0\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Sevenzip\Sevenzip\obj\Release\Sevenzip.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\bin\Release\SevenzipLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\Sevenzip\Sevenzip\obj\Release\SevenzipLib.pdb

@@ -8,7 +8,7 @@ Namespace AssemblyHelper
         Public Property ManifestResourceNames As IEnumerable(Of String)
         Public Property ManifestResourceStreams As List(Of Stream)
         Public Property TypesClass As IEnumerable(Of Type)
-        Public Property Modules As IEnumerable(Of Reflection.Module)
+        Public Property HasSerializableAttribute As Boolean
 #End Region
 
     End Class

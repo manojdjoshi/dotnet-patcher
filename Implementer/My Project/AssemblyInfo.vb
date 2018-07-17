@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("3DotDev Freewares")> 
 <Assembly: AssemblyProduct("Implementer")>
-<Assembly: AssemblyCopyright("Copyright © 3DotDev 2017")>
+<Assembly: AssemblyCopyright("Copyright © 3DotDev 2018")>
 <Assembly: AssemblyTrademark("Implementer")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' en utilisant '*', comme indiqué ci-dessous :
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("4.5.5.0")>
-<Assembly: AssemblyFileVersion("4.5.5.0")>
+<Assembly: AssemblyVersion("4.5.6.0")>
+<Assembly: AssemblyFileVersion("4.5.6.0")>

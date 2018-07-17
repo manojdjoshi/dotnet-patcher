@@ -74,6 +74,67 @@ Namespace Engine.Processing
         Friend Shared Sub RenameResources(TypeDef As TypeDefinition, ByRef NamespaceOriginal$, ByRef NamespaceObfuscated$, TypeOriginal$, TypeObfuscated$)
             Dim ModuleDef As ModuleDefinition = TypeDef.Module
 
+
+            'If ModuleDef.HasTypes Then
+            '    Dim lst = ModuleDef.Types.ToList
+            '    lst.Sort(Function(a, b)
+            '                 If b.FullName.Length <> a.FullName.Length Then Return b.FullName.Length.CompareTo(a.FullName.Length)
+            '                 Return b.FullName.CompareTo(a.FullName)
+            '             End Function)
+
+            '    For Each EmbRes As Resource In ModuleDef.Resources
+            '        Dim nam = EmbRes.Name
+            '        Mapping.NameToResource(nam) = EmbRes
+            '        Dim idx = nam.LastIndexOf(".")
+            '        If idx > 0 Then
+            '            Mapping.NameToResource(nam.Substring(0, idx)) = EmbRes
+            '        End If
+            '    Next
+
+            '    Dim OldInfoType = New Dictionary(Of String, TypeDefinition)
+            '    For Each Info In lst
+            '        OldInfoType(Info.FullName) = Info
+            '    Next
+
+            '    For Each types In ModuleDef.Types
+            '        For Each meths In types.Methods
+            '            If meths.HasBody Then
+            '                Dim instrs = meths.Body.Instructions
+            '                For i As Integer = 0 To instrs.Count - 1
+            '                    Dim instr = instrs(i)
+            '                    If instr.OpCode <> OpCodes.Ldstr Then Continue For
+            '                    Dim codeString = CStr(instr.Operand)
+            '                    If String.IsNullOrEmpty(codeString) Then Continue For
+            '                    Dim res As Resource = Nothing
+            '                    If Not Mapping.NameToResource.TryGetValue(codeString, res) Then Continue For
+            '                    Dim typeInfo As TypeDefinition = Nothing
+            '                    If Not OldInfoType.TryGetValue(codeString, typeInfo) Then Continue For
+            '                    Dim newName = typeInfo.FullName
+
+
+
+
+            '                    Dim renameCodeString As Boolean = IsCallingResourceManagerCtor(instrs, i, typeInfo)
+            '                    If renameCodeString Then
+            '                        MsgBox(instr.Operand.ToString & vbNewLine &
+            '                               newName)
+            '                        instr.Operand = newName
+            '                    End If
+
+            '                    'Dim renameCodeString As Boolean = [module].ObfuscatedFile.RenameResourcesInCode OrElse IsCallingResourceManagerCtor(instrs, i, typeInfo)
+            '                    'If Not renameCodeString Then Logger.v("Possible resource name in code: '{0}' => '{1}' in method {2}", Utils.RemoveNewlines(codeString), newName, Utils.RemoveNewlines(method)) Else instr.Operand = newName Logger.v("Renamed resource string in code: '{0}' => '{1}' ({2})", Utils.RemoveNewlines(codeString), newName, Utils.RemoveNewlines(method))
+            '                Next
+            '            End If
+
+
+            '        Next
+            '    Next
+            'End If
+
+
+
+
+
             For Each EmbRes As Resource In ModuleDef.Resources
                 If Utils.isStronglyTypedResourceBuilder(TypeDef) Then
                     If NamespaceOriginal.EndsWith(".My.Resources") Then
@@ -88,30 +149,137 @@ Namespace Engine.Processing
                 Else
                     If EmbRes.Name = NamespaceOriginal & "." & TypeOriginal & ".resources" Then
                         RenameResourceName(EmbRes, NamespaceObfuscated, TypeObfuscated)
+                    Else
+
+                        If EmbRes.Name.StartsWith(NamespaceOriginal) AndAlso Not EmbRes.Name.ToLower.EndsWith(".resources") Then
+
+                            '###############################
+                            'If Not NamespaceOriginal = String.Empty Then
+                            '    'Dim newTypeName = NamespaceObfuscated & "." & TypeObfuscated
+                            '    Dim oldstr = EmbRes.Name
+                            '    oldstr = oldstr.Replace(NamespaceOriginal, NamespaceObfuscated)
+                            '    Dim newstr = oldstr.Replace(TypeOriginal, TypeObfuscated)
+                            '    EmbRes.Name = newstr
+
+                            'End If
+
+
+                            'Dim oldStr = EmbRes.Name
+                            'If NamespaceOriginal.Contains(".") Then
+                            '    Dim nms = NamespaceOriginal.Split(".")
+
+                            '    For Each n In nms
+                            '        oldStr = oldStr.Replace(n, NamespaceObfuscated)
+                            '    Next
+                            'Else
+
+                            'End If
+
+                            'Dim oldStr = EmbRes.Name
+                            'If Not NamespaceOriginal = String.Empty Then
+                            '    oldStr = oldStr.Replace(NamespaceOriginal, NamespaceObfuscated)
+                            'End If
+
+                            'Dim newstr = oldStr.Replace(TypeOriginal, TypeObfuscated)
+
+                            ''MsgBox(newstr)
+                            ''Dim newstr = oldStr.Replace(NamespaceOriginal, NamespaceObfuscated).Replace(TypeOriginal, TypeObfuscated)
+                            ''MsgBox(EmbRes.Name & vbNewLine & newstr)
+
+                            'EmbRes.Name = newstr
+                            '"###########################################################"
+
+                        End If
+                        '######################################################
+                        'If NamespaceOriginal = "MetroFramework" Then
+                        '    MsgBox(NamespaceOriginal & "." & TypeOriginal & vbNewLine & EmbRes.Name)
+                        'End If
+
+                        'If EmbRes.Name.StartsWith(NamespaceOriginal & "." & TypeOriginal) Then
+                        '    MsgBox(EmbRes.Name)
+                        'End If
+                        '##############################################################################"
                     End If
                 End If
             Next
 
-            If TypeDef.HasMethods Then
-                For Each method In TypeDef.Methods
-                    If method.HasBody Then
-                        For Each inst In method.Body.Instructions
-                            If inst.OpCode = OpCodes.Ldstr Then
-                                If NamespaceOriginal.EndsWith(".My.Resources") Then
-                                    If inst.Operand.ToString() = (NamespaceOriginal.Replace(".My.Resources", "") & ".Resources") Then
-                                        inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
-                                    End If
-                                Else
-                                    If inst.Operand.ToString() = (NamespaceOriginal & "." & TypeOriginal) Then
-                                        inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
+            'If TypeDef.HasMethods Then
+            '    For Each method In TypeDef.Methods
+            '        If method.HasBody Then
+            '            For Each inst In method.Body.Instructions
+            '                If inst.OpCode = OpCodes.Ldstr Then
+            '                    If NamespaceOriginal.EndsWith(".My.Resources") Then
+            '                        If inst.Operand.ToString() = (NamespaceOriginal.Replace(".My.Resources", "") & ".Resources") Then
+            '                            inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
+            '                        End If
+            '                    Else
+            '                        If inst.Operand.ToString() = (NamespaceOriginal & "." & TypeOriginal) Then
+            '                            inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
+            '                        End If
+            '                    End If
+            '                End If
+            '            Next
+            '        End If
+            '    Next
+            'End If
+
+
+            Dim types = ModuleDef.Types
+            For Each td In types
+                If td.HasMethods Then
+                    For Each method In TypeDef.Methods
+                        If method.HasBody Then
+                            For Each inst In method.Body.Instructions
+                                If inst.OpCode = OpCodes.Ldstr Then
+                                    If NamespaceOriginal.EndsWith(".My.Resources") Then
+                                        If inst.Operand.ToString() = (NamespaceOriginal.Replace(".My.Resources", "") & ".Resources") Then
+                                            inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
+                                        End If
+                                    Else
+                                        If inst.Operand.ToString() = (NamespaceOriginal & "." & TypeOriginal) Then
+                                            inst.Operand = If(NamespaceObfuscated = String.Empty, TypeObfuscated, NamespaceObfuscated & "." & TypeObfuscated)
+                                        End If
                                     End If
                                 End If
-                            End If
-                        Next
-                    End If
-                Next
-            End If
+                            Next
+                        End If
+                    Next
+                End If
+            Next
+
         End Sub
+
+
+        'Private Shared Function IsCallingResourceManagerCtor(ByVal instrs As IList(Of Instruction), ByVal ldstrIndex As Integer, ByVal typeInfo As TypeDefinition) As Boolean
+        '    Try
+        '        Dim index As Integer = ldstrIndex + 1
+        '        Dim ldtoken = instrs(Math.Min(System.Threading.Interlocked.Increment(index), index - 1))
+        '        If ldtoken.OpCode.Code <> Code.Ldtoken Then Return False
+
+
+        '        'If Not New SigComparer().Equals(typeInfo.type.TypeDef, TryCast(ldtoken.Operand, ITypeDefOrRef)) Then Return False
+        '        If Not CheckCalledMethod(instrs(Math.Min(System.Threading.Interlocked.Increment(index), index - 1)), "System.Type", "(System.RuntimeTypeHandle)") Then Return False
+        '        If Not CheckCalledMethod(instrs(Math.Min(System.Threading.Interlocked.Increment(index), index - 1)), "System.Reflection.Assembly", "()") Then Return False
+        '        Dim newobj = instrs(Math.Min(System.Threading.Interlocked.Increment(index), index - 1))
+        '        If newobj.OpCode.Code <> Code.Newobj Then Return False
+        '        If newobj.Operand.ToString() <> "System.Void System.Resources.ResourceManager::.ctor(System.String,System.Reflection.Assembly)" Then Return False
+        '        Return True
+        '    Catch __unusedArgumentOutOfRangeException1__ As ArgumentOutOfRangeException
+        '        Return False
+        '    Catch __unusedIndexOutOfRangeException2__ As IndexOutOfRangeException
+        '        Return False
+        '    End Try
+        'End Function
+
+        'Private Shared Function CheckCalledMethod(ByVal instr As Instruction, ByVal returnType As String, ByVal parameters As String) As Boolean
+        '    If instr.OpCode.Code <> Code.[Call] AndAlso instr.OpCode.Code <> Code.Callvirt Then Return False
+        '    Return IsMethod(TryCast(instr.Operand, MethodDefinition), returnType, parameters)
+        'End Function
+
+        'Private Shared Function IsMethod(ByVal method As MethodDefinition, ByVal returnType As String, ByVal parameters As String) As Boolean
+        '    Return method IsNot Nothing AndAlso method.FullName = returnType & " " & method.DeclaringType.FullName & "::" & method.Name & parameters
+        'End Function
+
 
         Private Shared Sub RenameResourceName(EmbRes As Resource, NamespaceObfuscated As String, TypeObfuscated As String)
             EmbRes.Name = If(NamespaceObfuscated = String.Empty, TypeObfuscated & ".resources", NamespaceObfuscated & "." & TypeObfuscated & ".resources")

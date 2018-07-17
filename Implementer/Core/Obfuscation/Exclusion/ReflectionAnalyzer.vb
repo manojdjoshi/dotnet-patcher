@@ -35,7 +35,7 @@ Namespace Core.Obfuscation.Exclusion
                     stack.Clear()
                     Exit Select
                 Case StackBehaviour.Varpop
-                    Throw New InvalidOperationException
+                    'Throw New InvalidOperationException
             End Select
             Select Case op.StackBehaviourPush
                 Case StackBehaviour.Push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref
@@ -48,7 +48,7 @@ Namespace Core.Obfuscation.Exclusion
                 Case StackBehaviour.Varpop
                     Return
                 Case StackBehaviour.Varpush
-                    Throw New InvalidOperationException
+                    'Throw New InvalidOperationException
             End Select
         End Sub
 
@@ -67,7 +67,7 @@ Namespace Core.Obfuscation.Exclusion
                     stack = 0
                     Exit Select
                 Case StackBehaviour.Varpop
-                    Throw New InvalidOperationException
+                    'Throw New InvalidOperationException
             End Select
             Select Case op.StackBehaviourPush
                 Case StackBehaviour.Push1, StackBehaviour.Pushi, StackBehaviour.Pushi8, StackBehaviour.Pushr4, StackBehaviour.Pushr8, StackBehaviour.Pushref
@@ -79,7 +79,7 @@ Namespace Core.Obfuscation.Exclusion
                 Case StackBehaviour.Varpop
                     Return
                 Case StackBehaviour.Varpush
-                    Throw New InvalidOperationException
+                    'Throw New InvalidOperationException
             End Select
         End Sub
 

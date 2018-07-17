@@ -18,6 +18,8 @@ Namespace Core.Dependencing
         Private m_infos As DataFull = Nothing
 #End Region
 
+        'ReadOnly Property References As List(Of String)
+
 #Region " Constructor "
         Public Sub New(OriginalFilePath$, listOfReferences As List(Of String))
             m_listOfReferences = listOfReferences
@@ -142,7 +144,7 @@ Namespace Core.Dependencing
                 File.Copy(m_OriginalFilePath, Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe", True)
                
                 Try
-                    Shell(Functions.GetTempFolder & "\irpck.exe /noRepackRes" & " " & Chr(34) & Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe"" /out:" & Chr(34) & m_OriginalFilePath & Chr(34) & FormatArgument(), AppWinStyle.Hide, True)
+                    Shell(Functions.GetTempFolder & "\irpck.exe /noRepackRes  /delaysign" & " " & Chr(34) & Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe"" /out:" & Chr(34) & m_OriginalFilePath & Chr(34) & FormatArgument(), AppWinStyle.Hide, True)
                 Catch ex As Exception
                     MsgBox(ex.ToString)
                 End Try
@@ -204,7 +206,7 @@ Namespace Core.Dependencing
                         If File.Exists(Functions.GetTempFolder & "\irpck.exe") AndAlso File.Exists(Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe") Then
 
                             Try
-                                Shell(Functions.GetTempFolder & "\irpck.exe /noRepackRes" & " " & Chr(34) & Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe"" /out:" & Chr(34) & m_OriginalFilePath & Chr(34) & FormatArgument(), AppWinStyle.Hide, True)
+                                Shell(Functions.GetTempFolder & "\irpck.exe /noRepackRes /delaysign" & " " & Chr(34) & Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe"" /out:" & Chr(34) & m_OriginalFilePath & Chr(34) & FormatArgument(), AppWinStyle.Hide, True)
                             Catch ex As Exception
                                 MsgBox(ex.ToString)
                             Finally
@@ -216,7 +218,7 @@ Namespace Core.Dependencing
                             End Try
 
                             If bgw.CancellationPending Then
-                                For Each p As Process In System.Diagnostics.Process.GetProcessesByName("irpck")
+                                For Each p As Process In Process.GetProcessesByName("irpck")
                                     Try
                                         p.Kill()
                                         ' possibly with a timeout

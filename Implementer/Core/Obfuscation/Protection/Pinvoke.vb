@@ -108,7 +108,6 @@ Namespace Core.Obfuscation.Protection
                                     Continue For
                                 End Try
                             End If
-
                         Next
                         md.Body.OptimizeMacros
                         md.Body.ComputeOffsets()

@@ -16,14 +16,14 @@ D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\bin\Release\Vestris.ResourceLi
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Release\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher0\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.XML
-D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
-D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
-D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\bin\Release\Vestris.ResourceLib.XML
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\bin\Release\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\obj\Release\Vestris.ResourceLib.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\obj\Release\Vestris.ResourceLib.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\ResourceLib\obj\Release\ResourceLib.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.XML
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\bin\Release\Vestris.ResourceLib.pdb
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.dll
+D:\Documents\Bitbucket\DotNetPatcher\ResourceLib\obj\Release\Vestris.ResourceLib.pdb

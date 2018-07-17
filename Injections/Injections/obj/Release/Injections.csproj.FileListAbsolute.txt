@@ -205,12 +205,12 @@ D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\bin\Release\Injectio
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher0\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
-D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Injections\Injections\bin\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Injections\Injections\bin\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Injections\Injections\obj\Release\Injections.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Injections\Injections\obj\Release\Injections.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Injections\Injections\obj\Release\Injections.csprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\bin\Release\Injections.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.dll
+D:\Documents\Bitbucket\DotNetPatcher\Injections\Injections\obj\Release\Injections.pdb

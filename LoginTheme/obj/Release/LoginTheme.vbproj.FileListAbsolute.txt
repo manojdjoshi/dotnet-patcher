@@ -263,14 +263,6 @@ D:\Documents\Bitbucket\DotNetPatcher0\LoginTheme\obj\Release\LoginTheme.vbproj.G
 D:\Documents\Bitbucket\DotNetPatcher0\LoginTheme\obj\Release\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher0\LoginTheme\obj\Release\LoginTheme.xml
 D:\Documents\Bitbucket\DotNetPatcher0\LoginTheme\obj\Release\LoginTheme.pdb
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.dll
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.pdb
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.xml
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.Resources.resources
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.Cache
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.dll
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.xml
-D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\bin\Release\LoginTheme.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\bin\Release\LoginTheme.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\bin\Release\LoginTheme.xml
@@ -280,3 +272,11 @@ D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\obj\Release\Logi
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\obj\Release\LoginTheme.xml
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\obj\Release\LoginTheme.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\LoginTheme\obj\Release\LoginTheme.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.pdb
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\bin\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.dll
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.xml
+D:\Documents\Bitbucket\DotNetPatcher\LoginTheme\obj\Release\LoginTheme.pdb

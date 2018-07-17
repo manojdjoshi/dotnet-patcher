@@ -1,34 +1,45 @@
 ﻿Imports System.Reflection
 Imports System.IO
 Imports Helper.RandomizeHelper
-Imports System.Runtime.Versioning
 
 Namespace AssemblyHelper
     Public Class Loader
+
+        Private Shared m_AssPath As String
+        Private Shared m_AssList As List(Of String)
+
+        Shared Sub New()
+            m_AssList = New List(Of String)
+        End Sub
 
 #Region " Methods "
         Public Shared Function Minimal(AssPath$) As Data
 
             Dim tempAppDomain As AppDomain = Nothing
             Dim fName = Randomizer.GenerateNewAlphabetic
-            Dim path As String = String.Format("{0}{1}\", IO.Path.GetTempPath, fName)
-            Directory.CreateDirectory(path)
-            Dim tempAssemblyFilePath As String = (path & fName)
+            Dim fileName = Path.GetFileName(AssPath)
+            Dim Npath As String = String.Format("{0}{1}\", Path.GetTempPath, fName)
+            Directory.CreateDirectory(Npath)
+            Dim tempAssemblyFilePath As String = (Npath & fileName)
             File.Copy(AssPath, tempAssemblyFilePath, True)
+
+            Dim AsmPath = Directory.GetParent(AssPath).FullName
+            m_AssPath = AsmPath
 
             Dim AssData As New Data
             Try
-                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic)
+                For Each f In Directory.GetFiles(AsmPath, "*.dll")
+                    If Not File.Exists(Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name) Then
+                        m_AssList.Add(Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name)
+                        File.Copy(f, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name, True)
+                    End If
+                Next
+
+                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic, Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
 
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
-
                 Dim anObject As Object = Nothing
-
-                If Assembly.GetExecutingAssembly.GetName.Name.ToLower = "helper" Then
-                    anObject = tempAppDomain.CreateInstanceAndUnwrap("Helper", "Helper.AssemblyHelper.Infos")
-                Else
-                    anObject = tempAppDomain.CreateInstanceAndUnwrap("DotNetPatcher", "Helper.AssemblyHelper.Infos")
-                End If
+                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, "Helper.AssemblyHelper.Infos")
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
@@ -42,10 +53,10 @@ Namespace AssemblyHelper
                 Dim ManifestResourceNames As IEnumerable(Of String) = Nothing
                 Dim ManifestResourceStreams As New List(Of Stream)
                 Dim TypesClass As IEnumerable(Of Type) = Nothing
-                Dim Modules As IEnumerable(Of [Module]) = Nothing
+                Dim HasSerializableAttribute As Boolean = False
                 Dim Result As Data.Message
 
-                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result)
+                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, HasSerializableAttribute, Result)
 
                 With AssData
                     .AssName = AssName
@@ -61,7 +72,7 @@ Namespace AssemblyHelper
             Catch exception As Exception
                 MsgBox(exception.ToString)
             Finally
-                CleanDomain(tempAppDomain, tempAssemblyFilePath, path)
+                CleanDomain(tempAppDomain, tempAssemblyFilePath, Npath)
             End Try
             Return AssData
         End Function
@@ -70,24 +81,28 @@ Namespace AssemblyHelper
 
             Dim tempAppDomain As AppDomain = Nothing
             Dim fName = Randomizer.GenerateNewAlphabetic
-            Dim path As String = String.Format("{0}{1}\", IO.Path.GetTempPath, fName)
-            Directory.CreateDirectory(path)
-            Dim tempAssemblyFilePath As String = (path & fName)
+            Dim fileName = path.GetFileName(AssPath)
+            Dim Npath As String = String.Format("{0}{1}\", Path.GetTempPath, fName)
+            Directory.CreateDirectory(Npath)
+            Dim tempAssemblyFilePath As String = (Npath & fileName)
             File.Copy(AssPath, tempAssemblyFilePath, True)
+
+            Dim AsmPath = Directory.GetParent(AssPath).FullName
+            m_AssPath = AsmPath
 
             Dim AssData As New DataFull
             Try
-                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic)
+                For Each f In Directory.GetFiles(AsmPath, "*.dll")
+                    If Not File.Exists(Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name) Then
+                        m_AssList.Add(Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name)
+                        File.Copy(f, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name, True)
+                    End If
+                Next
+                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic, Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
 
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
-
                 Dim anObject As Object = Nothing
-
-                If Assembly.GetExecutingAssembly.GetName.Name.ToLower = "helper" Then
-                    anObject = tempAppDomain.CreateInstanceAndUnwrap("Helper", "Helper.AssemblyHelper.Infos")
-                Else
-                    anObject = tempAppDomain.CreateInstanceAndUnwrap("DotNetPatcher", "Helper.AssemblyHelper.Infos")
-                End If
+                anObject = tempAppDomain.CreateInstanceAndUnwrap(Assembly.GetExecutingAssembly.GetName.Name, "Helper.AssemblyHelper.Infos")
 
                 Dim assemblyInspector As IAssemblyInfos = TryCast(anObject, IAssemblyInfos)
 
@@ -101,10 +116,10 @@ Namespace AssemblyHelper
                 Dim ManifestResourceNames As IEnumerable(Of String) = Nothing
                 Dim ManifestResourceStreams As New List(Of Stream)
                 Dim TypesClass As IEnumerable(Of Type) = Nothing
-                Dim Modules As IEnumerable(Of [Module]) = Nothing
+                Dim HasSerializableAttribute As Boolean = False
                 Dim Result As DataFull.Message
 
-                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, True)
+                assemblyInspector.GetAssemblyInfo(assemblyBuffer, AssName, FrmwkVersion, AssVersion, IsWpf, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, HasSerializableAttribute, Result, True)
 
                 With AssData
                     .AssName = AssName
@@ -117,14 +132,14 @@ Namespace AssemblyHelper
                     .ManifestResourceNames = ManifestResourceNames
                     .ManifestResourceStreams = ManifestResourceStreams
                     .TypesClass = TypesClass
-                    .Modules = Modules
+                    .HasSerializableAttribute = HasSerializableAttribute
                     .Result = Result
                 End With
 
             Catch exception As Exception
                 MsgBox(exception.ToString)
             Finally
-                CleanDomain(tempAppDomain, tempAssemblyFilePath, path)
+                CleanDomain(tempAppDomain, tempAssemblyFilePath, Npath)
             End Try
             Return AssData
         End Function
@@ -132,12 +147,23 @@ Namespace AssemblyHelper
         Private Shared Sub CleanDomain(tempAppDomain As AppDomain, tempAssemblyFilePath$, path$)
             If Not tempAppDomain Is Nothing Then
                 AppDomain.Unload(tempAppDomain)
-                If File.Exists(tempAssemblyFilePath) Then
-                    File.Delete(tempAssemblyFilePath)
-                End If
+
+                For Each f In Directory.GetFiles(path)
+                    File.Delete(f)
+                Next
+                For Each f In m_AssList
+                    If File.Exists(f) Then
+                        Try
+                            File.Delete(f)
+                        Catch ex As Exception
+                        End Try
+                    End If
+                Next
                 If Directory.Exists(path) Then
                     Directory.Delete(path)
                 End If
+
+                m_AssList.Clear()
             End If
         End Sub
 

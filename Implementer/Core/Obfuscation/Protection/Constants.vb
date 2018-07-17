@@ -32,6 +32,7 @@ Namespace Core.Obfuscation.Protection
                 Types.Clear()
             Next
         End Sub
+
         Private Shared Sub IterateType(td As TypeDefinition)
 
             For Each mDef In (From mtd In td.Methods
@@ -43,9 +44,9 @@ Namespace Core.Obfuscation.Protection
 
                 For i = 0 To mDef.Body.Instructions.Count - 1
                     Dim instruct = mDef.Body.Instructions(i)
-                    If Not completedInstructions.Contains(instruct) Then
+                    'If Not completedInstructions.Contains(instruct) Then
 
-                        If Not instruct.OpCode = OpCodes.Ldc_I4 Then
+                    If Not instruct.OpCode = OpCodes.Ldc_I4 Then
                             Continue For
                         End If
 
@@ -125,8 +126,8 @@ Namespace Core.Obfuscation.Protection
                         Catch ex As Exception
                             Continue For
                         End Try
-                        completedInstructions.Add(instruct)
-                    End If
+                    '    completedInstructions.Add(instruct)
+                    'End If
                 Next
                 mDef.Body.OptimizeMacros
                 mDef.Body.ComputeOffsets()

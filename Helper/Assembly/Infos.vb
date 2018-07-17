@@ -1,21 +1,21 @@
 ﻿Imports System.Reflection
 Imports System.IO
+Imports System.Text
 
 Namespace AssemblyHelper
 
-    <Serializable> _
+    <Serializable>
     Public Class Infos
         Implements IAssemblyInfos
 
 #Region " Methods "
 
-        Private Sub AssemblyInfo(assemblyBuffer As Byte(), ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False)
+        Private Sub AssemblyInfo(assemblyBuffer As Byte(), ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef HasSerializableAttribute As Boolean, ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False)
             Try
                 Dim assembly = AppDomain.CurrentDomain.Load(assemblyBuffer)
 
                 Dim manifest = assembly.ManifestModule
                 AssName = manifest.ScopeName
-
                 AssVersion = assembly.GetName.Version.ToString()
 
                 Dim frameworkName = String.Empty
@@ -44,6 +44,7 @@ Namespace AssemblyHelper
                 AssemblyReferences = assembly.GetReferencedAssemblies
 
                 If LoadMaxInfos = True Then
+
                     ManifestResourceNames = assembly.GetManifestResourceNames
 
                     For Each r In ManifestResourceNames
@@ -53,14 +54,36 @@ Namespace AssemblyHelper
                         End If
                     Next
 
-                    TypesClass = assembly.GetTypes.Where(Function(t) t.IsClass)
-                    Modules = assembly.GetModules
+                    TypesClass = assembly.ManifestModule.GetTypes
+                    If Not TypesClass Is Nothing Then
+                        TypesClass = assembly.GetTypes.Where(Function(t) t.IsClass)
+                        For Each typ In TypesClass
+                            If HasSerializableAttribute Then Exit For
+                            If typ.Attributes.HasFlag(TypeAttributes.Serializable) Then
+                                HasSerializableAttribute = True
+                                Exit For
+                            End If
+                        Next
+                    End If
                 End If
 
                 Result = Data.Message.Success
-
             Catch ex As ReflectionTypeLoadException
+                Dim sb As StringBuilder = New StringBuilder
+                For Each exSub As Exception In ex.LoaderExceptions
+                    sb.AppendLine(exSub.Message)
+                    Dim exFileNotFound As FileNotFoundException = CType(exSub, FileNotFoundException)
+                    If (Not (exFileNotFound) Is Nothing) Then
+                        If Not String.IsNullOrEmpty(exFileNotFound.FusionLog) Then
+                            sb.AppendLine("FUSION LOG :" & vbNewLine)
+                            sb.AppendLine(exFileNotFound.FusionLog)
+                        End If
+                    End If
+                    sb.AppendLine
+                Next
+                Dim errorMessage As String = sb.ToString
                 Result = Data.Message.Failed
+                MsgBox(errorMessage)
             Catch ex As FileNotFoundException
                 Result = Data.Message.Failed
             Catch ex As FileLoadException
@@ -74,8 +97,8 @@ Namespace AssemblyHelper
             End Try
         End Sub
 
-        Public Sub GetAssemblyInfo(assembly() As Byte, ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef Modules As IEnumerable(Of [Module]), ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False) Implements IAssemblyInfos.GetAssemblyInfo
-            AssemblyInfo(assembly, AssName, FrmwkVersion, AssVersion, IsWpfApp, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, Modules, Result, LoadMaxInfos)
+        Public Sub GetAssemblyInfo(assembly() As Byte, ByRef AssName$, ByRef FrmwkVersion$, ByRef AssVersion$, ByRef IsWpfApp As Boolean, ByRef EntryPoint As MethodInfo, ByRef AssemblyReferences As AssemblyName(), ByRef ManifestResourceNames As IEnumerable(Of String), ByRef ManifestResourceStreams As List(Of Stream), ByRef TypesClass As IEnumerable(Of Type), ByRef HasSerializableAttribute As Boolean, ByRef Result As Data.Message, Optional ByVal LoadMaxInfos As Boolean = False) Implements IAssemblyInfos.GetAssemblyInfo
+            AssemblyInfo(assembly, AssName, FrmwkVersion, AssVersion, IsWpfApp, EntryPoint, AssemblyReferences, ManifestResourceNames, ManifestResourceStreams, TypesClass, HasSerializableAttribute, Result, LoadMaxInfos)
         End Sub
 
 #End Region

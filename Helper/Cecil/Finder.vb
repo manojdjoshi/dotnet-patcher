@@ -31,6 +31,10 @@ Namespace CecilHelper
             Return False
         End Function
 
+        'Public Shared Function HasResourceReflectionCall(member As MethodDefinition) As Boolean
+
+        'End Function
+
         Public Shared Function FindType(moduleDef As ModuleDefinition, Name As String, Optional ByVal Full As Boolean = False) As TypeDefinition
             For Each typeDef As TypeDefinition In moduleDef.Types
                 Dim returnType As TypeDefinition = Nothing

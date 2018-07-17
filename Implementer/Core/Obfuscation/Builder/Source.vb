@@ -183,6 +183,23 @@ Namespace Core.Obfuscation.Builder
             Return Compiler.CreateStubFromString(className, Frmwk, str)
         End Function
 
+        Protected Shared Function DecryptCtrFlowStub(ClassName$, DecryptCtrFlowFuncName As String) As String
+            LoadNamespacesHeaders()
+            Dim str =
+                    "Imports System" & vbNewLine &
+                      Loader.GenerateInfos(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic, "1.0.0.0") & vbNewLine _
+                    & m_AddedNamespaceStart & vbNewLine _
+                    & "Public Class " & ClassName & vbNewLine _
+                    & "    Public Shared Function " & DecryptCtrFlowFuncName & " (Str As String) As Integer" & vbNewLine _
+                    & "        Return Str.Length - 21" & vbNewLine _
+                    & "    End Function" & vbNewLine _
+                    & "End Class" & vbNewLine & vbNewLine _
+                    & m_AddedNamespaceEnd
+
+            Return Compiler.CreateStubFromString(ClassName, Frmwk, str)
+        End Function
+
+
         Protected Shared Function DecryptRPNStub(ClassName$, DecryptRPNFuncName1$, DecryptRPNFuncName2$) As String
             LoadNamespacesHeaders()
             Dim str = _

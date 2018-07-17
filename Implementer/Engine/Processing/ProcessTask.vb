@@ -64,11 +64,16 @@ Namespace Engine.Processing
                     type.Name = Mapping.RenameTypeDef(type, Randomizer.GenerateNew())
                     TypeObfuscated = type.Name
                     Renamer.RenameResources(type, NamespaceOriginal, NamespaceObfuscated, TypeOriginal, TypeObfuscated)
+
+
+                    'Utils.UpdateAssemblyReference(type, TypeOriginal, TypeObfuscated)
                 End If
 
                 If m_RenamingAccept.Namespaces Then
                     type.Namespace = Mapping.RenameTypeDef(type, NamespaceObfuscated, True)
                     Renamer.RenameResources(type, NamespaceOriginal, NamespaceObfuscated, TypeOriginal, TypeObfuscated)
+
+                    'Utils.UpdateAssemblyReference(type, TypeOriginal, TypeObfuscated)
                 End If
 
                 If m_RenamingAccept.Properties Then Renamer.RenameResourceManager(type)
@@ -87,8 +92,8 @@ Namespace Engine.Processing
             Pinvoke.DoJob(AssDef, frmwk, m_RenamingAccept.ExclusionRule, pack)
         End Sub
 
-        Public Sub ProcessControlFlow(AssDef As AssemblyDefinition)
-            ControlFlow.DoJob(AssDef, m_RenamingAccept.ExclusionRule)
+        Public Sub ProcessControlFlow(AssDef As AssemblyDefinition, frmwk$)
+            ControlFlow.DoJob(AssDef, m_RenamingAccept.ExclusionRule, frmwk)
         End Sub
 
         Public Sub ProcessConstants(AssDef As AssemblyDefinition)
@@ -96,8 +101,8 @@ Namespace Engine.Processing
         End Sub
 
         Public Sub ProcessEncryptString(AssDef As AssemblyDefinition, frmwk$, EncryptToResources As EncryptType, pack As Boolean)
-            Dim emptyNamespaces = If(m_RenamingAccept.ReplaceNamespacesSetting = RenamerState.ReplaceNamespaces.Empty, True, False)
-            Str.DoJob(AssDef, frmwk, If(pack = True, EncryptType.ByDefault, EncryptToResources), m_RenamingAccept.ExclusionRule, emptyNamespaces)
+            'Dim emptyNamespaces = If(m_RenamingAccept.ReplaceNamespacesSetting = RenamerState.ReplaceNamespaces.Empty, True, False)
+            Str.DoJob(AssDef, frmwk, If(pack = True, EncryptType.ByDefault, EncryptToResources), m_RenamingAccept.ExclusionRule, pack)
         End Sub
 
         Public Sub ProcessEncryptBoolean(AssDef As AssemblyDefinition, frmwk$, EncryptToResources As EncryptType, pack As Boolean)
@@ -224,6 +229,9 @@ Namespace Engine.Processing
         Public Sub ProcessFields(type As TypeDefinition)
             If m_RenamingAccept.Fields Then
                 For Each field As FieldDefinition In type.Fields
+                    If field.HasConstant AndAlso field.IsStatic Then
+                        field.HasConstant = False
+                    End If
                     If NameChecker.IsRenamable(field) Then Renamer.RenameField(field, Randomizer.GenerateNew())
                 Next
             End If
@@ -265,7 +273,7 @@ Namespace Engine.Processing
                                 Utils.RemoveCustomAttributeByName(meth, "ObsoleteAttribute")
                             End If
                         End If
-                        End If
+                    End If
                 End If
             End If
             ProcessParameters(meth)

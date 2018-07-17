@@ -3,16 +3,20 @@ Imports Mono.Cecil.Rocks
 Imports Mono.Cecil.Cil
 Imports Helper.CecilHelper
 Imports Implementer.Core.Obfuscation.Exclusion
+Imports Implementer.Core.Obfuscation.Builder
+Imports Helper.RandomizeHelper
 
 Namespace Core.Obfuscation.Protection
     ''' <summary>
     ''' By Furious from DotnetVitamin
     ''' </summary>
     Public NotInheritable Class ControlFlow
+        Inherits Source
 
 #Region " Fields "
         Private Shared Types As New List(Of TypeDefinition)
         Private Shared r As Random
+        Private Shared DecryptCtrFlow As Stub
 #End Region
 
 #Region " Constructor "
@@ -22,7 +26,17 @@ Namespace Core.Obfuscation.Protection
 #End Region
 
 #Region " Methods "
-        Friend Shared Function DoJob(asm As AssemblyDefinition, Exclude As ExcludeList) As AssemblyDefinition
+        Friend Shared Function DoJob(asm As AssemblyDefinition, Exclude As ExcludeList, Framwk$) As AssemblyDefinition
+            AssemblyDef = asm
+            Frmwk = Framwk
+
+            DecryptCtrFlow = New Stub(Randomizer.GenerateNewAlphabetic, Randomizer.GenerateNewAlphabetic)
+            With DecryptCtrFlow
+                .ResolveTypeFromFile(DecryptCtrFlowStub(.className, .funcName1), Finder.FindDefaultNamespace(asm, Pack), Randomizer.GenerateNew, Randomizer.GenerateNew)
+                .InjectType(asm)
+                completedMethods.Add(.GetMethod1)
+            End With
+
             For Each m As ModuleDefinition In asm.Modules
                 Types.AddRange(m.GetAllTypes())
                 For Each type As TypeDefinition In Types
@@ -37,7 +51,7 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 0 AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Utils.HasUnsafeInstructions(m) = False))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 0 AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Utils.HasUnsafeInstructions(m) = False AndAlso Not completedMethods.Contains(m)))
             'publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso m.Body.Variables.Count > 1 AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not m.DeclaringType.BaseType.Name = "WindowsFormsApplicationBase" AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute") AndAlso Not m.IsConstructor AndAlso Utils.HasUnsafeInstructions(m) = False))
 
             Try
@@ -47,78 +61,12 @@ Namespace Core.Obfuscation.Protection
                             If md.Body.ExceptionHandlers.Count = 0 Then
                                 md.Body.SimplifyMacros
 
-                                'For i = 0 To md.Body.Instructions.Count - 1
-                                '    Dim instruct = md.Body.Instructions(i)
-                                '    If instruct.OpCode = OpCodes.Call Then
-                                '        If instruct.Operand.ToString.ToLower.Contains("void") Then
-
-                                '            If instruct.Previous.OpCode = OpCodes.Ldarg Then
-                                '                Dim loc As New VariableDefinition(td.Module.Assembly.MainModule.Import(GetType(Integer)))
-                                '                md.Body.Variables.Add(loc)
-
-                                '                md.Body.Instructions.Insert(i - 1, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '                md.Body.Instructions.Insert(i, Instruction.Create(OpCodes.Stloc_S, loc))
-                                '                md.Body.Instructions.Insert(i + 1, Instruction.Create(OpCodes.Ldloc_S, loc))
-                                '                md.Body.Instructions.Insert(i + 2, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '                md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Ldarg_0))
-                                '                md.Body.Instructions.Insert(i + 4, Instruction.Create(OpCodes.Nop))
-                                '                md.Body.Instructions.Insert(i + 6, Instruction.Create(OpCodes.Nop))
-
-                                '                md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Bne_Un_S, md.Body.Instructions(i + 4)))
-                                '                md.Body.Instructions.Insert(i + 5, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 8)))
-                                '                md.Body.Instructions.Insert(i + 8, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 9)))
-
-                                '            End If
-                                '        End If
-                                '        'ElseIf instruct.OpCode = OpCodes.Callvirt Then
-                                '        '    If instruct.Operand.ToString.ToLower.Contains("int32") Then
-                                '        '        If instruct.Previous.OpCode = OpCodes.Ldloc Then
-
-                                '        '            Dim loc As New VariableDefinition(td.Module.Assembly.MainModule.Import(GetType(Integer)))
-                                '        '            md.Body.Variables.Add(loc)
-
-                                '        '            md.Body.Instructions.Insert(i - 1, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '        '            md.Body.Instructions.Insert(i, Instruction.Create(OpCodes.Stloc_S, loc))
-                                '        '            md.Body.Instructions.Insert(i + 1, Instruction.Create(OpCodes.Ldloc_S, loc))
-                                '        '            md.Body.Instructions.Insert(i + 2, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '        '            md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Ldarg_0))
-                                '        '            md.Body.Instructions.Insert(i + 4, Instruction.Create(OpCodes.Nop))
-                                '        '            md.Body.Instructions.Insert(i + 6, Instruction.Create(OpCodes.Nop))
-
-                                '        '            md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Beq_S, md.Body.Instructions(i + 4)))
-                                '        '            md.Body.Instructions.Insert(i + 5, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 8)))
-                                '        '            md.Body.Instructions.Insert(i + 8, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 9)))
-
-                                '        '        End If
-                                '        '    End If
-                                '        'ElseIf instruct.OpCode = OpCodes.Ldfld Then
-
-                                '        '    If instruct.Previous.OpCode = OpCodes.Ldarg Then
-                                '        '        Dim loc As New VariableDefinition(td.Module.Assembly.MainModule.Import(GetType(Integer)))
-                                '        '        md.Body.Variables.Add(loc)
-
-                                '        '        md.Body.Instructions.Insert(i - 1, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '        '        md.Body.Instructions.Insert(i, Instruction.Create(OpCodes.Stloc_S, loc))
-                                '        '        md.Body.Instructions.Insert(i + 1, Instruction.Create(OpCodes.Ldloc_S, loc))
-                                '        '        md.Body.Instructions.Insert(i + 2, Instruction.Create(OpCodes.Ldc_I4, r.Next))
-                                '        '        md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Ldarg_0))
-                                '        '        md.Body.Instructions.Insert(i + 4, Instruction.Create(OpCodes.Nop))
-                                '        '        md.Body.Instructions.Insert(i + 6, Instruction.Create(OpCodes.Nop))
-
-                                '        '        md.Body.Instructions.Insert(i + 3, Instruction.Create(OpCodes.Beq_S, md.Body.Instructions(i + 4)))
-                                '        '        md.Body.Instructions.Insert(i + 5, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 8)))
-                                '        '        md.Body.Instructions.Insert(i + 8, Instruction.Create(OpCodes.Br_S, md.Body.Instructions(i + 9)))
-                                '        '    End If
-
-                                '    End If
-                                'Next
-
-
                                 Dim incGroups As New InstructionGroups
                                 Dim item1 As New InstructionGroup
                                 Dim incremId As Integer = 0
                                 Dim incremStackUsage As Integer = 0
                                 Dim flag As Boolean = False
+
                                 For i = 0 To md.Body.Instructions.Count - 1
                                     Dim Instruct = md.Body.Instructions(i)
                                     Dim stacks As Integer
@@ -193,6 +141,7 @@ Namespace Core.Obfuscation.Protection
                                         md.Body.Instructions.Add(instruction6)
                                     Next
                                 End If
+
                                 md.Body.OptimizeMacros
                                 md.Body.ComputeOffsets()
                                 md.Body.ComputeHeader()
@@ -206,32 +155,6 @@ Namespace Core.Obfuscation.Protection
             publicMethods.Clear()
         End Sub
 #End Region
-
-        'Private Shared Function ReturnLdciInstruction(num As Integer) As Instruction
-        '    If num >= 0 AndAlso num < 9 Then
-        '        Select Case num
-        '            Case 0
-        '                Return Instruction.Create(OpCodes.Ldc_I4_0)
-        '            Case 1
-        '                Return Instruction.Create(OpCodes.Ldc_I4_1)
-        '            Case 2
-        '                Return Instruction.Create(OpCodes.Ldc_I4_2)
-        '            Case 3
-        '                Return Instruction.Create(OpCodes.Ldc_I4_3)
-        '            Case 4
-        '                Return Instruction.Create(OpCodes.Ldc_I4_4)
-        '            Case 5
-        '                Return Instruction.Create(OpCodes.Ldc_I4_5)
-        '            Case 6
-        '                Return Instruction.Create(OpCodes.Ldc_I4_6)
-        '            Case 7
-        '                Return Instruction.Create(OpCodes.Ldc_I4_7)
-        '            Case 8
-        '                Return Instruction.Create(OpCodes.Ldc_I4_8)
-        '        End Select
-        '    End If
-        '    Return Instruction.Create(OpCodes.Ldc_I4, num)
-        'End Function
 
     End Class
 

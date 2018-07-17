@@ -14,6 +14,7 @@ Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Core.Obfuscation.Exclusion
 Imports LoginTheme.XertzLoginTheme
 Imports Helper
+Imports Helper.CecilHelper
 
 Public Class Frm_Main
 
@@ -29,6 +30,7 @@ Public Class Frm_Main
     Private m_taskIsRunning As Boolean
     Private m_LanguageType%
     Private m_lastRequested$
+    Private m_assemblyHasSerializableAttributes As Boolean
 #End Region
 
 #Region " ######### FRM MAIN ######### "
@@ -133,24 +135,8 @@ Public Class Frm_Main
                         Exit Select
                     Case "Empty"
                         Dim infos = AssemblyHelper.Loader.Full(e.assembly.Location)
-                        Dim HasSerializableAttributes As Boolean = False
-                        Dim mods = infos.Modules
-
-                        For Each modul In mods
-                            If HasSerializableAttributes Then Exit For
-                            For Each typ In modul.GetTypes
-                                If HasSerializableAttributes Then Exit For
-                                Dim customAttributes = typ.GetCustomAttributes(True)
-                                For Each att In customAttributes
-                                    If att.ToString = "System.SerializableAttribute" Then
-                                        HasSerializableAttributes = True
-                                        Exit For
-                                    End If
-                                Next
-                            Next
-                        Next
-
-                        UnModified(HasSerializableAttributes)
+                        m_assemblyHasSerializableAttributes = infos.HasSerializableAttribute
+                        UnModified(m_assemblyHasSerializableAttributes)
                         Exit Select
                 End Select
             End With
@@ -582,7 +568,9 @@ Public Class Frm_Main
         ChbObfuscatorResourcesCompress.Enabled = If(state, False, True)
         ChbObfuscatorResourcesCompress.Checked = If(state, False, True)
         ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Enabled = If(state, False, True)
-        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = If(state, False, True)
+        ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked = If(state, False, False)
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Enabled = If(m_assemblyHasSerializableAttributes, False, If(state, False, True))
+        ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = If(m_assemblyHasSerializableAttributes, False, If(state, False, True))
         GbxPackerLoader.Enabled = If(state, True, False)
     End Sub
 

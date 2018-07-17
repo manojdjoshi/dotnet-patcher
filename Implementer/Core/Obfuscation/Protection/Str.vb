@@ -10,7 +10,6 @@ Imports Implementer.Core.Obfuscation.Exclusion
 Imports System.Text
 Imports System.Security.Cryptography
 Imports Helper.CryptoHelper
-Imports System.Runtime.CompilerServices
 
 Namespace Core.Obfuscation.Protection
     Public NotInheritable Class Str
@@ -158,12 +157,11 @@ Namespace Core.Obfuscation.Protection
                                     Dim str = TryCast(Instruction.Operand, String)
 
                                     Dim salt = randSalt.Next(1, 255)
-                                    Dim addProperty As Boolean = Randomizer.GenerateBoolean
+                                    'Dim addProperty As Boolean = Randomizer.GenerateBoolean
 
                                     If Not String.IsNullOrWhiteSpace(str) And str.Length > 0 Then
                                         If Utils.IsSettingStr(md, str) = False Then
                                             If Not str = ResName Then
-
                                                 m_IsDefaultEncoding = False
                                                 'm_IsDefaultEncoding = Randomizer.GenerateBoolean()
 
@@ -175,10 +173,11 @@ Namespace Core.Obfuscation.Protection
                                                 Dim encXor = EncryptXor(EncodeTo_64(str, m_IsDefaultEncoding), salt)
 
                                                 Dim ilProc As ILProcessor = mdFinal.Body.GetILProcessor()
-                                                ilProc.Body.MaxStackSize = 8
-                                                ilProc.Body.InitLocals = True
+                                                'ilProc.Body.MaxStackSize = 8
+                                                'ilProc.Body.InitLocals = True
 
                                                 Dim resEncrypted As Boolean = If((EncryptToResources = EncryptType.ToResources), True, False)
+
                                                 'Dim resEncrypted As Boolean = If((EncryptToResources = EncryptType.ToResources) AndAlso (Finder.HasCustomAttributeByName(md, "ObfuscationAttribute") = False), True, False)
                                                 If resEncrypted Then
                                                     'Dim si As Type = GetType(Reflection.ObfuscationAttribute)
@@ -223,6 +222,9 @@ Namespace Core.Obfuscation.Protection
                                                 md.DeclaringType.Methods.Add(mdFinal)
                                                 completedInstructions.Add(Instruction)
                                             End If
+
+                                            'Else
+                                            '    MsgBox("IsSetting : " & str)
                                         End If
                                     End If
                                     If (Not mdFinal Is Nothing) Then
@@ -237,15 +239,12 @@ Namespace Core.Obfuscation.Protection
                                         IL.InsertAfter(md.Body.Instructions.Item(i), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(DecryptPrime.GetMethod1)))
                                         IL.InsertAfter(md.Body.Instructions.Item(i + 1), IL.Create(OpCodes.Call, mdFinal))
 
-                                        'Dim IL = md.Body.GetILProcessor()
-                                        'IL.Replace(Instruction, IL.Create(If(m_IsDefaultEncoding, OpCodes.Ldc_I4_1, OpCodes.Ldc_I4_0)))
-                                        'IL.InsertAfter(md.Body.Instructions.Item(i), IL.Create(OpCodes.Call, mdFinal))
-
                                         completedMethods.Add(mdFinal)
                                     End If
                                 End If
                             End If
                         Next
+
                         md.Body.OptimizeMacros
                         md.Body.ComputeOffsets()
                         md.Body.ComputeHeader()
@@ -267,9 +266,6 @@ Namespace Core.Obfuscation.Protection
         End Function
 
         Private Shared Function EncodeTo_64(toEncode$, defaultEnc As Boolean) As String
-            'If defaultEnc Then
-            '    Convert.ToBase64String(GetByte(toEncode, defaultEnc))
-            'End If
             Dim strByte = GetByte(toEncode, defaultEnc)
             Return ConvertToBase64String(strByte, defaultEnc)
         End Function

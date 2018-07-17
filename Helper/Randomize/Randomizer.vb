@@ -24,6 +24,19 @@ Namespace RandomizeHelper
 #End Region
 
 #Region " Methods "
+        Public Shared Function GenerateAlphabetic(ByVal Optional length As Integer = -1) As String
+            Dim text As String = "‮"
+            Dim text2 As String = "abcdefghijklmnopqrstuvwxyz"
+            If length = -1 Then
+                length = m_rdn.Next(40, 60)
+            End If
+
+            For i As Integer = 0 To length - 1
+                text += text2(m_rdn.Next(0, text2.Length - 1))
+            Next
+
+            Return text
+        End Function
 
         Public Shared Function GenerateInvisible() As Integer
             Dim b = invisibleChars

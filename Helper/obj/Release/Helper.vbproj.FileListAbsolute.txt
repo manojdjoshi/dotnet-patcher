@@ -339,13 +339,6 @@ D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Release\Helper.vbproj.GenerateR
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Release\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Release\Helper.pdb
 D:\Documents\Bitbucket\DotNetPatcher0\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
-D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.dll
-D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.pdb
-D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Mono.Cecil.dll
-D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.Resources.resources
-D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
-D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.dll
-D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\bin\Release\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\bin\Release\Helper.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\bin\Release\Mono.Cecil.dll
@@ -354,3 +347,10 @@ D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\obj\Release\Helper.v
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\obj\Release\Helper.dll
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\obj\Release\Helper.pdb
 D:\Documents\Bitbucket\DotNetPatcher - DecryptString\Helper\obj\Release\Helper.vbprojResolveAssemblyReference.cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Helper.pdb
+D:\Documents\Bitbucket\DotNetPatcher\Helper\bin\Release\Mono.Cecil.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.Resources.resources
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.vbproj.GenerateResource.Cache
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.dll
+D:\Documents\Bitbucket\DotNetPatcher\Helper\obj\Release\Helper.pdb
