@@ -1,6 +1,5 @@
 ﻿Imports System.Reflection
 Imports System.IO
-Imports System.Text
 
 Namespace AssemblyHelper
 
@@ -66,24 +65,9 @@ Namespace AssemblyHelper
                         Next
                     End If
                 End If
-
                 Result = Data.Message.Success
             Catch ex As ReflectionTypeLoadException
-                Dim sb As StringBuilder = New StringBuilder
-                For Each exSub As Exception In ex.LoaderExceptions
-                    sb.AppendLine(exSub.Message)
-                    Dim exFileNotFound As FileNotFoundException = CType(exSub, FileNotFoundException)
-                    If (Not (exFileNotFound) Is Nothing) Then
-                        If Not String.IsNullOrEmpty(exFileNotFound.FusionLog) Then
-                            sb.AppendLine("FUSION LOG :" & vbNewLine)
-                            sb.AppendLine(exFileNotFound.FusionLog)
-                        End If
-                    End If
-                    sb.AppendLine
-                Next
-                Dim errorMessage As String = sb.ToString
                 Result = Data.Message.Failed
-                MsgBox(errorMessage)
             Catch ex As FileNotFoundException
                 Result = Data.Message.Failed
             Catch ex As FileLoadException
