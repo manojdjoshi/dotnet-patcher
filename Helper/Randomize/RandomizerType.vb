@@ -1,8 +1,8 @@
 ﻿Namespace RandomizeHelper
     Public NotInheritable Class RandomizerType
 
-#Region " Fields "
-        Public Shared RenameSetting As RenameEnum
+#Region " Properties "
+        Public Shared Property RenameSetting As RenameEnum
 #End Region
 
 #Region " Enumerations "

@@ -11,42 +11,38 @@ Namespace Engine.Processing
     Public NotInheritable Class Mapping
 
 #Region " Fields "
-        Private Shared m_ObfNamespaces As New Dictionary(Of String, String)
-        Private Shared m_ObfTypes As New Dictionary(Of TypeDefinition, String)
-        Private Shared m_ObfMethods As New Dictionary(Of MethodDefinition, String)
-        Private Shared m_ObfParameters As New Dictionary(Of ParameterDefinition, String)
-        Private Shared m_ObfGenericParameters As New Dictionary(Of GenericParameter, String)
-        Private Shared m_ObfVariables As New Dictionary(Of VariableDefinition, String)
-        Private Shared m_ObfProperties As New Dictionary(Of PropertyDefinition, String)
-        Private Shared m_ObfEvents As New Dictionary(Of EventDefinition, String)
-        Private Shared m_ObfFields As New Dictionary(Of FieldDefinition, String)
+        Private Shared m_ObfNamespaces As Dictionary(Of String, String)
+        Private Shared m_ObfTypes As Dictionary(Of TypeDefinition, String)
+        Private Shared m_ObfMethods As Dictionary(Of MethodDefinition, String)
+        Private Shared m_ObfParameters As Dictionary(Of ParameterDefinition, String)
+        Private Shared m_ObfGenericParameters As Dictionary(Of GenericParameter, String)
+        Private Shared m_ObfVariables As Dictionary(Of VariableDefinition, String)
+        Private Shared m_ObfProperties As Dictionary(Of PropertyDefinition, String)
+        Private Shared m_ObfEvents As Dictionary(Of EventDefinition, String)
+        Private Shared m_ObfFields As Dictionary(Of FieldDefinition, String)
+#End Region
 
-
-        'Private Shared m_ObfResources As New Dictionary(Of Resource, String)
-
-        'Private Shared m_ObfCustomAttributes As New Dictionary(Of CustomAttribute, String)
+#Region " Constructor "
+        Shared Sub New()
+            m_ObfNamespaces = New Dictionary(Of String, String)
+            m_ObfTypes = New Dictionary(Of TypeDefinition, String)
+            m_ObfMethods = New Dictionary(Of MethodDefinition, String)
+            m_ObfParameters = New Dictionary(Of ParameterDefinition, String)
+            m_ObfGenericParameters = New Dictionary(Of GenericParameter, String)
+            m_ObfVariables = New Dictionary(Of VariableDefinition, String)
+            m_ObfProperties = New Dictionary(Of PropertyDefinition, String)
+            m_ObfEvents = New Dictionary(Of EventDefinition, String)
+            m_ObfFields = New Dictionary(Of FieldDefinition, String)
+        End Sub
 #End Region
 
 #Region " Methods "
-
-        'Friend Shared NameToResource As New Dictionary(Of String, Resource)
-
-        'Friend Shared Function RenameResource(Member As Resource, ByRef ResourceObfuscated$) As String
-        '    If Not m_ObfResources.ContainsKey(Member) Then
-        '        m_ObfResources.Add(Member, ResourceObfuscated)
-        '        Tasks.RaiseRenamedItemEvent(New RenamedItem(RenamedItemType.ItemType.Methods, Member.Name, ResourceObfuscated))
-        '    Else
-        '        ResourceObfuscated = m_ObfResources.Item(Member)
-        '    End If
-        '    Return ResourceObfuscated
-        'End Function
-
         ''' <summary>
         ''' INFO : Store Key/Value pair (TypeDefinition/ObfuscatedName and third arg set to True if this is a namespace) to dictionary only if key not exists. Return NamespaceObfuscated value.
         ''' </summary>
         ''' <param name="Type"></param>
         ''' <param name="NamespaceObfuscated"></param>
-        Friend Shared Function RenameTypeDef(Type As TypeDefinition, ByRef NamespaceObfuscated$, Optional ByVal isNamespace As Boolean = False) As String
+        Friend Shared Function RenameTypeDef(Type As TypeDefinition, ByRef NamespaceObfuscated As String, Optional ByVal isNamespace As Boolean = False) As String
             If isNamespace Then
                 If Not m_ObfNamespaces.ContainsKey(Type.Namespace) Then
                     m_ObfNamespaces.Add(Type.Namespace, NamespaceObfuscated)
@@ -175,17 +171,15 @@ Namespace Engine.Processing
         ''' INFO : CleanUp Namespaces dictionary and MethodReferences List.
         ''' </summary>
         Friend Shared Sub CleanUp()
-            If Not m_ObfNamespaces.Count <> 0 Then m_ObfNamespaces.Clear()
-            If Not m_ObfTypes.Count <> 0 Then m_ObfTypes.Clear()
-            If Not m_ObfMethods.Count <> 0 Then m_ObfMethods.Clear()
-            If Not m_ObfGenericParameters.Count <> 0 Then m_ObfGenericParameters.Clear()
-            If Not m_ObfParameters.Count <> 0 Then m_ObfParameters.Clear()
-            If Not m_ObfVariables.Count <> 0 Then m_ObfVariables.Clear()
-            If Not m_ObfProperties.Count <> 0 Then m_ObfProperties.Clear()
-            If Not m_ObfEvents.Count <> 0 Then m_ObfEvents.Clear()
-            If Not m_ObfFields.Count <> 0 Then m_ObfFields.Clear()
-
-            'If Not m_ObfCustomAttributes.Count <> 0 Then m_ObfCustomAttributes.Clear()
+            If m_ObfNamespaces.Count <> 0 Then m_ObfNamespaces.Clear()
+            If m_ObfTypes.Count <> 0 Then m_ObfTypes.Clear()
+            If m_ObfMethods.Count <> 0 Then m_ObfMethods.Clear()
+            If m_ObfGenericParameters.Count <> 0 Then m_ObfGenericParameters.Clear()
+            If m_ObfParameters.Count <> 0 Then m_ObfParameters.Clear()
+            If m_ObfVariables.Count <> 0 Then m_ObfVariables.Clear()
+            If m_ObfProperties.Count <> 0 Then m_ObfProperties.Clear()
+            If m_ObfEvents.Count <> 0 Then m_ObfEvents.Clear()
+            If m_ObfFields.Count <> 0 Then m_ObfFields.Clear()
         End Sub
 #End Region
 

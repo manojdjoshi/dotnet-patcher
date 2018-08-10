@@ -60,7 +60,6 @@ Namespace Core.Obfuscation.Protection
                 Case Else
                     att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, String.Empty))
             End Select
-            'att.ConstructorArguments.Add(New CustomAttributeArgument(assdef.MainModule.TypeSystem.String, If(it = "AssemblyInfoAttribute", "", String.Format(("DotNetPatcher v" & GetType(Attribut).Assembly.GetName.Version.ToString), New Object(0 - 1) {}))))
             assdef.MainModule.CustomAttributes.Add(att)
             assdef.CustomAttributes.Add(att)
         End Sub

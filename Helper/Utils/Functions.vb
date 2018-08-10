@@ -9,7 +9,7 @@ Namespace UtilsHelper
     Public NotInheritable Class Functions
 
 #Region " Fields "
-        Private Shared tempFolder$ = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\Temp"
+        Private Shared tempFolder As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) & "\Temp"
 #End Region
 
 #Region " Methods "

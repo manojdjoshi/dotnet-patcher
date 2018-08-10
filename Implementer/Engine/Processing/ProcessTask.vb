@@ -31,7 +31,7 @@ Namespace Engine.Processing
         ''' <param name="RenamingAccept"></param>
         Public Sub New(RenamingAccept As RenamerState)
             m_RenamingAccept = RenamingAccept
-            RandomizerType.RenameSetting = m_RenamingAccept.RenamingType
+            RandomizerType.RenameSetting = RenamingAccept.RenamingType
         End Sub
 #End Region
 
@@ -43,20 +43,20 @@ Namespace Engine.Processing
         ''' <param name="type"></param>
         Public Sub ProcessType(type As TypeDefinition)
 
-            Dim NamespaceOriginal$ = type.Namespace
-            Dim NamespaceObfuscated$ = type.Namespace
+            Dim NamespaceOriginal As String = type.Namespace
+            Dim NamespaceObfuscated As String = type.Namespace
 
             If Not type.Name = "<Module>" Then
                 If m_RenamingAccept.Namespaces Then
-                    NamespaceObfuscated = If(CBool(m_RenamingAccept.ReplaceNamespacesSetting) = True, String.Empty, Randomizer.GenerateNew())
+                    NamespaceObfuscated = If(m_RenamingAccept.ReplaceNamespacesSetting And RenamerState.ReplaceNamespaces.Empty, String.Empty, Randomizer.GenerateNew())
                     type.Namespace = Mapping.RenameTypeDef(type, NamespaceObfuscated, True)
                 End If
             End If
 
             If NameChecker.IsRenamable(type) Then
 
-                Dim TypeOriginal$ = type.Name
-                Dim TypeObfuscated$ = type.Name
+                Dim TypeOriginal As String = type.Name
+                Dim TypeObfuscated As String = type.Name
 
                 If m_RenamingAccept.CustomAttributes Then Renamer.RenameCustomAttributesValues(type)
 
@@ -64,16 +64,11 @@ Namespace Engine.Processing
                     type.Name = Mapping.RenameTypeDef(type, Randomizer.GenerateNew())
                     TypeObfuscated = type.Name
                     Renamer.RenameResources(type, NamespaceOriginal, NamespaceObfuscated, TypeOriginal, TypeObfuscated)
-
-
-                    'Utils.UpdateAssemblyReference(type, TypeOriginal, TypeObfuscated)
                 End If
 
                 If m_RenamingAccept.Namespaces Then
                     type.Namespace = Mapping.RenameTypeDef(type, NamespaceObfuscated, True)
                     Renamer.RenameResources(type, NamespaceOriginal, NamespaceObfuscated, TypeOriginal, TypeObfuscated)
-
-                    'Utils.UpdateAssemblyReference(type, TypeOriginal, TypeObfuscated)
                 End If
 
                 If m_RenamingAccept.Properties Then Renamer.RenameResourceManager(type)
@@ -92,8 +87,8 @@ Namespace Engine.Processing
             Pinvoke.DoJob(AssDef, frmwk, m_RenamingAccept.ExclusionRule, pack)
         End Sub
 
-        Public Sub ProcessControlFlow(AssDef As AssemblyDefinition, frmwk$)
-            ControlFlow.DoJob(AssDef, m_RenamingAccept.ExclusionRule, frmwk)
+        Public Sub ProcessControlFlow(AssDef As AssemblyDefinition, frmwk$, pack As Boolean)
+            ControlFlow.DoJob(AssDef, m_RenamingAccept.ExclusionRule, frmwk, pack)
         End Sub
 
         Public Sub ProcessConstants(AssDef As AssemblyDefinition)
@@ -101,7 +96,6 @@ Namespace Engine.Processing
         End Sub
 
         Public Sub ProcessEncryptString(AssDef As AssemblyDefinition, frmwk$, EncryptToResources As EncryptType, pack As Boolean)
-            'Dim emptyNamespaces = If(m_RenamingAccept.ReplaceNamespacesSetting = RenamerState.ReplaceNamespaces.Empty, True, False)
             Str.DoJob(AssDef, frmwk, If(pack = True, EncryptType.ByDefault, EncryptToResources), m_RenamingAccept.ExclusionRule, pack)
         End Sub
 

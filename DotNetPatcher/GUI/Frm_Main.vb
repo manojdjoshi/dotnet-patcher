@@ -14,7 +14,6 @@ Imports Implementer.Core.Obfuscation.Protection
 Imports Implementer.Core.Obfuscation.Exclusion
 Imports LoginTheme.XertzLoginTheme
 Imports Helper
-Imports Helper.CecilHelper
 
 Public Class Frm_Main
 
@@ -28,7 +27,6 @@ Public Class Frm_Main
     Private m_taskArgs As TaskState
     Private m_controlList As List(Of Control)
     Private m_taskIsRunning As Boolean
-    Private m_LanguageType%
     Private m_lastRequested$
     Private m_assemblyHasSerializableAttributes As Boolean
 #End Region
@@ -534,10 +532,6 @@ Public Class Frm_Main
         PnlObfuscatorNamespacesGroup.Enabled = ChbObfuscatorNamespacesRP.Checked
     End Sub
 
-    Private Sub CbxObfuscatorScheme_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbxObfuscatorScheme.SelectedIndexChanged
-        m_LanguageType = CbxObfuscatorScheme.SelectedIndex
-    End Sub
-
     Private Sub ChbObfuscatorReplaceNamespaceByEmptyNamespaces_CheckedChanged(sender As Object, e As EventArgs) Handles ChbObfuscatorReplaceNamespaceByEmptyNamespaces.CheckedChanged
         If ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked = True Then
             If ChbObfuscatorTypesRP.Checked = False Then
@@ -599,7 +593,7 @@ Public Class Frm_Main
             GrayedImage(PbxSelectedFile, TxbSelectedFile, False, Nothing)
             GrayedImage(PcbDetection, TxbDetection, False, TryCast(PcbDetection.Tag, Image))
             GrayedImage(PbxIconChangerSelect, TxbIconChangerSelect, False, Nothing)
-            BgwRenameTask.RunWorkerAsync(CbxDependenciesEmbedded.SelectedIndex)
+            BgwRenameTask.RunWorkerAsync(New Integer() {CbxObfuscatorScheme.SelectedIndex, CbxDependenciesEmbedded.SelectedIndex})
         End If
     End Sub
 
@@ -612,6 +606,9 @@ Public Class Frm_Main
 
     Private Sub BgwRenameTask_DoWork(sender As Object, e As DoWorkEventArgs) Handles BgwRenameTask.DoWork
         Try
+            Dim ObfuscatorRenamingSchemeIndex As Integer = e.Argument(0)
+            Dim DependenciesEmbeddedIndex As Integer = e.Argument(1)
+
             m_param.RenamingAccept = New RenamerState(ChbObfuscatorNamespacesRP.Checked,
                                                       ChbObfuscatorTypesRP.Checked,
                                                       ChbObfuscatorMethodsRP.Checked,
@@ -623,7 +620,7 @@ Public Class Frm_Main
                                                       ChbObfuscatorMethodsRP.Checked,
                                                       ChbObfuscatorReplaceNamespaceByEmptyNamespaces.Checked,
                                                       ChbObfuscatorRenameMainNamespaceOnlyNamespaces.Checked,
-                                                      m_LanguageType,
+                                                      ObfuscatorRenamingSchemeIndex,
                                                       m_param.ExcludeList,
                                                       ChbObfuscatorExcludeReflection.Checked)
 
@@ -632,7 +629,7 @@ Public Class Frm_Main
                 .MergeReferences = New DependenciesInfos(ChbDependenciesEnabled.Checked,
                                                          LbxDependenciesAdd.Items.Cast(Of String).ToList,
                                                          RdbDependenciesEmbedded.Checked,
-                                                         CInt(e.Argument))
+                                                         DependenciesEmbeddedIndex)
 
                 .Obfuscation = New ObfuscationInfos(ChbObfuscatorEnabled.Checked,
                                                     ChbObfuscatorResourcesContent.Checked,
@@ -650,15 +647,15 @@ Public Class Frm_Main
                                                     ChbObfuscatorInvalidMetadata.Checked,
                                                     True)
 
-                .VersionInfos = If(ChbVersionInfosEnabled.Checked, New Infos(ChbVersionInfosEnabled.Checked, _
-                                                                             TxbVersionInfosTitle.Text, _
-                                                                             TxbVersionInfosDescription.Text, _
-                                                                             TxbVersionInfosCompany.Text, _
-                                                                             TxbVersionInfosProduct.Text, _
-                                                                             TxbVersionInfosCopyright.Text, _
-                                                                             TxbVersionInfosTrademark.Text, _
-                                                                             TxbVersionInfosVersion.Text, _
-                                                                             TxbVersionInfosVersion.Text), _
+                .VersionInfos = If(ChbVersionInfosEnabled.Checked, New Infos(ChbVersionInfosEnabled.Checked,
+                                                                             TxbVersionInfosTitle.Text,
+                                                                             TxbVersionInfosDescription.Text,
+                                                                             TxbVersionInfosCompany.Text,
+                                                                             TxbVersionInfosProduct.Text,
+                                                                             TxbVersionInfosCopyright.Text,
+                                                                             TxbVersionInfosTrademark.Text,
+                                                                             TxbVersionInfosVersion.Text,
+                                                                             TxbVersionInfosVersion.Text),
                                                                    New Infos(ChbVersionInfosEnabled.Checked, TxbSelectedFile.Text))
 
                 .Manifest = New ManifestInfos(m_lastRequested, m_rdb.Where(Function(currentRequested) currentRequested.Checked).First.Tag.ToString)
@@ -776,6 +773,7 @@ Public Class Frm_Main
         EmptyTextBox()
         GbxSelectFile.Enabled = True
         GbxDetection.Enabled = False
+        CbxObfuscatorScheme.SelectedIndex = 0
         PgbStart.Text = String.Empty
         BtnStart.Visible = True
         PgbStart.Value = 0

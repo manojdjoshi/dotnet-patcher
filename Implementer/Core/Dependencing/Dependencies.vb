@@ -11,19 +11,19 @@ Namespace Core.Dependencing
 
 #Region " Fields "
         Private m_listOfReferences As List(Of String)
-        Private m_RExternal As New Dictionary(Of String, String)
+        Private m_RExternal As Dictionary(Of String, String)
         Private m_OriginalFilePath$ = String.Empty
-        Private m_result$ = String.Empty
-        Private m_resourcesDependencies As New List(Of String)
+        Private m_result As String = String.Empty
+        Private m_resourcesDependencies As List(Of String)
         Private m_infos As DataFull = Nothing
 #End Region
 
-        'ReadOnly Property References As List(Of String)
-
 #Region " Constructor "
-        Public Sub New(OriginalFilePath$, listOfReferences As List(Of String))
+        Public Sub New(OriginalFilePath As String, listOfReferences As List(Of String))
             m_listOfReferences = listOfReferences
             m_OriginalFilePath = OriginalFilePath
+            m_RExternal = New Dictionary(Of String, String)
+            m_resourcesDependencies = New List(Of String)
             ReturnBinaryDependencies()
         End Sub
 #End Region
@@ -99,8 +99,8 @@ Namespace Core.Dependencing
 
         Private Sub AddToRExternal(fPath)
             For Each item In (From ite In GetExternal(fPath)
-                   Where Not m_RExternal.ContainsKey(ite.Key.ToLower)
-                   Select ite)
+                              Where Not m_RExternal.ContainsKey(ite.Key.ToLower)
+                              Select ite)
                 m_RExternal.Add(item.Key.ToLower, item.Value)
             Next
         End Sub
@@ -112,7 +112,7 @@ Namespace Core.Dependencing
                 Dim infos = Loader.Full(target)
                 For Each assname In (From ass In infos.AssemblyReferences
                                      Where Not ass Is Nothing AndAlso Not IsAssemblyInGAC(ass.FullName) AndAlso Not resultsExt.ContainsKey((ass.Name & ".dll").ToLower)
-                    Select ass)
+                                     Select ass)
                     resultsExt.Add((assname.Name & ".dll").ToLower, assname.FullName)
                 Next
             Catch ex As Exception
@@ -142,7 +142,7 @@ Namespace Core.Dependencing
             If bgw Is Nothing Then
                 IO.File.WriteAllBytes(Functions.GetTempFolder & "\irpck.exe", My.Resources.ILRepack)
                 File.Copy(m_OriginalFilePath, Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe", True)
-               
+
                 Try
                     Shell(Functions.GetTempFolder & "\irpck.exe /noRepackRes  /delaysign" & " " & Chr(34) & Functions.GetTempFolder & "\" & Path.GetFileNameWithoutExtension(m_OriginalFilePath) & "irpck.exe"" /out:" & Chr(34) & m_OriginalFilePath & Chr(34) & FormatArgument(), AppWinStyle.Hide, True)
                 Catch ex As Exception

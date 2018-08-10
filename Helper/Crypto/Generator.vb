@@ -1,6 +1,7 @@
 ﻿Namespace CryptoHelper
     Public Class Generator
 
+#Region " Fields "
         Public Shared numberPrime As Integer() = New Integer() {547, 557, 563, 569, 571, 577, 587, 593, 599, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659,
                                              739, 743, 751, 757, 761, 769, 773, 787, 797, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997,
                                              1523, 1531, 1543, 1549, 1553, 1559, 1567, 1571, 1579, 1583, 2063, 2069, 2081, 2083, 2087, 2089, 2099, 2111, 2113, 2129,
@@ -14,7 +15,9 @@
                                                           3660, 3675, 3674, 3679, 3696, 3699, 3703, 3711, 3720, 3728, 4156, 4158, 4160, 4178, 4209, 4215, 4218, 4220, 4230, 4236,
                                                           5282, 5298, 5306, 5326, 5335, 5348, 5354, 5386, 5388, 6313, 6319, 6325, 6330, 6339, 6345, 6351, 6360, 6365, 6363,
                                                           9905, 9909, 9928, 9930, 9946, 9950, 9970, 9974}
+#End Region
 
+#Region " Methods "
         Public Shared Function IntEncrypt(num%, integ%) As String
             Dim ch As Char
             Dim str = String.Empty
@@ -38,10 +41,10 @@
                               & "    Public Shared Function " & _DecryptIntFuncName & " (ByVal dString$, Byval integ%) As Integer" & vbNewLine _
                               & "        Dim sString As String() = dString.Split(New Char() {Strings.ChrW(integ)})" & vbNewLine _
                               & "        Dim nString As Integer() = New Integer((sString.Length - 1) - 1) {}" & vbNewLine _
-                              & "        Dim i%" & vbNewLine _
-                              & "        For i = 0 To nString.Length - 1" & vbNewLine _
-                              & "            nString(i) = Integer.Parse(sString(i))" & vbNewLine _
-                              & "        Next i" & vbNewLine _
+                              & "        Dim iIncrement%" & vbNewLine _
+                              & "        For iIncrement = 0 To nString.Length - 1" & vbNewLine _
+                              & "            nString(iIncrement) = Integer.Parse(sString(iIncrement))" & vbNewLine _
+                              & "        Next iIncrement" & vbNewLine _
                               & "        Return nString(nString(nString.Length - 1))" & vbNewLine _
                               & "    End Function" & vbNewLine _
                               & "End Class"
@@ -59,14 +62,14 @@
 
         Public Shared Function GenerateDecryptXorFunc(_ClassXorName$, _DecryptXorFuncName$) As String
             Dim str = "Public Class " & _ClassXorName & vbNewLine _
-                              & "    Public Shared Function " & _DecryptXorFuncName & " (ByVal tString$, ByVal numInteg%) As String" & vbNewLine _
+                              & "    Public Shared Function " & _DecryptXorFuncName & " (ByVal tString as String, ByVal numInteg%) As String" & vbNewLine _
                               & "        Dim sResult$ = String.Empty" & vbNewLine _
                               & "        Dim sLength% = (tString.Length - 1)" & vbNewLine _
-                              & "        Dim j% = 0" & vbNewLine _
-                              & "        Do While (j <= sLength)" & vbNewLine _
-                              & "            Dim p% = (Convert.ToInt32(tString.Chars(j)) Xor numInteg)" & vbNewLine _
+                              & "        Dim jincrement% = 0" & vbNewLine _
+                              & "        Do While (jincrement <= sLength)" & vbNewLine _
+                              & "            Dim p% = (Convert.ToInt32(tString.Chars(jincrement)) Xor numInteg)" & vbNewLine _
                               & "            sResult = (sResult & Char.ConvertFromUtf32(p))" & vbNewLine _
-                              & "            j += 1" & vbNewLine _
+                              & "            jincrement += 1" & vbNewLine _
                               & "        Loop" & vbNewLine _
                               & "        Return sResult" & vbNewLine _
                               & "    End Function" & vbNewLine _
@@ -110,9 +113,9 @@
             Return "Public Shared Function " & _FunctionName & " (Byval numberInteg as Integer) As Boolean" & vbNewLine _
                  & "        Dim boolVal As Boolean = True" & vbNewLine _
                  & "        Dim halfNum as integer = numberInteg / 2" & vbNewLine _
-                 & "        Dim i as integer = 0" & vbNewLine _
-                 & "        For i = 2 To halfNum" & vbNewLine _
-                 & "            If (numberInteg Mod i) = 0 Then" & vbNewLine _
+                 & "        Dim iIncrement as integer = 0" & vbNewLine _
+                 & "        For iIncrement= 2 To halfNum" & vbNewLine _
+                 & "            If (numberInteg Mod iIncrement) = 0 Then" & vbNewLine _
                  & "                boolVal = False" & vbNewLine _
                  & "            End If" & vbNewLine _
                  & "        Next" & vbNewLine _
@@ -172,13 +175,13 @@
                           & "            End If" & vbNewLine _
                           & "            Using transformation As FromBase64Transform = New FromBase64Transform()" & vbNewLine _
                           & "                bufferedOutputBytes = New Byte(transformation.OutputBlockSize - 1) {}" & vbNewLine _
-                          & "                Dim i As Integer = 0" & vbNewLine _
-                          & "                While inputBytes.Length - i > 4" & vbNewLine _
-                          & "                    transformation.TransformBlock(inputBytes, i, 4, bufferedOutputBytes, 0)" & vbNewLine _
-                          & "                    i += 4" & vbNewLine _
+                          & "                Dim iIncrement As Integer = 0" & vbNewLine _
+                          & "                While inputBytes.Length - iIncrement > 4" & vbNewLine _
+                          & "                    transformation.TransformBlock(inputBytes, iIncrement, 4, bufferedOutputBytes, 0)" & vbNewLine _
+                          & "                    iIncrement += 4" & vbNewLine _
                           & "                    writer.Write(bufferedOutputBytes, 0, transformation.OutputBlockSize)" & vbNewLine _
                           & "                End While" & vbNewLine _
-                          & "                bufferedOutputBytes = transformation.TransformFinalBlock(inputBytes, i, inputBytes.Length - i)" & vbNewLine _
+                          & "                bufferedOutputBytes = transformation.TransformFinalBlock(inputBytes, iIncrement, inputBytes.Length - iIncrement)" & vbNewLine _
                           & "                writer.Write(bufferedOutputBytes, 0, bufferedOutputBytes.Length)" & vbNewLine _
                           & "                transformation.Clear()" & vbNewLine _
                           & "            End Using" & vbNewLine _
@@ -204,8 +207,6 @@
                           & "    End Function" & vbNewLine _
                           & "End Class" & vbNewLine
         End Function
-
+#End Region
     End Class
-
-
 End Namespace

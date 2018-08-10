@@ -198,7 +198,6 @@ Namespace Engine.Context
         Public Sub IconChangerTask()
             If m_parameters.TaskAccept.IconChanger.Enabled Then
                 m_bgw.ReportProgress(28, "Icon Changing ...")
-
                 m_processing.ProcessIconChanger(m_parameters.inputFile, m_framework, m_parameters.TaskAccept.IconChanger.NewIcon, m_parameters.TaskAccept.VersionInfos)
             End If
         End Sub
@@ -217,17 +216,17 @@ Namespace Engine.Context
                     If .Obfuscation.AntiIlDasm AndAlso .Packer.Enabled = False Then AntiIlDasm()
 
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PreCompressResources()
-
-                    If .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False Then HidePinvokeCalls()
+                    If .Obfuscation.HidePublicCalls AndAlso .Obfuscation.InvalidMetadata = False AndAlso .Packer.Enabled = False Then HidePinvokeCalls()
 
                     If .Obfuscation.EncryptString Then EncryptString()
                     If .Obfuscation.HidePublicCalls Then MildCalls()
-                    If .Obfuscation.EncryptNumeric Then HideConstants()
 
                     If HasRenameTask() Then RenameAssembly()
                     If .Obfuscation.CompressResources OrElse .Obfuscation.EncryptResources Then PostCompressResources()
 
-                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then ControlFlow()
+                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then InjectControlFlow()
+                    If .Obfuscation.EncryptNumeric Then HideConstants()
+
                     If HasObfuscationTask() Then InjectDnpWatermark()
 
                     If .Obfuscation.InvalidMetadata AndAlso .Packer.Enabled = False Then InvalidMetadata()
@@ -260,13 +259,13 @@ Namespace Engine.Context
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptString Then EncryptString(True)
                     If .Obfuscation.Enabled AndAlso .Obfuscation.HidePublicCalls Then MildCalls(True)
-                    If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptNumeric Then HideConstants(True)
 
                     If HasRenameTask() Then RenameAssembly(True)
 
                     PostCompressResolver()
 
-                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then ControlFlow(True)
+                    If .Obfuscation.Enabled AndAlso .Obfuscation.ControlFlow Then InjectControlFlow(True)
+                    If .Obfuscation.Enabled AndAlso .Obfuscation.EncryptNumeric Then HideConstants(True)
                     If HasPackerTask() Then InjectDnpWatermark(True)
 
                     If .Obfuscation.Enabled AndAlso .Obfuscation.InvalidMetadata Then InvalidMetadata(True)
@@ -327,13 +326,6 @@ Namespace Engine.Context
             m_bgw.ReportProgress(30, "Obfuscating (Resources content renaming ...)")
             ReadAssembly()
             m_processing.ProcessRenameResourcesContent(AssDef)
-            WriteAssembly()
-        End Sub
-
-        Private Sub ControlFlow(Optional pack As Boolean = False)
-            m_bgw.ReportProgress(90, If(pack, "Packing", "Obfuscating") & " (ControlFlow...)")
-            ReadAssembly()
-            m_processing.ProcessControlFlow(AssDef, m_framework)
             WriteAssembly()
         End Sub
 
@@ -437,8 +429,15 @@ Namespace Engine.Context
             WriteAssembly()
         End Sub
 
+        Private Sub InjectControlFlow(Optional pack As Boolean = False)
+            m_bgw.ReportProgress(90, If(pack, "Packing", "Obfuscating") & " (ControlFlow...)")
+            ReadAssembly()
+            m_processing.ProcessControlFlow(AssDef, m_framework, pack)
+            WriteAssembly()
+        End Sub
+
         Private Sub HideConstants(Optional pack As Boolean = False)
-            m_bgw.ReportProgress(78, If(pack, "Packing", "Obfuscating") & " (Numeric encryption part 2...)")
+            m_bgw.ReportProgress(95, If(pack, "Packing", "Obfuscating") & " (Numeric encryption part 2...)")
             ReadAssembly()
             m_processing.ProcessConstants(AssDef)
             WriteAssembly()
@@ -449,7 +448,7 @@ Namespace Engine.Context
         ''' </summary>
         Private Sub RenameAssembly(Optional pack As Boolean = False)
             If m_parameters.RenamingAccept.ExcludeReflection Then
-                m_bgw.ReportProgress(82, If(pack, "Packing", "Obfuscating") & " (Reflection analysis...)")
+                m_bgw.ReportProgress(78, If(pack, "Packing", "Obfuscating") & " (Reflection analysis...)")
             End If
 
             ReadAssembly()
@@ -459,7 +458,7 @@ Namespace Engine.Context
                 ExcludeReflection.AnalyzeCodes(AssDef, m_parameters.ExcludeList)
             End If
 
-            m_bgw.ReportProgress(85, If(pack, "Packing", "Obfuscating") & " (Renaming assembly...)")
+            m_bgw.ReportProgress(82, If(pack, "Packing", "Obfuscating") & " (Renaming assembly...)")
 
             For Each modul In AssDef.Modules
                 If modul.HasTypes Then
@@ -468,17 +467,6 @@ Namespace Engine.Context
                             RenameSelectedNamespace(type, assemblyMainName)
                         End If
                     Next
-                    'Dim lst = modul.GetAllTypes.ToList
-                    'lst.Sort(Function(a, b)
-                    '             If b.FullName.Length <> a.FullName.Length Then Return b.FullName.Length.CompareTo(a.FullName.Length)
-                    '             Return b.FullName.CompareTo(a.FullName)
-                    '         End Function)
-
-                    'For Each type In lst
-                    '    If m_parameters.ExcludeList.isRenamingExclude(type) = False Then
-                    '        RenameSelectedNamespace(type, assemblyMainName)
-                    '    End If
-                    'Next
                 End If
             Next
             WriteAssembly()
@@ -491,7 +479,7 @@ Namespace Engine.Context
         ''' <param name="assemblyMainName"></param>
         ''' <param name="processing"></param>
         Private Sub RenameSelectedNamespace(type As TypeDefinition, assemblyMainName$)
-            If m_parameters.RenamingAccept.RenameMainNamespaceSetting = CBool(RenamerState.RenameMainNamespace.Only) Then
+            If m_parameters.RenamingAccept.RenameMainNamespaceSetting And RenamerState.RenameMainNamespace.Only Then
                 If type.Namespace.StartsWith(assemblyMainName) Then m_processing.ProcessType(type)
             Else
                 m_processing.ProcessType(type)
@@ -514,7 +502,7 @@ Namespace Engine.Context
                 str &= "encrypt & compress finishing ...)"
             End If
 
-            m_bgw.ReportProgress(86, str)
+            m_bgw.ReportProgress(85, str)
             ReadAssembly()
             m_resourceCompress.CompressInjectResources(AssDef)
             WriteAssembly()
@@ -527,7 +515,7 @@ Namespace Engine.Context
         End Sub
 
         Private Sub InvalidMetadata(Optional ByVal Pack As Boolean = False)
-            m_bgw.ReportProgress(94, If(Pack, "Packing", "Obfuscating") & " (Invalid Metadatas ...)")
+            m_bgw.ReportProgress(96, If(Pack, "Packing", "Obfuscating") & " (Invalid Metadatas ...)")
             ReadAssembly()
             Dim psr As New MetadataProcessor
             m_processing.ProcessInvalidMetadata(AssDef, psr)
@@ -568,6 +556,7 @@ Namespace Engine.Context
             Mild.CleanUp()
             Content.Cleanup()
             Pinvoke.CleanUp()
+            ControlFlow.CleanUp()
             EmptyTemp()
             m_parameters.TaskAccept.CleanUp()
             If Not m_parameters.RenamingAccept.ExclusionRule Is Nothing Then m_parameters.RenamingAccept.ExclusionRule.CleanUp()

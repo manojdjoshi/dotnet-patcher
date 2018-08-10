@@ -74,6 +74,7 @@
     <Compile Include="Cecil\Finder.vb" />
     <Compile Include="Cecil\InstructionGroup.vb" />
     <Compile Include="Cecil\InstructionGroups.vb" />
+    <Compile Include="Cecil\Msil.vb" />
     <Compile Include="Cecil\NameChecker.vb" />
     <Compile Include="CodeDom\Compiler.vb" />
     <Compile Include="Assembly\Data.vb" />
@@ -98,7 +99,6 @@
     </Compile>
     <Compile Include="Crypto\Crypt.vb" />
     <Compile Include="Crypto\Generator.vb" />
-    <Compile Include="Cecil\Msil.vb" />
     <Compile Include="Cecil\Injecter.vb" />
     <Compile Include="Resource\NativeMethods.vb" />
     <Compile Include="Resource\ResourceEx.vb" />

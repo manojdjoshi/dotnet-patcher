@@ -31,9 +31,6 @@ Namespace CecilHelper
             Return False
         End Function
 
-        'Public Shared Function HasResourceReflectionCall(member As MethodDefinition) As Boolean
-
-        'End Function
 
         Public Shared Function FindType(moduleDef As ModuleDefinition, Name As String, Optional ByVal Full As Boolean = False) As TypeDefinition
             For Each typeDef As TypeDefinition In moduleDef.Types
@@ -115,16 +112,16 @@ Namespace CecilHelper
             Return parentType.Fields.First(Function(f) f.Name = name)
         End Function
 
-        Public Shared Function FindDefaultNamespace(assDef As AssemblyDefinition) As String
-            Dim NamespaceDefault = assDef.MainModule.EntryPoint.DeclaringType.Namespace
-            If NamespaceDefault.EndsWith(".My") Then
-                NamespaceDefault = NamespaceDefault.Split(".")(0)
+        Public Shared Function FindDefaultNamespace(assDef As AssemblyDefinition, Packer As Boolean) As String
+            If Packer Then
+                Return String.Empty
+            Else
+                Dim NamespaceDefault = assDef.MainModule.EntryPoint.DeclaringType.Namespace
+                If NamespaceDefault.EndsWith(".My") Then
+                    NamespaceDefault = NamespaceDefault.Split(".")(0)
+                End If
             End If
-            Return NamespaceDefault
-        End Function
-
-        Public Shared Function FindDefaultNamespace(assDef As AssemblyDefinition, Pack As Boolean) As String
-            Return If(Pack = True, String.Empty, assDef.MainModule.EntryPoint.DeclaringType.Namespace)
+            Return assDef.MainModule.EntryPoint.DeclaringType.Namespace
         End Function
 
         Public Shared Function FindFrameworkVersion(assDef As AssemblyDefinition) As String

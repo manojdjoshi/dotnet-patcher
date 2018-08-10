@@ -19,15 +19,15 @@ Namespace CecilHelper
 
 #Region " Methods "
 
-        Public Shared Function Create(asm As AssemblyDefinition, delegateName As String, returnType As TypeReference, arguments As List(Of TypeReference)) As TypeDefinition
+        Public Shared Function Create(asm As AssemblyDefinition, delegateName As String, returnType As TypeReference, argumentsTyps As List(Of TypeReference), arguments As Mono.Collections.Generic.Collection(Of ParameterDefinition)) As TypeDefinition
             InitializeTypes(asm)
 
             Dim TypeDef = New TypeDefinition(String.Empty, delegateName, DelegateTypeAttributes, multidelegate)
             With TypeDef.Methods
                 .Add(BuildConstructor)
-                .Add(BuildInvoke(returnType, arguments))
+                .Add(BuildInvoke(returnType, argumentsTyps, arguments))
             End With
-          
+
             Return TypeDef
         End Function
 
@@ -48,12 +48,15 @@ Namespace CecilHelper
             Return constructor
         End Function
 
-        Private Shared Function BuildInvoke(returnType As TypeReference, arguments As List(Of TypeReference)) As MethodDefinition
+        Private Shared Function BuildInvoke(returnType As TypeReference, argumentsTypes As List(Of TypeReference), arguments As Mono.Collections.Generic.Collection(Of ParameterDefinition)) As MethodDefinition
             Dim invoke = New MethodDefinition("Invoke", DelegateMethodAttributes, returnType)
             With invoke
                 For Each argument In arguments
-                    .Parameters.Add(New ParameterDefinition(Randomizer.GenerateNew, ParameterAttributes.None, argument))
+                    .Parameters.Add(New ParameterDefinition(Randomizer.GenerateNew, argument.Attributes, argument.ParameterType))
                 Next
+                'For Each argument In argumentsTypes
+                '    .Parameters.Add(New ParameterDefinition(Randomizer.GenerateNew, ParameterAttributes.None, argument))
+                'Next
                 .ImplAttributes = MethodImplAttributes.Runtime
             End With
             Return invoke

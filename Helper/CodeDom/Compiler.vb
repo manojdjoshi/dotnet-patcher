@@ -8,7 +8,7 @@ Namespace CodeDomHelper
 #Region " Methods "
         Public Shared Function CreateStubFromString(MainClass$, FrmwkVersion$, str$, Optional ByVal ReferencencedAssemblies As Dictionary(Of String, Byte()) = Nothing) As String
             Try
-                Dim nam = Randomizer.GenerateNewAlphabetic()
+                Dim nam = Randomizer.GenerateAlphabetic(10)
                 Dim Version = New Dictionary(Of String, String) : Version.Add("CompilerVersion", FrmwkVersion)
                 Dim cProv As New VBCodeProvider(Version)
                 Dim cParams As New CompilerParameters()
@@ -27,7 +27,7 @@ Namespace CodeDomHelper
                             Next
                         End If
                     End With
-                    .CompilerOptions = "/target:library /platform:anycpu /optimize+ /debug-"
+                    .CompilerOptions = "/target:library /platform:anycpu /optimize"
                     .GenerateExecutable = False
                     .OutputAssembly = My.Computer.FileSystem.SpecialDirectories.Temp & "\" & nam
                     .GenerateInMemory = True
@@ -62,7 +62,7 @@ Namespace CodeDomHelper
                         .Add("System.dll")
                         .Add("System.Windows.Forms.dll")
                     End With
-                    .CompilerOptions = "/target:library /platform:anycpu /optimize+ /debug-"
+                    .CompilerOptions = "/target:library /platform:anycpu /optimize"
                     .GenerateExecutable = False
                     .GenerateInMemory = True
                     .IncludeDebugInformation = False

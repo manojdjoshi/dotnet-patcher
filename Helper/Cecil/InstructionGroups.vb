@@ -29,6 +29,5 @@ Namespace CecilHelper
             incGroups = groups
         End Sub
 
-
     End Class
 End Namespace

@@ -46,10 +46,12 @@ Namespace Core.Obfuscation.Protection
         End Sub
 
         Public Sub CreatePinvokeBody(LoaderInvoke As Stub)
-            Dim newDelegate = DelegateEmitter.Create(iteratedT.Module.Assembly, Randomizer.GenerateNew, returnedType, typeRefs)
+            Dim newDelegate = DelegateEmitter.Create(iteratedT.Module.Assembly, Randomizer.GenerateNew, returnedType, typeRefs, parameters)
 
             Dim ca As New CustomAttribute(iteratedT.Module.Import(GetType(UnmanagedFunctionPointerAttribute).GetConstructor(New Type() {GetType(CallingConvention)})))
-            Dim carg = New CustomAttributeArgument(iteratedT.Module.Import(GetType(CallingConvention)), 3)
+            Dim carg = New CustomAttributeArgument(iteratedT.Module.Import(GetType(CallingConvention)), 2)
+            'Cdecl = 2
+            'StdCall = 3
 
             ca.ConstructorArguments.Add(carg)
 
@@ -126,22 +128,6 @@ Namespace Core.Obfuscation.Protection
             End If
             Return 0
         End Function
-
-        'Private Function LOWORD(ByVal dwValue As Long) As Long
-        '    CopyMemory(LOWORD, dwValue, 2)
-        'End Function
-
-        'Private Function MAKELONG(ByVal wLow As Long, ByVal wHi As Long) As Long
-        '    If (wHi And &H8000&) Then
-        '        MAKELONG = (((wHi And &H7FFF&) * 65536) Or (wLow And &HFFFF&)) Or &H80000000
-        '    Else
-        '        MAKELONG = LOWORD(wLow) Or (&H10000 * LOWORD(wHi))
-        '    End If
-        'End Function
-
-        'Private Function MAKEINTRESOURCE(ByVal lID As Long) As String
-        '    MAKEINTRESOURCE = "#" & CStr(MAKELONG(lID, 0))
-        'End Function
 
 #End Region
 

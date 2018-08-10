@@ -121,6 +121,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Recherche une ressource localisée de type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property dllexp() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dllexp", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property DNP() As System.Drawing.Bitmap

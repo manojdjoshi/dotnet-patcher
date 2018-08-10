@@ -92,71 +92,68 @@ Namespace Core.Obfuscation.Protection
             MtdByInteger.Clear()
         End Sub
 
-
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 2 AndAlso Not completedMethods.Contains(m) AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute")))
             Try
                 For Each md In publicMethods
-                    If publicMethods.Contains(md) Then
-                        md.Body.SimplifyMacros
-                        For i = 0 To md.Body.Instructions.Count - 1
-
-                            Dim Instruct = md.Body.Instructions(i)
-
-                            If Not completedInstructions.Contains(Instruct) Then
-                                Dim mdFinal As MethodDefinition = Nothing
-                                Dim index = md.Body.Instructions.IndexOf(Instruct)
-
-                                If ((Instruct.OpCode = OpCodes.Ldc_I4) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_S)) Then
-                                    If isValidOperand(Instruct) AndAlso (CInt(Instruct.Operand) = 0 OrElse CInt(Instruct.Operand) = 1) Then
-                                        Dim value%
-                                        If CInt(Instruct.Operand) = 0 Then
-                                            value = 0
-                                        ElseIf CInt(Instruct.Operand) = 1 Then
-                                            value = 1
-                                        End If
-                                        Dim instructNext = Instruct.Next
-                                        If isValidOperand(instructNext) Then
-                                            If instructNext.Operand.ToString.ToLower.EndsWith("system.boolean)") Then
-                                                CreateMethod(mdFinal, value, md)
-                                            End If
-
-                                            If (Not mdFinal Is Nothing) Then
-                                                If mdFinal.DeclaringType.IsNotPublic Then
-                                                    mdFinal.DeclaringType.IsPublic = True
-                                                End If
-                                                md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                                md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                completedMethods.Add(mdFinal)
-                                                completedInstructions.Add(Instruct)
-                                            End If
-                                        End If
-                                    End If
-                                ElseIf ((Instruct.OpCode = OpCodes.Ldc_I4_0) OrElse (Instruct.OpCode = OpCodes.Ldc_I4_1)) Then
-                                    CreateMethod(mdFinal, If(Instruct.OpCode = OpCodes.Ldc_I4_0, 0, 1), md)
-                                    If (Not mdFinal Is Nothing) Then
-                                        If mdFinal.DeclaringType.IsNotPublic Then
-                                            mdFinal.DeclaringType.IsPublic = True
-                                        End If
-                                        md.Body.Instructions.Item(index).OpCode = OpCodes.Call
-                                        md.Body.Instructions.Item(index).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                        completedMethods.Add(mdFinal)
-                                        completedInstructions.Add(Instruct)
-                                    End If
-                                End If
-                            End If
-                        Next
-                        md.Body.OptimizeMacros
-                        md.Body.ComputeOffsets()
-                        md.Body.ComputeHeader()
-                    End If
+                    md.Body.SimplifyMacros
+                    ProcessInstructions(md.Body)
+                    md.Body.OptimizeMacros
+                    md.Body.ComputeOffsets()
+                    md.Body.ComputeHeader()
                 Next
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
             publicMethods.Clear()
         End Sub
+
+        Private Shared Sub ProcessInstructions(body As MethodBody)
+            Dim instructions = body.Instructions
+            Dim il = body.GetILProcessor()
+            Dim instructionsToExpand As List(Of Instruction) = New List(Of Instruction)()
+
+            For Each instruction As Instruction In instructions
+                If instruction.OpCode = OpCodes.Ldc_I4 Then
+                    If isValidBoolOperand(instruction) Then
+                        Dim instructNext = instruction.Next
+                        If isValidOperand(instructNext) Then
+                            If instructNext.OpCode = OpCodes.Stloc Then
+                                Dim varIndex = CInt(instructNext.Operand.ToString.ToLower.Replace("v_", String.Empty))
+                                Dim varType = body.Variables(varIndex).VariableType
+                                If varType.ToString = "System.Boolean" Then
+                                    instructionsToExpand.Add(instruction)
+                                End If
+                            Else
+                                If instructNext.Operand.ToString.ToLower.EndsWith("system.boolean)") OrElse instructNext.Operand.ToString.ToLower.StartsWith("system.boolean") Then
+                                    instructionsToExpand.Add(instruction)
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            Next
+
+            For Each instruction As Instruction In instructionsToExpand
+                Dim value% = CInt(instruction.Operand)
+                Dim mdFinal As MethodDefinition = Nothing
+                CreateMethod(mdFinal, value, body.Method)
+                InjectMethodCall(mdFinal, instruction, il)
+            Next
+        End Sub
+
+        Private Shared Sub InjectMethodCall(mdFinal As MethodDefinition, instruction As Instruction, ilProc As ILProcessor)
+            If (Not mdFinal Is Nothing) Then
+                If mdFinal.DeclaringType.IsNotPublic Then
+                    mdFinal.DeclaringType.IsPublic = True
+                End If
+                Dim CallMethod = ilProc.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                ilProc.Replace(instruction, CallMethod)
+                completedMethods.Add(mdFinal)
+            End If
+        End Sub
+
 
         Private Shared Sub CreateMethod(ByRef mDef As MethodDefinition, value%, ByRef md As MethodDefinition)
             If Randomizer.GenerateBoolean Then

@@ -75,11 +75,11 @@ Namespace Core.Obfuscation.Builder
 #End Region
 
 #Region " Methods "
-        Friend Function ResolveTypeFromFile(ResolverDll$, Optional ByVal replaceNamespace As String = "", _
-                                                          Optional ByVal replaceClassName As String = "", _
-                                                          Optional ByVal FuncNewName1 As String = "", _
-                                                          Optional ByVal FuncNewName2 As String = "", _
-                                                          Optional ByVal FuncNewName3 As String = "", _
+        Friend Function ResolveTypeFromFile(ResolverDll$, Optional ByVal replaceNamespace As String = "",
+                                                          Optional ByVal replaceClassName As String = "",
+                                                          Optional ByVal FuncNewName1 As String = "",
+                                                          Optional ByVal FuncNewName2 As String = "",
+                                                          Optional ByVal FuncNewName3 As String = "",
                                                           Optional ByVal FuncNewName4 As String = "") As TypeDefinition
 
             If Not ResolverDll.ToLower.EndsWith(".exe") Then
@@ -99,40 +99,31 @@ Namespace Core.Obfuscation.Builder
                 Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName1)
                 m.Name = FuncNewName1
                 m_funcName1 = FuncNewName1
-                'If m.IsPInvokeImpl Then
-                '    m.PInvokeInfo.EntryPoint = m_funcName1
-                'End If
             End If
             If Not FuncNewName2 = "" Then
                 Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName2)
                 m.Name = FuncNewName2
                 m_funcName2 = FuncNewName2
-                'If m.IsPInvokeImpl Then
-                '    m.PInvokeInfo.EntryPoint = m_funcName2
-                'End If
             End If
             If Not FuncNewName3 = "" Then
                 Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName3)
                 m.Name = FuncNewName3
                 m_funcName3 = FuncNewName3
-                'If m.IsPInvokeImpl Then
-                '    m.PInvokeInfo.EntryPoint = m_funcName3
-                'End If
             End If
             If Not FuncNewName4 = "" Then
                 Dim m = Finder.FindMethod(m_typeDefResolver, m_funcName4)
                 m.Name = FuncNewName4
                 m_funcName4 = FuncNewName4
-                'If m.IsPInvokeImpl Then
-                '    m.PInvokeInfo.EntryPoint = m_funcName4
-                'End If
             End If
 
             Return m_typeDefResolver
         End Function
 
-        Friend Function InjectType(assDefTarget As AssemblyDefinition) As TypeDefinition
+        Friend Function InjectType(assDefTarget As AssemblyDefinition, Optional ByVal InjectToEmpty As Boolean = False) As TypeDefinition
             m_assDefTarget = assDefTarget
+            If InjectToEmpty Then
+                m_typeDefResolver.Namespace = String.Empty
+            End If
             m_resolvedTypeDef = Injecter.InjectTypeDefinition(assDefTarget.MainModule, m_typeDefResolver)
             assDefTarget.MainModule.Types.Add(m_resolvedTypeDef)
             Return m_resolvedTypeDef
@@ -171,7 +162,7 @@ Namespace Core.Obfuscation.Builder
 
         Friend Sub InjectToMyProject()
             If Utils.IsDebuggerNonUserCode(m_assDefTarget) Then
-                Dim myProjectType = Finder.FindType(m_assDefTarget.MainModule, Finder.FindDefaultNamespace(m_assDefTarget) & ".My.MyProject", True)
+                Dim myProjectType = Finder.FindType(m_assDefTarget.MainModule, Finder.FindDefaultNamespace(m_assDefTarget, False) & ".My.MyProject", True)
 
                 If Not myProjectType Is Nothing Then
                     Dim cctr = myProjectType.GetStaticConstructor

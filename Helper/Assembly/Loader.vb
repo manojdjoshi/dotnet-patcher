@@ -16,7 +16,7 @@ Namespace AssemblyHelper
         Public Shared Function Minimal(AssPath$) As Data
 
             Dim tempAppDomain As AppDomain = Nothing
-            Dim fName = Randomizer.GenerateNewAlphabetic
+            Dim fName = Randomizer.GenerateAlphabetic(10)
             Dim fileName = Path.GetFileName(AssPath)
             Dim Npath As String = String.Format("{0}{1}\", Path.GetTempPath, fName)
             Directory.CreateDirectory(Npath)
@@ -35,7 +35,7 @@ Namespace AssemblyHelper
                     End If
                 Next
 
-                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic, Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
+                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateAlphabetic(10), Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
 
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
                 Dim anObject As Object = Nothing
@@ -80,8 +80,8 @@ Namespace AssemblyHelper
         Public Shared Function Full(AssPath$) As DataFull
 
             Dim tempAppDomain As AppDomain = Nothing
-            Dim fName = Randomizer.GenerateNewAlphabetic
-            Dim fileName = path.GetFileName(AssPath)
+            Dim fName = Randomizer.GenerateAlphabetic(10)
+            Dim fileName = Path.GetFileName(AssPath)
             Dim Npath As String = String.Format("{0}{1}\", Path.GetTempPath, fName)
             Directory.CreateDirectory(Npath)
             Dim tempAssemblyFilePath As String = (Npath & fileName)
@@ -98,7 +98,7 @@ Namespace AssemblyHelper
                         File.Copy(f, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName & "\" & New FileInfo(f).Name, True)
                     End If
                 Next
-                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateNewAlphabetic, Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
+                tempAppDomain = AppDomain.CreateDomain(Randomizer.GenerateAlphabetic(10), Nothing, Directory.GetParent(Assembly.GetExecutingAssembly.Location).FullName, "", False)
 
                 Dim assemblyBuffer As Byte() = File.ReadAllBytes(tempAssemblyFilePath)
                 Dim anObject As Object = Nothing

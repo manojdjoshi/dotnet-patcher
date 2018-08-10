@@ -75,7 +75,7 @@ Namespace Engine.Context
         ''' INFO : ByDefault : Namespaces of the assembly stayed on first level of the tree. 
         '''        Empty : Namespaces are renamed by String.Empty value and store the types into the -1 level. 
         ''' </summary>
-        Enum ReplaceNamespaces
+        Public Enum ReplaceNamespaces
             ByDefault = 0
             Empty = 1
         End Enum
@@ -85,7 +85,7 @@ Namespace Engine.Context
         '''        Medium : set to false events, variables, parameters. It will set the other one automatically to True.
         '''        Personnalize : requires you to set the boolean values manually for each types and members. 
         ''' </summary>
-        Enum RenameRule
+        Public Enum RenameRule
             Full = 0
             Medium = 1
             Personalize = 2
@@ -95,7 +95,7 @@ Namespace Engine.Context
         ''' INFO : NotOnly : Rename all namespaces.
         '''        Only : It will maybe solve many problems due to rename namespaces of merged assembly(s) !
         ''' </summary>
-        Enum RenameMainNamespace
+        Public Enum RenameMainNamespace
             NotOnly = 0
             Only = 1
         End Enum

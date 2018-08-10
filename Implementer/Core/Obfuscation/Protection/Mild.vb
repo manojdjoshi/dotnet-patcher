@@ -11,15 +11,31 @@ Namespace Core.Obfuscation.Protection
         Inherits Source
 
 #Region " Fields "
-        Private Shared MdByString As New Dictionary(Of String, MethodDefinition)
-        Private Shared MdByInteger As New Dictionary(Of Integer, MethodDefinition)
-        Private Shared MdByLong As New Dictionary(Of Long, MethodDefinition)
-        Private Shared MdByDouble As New Dictionary(Of Double, MethodDefinition)
-        Private Shared MdBySingle As New Dictionary(Of Single, MethodDefinition)
-        Private Shared MdByByte As New Dictionary(Of Byte, MethodDefinition)
-        Private Shared MdByRef As New Dictionary(Of MethodReference, MethodDefinition)
-        Private Shared Types As New List(Of TypeDefinition)
+        Private Shared MdByString As Dictionary(Of String, MethodDefinition)
+        Private Shared MdByInteger As Dictionary(Of Integer, MethodDefinition)
+        Private Shared MdByLong As Dictionary(Of Long, MethodDefinition)
+        Private Shared MdByDouble As Dictionary(Of Double, MethodDefinition)
+        Private Shared MdBySingle As Dictionary(Of Single, MethodDefinition)
+        Private Shared MdByByte As Dictionary(Of Byte, MethodDefinition)
+        Private Shared MdByRef As Dictionary(Of MethodReference, MethodDefinition)
+        Private Shared Types As List(Of TypeDefinition)
+        Private Shared OpCodeDic As Dictionary(Of OpCode, String)
 #End Region
+
+#Region " Constructor "
+        Shared Sub New()
+            MdByString = New Dictionary(Of String, MethodDefinition)
+            MdByInteger = New Dictionary(Of Integer, MethodDefinition)
+            MdByLong = New Dictionary(Of Long, MethodDefinition)
+            MdByDouble = New Dictionary(Of Double, MethodDefinition)
+            MdBySingle = New Dictionary(Of Single, MethodDefinition)
+            MdByByte = New Dictionary(Of Byte, MethodDefinition)
+            MdByRef = New Dictionary(Of MethodReference, MethodDefinition)
+            Types = New List(Of TypeDefinition)
+            OpCodeDic = New Dictionary(Of OpCode, String) From {{OpCodes.Ldc_I4, "System.Int32"}, {OpCodes.Ldc_R4, "System.Single"}, {OpCodes.Ldc_R8, "System.Double"}}
+        End Sub
+#End Region
+
 
 #Region " Methods "
         Friend Shared Function DoJob(asm As AssemblyDefinition, Framework$, Exclude As ExcludeList, Optional ByVal packIt As Boolean = False) As AssemblyDefinition
@@ -54,190 +70,189 @@ Namespace Core.Obfuscation.Protection
 
         Private Shared Sub IterateType(td As TypeDefinition)
             Dim publicMethods As New List(Of MethodDefinition)()
-            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count > 2 AndAlso Not completedMethods.Contains(m) AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not m.DeclaringType.BaseType.Name = "WindowsFormsApplicationBase" AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute") AndAlso Utils.HasUnsafeInstructions(m) = False))
+            publicMethods.AddRange(From m In td.Methods Where (m.HasBody AndAlso m.Body.Instructions.Count >= 2 AndAlso Not completedMethods.Contains(m) AndAlso Not m.DeclaringType.BaseType Is Nothing AndAlso Not m.DeclaringType.BaseType.Name = "ApplicationSettingsBase" AndAlso Not m.DeclaringType.BaseType.Name = "WindowsFormsApplicationBase" AndAlso Not Finder.HasCustomAttributeByName(m.DeclaringType, "EditorBrowsableAttribute") AndAlso Utils.HasUnsafeInstructions(m) = False))
             Try
                 For Each md In publicMethods
-                    If publicMethods.Contains(md) Then
-                        md.Body.SimplifyMacros
-                        For i = 0 To md.Body.Instructions.Count - 1
-
-                            Dim Instruction = md.Body.Instructions(i)
-                            Dim mdFinal As MethodDefinition = Nothing
-                            Dim index% = md.Body.Instructions.IndexOf(Instruction)
-
-                            If (Instruction.OpCode = OpCodes.Ldc_I4) Then
-                                If isValidIntegerOperand(Instruction) AndAlso Not Randomizer.invisibleChars.Contains(CInt(Instruction.Operand)) Then
-                                    If Not Instruction.Next Is Nothing AndAlso Not Instruction.Next.Operand Is Nothing Then
-                                        If Instruction.Next.Operand.ToString.EndsWith("System.Int32)") Then
-                                            If MdByInteger.ContainsKey(CInt(Instruction.Operand)) Then
-                                                mdFinal = MdByInteger.Item(CInt(Instruction.Operand))
-                                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                            Else
-                                                mdFinal = CreateMethod(Integer.Parse(Instruction.Operand.ToString), md)
-                                                If Not mdFinal Is Nothing Then
-                                                    mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                                    MdByInteger.Add(CInt(Instruction.Operand), mdFinal)
-                                                End If
-                                            End If
-                                            If (Not mdFinal Is Nothing) Then
-                                                'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                                'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                                Dim IL = md.Body.GetILProcessor()
-                                                IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                                completedMethods.Add(mdFinal)
-                                            End If
-                                            completedInstructions.Add(Instruction)
-                                        End If
-                                    End If
-                                End If
-                            ElseIf Instruction.OpCode = OpCodes.Ldc_I4_2 _
-                                     OrElse Instruction.OpCode = OpCodes.Ldc_I4_3 OrElse Instruction.OpCode = OpCodes.Ldc_I4_4 OrElse Instruction.OpCode = OpCodes.Ldc_I4_5 _
-                                      OrElse Instruction.OpCode = OpCodes.Ldc_I4_6 OrElse Instruction.OpCode = OpCodes.Ldc_I4_7 OrElse Instruction.OpCode = OpCodes.Ldc_I4_8 Then
-                                Dim num = Integer.Parse(Instruction.OpCode.ToString().Split(".")(2))
-
-                                If MdByInteger.ContainsKey(num) Then
-                                    mdFinal = MdByInteger.Item(num)
-                                    mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                Else
-                                    mdFinal = CreateMethod(num, md)
-                                    If Not mdFinal Is Nothing Then
-                                        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                        MdByInteger.Add(num, mdFinal)
-                                    End If
-                                End If
-                                If (Not mdFinal Is Nothing) Then
-                                    'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                    'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                    Dim IL = md.Body.GetILProcessor()
-                                    IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                    completedMethods.Add(mdFinal)
-                                End If
-                                completedInstructions.Add(Instruction)
-                            ElseIf (Instruction.OpCode = OpCodes.Ldstr) Then
-                                If Not CStr(Instruction.Operand) = String.Empty Then
-                                    If MdByString.ContainsKey(CStr(Instruction.Operand)) Then
-                                        mdFinal = MdByString.Item(CStr(Instruction.Operand))
-                                        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                    Else
-                                        mdFinal = CreateMethod(CStr(Instruction.Operand), md)
-                                        If Not mdFinal Is Nothing Then
-                                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                            MdByString.Add(CStr(Instruction.Operand), mdFinal)
-                                        End If
-                                    End If
-                                    If (Not mdFinal Is Nothing) Then
-                                        'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                        'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                        Dim IL = md.Body.GetILProcessor()
-                                        IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                        completedMethods.Add(mdFinal)
-                                    End If
-                                    completedInstructions.Add(Instruction)
-                                End If
-                                'ElseIf Instruction.OpCode = OpCodes.Ldc_I4_S Then
-                                '    If MdByByte.ContainsKey(CByte(Instruction.Operand)) Then
-                                '        mdFinal = MdByByte.Item(CByte(Instruction.Operand))
-                                '        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                '    Else
-                                '        mdFinal = CreateMethod(Byte.Parse(Instruction.Operand.ToString), md)
-                                '        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                '        MdByByte.Add(CByte(Instruction.Operand), mdFinal)
-                                '    End If
-                                '    If (Not mdFinal Is Nothing) Then
-                                '        md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                '        md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-
-                                '        completedMethods.Add(mdFinal)
-                                '        completedInstructions.Add(Instruction)
-                                '    End If
-                            ElseIf (Instruction.OpCode = OpCodes.Newobj) Then
-                                Dim mRef = DirectCast(Instruction.Operand, MethodReference)
-                                If Not mRef Is Nothing Then
-                                    If MdByRef.ContainsKey(mRef) Then
-                                        mdFinal = MdByRef.Item(mRef)
-                                    Else
-                                        mdFinal = CreateReferenceMethod(mRef, md)
-                                        If Not mdFinal Is Nothing Then
-                                            MdByRef.Add(mRef, mdFinal)
-                                        End If
-                                    End If
-                                    If (Not mdFinal Is Nothing) Then
-                                        'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                        'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                        Dim IL = md.Body.GetILProcessor()
-                                        IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                        completedMethods.Add(mdFinal)
-                                    End If
-                                    completedInstructions.Add(Instruction)
-                                End If
-                            ElseIf (Instruction.OpCode = OpCodes.Ldc_R4) Then
-                                If MdBySingle.ContainsKey(CSng(Instruction.Operand)) Then
-                                    mdFinal = MdBySingle.Item(CSng(Instruction.Operand))
-                                    mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                Else
-                                    mdFinal = CreateMethod(CSng(Instruction.Operand), md)
-                                    If Not mdFinal Is Nothing Then
-                                        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                        MdBySingle.Add(CSng(Instruction.Operand), mdFinal)
-                                    End If
-                                End If
-                                If (Not mdFinal Is Nothing) Then
-                                    'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                    'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                    Dim IL = md.Body.GetILProcessor()
-                                    IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                    completedMethods.Add(mdFinal)
-                                End If
-                                completedInstructions.Add(Instruction)
-                            ElseIf (Instruction.OpCode = OpCodes.Ldc_I8) Then
-                                If MdByLong.ContainsKey(CLng(Instruction.Operand)) Then
-                                    mdFinal = MdByLong.Item(CLng(Instruction.Operand))
-                                    mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                Else
-                                    mdFinal = CreateMethod(CLng(Instruction.Operand), md)
-                                    If Not mdFinal Is Nothing Then
-                                        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                        MdByLong.Add(CLng(Instruction.Operand), mdFinal)
-                                    End If
-                                End If
-                                If (Not mdFinal Is Nothing) Then
-                                    'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                    'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                    Dim IL = md.Body.GetILProcessor()
-                                    IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                    completedMethods.Add(mdFinal)
-                                End If
-                                completedInstructions.Add(Instruction)
-                            ElseIf (Instruction.OpCode = OpCodes.Ldc_R8) Then
-                                If MdByDouble.ContainsKey(CDbl(Instruction.Operand)) Then
-                                    mdFinal = MdByDouble.Item(CDbl(Instruction.Operand))
-                                    mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
-                                Else
-                                    mdFinal = CreateMethod(CDbl(Instruction.Operand), md)
-                                    If Not mdFinal Is Nothing Then
-                                        mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
-                                        MdByDouble.Add(CDbl(Instruction.Operand), mdFinal)
-                                    End If
-                                End If
-                                If (Not mdFinal Is Nothing) Then
-                                    'md.Body.Instructions.Item(i).OpCode = OpCodes.Call
-                                    'md.Body.Instructions.Item(i).Operand = AssemblyDef.MainModule.Import(mdFinal)
-                                    Dim IL = md.Body.GetILProcessor()
-                                    IL.Replace(md.Body.Instructions.Item(index), IL.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal)))
-                                    completedMethods.Add(mdFinal)
-                                End If
-                                completedInstructions.Add(Instruction)
-                            End If
-                        Next
-                        md.Body.OptimizeMacros
-                        md.Body.ComputeOffsets()
-                        md.Body.ComputeHeader()
-                    End If
+                    md.Body.SimplifyMacros
+                    ProcessInstructions(md.Body)
+                    md.Body.OptimizeMacros
+                    md.Body.ComputeHeader()
+                    md.Body.ComputeOffsets()
                 Next
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
             publicMethods.Clear()
+        End Sub
+
+        Private Shared Sub ProcessInstructions(body As MethodBody)
+            Dim instructions = body.Instructions
+            Dim il = body.GetILProcessor()
+            Dim instructionsToExpand As List(Of Instruction) = New List(Of Instruction)()
+
+            For Each instruction As Instruction In instructions
+                Select Case instruction.OpCode
+                    Case OpCodes.Ldc_I4
+                        If isValidIntegerOperand(instruction) AndAlso Not Randomizer.invisibleChars.Contains(CInt(instruction.Operand)) Then
+                            OpCodesFilter(instruction.OpCode, instruction, instructionsToExpand, body)
+                        End If
+                    Case OpCodes.Ldc_I8
+                        If isValidLongOperand(instruction) Then
+                            instructionsToExpand.Add(instruction)
+                        End If
+                    Case OpCodes.Ldc_R4
+                        If isValidSingleOperand(instruction) Then
+                            OpCodesFilter(instruction.OpCode, instruction, instructionsToExpand, body)
+                        End If
+                    Case OpCodes.Ldc_R8
+                        If isValidDoubleOperand(instruction) Then
+                            OpCodesFilter(instruction.OpCode, instruction, instructionsToExpand, body)
+                        End If
+                    Case OpCodes.Ldstr
+                        If isValidStringOperand(instruction) Then
+                            instructionsToExpand.Add(instruction)
+                        End If
+                    Case OpCodes.Newobj
+                        If isValidNewObjOperand(instruction) Then
+                            instructionsToExpand.Add(instruction)
+                        End If
+                End Select
+            Next
+
+            For Each instruction As Instruction In instructionsToExpand
+                Select Case instruction.OpCode
+                    Case OpCodes.Ldc_I4
+                        Dim Value As Integer = CInt(instruction.Operand)
+                        Dim mdFinal As MethodDefinition = Nothing
+                        If MdByInteger.ContainsKey(Value) Then
+                            mdFinal = MdByInteger.Item(Value)
+                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
+                        Else
+                            mdFinal = CreateMethod(Value, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
+                                MdByInteger.Add(Value, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                    Case OpCodes.Ldc_I8
+                        Dim Value As Long = CLng(instruction.Operand)
+                        Dim mdFinal As MethodDefinition = Nothing
+                        If MdByLong.ContainsKey(Value) Then
+                            mdFinal = MdByLong.Item(Value)
+                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
+                        Else
+                            mdFinal = CreateMethod(Value, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
+                                MdByLong.Add(Value, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                    Case OpCodes.Ldc_R4
+                        Dim Value As Single = CSng(instruction.Operand)
+                        Dim mdFinal As MethodDefinition = Nothing
+                        If MdBySingle.ContainsKey(Value) Then
+                            mdFinal = MdBySingle.Item(Value)
+                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
+                        Else
+                            mdFinal = CreateMethod(Value, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
+                                MdBySingle.Add(Value, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                    Case OpCodes.Ldc_R8
+                        Dim Value As Double = CDbl(instruction.Operand)
+                        Dim mdFinal As MethodDefinition = Nothing
+                        If MdByDouble.ContainsKey(Value) Then
+                            mdFinal = MdByDouble.Item(Value)
+                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
+                        Else
+                            mdFinal = CreateMethod(Value, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
+                                MdByDouble.Add(Value, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                    Case OpCodes.Ldstr
+                        Dim Value As String = CStr(instruction.Operand)
+                        Dim mdFinal As MethodDefinition = Nothing
+                        If MdByString.ContainsKey(Value) Then
+                            mdFinal = MdByString.Item(Value)
+                            mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Public
+                        Else
+                            mdFinal = CreateMethod(Value, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                mdFinal.Attributes = MethodAttributes.Static Or MethodAttributes.Private
+                                MdByString.Add(Value, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                    Case OpCodes.Newobj
+                        Dim Mref = DirectCast(instruction.Operand, MethodReference)
+                        Dim mdFinal As MethodDefinition = Nothing
+
+                        If MdByRef.ContainsKey(mRef) Then
+                            mdFinal = MdByRef.Item(mRef)
+                        Else
+                            mdFinal = CreateReferenceMethod(Mref, body.Method)
+                            If Not mdFinal Is Nothing Then
+                                MdByRef.Add(mRef, mdFinal)
+                            End If
+                        End If
+                        If (Not mdFinal Is Nothing) Then
+                            Dim Instruct = il.Create(OpCodes.Call, AssemblyDef.MainModule.Import(mdFinal))
+                            il.Replace(instruction, Instruct)
+                            completedMethods.Add(mdFinal)
+                        End If
+                End Select
+            Next
+        End Sub
+
+        Private Shared Sub OpCodesFilter(opcode As OpCode, Instruction As Instruction, instructionsToExpand As List(Of Instruction), body As MethodBody)
+            Dim opCodeStr = OpCodeDic.Item(opcode)
+
+            Dim instructNext = Instruction.Next
+            If instructNext.OpCode = OpCodes.Stloc OrElse instructNext.OpCode = OpCodes.Ldloc Then
+                Dim varIndex = CInt(instructNext.Operand.ToString.ToLower.Replace("v_", String.Empty))
+                Dim varType = body.Variables(varIndex).VariableType
+                If varType.ToString = opCodeStr Then
+                    If Not Instruction.Operand Is Nothing Then
+                        instructionsToExpand.Add(Instruction)
+                    End If
+                End If
+            Else
+                If Not instructNext.Operand Is Nothing Then
+                    If instructNext.Operand.ToString.ToLower.EndsWith(opCodeStr.ToLower & ")") OrElse instructNext.Operand.ToString.ToLower.StartsWith(opCodeStr.ToLower) Then
+                        If Not Instruction.Operand Is Nothing Then
+                            instructionsToExpand.Add(Instruction)
+                        End If
+                    End If
+                End If
+            End If
         End Sub
 
         Private Shared Function CreateReferenceMethod(targetConstructor As MethodReference, md As MethodDefinition) As MethodDefinition
@@ -269,8 +284,6 @@ Namespace Core.Obfuscation.Protection
                     opc = OpCodes.Ldc_I4
                 Case GetType(Long)
                     opc = OpCodes.Ldc_I8
-                Case GetType(Byte)
-                    opc = OpCodes.Ldc_I4_S
                 Case GetType(Single)
                     opc = OpCodes.Ldc_R4
                 Case GetType(Double)

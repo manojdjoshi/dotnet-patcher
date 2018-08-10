@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Obfuscation\Protection\ControlFlow.vb" />
+    <Compile Include="Core\Obfuscation\Protection\NativeDllFunction.vb" />
     <Compile Include="Engine\Analyze\Analyzer.vb" />
     <Compile Include="Engine\Analyze\ValidatedFile.vb" />
     <Compile Include="Engine\Context\RenamerState.vb" />
@@ -269,6 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Dotwall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dllexp.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
